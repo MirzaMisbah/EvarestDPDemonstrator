@@ -1,0 +1,40 @@
+{
+  "opts" : {
+    "destination" : "./docs/",
+    "readme" : "README.md",
+    "template": "node_modules/tui-jsdoc-template"
+  },
+  "tags": {
+    "allowUnknownTags": true
+  },
+  "plugins": [
+    "plugins/markdown"
+  ],
+  "markdown": {
+    "tags": ["foo", "bar"]
+  },
+  "templates": {
+    "cleverLinks": false,
+    "monospaceLinks": false,
+    "default": {
+      "outputSourceFiles": true,
+      "includeDate" : true
+    },
+    "logo": {
+      "url": "http://iss.uni-saarland.de/workspace/grayscale/img/logo_iss1.png",
+      "height": "30px",
+      "width" : "90px",
+      "link": "https://github.com/InformationServiceSystems/tucana"
+    },
+    "name": "TUCANA Documentation"
+  },
+  "source": {
+    "include": [
+      "src/",
+      "src/coreplatform/",
+      "src/dataallocation/",
+      "src/dataallocation/handler"
+    ],
+    "includePattern": ".+\\.js(doc|x)?$"
+  }
+}

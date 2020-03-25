@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Integrate meta information -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>#AppName</title>
+
+    <!-- Import favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+
+    <!-- Author information -->
+    <link type="text/plain" rel="author" href="/humans.txt" />
+
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- Web Application Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <!-- TODO specify app name and touch icon -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="#AppName">
+    <link rel="icon" sizes="192x192" href="assets/touch/chrome-touch-icon-192x192.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <!-- TODO specify app name and touch icon -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="#AppName">
+    <link rel="apple-touch-icon" href="assets/touch/apple-touch-icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <!-- TODO specify touch icon -->
+    <meta name="msapplication-TileImage" content="assets/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#2F3BA2">
+
+    <!-- Color the status bar on mobile devices -->
+    <!-- TODO color the status bar in mobile devices -->
+    <meta name="theme-color" content="#7b2ea1">
+
+    <!-- Material Design Lite page styles:
+      You can choose other color schemes from the CDN, more info here http://www.getmdl.io/customize/index.html
+      Format: material.color1-color2.min.css, some examples:
+      material.red-teal.min.css
+      material.blue-orange.min.css
+      material.purple-indigo.min.css -->
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+    <!-- Material Design icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Import main stylesheet of app shell -->
+    <link rel="stylesheet" href="styles/main.css">
+
+    <!-- TODO your custom stylesheets-->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+</head>
+
+<body class="mdl-container mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+
+<div class="container-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header mdl-layout--fixed-tabs">
+    <div class="drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-100">
+        <header class="drawer-header">
+            <img class="avatar" alt="avatar">
+            <div class="avatar-dropdown">
+                <span id="username"></span>
+                <div class="mdl-layout-spacer"></div>
+                <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                    <i class="material-icons" role="presentation">arrow_drop_down</i>
+                    <span class="visuallyhidden">Account</span>
+                </button>
+                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
+                    <li id="btn-logout" class="mdl-menu__item">Log Out</li>
+                </ul>
+            </div>
+        </header>
+        <nav class="drawer-navigation mdl-navigation mdl-color--blue-grey-800">
+            <a class="mdl-navigation__link" href="/"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Home</a>
+            <a class="mdl-navigation__link" href="/profile.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">people</i>Profile</a>
+            <a class="mdl-navigation__link is-active" href="/sync.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">import_export</i>Data management</a>
+            <a id="visit" target="_blank" class="mdl-navigation__link" href="#"><i class="mdl-color-text--blue-grey-400 material-icons fa fa-database" role="presentation"></i>Local Storage</a>
+        </nav>
+    </div>
+    <header class="mdl-layout__header mdl-color--primary">
+        <div class="mdl-layout__header-row">
+            <!-- Title -->
+            <!-- TODO specify app name -->
+            <span class="mdl-layout-title">Heartrate Minion</span>
+        </div>
+        <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
+            <!-- TODO customize tabs of application incl. icons -->
+            <a id="tab-synch" href="#synch" class="mdl-layout__tab"><img class="iconize" alt="synch" src="assets/icons/sync.png"><span class="mdl-layout--large-screen-only icon-text">Sync Data</span></a>
+        </div>
+    </header>
+
+    <main class="mdl-layout__content">
+        <div class="mdl-layout__tab-panel is-active" id="synch">
+            <section id="synchsection" class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+                <div class="mdl-card mdl-cell mdl-cell--12-col">
+                    <!-- TODO Insert card title and card action items here -->
+                    <div class="mdl-card__supporting-text">
+                        <h3>Start synchronization with backup data</h3>
+                        <div id="data-view" class="panel panel-default" style="visibility: hidden; margin-top: 30px;">
+                            <div class="panel-heading"><h4>Synched data</h4></div>
+                            <div class="panel-body">
+                                <pre class="full-data" style="max-height: 400px; overflow: scroll"></pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mdl-card__actions">
+                        <button id="synchStepData" class="mdl-button">Synchronize Step Data</button>
+                        <button id="synchHeartrateData" class="mdl-button">Synchronize Heartrate Data</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Integration of spinner element -->
+    <spinner id="spinner">
+        <img src="assets/loading.svg" alt="Loading spinner">
+    </spinner>
+
+    <!-- Integration of snackbar for notifications -->
+    <div id="notificationbar" class="mdl-js-snackbar mdl-snackbar">
+        <div class="mdl-snackbar__text"></div>
+        <button class="mdl-snackbar__action" type="button"></button>
+    </div>
+
+</div>
+
+<!-- Installation script for Service Workers -->
+<script type="application/javascript" src="scripts/install-service-worker.js"></script>
+
+<!-- Import material design javascript -->
+<script type="application/javascript" src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+
+<!-- Import Auth0 Lock -->
+<script type="application/javascript" src="libs/ui/thirdparty/lock11_0_1.min.js"></script>
+
+<!-- Import subMinion libraries -->
+<script type="application/javascript" src="libs/oauthlib/auth0connection.js"></script>
+<script type="application/javascript" src="libs/encapsulationlib/customformat.js"></script>
+<script type="application/javascript" src="libs/localstoragelib/crossdatastorageclient.js"></script>
+<script type="application/javascript" src="libs/serversychronizationlib/synchronization.js"></script>
+
+
+<!-- Import main application logic -->
+<!-- TODO customize the app logic to your specific needs -->
+<script type="application/javascript" src="scripts/globals.js"></script>
+<script type="application/javascript" src="scripts/sync-view.js"></script>
+
+</body>
+</html>

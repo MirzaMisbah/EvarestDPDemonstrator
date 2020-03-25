@@ -1,0 +1,30 @@
+{
+  "id": "Test Smart Service 1",
+  "version": "0.1",
+  "name": "Test Smart Service",
+  "descriptionTitle": "Showcase of platform",
+  "descriptionText": "In this service an example smart service is showcased using the developed Components.",
+  "configuration": [{
+    "softwareItemId": "https://gist.githubusercontent.com/mircopp/52026adea17d313f47026262fa10eeac/raw/76858c7a54f25769c893abe5cc23790d55a9c49a/TestRandomGenerator.js",
+    "instanceId": "https://gist.githubusercontent.com/mircopp/52026adea17d313f47026262fa10eeac/raw/76858c7a54f25769c893abe5cc23790d55a9c49a/TestRandomGenerator.js0",
+    "targetMinionIds": ["https://gist.githubusercontent.com/mircopp/c436af1c177922bab10e9eef393a49d7/raw/89093d118a84667d82a275cf9c9dd1a4a31f6bcd/TestIntegerMultiplicator.js0"],
+    "name": "Number Generator",
+    "type": "P",
+    "defaultShow": false
+  }, {
+    "softwareItemId": "https://gist.githubusercontent.com/mircopp/c436af1c177922bab10e9eef393a49d7/raw/89093d118a84667d82a275cf9c9dd1a4a31f6bcd/TestIntegerMultiplicator.js",
+    "instanceId": "https://gist.githubusercontent.com/mircopp/c436af1c177922bab10e9eef393a49d7/raw/89093d118a84667d82a275cf9c9dd1a4a31f6bcd/TestIntegerMultiplicator.js0",
+    "targetMinionIds": ["Test Integer Visualizer0"],
+    "name": "Number Tmin",
+    "type": "T",
+    "defaultShow": false
+  }, {
+    "softwareItemId": "Test Integer Visualizer",
+    "instanceId": "Test Integer Visualizer0",
+    "targetMinionIds": [],
+    "name": "Result Visualizer",
+    "type": "C",
+    "defaultShow": true
+  }],
+  "context": {}
+}

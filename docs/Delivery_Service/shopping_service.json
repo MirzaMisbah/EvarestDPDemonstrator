@@ -1,0 +1,34 @@
+{
+  "id": "Delivery Service",
+  "version": "0.2",
+  "name": "Delivery Service",
+  "descriptionText": "This service offers concierge delivery service to customer",
+  "configuration": [{
+    "softwareItemId": "getcustomerdata.js",
+    "instanceId": "getcustomerdata.js0",
+    "targetMinionIds": ["display"],
+    "name": "Customer Data",
+    "type": "P"
+  },{
+    "softwareItemId": "scheduler.js",
+    "instanceId": "scheduler.js0",
+    "targetMinionIds": ["display"],
+    "name": "scheduler",
+    "type": "T"
+  },{
+    "softwareItemId": "ShoppingCmin.js",
+    "instanceId": "display",
+    "targetMinionIds": ["commD"],
+    "name": "Orders",
+    "type": "C",
+    "description": "Customer shown new deal from store"
+  },{
+    "softwareItemId": "PeerCommDelivery.js",
+    "instanceId": "commD",
+    "targetMinionIds": [],
+    "name": "Communicator",
+    "type": "C",
+    "description": "Send Data to Customer"
+  } ],
+  "context": {}
+}

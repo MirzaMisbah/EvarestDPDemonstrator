@@ -1,0 +1,35 @@
+{
+    "@context": "EVAREST",
+    "name": "PDE (Prozessdatenerfassung)",
+    "location": "http://www.evarest.de/iot/pde",
+    "consumption": "Internal",
+    "lang": "DE",
+    "keyWords": "Prozessdatenerfassung, PDE,  Fault Analysis, Deployments",
+    "description": "Prozessdatenerfassung is meant for  fault analysis for department technics. Average size is around 10GB per year. It is useful for project improvements and deployments. ",
+    "productType": {
+        "@tpe": "Visualization",
+        "tier_1": "PDE (Prozessdatenerfassung)",
+        "tier_2": "Process Instruction"
+    },
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "3.4",
+        "reviewCount": "60"
+    },
+    "smartContract": {
+        "@type": "smartContract",
+        "location": "http://www.evarest.de/iot/pde",
+        "terms": "http://www.evarest.de/iot/pde"
+    },
+    "offers": {
+        "@type": "Offer",
+        "priceCurrency": "EUR",
+        "price": "100.99",
+        "priceValidUntil": "01-11-2021",
+        "availability": "yes",
+        "seller": {
+            "@type": "Lindt",
+            "location": "https://www.lindt.de/startseite/"
+        }
+    }
+}

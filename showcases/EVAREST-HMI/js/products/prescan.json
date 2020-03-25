@@ -1,0 +1,35 @@
+{
+    "@context": "EVAREST",
+    "name": "Prescan",
+    "location": "http://www.evarest.de/iot/prescan",
+    "consumption": "External",
+    "lang": "DE",
+    "keyWords": "Prescan, Quality Assurance, Retraceability, Labelling",
+    "description": "There are around more or less 40,000 prescans per month. Preprocessing involves evaluation of prescans related to used pallets.  Quality assurance and Retraceability of all product components are an added value to this data product. ",
+    "productType": {
+        "@tpe": "Dataset",
+        "tier_1": "Prescan",
+        "tier_2": "Machine Data"
+    },
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "3.1",
+        "reviewCount": "15"
+    },
+    "smartContract": {
+        "@type": "smartContract",
+        "location": "http://www.evarest.de/iot/prescan",
+        "terms": "http://www.evarest.de/iot/prescan"
+    },
+    "offers": {
+        "@type": "Offer",
+        "priceCurrency": "EUR",
+        "price": "35.00",
+        "priceValidUntil": "05-05-2020",
+        "availability": "yes",
+        "seller": {
+            "@type": "Lindt",
+            "location": "https://www.lindt.de/startseite/"
+        }
+    }
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Testpage</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+
+    <style>
+        #spinner {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            width: 100vw;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #fff;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+
+<main class="container">
+    <button id="profile-button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color--accent mdl-color-text--accent-contrast">
+        <img alt="avatar" class="avatar" style="visibility: hidden; height: 100%; width: 100%">
+    </button>
+    <div id="profile_information">
+        <p id="username"></p>
+        <button id="btn-logout">Log Out</button>
+    </div>
+    <h1>You are logged in now!</h1>
+    <button id="synchStepData">Synchronize Step Data</button>
+    <button id="synchHeartrateData">Synchronize Heartrate Data</button>
+
+
+    <div id="data-view" class="panel panel-default profile-area" style="visibility: hidden; margin-top: 30px;">
+        <div class="panel-heading"><h3>Synched data</h3></div>
+        <div class="panel-body">
+            <pre class="full-data" style="max-height: 400px; overflow: scroll"></pre>
+        </div>
+    </div>
+</main>
+
+
+<div id="spinner">
+    <img src="assets/loading.svg" alt="Loading spinner">
+</div>
+
+<!-- Import Auth0 Lock -->
+<script type="application/javascript" src="https://cdn.auth0.com/js/lock/10.21.1/lock.min.js"></script>
+
+<!-- Import subMinion libraries -->
+<script type="application/javascript" src="libs/ouathlib/auth0connection.js"></script>
+<script type="application/javascript" src="libs/localstoragelib/crossdatastorageclient.js"></script>
+<script type="application/javascript" src="libs/serversychronizationlib/synchronization.js"></script>
+
+<!-- Import main application logic -->
+<script type="application/javascript" src="main.js"></script>
+
+</body>
+</html>

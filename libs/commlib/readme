@@ -1,0 +1,37 @@
+/****
+	COMM LIB
+	Using WebRTC	
+
+	Libversion: 0.2
+	STABLE: NO
+	DOCUMENTED: NO
+	BUGGY: YES
+	
+	This library is still under developement and is subject to change. 
+
+	
+***/
+
+Files:
+1. testCommConfig.html: an html file that uses the communication library. Use it as a guide on how to use the library. (Out of Date)
+
+2. lib/peerComm.js: this file contains the library core functions. It communicates with the signaling server and the target peers.
+
+3. lib/logger.js: has helper logging functions.
+
+4. lib/server.js: a compatible signaling server. Must be deployed in order for the peer communication to succeed.
+
+
+
+Dependencies:
+ 			The signaling server must be up and running before the communication takes place
+ 
+Limitations:
+ 			At the moment the communication can succeed IFF both peers are on the same WLAN/LAN
+ 
+Usage Instructions: 
+			In order to use the library you need two main things:
+ 				1. create an object, in the callbacks parameters there is a callback for receiving messages
+ 					var comm = PeerCommunication(config, callbacks); // check full documentation of paramters on the constructor header (lib/peerComm.js)
+ 				2. use the object to send messages
+ 					comm.sendToPeer(peerId, msg); // check full documentation of paramters on the function header(lib/peerComm.js)

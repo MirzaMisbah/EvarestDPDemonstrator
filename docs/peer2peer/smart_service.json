@@ -1,0 +1,23 @@
+{
+  "id": "Test Peer Communication Service 1",
+  "version": "0.1",
+  "name": "Test Peer Communication Service",
+  "descriptionTitle": "Summary",
+  "descriptionText": "Peer to peer communication is shown in this service.",
+  "configuration": [{
+    "softwareItemId": "testdatagenerator.js",
+    "instanceId": "https://gist.githubusercontent.com/emanzoor/971102f777f1c8af33cba1d312930bc2/raw/9a7295bd1cc8e5860263717d96645d1aa242cb9d/TestDataGenerator.js",
+   "targetMinionIds": ["https://gist.githubusercontent.com/emanzoor/259f95077414342230511ae1009d1036/raw/ae9c78b2151193df06086f6b7e3ed35727ea7d0f/TestPeerCommunicator.js"],
+    "name": "Data",
+    "type": "P",
+    "defaultShow": false
+  }, {
+    "softwareItemId": "testpeercommunicator.js",
+    "instanceId": "https://gist.githubusercontent.com/emanzoor/259f95077414342230511ae1009d1036/raw/ae9c78b2151193df06086f6b7e3ed35727ea7d0f/TestPeerCommunicator.js",
+    "targetMinionIds": [],
+    "name": "Result",
+    "type": "C",
+    "defaultShow": true
+  } ],
+  "context": {}
+}

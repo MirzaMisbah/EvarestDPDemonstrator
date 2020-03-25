@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/signUp.css">
+
+
+  <script defer src="js/init.js" type="module"></script>
+
+
+  <title>Intelligent Shopping Assistant</title>
+</head>
+
+<body>
+  <script src="./js/tucana.js" type="application/javascript"></script>
+  <!-- Always shows a header, even in smaller screens. -->
+  <div class="mdl-layout mdl-js-layout">
+
+    <header class="mdl-layout__header mdl-layout__header--transparent mdl-layout__header--scroll">
+
+      <div class="mdl-layout__header-row">
+        <!-- Title -->
+        <img class="mdl-layout-icon" src="images/logo_iss.png" style="margin-right: 30px">
+        <span class="mdl-layout-title">TUCANA</span>
+        <div class="mdl-layout-spacer"></div>
+
+        <!-- Navigation -->
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="/docs/global.html">Docs</a>
+          <a id="clear" class="mdl-navigation__link" href="#">Clear DB</a>
+          <a class="mdl-navigation__link">Create SSC</a>
+          <a class="mdl-navigation__link" href="/extras/potato.html">Potato</a>
+        </nav>
+      </div>
+
+
+    </header>
+    <div class="header-divider"></div>
+
+
+    <main class="mdl-layout__content" id="main-place">
+
+      <button id="logoutButton" style="display:none" class="mdl-navigation__link">
+        <i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">&#xe163</i>Logout
+      </button>
+
+
+
+    </main>
+  </div>
+  <div id="id01" class="modal"></div>
+
+
+  <script type="application/javascript">
+  var clearDB = function () {
+    const indexedDB = window.indexedDB || window.mozIndexedDB
+            || window.webkitIndexedDB || window.msIndexedDB;
+    const databases = ['data', 'model', 'swComponent', 'sscItem', 'tensorflowjs'];
+    databases.forEach((database) => {
+      var req = indexedDB.deleteDatabase(database);
+      req.onsuccess = function () {
+        console.log("Deleted database successfully");
+      };
+    });
+
+    alert('All databases successfully deleted');
+  };
+  document.getElementById('clear').addEventListener("click", clearDB);
+</script>
+
+
+
+</body>
+
+</html>

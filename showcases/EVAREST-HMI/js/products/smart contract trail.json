@@ -1,0 +1,79 @@
+pragma solidity >=0.4.24 <0.6.0;
+contract SC {
+    string public constant stringValue = "myvalue";
+    string public value;
+    string public name = 'SmartContract'; 
+    string public symbol = 'SC'; 
+    mapping (address => uint) public balances; 
+    event Transfer(address _from, address _to, uint256 _value); 
+    enum State {Available, NotAvailable}
+    State public state;
+    
+    Seller[] public people;
+    uint256 public peopleCount;
+    struct Seller {
+        string _firstName;
+        string _lastName;
+    }
+    
+
+    
+    address public customer = msg.sender;
+    address public owner;
+    
+    constructor() public { 
+        balances[msg.sender] = 10000; 
+        state = State.NotAvailable;
+        value = "myvalue";
+        }
+
+    function MakePayment(address _receiver, uint _amount) public returns(bool sufficient) {
+        if (balances[msg.sender] < _amount) return false;  
+        balances[msg.sender] -= _amount;
+        balances[_receiver] += _amount;
+        emit Transfer(msg.sender, _receiver, _amount); 
+        return true;
+        }
+    
+    function getBalance(address _addr) public view returns(uint) { 
+        return balances[_addr];
+        }
+    
+
+    function available() public {
+        state = State.Available;
+    }
+     
+    function isAvailable() public view returns(string){
+        if (state == State.Available)
+        {
+            return "yes";
+        }
+        else {
+            return "no";
+        }
+    }
+    
+    /*function get() public view returns (string memory){
+        return value;
+    }
+    function set (string memory _value) public{
+        value = _value;
+    }*/
+
+
+    function addSeller(string memory _firstName, string memory _lastName) public {
+        people.push(Seller(_firstName, _lastName));
+        peopleCount += 1;
+    }
+
+    modifier onlyOwner() {
+        require(msg.sender == owner);
+        _;
+    }
+    
+    modifier onlyCustomer(address _receiver) {
+        require(_receiver == customer);
+        _;
+    }
+}

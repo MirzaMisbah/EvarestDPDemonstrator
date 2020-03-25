@@ -1,0 +1,54 @@
+{
+  "id": "Customer",
+  "version": "0.2",
+  "name": "Customer",
+  "descriptionText": "This service shows Customer who get offers from this store",
+  "configuration": [{
+    "softwareItemId": "getcustomerdata.js",
+    "instanceId": "getcustomerdata.js0",
+    "targetMinionIds": ["peercommunicator"],
+    "name": "Customer Data",
+    "type": "P"
+  },{
+    "softwareItemId": "getoffers.js",
+    "instanceId": "getoffers.js0",
+    "targetMinionIds": ["dealminion0"],
+    "name": "Store Offers",
+    "type": "P"
+  },{
+    "softwareItemId": "delstatus.js",
+    "instanceId": "status.js0",
+    "targetMinionIds": ["dealminion1"],
+    "name": "Store Offers",
+    "type": "P"
+  },{
+    "softwareItemId": "DeliveryCmin.js",
+    "instanceId": "dealminion1",
+    "targetMinionIds": [],
+    "name": "Delivery Status",
+    "type": "C",
+    "description": "Customer shown new deal from store"
+  },{
+    "softwareItemId": "ShoppingDealCmin.js",
+    "instanceId": "dealminion0",
+    "targetMinionIds": ["commD"],
+    "name": "Offers",
+    "type": "C",
+    "description": "Customer shown new deal from store"
+  },{
+    "softwareItemId": "PeerCommDelivery.js",
+    "instanceId": "commD",
+    "targetMinionIds": [],
+    "name": "Delivery Service Communicator",
+    "type": "C",
+    "description": "Send Data to Services"
+  },{
+       "softwareItemId": "PeerCommunicator.js", 
+      "instanceId": "peercommunicator", 
+      "targetMinionIds": [], 
+      "name": "Store Communicator",
+       "type": "C", 
+       "description": "Send Data to Stores", 
+       "defaultShow": true } ],
+  "context": {}
+}

@@ -1,0 +1,840 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Source: coreplatform/minionstatecontroller.js | TUCANA Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-jsdoc.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/tui-doc.css">
+
+    
+</head>
+<body>
+<nav class="lnb" id="lnb">
+    <div class="logo" style="width: 90px; height: 30px">
+        
+            <a href="https://github.com/InformationServiceSystems/tucana" rel="noopener noreferrer" target="_blank">
+                <img src="http://iss.uni-saarland.de/workspace/grayscale/img/logo_iss1.png" width="100%" height="100%">
+            </a>
+        
+    </div>
+    <div class="title">
+        <h1><a href="index.html" class="link">TUCANA Documentation</a></h1>
+        
+    </div>
+    <div class="search-container" id="search-container">
+        <input type="text" placeholder="Search">
+        <ul></ul>
+    </div>
+    
+    <div class="lnb-api hidden"><h3>Classes</h3><ul><li><a href="AwaitBroadcastResponse.html">AwaitBroadcastResponse</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="AwaitBroadcastResponse_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="AwaitBroadcastResponse.html#ressourceNotAvailable">ressourceNotAvailable</a></li><li><a href="AwaitBroadcastResponse.html#ressourceProtected">ressourceProtected</a></li><li><a href="AwaitBroadcastResponse.html#ressourceProvided">ressourceProvided</a></li><li><a href="AwaitBroadcastResponse.html#toString">toString</a></li></ul></div></li><li><a href="BaaSCommunicationHandler.html">BaaSCommunicationHandler</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="BaaSCommunicationHandler_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="BaaSCommunicationHandler.html#broadcastDBaaS">broadcastDBaaS</a></li><li><a href="BaaSCommunicationHandler.html#broadcastMBaaS">broadcastMBaaS</a></li><li><a href="BaaSCommunicationHandler.html#broadcastRessourceAccess">broadcastRessourceAccess</a></li><li><a href="BaaSCommunicationHandler.html#broadcastSBaaS">broadcastSBaaS</a></li><li><a href="BaaSCommunicationHandler.html#broadcastSSCBaaS">broadcastSSCBaaS</a></li></ul></div></li><li><a href="BroadcastConfiguration.html">BroadcastConfiguration</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="BroadcastConfiguration_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="BroadcastConfiguration.html#.fromJSON">fromJSON</a></li><li><a href="BroadcastConfiguration.html#getBroadcastCondition">getBroadcastCondition</a></li><li><a href="BroadcastConfiguration.html#getSource">getSource</a></li><li><a href="BroadcastConfiguration.html#getTargets">getTargets</a></li><li><a href="BroadcastConfiguration.html#getTrigger">getTrigger</a></li><li><a href="BroadcastConfiguration.html#getType">getType</a></li><li><a href="BroadcastConfiguration.html#toJSON">toJSON</a></li></ul></div></li><li><a href="BroadcastRequestReceived.html">BroadcastRequestReceived</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="BroadcastRequestReceived_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="BroadcastRequestReceived.html#broadcastRessourceAccess">broadcastRessourceAccess</a></li><li><a href="BroadcastRequestReceived.html#toString">toString</a></li></ul></div></li><li><a href="BrowserFingerprintIdentificationHandler.html">BrowserFingerprintIdentificationHandler</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="BrowserFingerprintIdentificationHandler_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="BrowserFingerprintIdentificationHandler.html#getContentOffering">getContentOffering</a></li><li><a href="BrowserFingerprintIdentificationHandler.html#getGeography">getGeography</a></li><li><a href="BrowserFingerprintIdentificationHandler.html#getKeywords">getKeywords</a></li><li><a href="BrowserFingerprintIdentificationHandler.html#getLocalID">getLocalID</a></li><li><a href="BrowserFingerprintIdentificationHandler.html#getModelOffering">getModelOffering</a></li><li><a href="BrowserFingerprintIdentificationHandler.html#getName">getName</a></li><li><a href="BrowserFingerprintIdentificationHandler.html#getProperties">getProperties</a></li><li><a href="BrowserFingerprintIdentificationHandler.html#getSoftwareOffering">getSoftwareOffering</a></li><li><a href="BrowserFingerprintIdentificationHandler.html#getType">getType</a></li></ul></div></li><li><a href="Cmin.html">Cmin</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Cmin_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="Cmin.html#broadcastDataCreateOperation">broadcastDataCreateOperation</a></li><li><a href="Cmin.html#broadcastDataDeleteOperation">broadcastDataDeleteOperation</a></li><li><a href="Cmin.html#broadcastDataReadOperation">broadcastDataReadOperation</a></li><li><a href="Cmin.html#broadcastDataUpdateOperation">broadcastDataUpdateOperation</a></li></ul></div></li><li><a href="CRUDOperation.html">CRUDOperation</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="CRUDOperation_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="CRUDOperation.html#.fromJSON">fromJSON</a></li><li><a href="CRUDOperation.html#getBroadcastConfiguration">getBroadcastConfiguration</a></li><li><a href="CRUDOperation.html#getBroadcastTargets">getBroadcastTargets</a></li><li><a href="CRUDOperation.html#getObject">getObject</a></li><li><a href="CRUDOperation.html#getObjectType">getObjectType</a></li><li><a href="CRUDOperation.html#getOperationType">getOperationType</a></li><li><a href="CRUDOperation.html#getQuery">getQuery</a></li><li><a href="CRUDOperation.html#setBroadcastConfiguration">setBroadcastConfiguration</a></li><li><a href="CRUDOperation.html#setObject">setObject</a></li><li><a href="CRUDOperation.html#setObjectType">setObjectType</a></li><li><a href="CRUDOperation.html#setOperationType">setOperationType</a></li><li><a href="CRUDOperation.html#setQuery">setQuery</a></li><li><a href="CRUDOperation.html#toJSON">toJSON</a></li></ul></div></li><li><a href="DataAccessController.html">DataAccessController</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="DataAccessController_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="DataAccessController.html#broadcastRessourceAccess">broadcastRessourceAccess</a></li><li><a href="DataAccessController.html#executeCRUDOperation">executeCRUDOperation</a></li><li><a href="DataAccessController.html#executeLocalCRUDOperation">executeLocalCRUDOperation</a></li><li><a href="DataAccessController.html#getDomainItemIds">getDomainItemIds</a></li><li><a href="DataAccessController.html#getFilteredPeerIds">getFilteredPeerIds</a></li><li><a href="DataAccessController.html#getLocalID">getLocalID</a></li><li><a href="DataAccessController.html#getModelItemIds">getModelItemIds</a></li><li><a href="DataAccessController.html#getProperties">getProperties</a></li><li><a href="DataAccessController.html#getSmartServiceConfigurationItemIds">getSmartServiceConfigurationItemIds</a></li><li><a href="DataAccessController.html#getSoftwareItemIds">getSoftwareItemIds</a></li><li><a href="DataAccessController.html#requestAccessPermission">requestAccessPermission</a></li></ul></div></li><li><a href="DataAccessService.html">DataAccessService</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="DataAccessService_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="DataAccessService.html#getDomainItemIds">getDomainItemIds</a></li><li><a href="DataAccessService.html#getFilteredPeerIds">getFilteredPeerIds</a></li><li><a href="DataAccessService.html#getLocalID">getLocalID</a></li><li><a href="DataAccessService.html#getModelItemIds">getModelItemIds</a></li><li><a href="DataAccessService.html#getProperties">getProperties</a></li><li><a href="DataAccessService.html#getSmartServiceConfigurationItemIds">getSmartServiceConfigurationItemIds</a></li><li><a href="DataAccessService.html#getSoftwareItemIds">getSoftwareItemIds</a></li></ul></div></li><li><a href="DatabaseHandler.html">DatabaseHandler</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="DatabaseHandler_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="DatabaseHandler.html#_createData">_createData</a></li><li><a href="DatabaseHandler.html#_createModel">_createModel</a></li><li><a href="DatabaseHandler.html#_createSmartServiceConfiguration">_createSmartServiceConfiguration</a></li><li><a href="DatabaseHandler.html#_createSoftwareComponent">_createSoftwareComponent</a></li><li><a href="DatabaseHandler.html#_deleteData">_deleteData</a></li><li><a href="DatabaseHandler.html#_deleteModel">_deleteModel</a></li><li><a href="DatabaseHandler.html#_deleteSmartServiceConfiguration">_deleteSmartServiceConfiguration</a></li><li><a href="DatabaseHandler.html#_deleteSoftwareComponent">_deleteSoftwareComponent</a></li><li><a href="DatabaseHandler.html#_readData">_readData</a></li><li><a href="DatabaseHandler.html#_readModel">_readModel</a></li><li><a href="DatabaseHandler.html#_readSmartServiceConfiguration">_readSmartServiceConfiguration</a></li><li><a href="DatabaseHandler.html#_readSoftwareComponent">_readSoftwareComponent</a></li><li><a href="DatabaseHandler.html#_updateData">_updateData</a></li><li><a href="DatabaseHandler.html#_updateModel">_updateModel</a></li><li><a href="DatabaseHandler.html#_updateSmartServiceConfiguration">_updateSmartServiceConfiguration</a></li><li><a href="DatabaseHandler.html#_updateSoftwareComponent">_updateSoftwareComponent</a></li><li><a href="DatabaseHandler.html#create">create</a></li><li><a href="DatabaseHandler.html#delete">delete</a></li><li><a href="DatabaseHandler.html#executeLocalCRUDOperation">executeLocalCRUDOperation</a></li><li><a href="DatabaseHandler.html#getDomainItemIDs">getDomainItemIDs</a></li><li><a href="DatabaseHandler.html#getModelItemIDs">getModelItemIDs</a></li><li><a href="DatabaseHandler.html#getSmartServiceConfigurationItemIDs">getSmartServiceConfigurationItemIDs</a></li><li><a href="DatabaseHandler.html#getSoftwareItemIDs">getSoftwareItemIDs</a></li><li><a href="DatabaseHandler.html#read">read</a></li><li><a href="DatabaseHandler.html#update">update</a></li></ul></div></li><li><a href="DatabaseQuery.html">DatabaseQuery</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="DatabaseQuery_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="DatabaseQuery.html#.fromJSON">fromJSON</a></li><li><a href="DatabaseQuery.html#getParams">getParams</a></li><li><a href="DatabaseQuery.html#getQueryType">getQueryType</a></li><li><a href="DatabaseQuery.html#getRessource">getRessource</a></li><li><a href="DatabaseQuery.html#toJSON">toJSON</a></li><li><a href="DatabaseQuery.html#toURI">toURI</a></li></ul></div></li><li><a href="DataRequestStateController.html">DataRequestStateController</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="DataRequestStateController_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="DataRequestStateController.html#broadcastOperationExecuted">broadcastOperationExecuted</a></li><li><a href="DataRequestStateController.html#broadcastRessourceAccess">broadcastRessourceAccess</a></li><li><a href="DataRequestStateController.html#cancelBroadcastOperation">cancelBroadcastOperation</a></li><li><a href="DataRequestStateController.html#executeLocalOperation">executeLocalOperation</a></li><li><a href="DataRequestStateController.html#getAwaitBroadcastResponse">getAwaitBroadcastResponse</a></li><li><a href="DataRequestStateController.html#getBroadcastRequestReceived">getBroadcastRequestReceived</a></li><li><a href="DataRequestStateController.html#getCurrentState">getCurrentState</a></li><li><a href="DataRequestStateController.html#getIdle">getIdle</a></li><li><a href="DataRequestStateController.html#getRequestReceived">getRequestReceived</a></li><li><a href="DataRequestStateController.html#getRessourceAccessNotAvailable">getRessourceAccessNotAvailable</a></li><li><a href="DataRequestStateController.html#getRessourceAccessProtected">getRessourceAccessProtected</a></li><li><a href="DataRequestStateController.html#getRessourceAccessProvided">getRessourceAccessProvided</a></li><li><a href="DataRequestStateController.html#requestBroadcastCRUDOperation">requestBroadcastCRUDOperation</a></li><li><a href="DataRequestStateController.html#requestCRUDOperation">requestCRUDOperation</a></li><li><a href="DataRequestStateController.html#requestRessourceAccess">requestRessourceAccess</a></li><li><a href="DataRequestStateController.html#ressourceNotAvailable">ressourceNotAvailable</a></li><li><a href="DataRequestStateController.html#ressourceProtected">ressourceProtected</a></li><li><a href="DataRequestStateController.html#ressourceProvided">ressourceProvided</a></li><li><a href="DataRequestStateController.html#setCurrentState">setCurrentState</a></li></ul></div></li><li><a href="DomainItem.html">DomainItem</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="DomainItem_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="DomainItem.html#.fromJSON">fromJSON</a></li><li><a href="DomainItem.html#getId">getId</a></li><li><a href="DomainItem.html#getObject">getObject</a></li><li><a href="DomainItem.html#setId">setId</a></li><li><a href="DomainItem.html#setObject">setObject</a></li><li><a href="DomainItem.html#toJSON">toJSON</a></li></ul></div></li><li><a href="ExecutionFailed.html">ExecutionFailed</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="ExecutionFailed_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="ExecutionFailed.html#cancel">cancel</a></li></ul></div></li><li><a href="ExecutionPossible.html">ExecutionPossible</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="ExecutionPossible_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="ExecutionPossible.html#bindMinions">bindMinions</a></li></ul></div></li><li><a href="ExecutionProtected.html">ExecutionProtected</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="ExecutionProtected_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="ExecutionProtected.html#cancel">cancel</a></li><li><a href="ExecutionProtected.html#removeProtection">removeProtection</a></li></ul></div></li><li><a href="FeatureRequest.html">FeatureRequest</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="FeatureRequest_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="FeatureRequest.html#.fromJSON">fromJSON</a></li><li><a href="FeatureRequest.html#getCRUDOperation">getCRUDOperation</a></li><li><a href="FeatureRequest.html#getId">getId</a></li><li><a href="FeatureRequest.html#getTrigger">getTrigger</a></li><li><a href="FeatureRequest.html#getType">getType</a></li><li><a href="FeatureRequest.html#toJSON">toJSON</a></li></ul></div></li><li><a href="FeatureResponse.html">FeatureResponse</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="FeatureResponse_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="FeatureResponse.html#.fromJSON">fromJSON</a></li><li><a href="FeatureResponse.html#getRequest">getRequest</a></li><li><a href="FeatureResponse.html#getResult">getResult</a></li><li><a href="FeatureResponse.html#toJSON">toJSON</a></li></ul></div></li><li><a href="Idle.html">Idle</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Idle_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="Idle.html#getSmartServiceConfigurationItemIds">getSmartServiceConfigurationItemIds</a></li><li><a href="Idle.html#loadSmartServiceConfiguration">loadSmartServiceConfiguration</a></li><li><a href="Idle.html#requestCRUDOperation">requestCRUDOperation</a></li><li><a href="Idle.html#toString">toString</a></li></ul></div></li><li><a href="LocalDSOMinion.html">LocalDSOMinion</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="LocalDSOMinion_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="LocalDSOMinion.html#deleteData">deleteData</a></li><li><a href="LocalDSOMinion.html#readData">readData</a></li><li><a href="LocalDSOMinion.html#saveData">saveData</a></li><li><a href="LocalDSOMinion.html#updateData">updateData</a></li></ul></div></li><li><a href="Minion.html">Minion</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Minion_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="Minion.html#.interpretMinionCode">interpretMinionCode</a></li><li><a href="Minion.html#.loadMinion">loadMinion</a></li><li><a href="Minion.html#activate">activate</a></li><li><a href="Minion.html#getCode">getCode</a></li><li><a href="Minion.html#getConstructor">getConstructor</a></li><li><a href="Minion.html#getId">getId</a></li><li><a href="Minion.html#getInstanceId">getInstanceId</a></li><li><a href="Minion.html#getName">getName</a></li><li><a href="Minion.html#getRunning">getRunning</a></li><li><a href="Minion.html#initialize">initialize</a></li><li><a href="Minion.html#notify">notify</a></li><li><a href="Minion.html#saveMinionLocally">saveMinionLocally</a></li><li><a href="Minion.html#setId">setId</a></li><li><a href="Minion.html#setInstanceId">setInstanceId</a></li><li><a href="Minion.html#setRunning">setRunning</a></li><li><a href="Minion.html#terminate">terminate</a></li></ul></div></li><li><a href="MinionCommunicationMap.html">MinionCommunicationMap</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="MinionCommunicationMap_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="MinionCommunicationMap.html#addMinion">addMinion</a></li><li><a href="MinionCommunicationMap.html#addTransition">addTransition</a></li><li><a href="MinionCommunicationMap.html#getColumnRows">getColumnRows</a></li><li><a href="MinionCommunicationMap.html#getMap">getMap</a></li><li><a href="MinionCommunicationMap.html#getSourceMinionIDs">getSourceMinionIDs</a></li><li><a href="MinionCommunicationMap.html#getTargetMinionIDs">getTargetMinionIDs</a></li><li><a href="MinionCommunicationMap.html#removeTransition">removeTransition</a></li></ul></div></li><li><a href="MinionController.html">MinionController</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="MinionController_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="MinionController.html#activate">activate</a></li><li><a href="MinionController.html#bind">bind</a></li><li><a href="MinionController.html#clearRuntimeEnvironment">clearRuntimeEnvironment</a></li><li><a href="MinionController.html#getMinionClass">getMinionClass</a></li><li><a href="MinionController.html#getMinionClasses">getMinionClasses</a></li><li><a href="MinionController.html#notify">notify</a></li><li><a href="MinionController.html#register">register</a></li><li><a href="MinionController.html#terminate">terminate</a></li></ul></div></li><li><a href="MinionMatchingChecked.html">MinionMatchingChecked</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="MinionMatchingChecked_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="MinionMatchingChecked.html#allMinionsAvailable">allMinionsAvailable</a></li><li><a href="MinionMatchingChecked.html#someMinionNotAvailable">someMinionNotAvailable</a></li><li><a href="MinionMatchingChecked.html#someMinionProtected">someMinionProtected</a></li></ul></div></li><li><a href="MinionsBound.html">MinionsBound</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="MinionsBound_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="MinionsBound.html#runSmartService">runSmartService</a></li></ul></div></li><li><a href="MinionSpecification.html">MinionSpecification</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="MinionSpecification_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="MinionSpecification.html#.fromJSON">fromJSON</a></li><li><a href="MinionSpecification.html#getDescription">getDescription</a></li><li><a href="MinionSpecification.html#getInstanceId">getInstanceId</a></li><li><a href="MinionSpecification.html#getName">getName</a></li><li><a href="MinionSpecification.html#getSoftwareItemId">getSoftwareItemId</a></li><li><a href="MinionSpecification.html#getTargetMinionIds">getTargetMinionIds</a></li><li><a href="MinionSpecification.html#getType">getType</a></li><li><a href="MinionSpecification.html#setInstanceId">setInstanceId</a></li><li><a href="MinionSpecification.html#toJSON">toJSON</a></li></ul></div></li><li><a href="MinionState.html">MinionState</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="MinionState_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="MinionState.html#allMinionsAvailable">allMinionsAvailable</a></li><li><a href="MinionState.html#bindMinions">bindMinions</a></li><li><a href="MinionState.html#cancel">cancel</a></li><li><a href="MinionState.html#checkMinionMatching">checkMinionMatching</a></li><li><a href="MinionState.html#deliverSmartServiceConfigurationItemIds">deliverSmartServiceConfigurationItemIds</a></li><li><a href="MinionState.html#getSmartServiceConfigurationItemIds">getSmartServiceConfigurationItemIds</a></li><li><a href="MinionState.html#loadSmartServiceConfiguration">loadSmartServiceConfiguration</a></li><li><a href="MinionState.html#removeProtection">removeProtection</a></li><li><a href="MinionState.html#runSmartService">runSmartService</a></li><li><a href="MinionState.html#someMinionNotAvailable">someMinionNotAvailable</a></li><li><a href="MinionState.html#someMinionProtected">someMinionProtected</a></li><li><a href="MinionState.html#terminateSmartService">terminateSmartService</a></li></ul></div></li><li><a href="MinionStateController.html">MinionStateController</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="MinionStateController_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="MinionStateController.html#allMinionsAvailable">allMinionsAvailable</a></li><li><a href="MinionStateController.html#bindMinions">bindMinions</a></li><li><a href="MinionStateController.html#cancel">cancel</a></li><li><a href="MinionStateController.html#checkMinionMatching">checkMinionMatching</a></li><li><a href="MinionStateController.html#deliverSmartServiceConfigurationItemIds">deliverSmartServiceConfigurationItemIds</a></li><li><a href="MinionStateController.html#getCurrentState">getCurrentState</a></li><li><a href="MinionStateController.html#getExecutionFailed">getExecutionFailed</a></li><li><a href="MinionStateController.html#getExecutionPossible">getExecutionPossible</a></li><li><a href="MinionStateController.html#getExecutionProtected">getExecutionProtected</a></li><li><a href="MinionStateController.html#getIdle">getIdle</a></li><li><a href="MinionStateController.html#getMinionMatchingChecked">getMinionMatchingChecked</a></li><li><a href="MinionStateController.html#getMinionsBound">getMinionsBound</a></li><li><a href="MinionStateController.html#getSmartServiceConfigurationItemIds">getSmartServiceConfigurationItemIds</a></li><li><a href="MinionStateController.html#getSmartServiceConfigurationLoaded">getSmartServiceConfigurationLoaded</a></li><li><a href="MinionStateController.html#getSmartServiceConfigurationsFound">getSmartServiceConfigurationsFound</a></li><li><a href="MinionStateController.html#getSmartServiceRunning">getSmartServiceRunning</a></li><li><a href="MinionStateController.html#loadSmartServiceConfiguration">loadSmartServiceConfiguration</a></li><li><a href="MinionStateController.html#removeProtection">removeProtection</a></li><li><a href="MinionStateController.html#runSmartService">runSmartService</a></li><li><a href="MinionStateController.html#setCurrentState">setCurrentState</a></li><li><a href="MinionStateController.html#someMinionNotAvailable">someMinionNotAvailable</a></li><li><a href="MinionStateController.html#someMinionProtected">someMinionProtected</a></li><li><a href="MinionStateController.html#terminateSmartService">terminateSmartService</a></li></ul></div></li><li><a href="ModelItem.html">ModelItem</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="ModelItem_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="ModelItem.html#.fromJSON">fromJSON</a></li><li><a href="ModelItem.html#getId">getId</a></li><li><a href="ModelItem.html#getModel">getModel</a></li><li><a href="ModelItem.html#setId">setId</a></li><li><a href="ModelItem.html#setModel">setModel</a></li><li><a href="ModelItem.html#toJSON">toJSON</a></li></ul></div></li><li><a href="Pmin.html">Pmin</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Pmin_sub"></div></li><li><a href="RequestReceived.html">RequestReceived</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="RequestReceived_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="RequestReceived.html#executeLocalOperation">executeLocalOperation</a></li><li><a href="RequestReceived.html#requestBroadcastCRUDOperation">requestBroadcastCRUDOperation</a></li><li><a href="RequestReceived.html#toString">toString</a></li></ul></div></li><li><a href="RessourceAccessNotAvailable.html">RessourceAccessNotAvailable</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="RessourceAccessNotAvailable_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="RessourceAccessNotAvailable.html#cancelBroadcastOperation">cancelBroadcastOperation</a></li><li><a href="RessourceAccessNotAvailable.html#toString">toString</a></li></ul></div></li><li><a href="RessourceAccessProtected.html">RessourceAccessProtected</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="RessourceAccessProtected_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="RessourceAccessProtected.html#cancelBroadcastOperation">cancelBroadcastOperation</a></li><li><a href="RessourceAccessProtected.html#requestRessourceAccess">requestRessourceAccess</a></li></ul></div></li><li><a href="RessourceAccessProvided.html">RessourceAccessProvided</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="RessourceAccessProvided_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="RessourceAccessProvided.html#broadcastOperationExecuted">broadcastOperationExecuted</a></li><li><a href="RessourceAccessProvided.html#toString">toString</a></li></ul></div></li><li><a href="SmartServiceConfigurationItem.html">SmartServiceConfigurationItem</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="SmartServiceConfigurationItem_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="SmartServiceConfigurationItem.html#.fromJSON">fromJSON</a></li><li><a href="SmartServiceConfigurationItem.html#getConfiguration">getConfiguration</a></li><li><a href="SmartServiceConfigurationItem.html#getContext">getContext</a></li><li><a href="SmartServiceConfigurationItem.html#getDescriptionText">getDescriptionText</a></li><li><a href="SmartServiceConfigurationItem.html#getDescriptionTitle">getDescriptionTitle</a></li><li><a href="SmartServiceConfigurationItem.html#getId">getId</a></li><li><a href="SmartServiceConfigurationItem.html#getName">getName</a></li><li><a href="SmartServiceConfigurationItem.html#getVersion">getVersion</a></li><li><a href="SmartServiceConfigurationItem.html#toJSON">toJSON</a></li></ul></div></li><li><a href="SmartServiceConfigurationLoaded.html">SmartServiceConfigurationLoaded</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="SmartServiceConfigurationLoaded_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="SmartServiceConfigurationLoaded.html#checkMinionMatching">checkMinionMatching</a></li></ul></div></li><li><a href="SmartServiceConfigurationsFound.html">SmartServiceConfigurationsFound</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="SmartServiceConfigurationsFound_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="SmartServiceConfigurationsFound.html#deliverSmartServiceConfigurationItemIds">deliverSmartServiceConfigurationItemIds</a></li></ul></div></li><li><a href="SmartServiceController.html">SmartServiceController</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="SmartServiceController_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="SmartServiceController.html#activateLoadedService">activateLoadedService</a></li><li><a href="SmartServiceController.html#bindMinions">bindMinions</a></li><li><a href="SmartServiceController.html#getDataAccessService">getDataAccessService</a></li><li><a href="SmartServiceController.html#getMinionController">getMinionController</a></li><li><a href="SmartServiceController.html#getSmartServiceConfigurationItemIds">getSmartServiceConfigurationItemIds</a></li><li><a href="SmartServiceController.html#loadSmartServiceConfiguration">loadSmartServiceConfiguration</a></li><li><a href="SmartServiceController.html#match">match</a></li><li><a href="SmartServiceController.html#notifyMinions">notifyMinions</a></li><li><a href="SmartServiceController.html#removeProtections">removeProtections</a></li><li><a href="SmartServiceController.html#terminateRunningService">terminateRunningService</a></li></ul></div></li><li><a href="SmartServiceRunning.html">SmartServiceRunning</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="SmartServiceRunning_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="SmartServiceRunning.html#terminateSmartService">terminateSmartService</a></li></ul></div></li><li><a href="SoftwareItem.html">SoftwareItem</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="SoftwareItem_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="SoftwareItem.html#.fromJSON">fromJSON</a></li><li><a href="SoftwareItem.html#getClass">getClass</a></li><li><a href="SoftwareItem.html#getCode">getCode</a></li><li><a href="SoftwareItem.html#getId">getId</a></li><li><a href="SoftwareItem.html#setCode">setCode</a></li><li><a href="SoftwareItem.html#setId">setId</a></li><li><a href="SoftwareItem.html#toJSON">toJSON</a></li></ul></div></li><li><a href="TENVIdentificationHandler.html">TENVIdentificationHandler</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="TENVIdentificationHandler_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="TENVIdentificationHandler.html#getContentOffering">getContentOffering</a></li><li><a href="TENVIdentificationHandler.html#getGeography">getGeography</a></li><li><a href="TENVIdentificationHandler.html#getKeywords">getKeywords</a></li><li><a href="TENVIdentificationHandler.html#getLocalID">getLocalID</a></li><li><a href="TENVIdentificationHandler.html#getModelOffering">getModelOffering</a></li><li><a href="TENVIdentificationHandler.html#getName">getName</a></li><li><a href="TENVIdentificationHandler.html#getProperties">getProperties</a></li><li><a href="TENVIdentificationHandler.html#getSoftwareOffering">getSoftwareOffering</a></li><li><a href="TENVIdentificationHandler.html#getType">getType</a></li></ul></div></li><li><a href="Tmin.html">Tmin</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Tmin_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="Tmin.html#createModel">createModel</a></li><li><a href="Tmin.html#deleteModel">deleteModel</a></li><li><a href="Tmin.html#predictModel">predictModel</a></li><li><a href="Tmin.html#readModel">readModel</a></li><li><a href="Tmin.html#updateModel">updateModel</a></li></ul></div></li><li><a href="Trigger.html">Trigger</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Trigger_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="Trigger.html#.fromJSON">fromJSON</a></li><li><a href="Trigger.html#getMinionSpecs">getMinionSpecs</a></li><li><a href="Trigger.html#getTriggerMethod">getTriggerMethod</a></li><li><a href="Trigger.html#toJSON">toJSON</a></li></ul></div></li><li><a href="TucanaCoreService.html">TucanaCoreService</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="TucanaCoreService_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="TucanaCoreService.html#notifyMinions">notifyMinions</a></li><li><a href="TucanaCoreService.html#requestCRUDOperation">requestCRUDOperation</a></li><li><a href="TucanaCoreService.html#startService">startService</a></li></ul></div></li><li><a href="UPeerCommunicationHandler.html">UPeerCommunicationHandler</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="UPeerCommunicationHandler_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="UPeerCommunicationHandler.html#_executeBroadcastCRUDOperation">_executeBroadcastCRUDOperation</a></li><li><a href="UPeerCommunicationHandler.html#answer">answer</a></li><li><a href="UPeerCommunicationHandler.html#broadcastRessourceAccess">broadcastRessourceAccess</a></li><li><a href="UPeerCommunicationHandler.html#connectToCore">connectToCore</a></li><li><a href="UPeerCommunicationHandler.html#getFilteredPeerIds">getFilteredPeerIds</a></li><li><a href="UPeerCommunicationHandler.html#handleCRUDOperation">handleCRUDOperation</a></li><li><a href="UPeerCommunicationHandler.html#handleRequest">handleRequest</a></li><li><a href="UPeerCommunicationHandler.html#handleResponse">handleResponse</a></li><li><a href="UPeerCommunicationHandler.html#handleTrigger">handleTrigger</a></li><li><a href="UPeerCommunicationHandler.html#init">init</a></li><li><a href="UPeerCommunicationHandler.html#requestAccessPermission">requestAccessPermission</a></li><li><a href="UPeerCommunicationHandler.html#setupEventListener">setupEventListener</a></li><li><a href="UPeerCommunicationHandler.html#transfer">transfer</a></li></ul></div></li><li><a href="VisualizationCmin.html">VisualizationCmin</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="VisualizationCmin_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="VisualizationCmin.html#clearUserInterface">clearUserInterface</a></li></ul></div></li></ul></div><div class="lnb-api hidden"><h3>Global</h3><ul><li><a href="global.html#BROADCAST_CONDITION">BROADCAST_CONDITION</a></li><li><a href="global.html#BROADCAST_TYPE">BROADCAST_TYPE</a></li><li><a href="global.html#CRUD_OPERATION_TYPE">CRUD_OPERATION_TYPE</a></li><li><a href="global.html#MINION_TYPE">MINION_TYPE</a></li><li><a href="global.html#OBJECT_TYPE">OBJECT_TYPE</a></li><li><a href="global.html#QUERY_TYPE">QUERY_TYPE</a></li><li><a href="global.html#REQUEST_TYPE">REQUEST_TYPE</a></li><li><a href="global.html#RESPONSE_STATUS">RESPONSE_STATUS</a></li></ul></div>
+</nav>
+<div id="resizer"></div>
+
+<div class="main" id="main">
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const model = require('../model');
+
+/**
+ * State Machine for smart service executions using minion states.
+ * @class MinionStateController
+ */
+class MinionStateController {
+
+    /**
+     * Creates a new MinionStateController with all required states and transitions.
+     * @param {SmartServiceController} smartServiceController: Instance of the running smart service controller.
+     */
+    constructor(smartServiceController) {
+        this.smartServiceController = smartServiceController;
+        this.idle = new Idle(this);
+        this.smartServiceConfigurationsFound = new SmartServiceConfigurationsFound(this);
+        this.smartServiceConfigurationLoaded = new SmartServiceConfigurationLoaded(this);
+        this.minionMatchingChecked = new MinionMatchingChecked(this);
+        this.executionFailed = new ExecutionFailed(this);
+        this.executionProtected = new ExecutionProtected(this);
+        this.executionPossible = new ExecutionPossible(this);
+        this.minionsBound = new MinionsBound(this);
+        this.smartServiceRunning = new SmartServiceRunning(this);
+
+        this.currentState = this.idle;
+    }
+
+    /**
+     * Initiates a request for all ids of available smart service configuration items.
+     * @return {Promise&lt;Object>} The result of the call.
+     */
+    async getSmartServiceConfigurationItemIds() {
+        return await this.currentState.getSmartServiceConfigurationItemIds();
+    }
+
+    /**
+     * Delivers all ids of available smart service configuration items back to the caller.
+     * @return {Object} The result of the call.
+     */
+    deliverSmartServiceConfigurationItemIds(smartServiceConfigurationItemIds) {
+        return this.currentState.deliverSmartServiceConfigurationItemIds(smartServiceConfigurationItemIds);
+    }
+
+    /**
+     * Loads a specific smart service configuration into the system given its id.
+     * @param {String} smartServiceConfigurationItemId: The id of the smart service configuration item to be loaded.
+     * @return {Object} The result of the call.
+     */
+    async loadSmartServiceConfiguration(smartServiceConfigurationItemId) {
+        return await this.currentState.loadSmartServiceConfiguration(smartServiceConfigurationItemId);
+    }
+
+    /**
+     * Checks availability of all minions necessary for service execution fiŕst local, then broadcast.
+     * @param {SmartServiceConfigurationItem} smartServiceConfigurationItem: The underlying smart service configuration.
+     * @return {Object} The result of the call.
+     */
+    async checkMinionMatching(smartServiceConfigurationItem) {
+        return await this.currentState.checkMinionMatching(smartServiceConfigurationItem);
+    }
+
+    /**
+     * Gets executed if some minion is not available for the service execution.
+     * @param {SmartServiceConfigurationItem} smartServiceConfigurationItem: The underlying smart service configuration.
+     * @param {Array} response: The result of the minion matching call
+     * @return {Object} The result of the call.
+     */
+    someMinionNotAvailable(smartServiceConfigurationItem, response) {
+        return this.currentState.someMinionNotAvailable(smartServiceConfigurationItem, response);
+    }
+
+    /**
+     * Gets executed if some minion is a protected ressource.
+     * @param {SmartServiceConfigurationItem} smartServiceConfigurationItem: The underlying smart service configuration.
+     * @param {Array} response: The result of the minion matching call
+     * @return {Object} The result of the call.
+     */
+    someMinionProtected(smartServiceConfigurationItem, response) {
+        return this.currentState.someMinionProtected(smartServiceConfigurationItem, response);
+    }
+
+    /**
+     * Gets executed if all minions are available for service execution.
+     * @param {SmartServiceConfigurationItem} smartServiceConfigurationItem: The underlying smart service configuration.
+     * @param {Array} response: The result of the minion matching call
+     * @return {Object} The result of the call.
+     */
+    async allMinionsAvailable(smartServiceConfigurationItem, response) {
+        return await this.currentState.allMinionsAvailable(smartServiceConfigurationItem, response);
+    }
+
+    /**
+     * Initiates mechanism in order to remove the protection of some requested ressource.
+     * @param {SmartServiceConfigurationItem} smartServiceConfigurationItem: The underlying smart service configuration.
+     * @param {Array} response: The result of the minion matching call
+     * @return {Promise&lt;Object>} The result of the call.
+     */
+    async removeProtection(smartServiceConfigurationItem, response) {
+        return await this.currentState.removeProtection(smartServiceConfigurationItem, response);
+    }
+
+    /**
+     * Gets executed in order to bind all minions w.r.t. the service configuration within the smart sertvice controller.
+     * @param {SmartServiceConfigurationItem} smartServiceConfigurationItem: The underlying smart service configuration.
+     * @param {Array} response: The result of the minion matching call
+     * @return {Object} The result of the call.
+     */
+    async bindMinions(smartServiceConfigurationItem, response) {
+        return await this.currentState.bindMinions(smartServiceConfigurationItem, response, this.terminateSmartService.bind(this));
+    }
+
+    /**
+     * Runs the smart service according to the smart service configuration once all minions are loaded and bound.
+     * @return {Promise&lt;Object>} The result of the call.
+     */
+    async runSmartService() {
+        return await this.currentState.runSmartService();
+    }
+
+    /**
+     * Terminates the running smart service once started.
+     * @return {Promise&lt;Object>} The result of the call.
+     */
+    terminateSmartService() {
+        return this.currentState.terminateSmartService();
+    }
+
+    /**
+     * Cancels the operation and returns back to Idle State.
+     * @param {SmartServiceConfigurationItem} smartServiceConfigurationItem: The underlying smart service configuration.
+     * @param {Array} response: The result of the minion matching call
+     * @return {Object} The result of the call.
+     */
+    cancel(smartServiceConfigurationItem, response) {
+        return this.currentState.cancel(smartServiceConfigurationItem, response);
+    }
+
+    /**
+     * Sets the current state of the state machine according to a transition.
+     * @param {MinionState} newState: The new state of the state machine.
+     */
+    setCurrentState(newState) {
+        this.currentState = newState;
+    }
+
+    /**
+     * Get the current state of the state machine.
+     * @return {MinionState} The current state of the state machine
+     */
+    getCurrentState() {
+        return this.currentState;
+    }
+
+    /**
+     * Get Idle state.
+     * @return {Idle} The Idle state.
+     */
+    getIdle() {
+        return this.idle;
+    }
+
+    /**
+     * Get SmartServiceConfigurationsFound state.
+     * @return {SmartServiceConfigurationsFound} The SmartServiceConfigurationsFound state.
+     */
+    getSmartServiceConfigurationsFound() {
+        return this.smartServiceConfigurationsFound;
+    }
+
+    /**
+     * Get SmartServiceConfigurationLoaded state.
+     * @return {SmartServiceConfigurationLoaded} The SmartServiceConfigurationLoaded state.
+     */
+    getSmartServiceConfigurationLoaded() {
+        return this.smartServiceConfigurationLoaded;
+    }
+
+    /**
+     * Get MinionMatchingChecked state.
+     * @return {MinionMatchingChecked} The MinionMatchingChecked state.
+     */
+    getMinionMatchingChecked() {
+        return this.minionMatchingChecked;
+    }
+
+    /**
+     * Get ExecutionFailed state.
+     * @return {ExecutionFailed} The ExecutionFailed state.
+     */
+    getExecutionFailed() {
+        return this.executionFailed;
+    }
+
+    /**
+     * Get ExecutionProtected state.
+     * @return {ExecutionProtected} The ExecutionProtected state.
+     */
+    getExecutionProtected() {
+        return this.executionProtected;
+    }
+
+    /**
+     * Get ExecutionPossible state.
+     * @return {ExecutionPossible} The ExecutionPossible state.
+     */
+    getExecutionPossible() {
+        return this.executionPossible;
+    }
+
+    /**
+     * Get MinionsBound state.
+     * @return {MinionsBound} The MinionsBound state.
+     */
+    getMinionsBound() {
+        return this.minionsBound;
+    }
+
+    /**
+     * Get SmartServiceRunning state.
+     * @return {SmartServiceRunning} The SmartServiceRunning state.
+     */
+    getSmartServiceRunning() {
+        return this.smartServiceRunning
+    }
+
+    /**
+     * Get the SmartServiceController of the state machine.
+     * @return {SmartServiceController} The SmartServiceController.
+     * @private
+     */
+    _getSmartServiceController() {
+        return this.smartServiceController;
+    }
+}
+
+
+/**
+ * Abstract parent class for all necessary minion states.
+ * @class
+ */
+class MinionState {
+
+    /**
+     * Creates a new Minion State given the MinionStateController.
+     * @param {MinionStateController} minionStateController: The minion controlling state machine.
+     */
+    constructor(minionStateController) {
+        if (new.target === MinionState) {
+            throw new TypeError('Abstract classes cannot be instantiated.')
+        }
+        Object.defineProperty(this, 'minionStateController', {
+            get: function () {
+                return minionStateController;
+            }
+        });
+    }
+
+    /**
+     * Initiates a request for all ids of available smart service configuration items.
+     * @return {Promise&lt;Object>} The result of the call.
+     */
+    async getSmartServiceConfigurationItemIds() {
+        return await {
+            status: 'failed',
+            success: false,
+            message: 'This operation is not executable in the current state.',
+            state: this.minionStateController.getCurrentState()
+        }
+    }
+
+    /**
+     * Delivers all ids of available smart service configuration items back to the caller.
+     * @return {Object} The result of the call.
+     */
+    deliverSmartServiceConfigurationItemIds(smartServiceConfigurationItemIds) {
+        return {
+            status: 'failed',
+            success: false,
+            message: 'This operation is not executable in the current state.',
+            state: this.minionStateController.getCurrentState()
+        }
+    }
+
+    /**
+     * Loads a specific smart service configuration into the system given its id.
+     * @param {String} smartServiceConfigurationItemId: The id of the smart service configuration item to be loaded.
+     * @return {Object} The result of the call.
+     */
+    async loadSmartServiceConfiguration(smartServiceConfigurationItemId) {
+        return await {
+            status: 'failed',
+            success: false,
+            message: 'This operation is not executable in the current state.',
+            state: this.minionStateController.getCurrentState()
+        }
+    }
+
+    /**
+     * Checks availability of all minions necessary for service execution fiŕst local, then broadcast.
+     * @param {SmartServiceConfigurationItem} smartServiceConfigurationItem: The underlying smart service configuration.
+     * @return {Object} The result of the call.
+     */
+    async checkMinionMatching(smartServiceConfigurationItem) {
+        return await {
+            status: 'failed',
+            success: false,
+            message: 'This operation is not executable in the current state.',
+            state: this.minionStateController.getCurrentState()
+        }
+    }
+
+    /**
+     * Gets executed if some minion is not available for the service execution.
+     * @param {SmartServiceConfigurationItem} smartServiceConfigurationItem: The underlying smart service configuration.
+     * @param {Array} response: The result of the minion matching call
+     * @return {Object} The result of the call.
+     */
+    someMinionNotAvailable(smartServiceConfigurationItem, response) {
+        return {
+            status: 'failed',
+            success: false,
+            message: 'This operation is not executable in the current state.',
+            state: this.minionStateController.getCurrentState()
+        }
+    }
+
+    /**
+     * Gets executed if some minion is a protected ressource.
+     * @param {SmartServiceConfigurationItem} smartServiceConfigurationItem: The underlying smart service configuration.
+     * @param {Array} response: The result of the minion matching call
+     * @return {Object} The result of the call.
+     */
+    someMinionProtected(smartServiceConfigurationItem, response) {
+        return {
+            status: 'failed',
+            success: false,
+            message: 'This operation is not executable in the current state.',
+            state: this.minionStateController.getCurrentState()
+        }
+    }
+
+    /**
+     * Gets executed if all minions are available for service execution.
+     * @param {SmartServiceConfigurationItem} smartServiceConfigurationItem: The underlying smart service configuration.
+     * @param {Array} response: The result of the minion matching call
+     * @return {Object} The result of the call.
+     */
+    async allMinionsAvailable(smartServiceConfigurationItem, response) {
+        return await {
+            status: 'failed',
+            success: false,
+            message: 'This operation is not executable in the current state.',
+            state: this.minionStateController.getCurrentState()
+        }
+    }
+
+    /**
+     * Initiates mechanism in order to remove the protection of some requested ressource.
+     * @param {SmartServiceConfigurationItem} smartServiceConfigurationItem: The underlying smart service configuration.
+     * @param {Array} response: The result of the minion matching call
+     * @return {Promise&lt;Object>} The result of the call.
+     */
+    async removeProtection(smartServiceConfigurationItem, response) {
+        return await {
+            status: 'failed',
+            success: false,
+            message: 'This operation is not executable in the current state.',
+            state: this.minionStateController.getCurrentState()
+        }
+    }
+
+    /**
+     * Gets executed in order to bind all minions w.r.t. the service configuration within the smart sertvice controller.
+     * @param {SmartServiceConfigurationItem} smartServiceConfigurationItem: The underlying smart service configuration.
+     * @param {Array} response: The result of the minion matching call
+     * @return {Object} The result of the call.
+     */
+    async bindMinions(smartServiceConfigurationItem, response) {
+        return await {
+            status: 'failed',
+            success: false,
+            message: 'This operation is not executable in the current state.',
+            state: this.minionStateController.getCurrentState()
+        }
+    }
+
+    /**
+     * Runs the smart service according to the smart service configuration once all minions are loaded and bound.
+     * @return {Promise&lt;Object>} The result of the call.
+     */
+    async runSmartService() {
+        return await {
+            status: 'failed',
+            success: false,
+            message: 'This operation is not executable in the current state.',
+            state: this.minionStateController.getCurrentState()
+        }
+    }
+
+    /**
+     * Terminates the running smart service once started.
+     * @return {Promise&lt;Object>} The result of the call.
+     */
+    terminateSmartService() {
+        return {
+            status: 'failed',
+            success: false,
+            message: 'This operation is not executable in the current state.',
+            state: this.minionStateController.getCurrentState()
+        }
+    }
+
+    /**
+     * Cancels the operation and returns back to Idle State.
+     * @param {SmartServiceConfigurationItem} smartServiceConfigurationItem: The underlying smart service configuration.
+     * @param {Array} response: The result of the minion matching call
+     * @return {Object} The result of the call.
+     */
+    cancel(smartServiceConfigurationItem, response) {
+        return {
+            status: 'failed',
+            success: false,
+            message: 'This operation is not executable in the current state.',
+            state: this.minionStateController.getCurrentState()
+        }
+    }
+
+}
+
+/**
+ * @class
+ */
+class Idle extends MinionState {
+    /**
+     * Creates a new Idle state.
+     * @param {MinionStateController} minionStateController: The underlying minion state controller.
+     */
+    constructor(minionStateController) {
+        super(minionStateController);
+    }
+
+    /**
+     * Initiates a request for all ids of available smart service configuration items.
+     * @return {Promise&lt;Object>} The result of the call.
+     */
+    async getSmartServiceConfigurationItemIds() {
+        const smartServiceConfigurationItemIds = await this.minionStateController._getSmartServiceController().getSmartServiceConfigurationItemIds();
+        this.minionStateController.setCurrentState(this.minionStateController.getSmartServiceConfigurationsFound());
+        return this.minionStateController.deliverSmartServiceConfigurationItemIds(smartServiceConfigurationItemIds);
+    }
+
+    /**
+     * Loads a specific smart service configuration into the system given its id.
+     * @param {String} smartServiceConfigurationItemId: The id of the smart service configuration item to be loaded.
+     * @return {Object} The result of the call.
+     */
+    async loadSmartServiceConfiguration(smartServiceConfigurationItemId) {
+        const response = await this.minionStateController._getSmartServiceController().loadSmartServiceConfiguration(smartServiceConfigurationItemId);
+        this.minionStateController.setCurrentState(this.minionStateController.getSmartServiceConfigurationLoaded());
+        return await this.minionStateController.checkMinionMatching(model.SmartServiceConfigurationItem.fromJSON(response.response.res));
+    }
+}
+
+/**
+ * @class
+ */
+class SmartServiceConfigurationsFound extends MinionState {
+
+    /**
+     * Creates a new SmartServiceConfigurationsFound state.
+     * @param {MinionStateController} minionStateController: The underlying minion state controller.
+     */
+    constructor(minionStateController) {
+        super(minionStateController);
+    }
+
+    /**
+     * Delivers all ids of available smart service configuration items back to the caller.
+     * @return {Object} The result of the call.
+     */
+    deliverSmartServiceConfigurationItemIds(smartServiceConfigurationItemIds) {
+        this.minionStateController.setCurrentState(this.minionStateController.getIdle());
+        return {
+            status: 'success',
+            success: true,
+            message: 'Operation was successfully executed.',
+            smartServiceConfigurationItemIds: smartServiceConfigurationItemIds,
+            state: this.minionStateController.getCurrentState()
+        };
+    }
+}
+
+/**
+ * @class
+ */
+class SmartServiceConfigurationLoaded extends MinionState {
+
+    /**
+     * Creates a new SmartServiceConfigurationLoaded state.
+     * @param {MinionStateController} minionStateController: The underlying minion state controller.
+     */
+    constructor(minionStateController) {
+        super(minionStateController);
+    }
+
+    /**
+     * Checks availability of all minions necessary for service execution fiŕst local, then broadcast.
+     * @param {SmartServiceConfigurationItem} smartServiceConfigurationItem: The underlying smart service configuration.
+     * @return {Object} The result of the call.
+     */
+    async checkMinionMatching(smartServiceConfigurationItem) {
+        const matchingResponse = await this.minionStateController._getSmartServiceController().match(smartServiceConfigurationItem);
+        this.minionStateController.setCurrentState(this.minionStateController.getMinionMatchingChecked());
+        for (let softwareItem of matchingResponse) {
+            if (softwareItem.status === model.RESPONSE_STATUS.NOT_AVAILABLE) {
+                return this.minionStateController.someMinionNotAvailable(smartServiceConfigurationItem, matchingResponse);
+            }
+            if (softwareItem.status === model.RESPONSE_STATUS.PROTECTED) {
+                return this.minionStateController.someMinionProtected(smartServiceConfigurationItem, matchingResponse);
+            }
+        }
+        return await this.minionStateController.allMinionsAvailable(smartServiceConfigurationItem, matchingResponse);
+    }
+}
+
+/**
+ * @class
+ */
+class MinionMatchingChecked extends MinionState {
+
+    /**
+     * Creates a new MinionMatchingChecked state.
+     * @param {MinionStateController} minionStateController: The underlying minion state controller.
+     */
+    constructor(minionStateController) {
+        super(minionStateController);
+    }
+
+    /**
+     * Gets executed if some minion is not available for the service execution.
+     * @param {SmartServiceConfigurationItem} smartServiceConfigurationItem: The underlying smart service configuration.
+     * @param {Array} response: The result of the minion matching call
+     * @return {Object} The result of the call.
+     */
+    someMinionNotAvailable(smartServiceConfigurationItem, response) {
+        this.minionStateController.setCurrentState(this.minionStateController.getExecutionFailed());
+        return this.minionStateController.cancel(smartServiceConfigurationItem, response);
+    }
+
+    /**
+     * Gets executed if some minion is a protected ressource.
+     * @param {SmartServiceConfigurationItem} smartServiceConfigurationItem: The underlying smart service configuration.
+     * @param {Array} response: The result of the minion matching call
+     * @return {Object} The result of the call.
+     */
+    someMinionProtected(smartServiceConfigurationItem, response) {
+        this.minionStateController.setCurrentState(this.minionStateController.getExecutionProtected());
+        return {
+            status: 'success',
+            success: true,
+            message: 'Operation was successfully executed.',
+            smartServiceConfigurationItem: smartServiceConfigurationItem,
+            matchingResponse: response,
+            state: this.minionStateController.getCurrentState()
+        };
+    }
+
+    /**
+     * Gets executed if all minions are available for service execution.
+     * @param {SmartServiceConfigurationItem} smartServiceConfigurationItem: The underlying smart service configuration.
+     * @param {Array} response: The result of the minion matching call
+     * @return {Object} The result of the call.
+     */
+    async allMinionsAvailable(smartServiceConfigurationItem, response) {
+        this.minionStateController.setCurrentState(this.minionStateController.getExecutionPossible());
+        return await this.minionStateController.bindMinions(smartServiceConfigurationItem, response);
+    }
+}
+
+/**
+ * @class
+ */
+class ExecutionFailed extends MinionState {
+
+    /**
+     * Creates a new ExecutionFailed state.
+     * @param {MinionStateController} minionStateController: The underlying minion state controller.
+     */
+    constructor(minionStateController) {
+        super(minionStateController);
+    }
+
+    /**
+     * Cancels the operation and returns back to Idle State.
+     * @param {SmartServiceConfigurationItem} smartServiceConfigurationItem: The underlying smart service configuration.
+     * @param {Array} response: The result of the minion matching call
+     * @return {Object} The result of the call.
+     */
+    cancel(smartServiceConfigurationItem, response) {
+        this.minionStateController.setCurrentState(this.minionStateController.getIdle());
+        return {
+            status: 'success',
+            success: true,
+            message: 'Operation was successfully executed.',
+            smartServiceConfigurationItem: smartServiceConfigurationItem,
+            matchingResponse: response,
+            state: this.minionStateController.getCurrentState()
+        };
+    }
+}
+
+/**
+ * @class
+ */
+class ExecutionProtected extends MinionState {
+
+    /**
+     * Creates a new ExecutionProtected state.
+     * @param {MinionStateController} minionStateController: The underlying minion state controller.
+     */
+    constructor(minionStateController) {
+        super(minionStateController);
+    }
+
+    /**
+     * Initiates mechanism in order to remove the protection of some requested ressource.
+     * @param {SmartServiceConfigurationItem} smartServiceConfigurationItem: The underlying smart service configuration.
+     * @param {Array} response: The result of the minion matching call
+     * @return {Promise&lt;Object>} The result of the call.
+     */
+    async removeProtection(smartServiceConfigurationItem, response) {
+        //TODO Implement Method with concrete business logic. At the moment it just cancels the execution.
+        const matchingResponse = await this.minionStateController._getSmartServiceController().removeProtections(response);
+
+        return this.cancel(smartServiceConfigurationItem, response);
+
+        // Something like this will be the case once there is a concrete business logic behind the execution:
+        /*
+            const matchingResponse = await this.minionStateController._getSmartServiceController().removeProtections(response);
+            this.minionStateController.setCurrentState(this.minionStateController.getExecutionPossible());
+            return await this.minionStateController.bindMinions(smartServiceConfigurationItem, matchingResponse)
+         */
+
+    }
+
+    /**
+     * Cancels the operation and returns back to Idle State.
+     * @param {SmartServiceConfigurationItem} smartServiceConfigurationItem: The underlying smart service configuration.
+     * @param {Array} response: The result of the minion matching call
+     * @return {Object} The result of the call.
+     */
+    cancel(smartServiceConfigurationItem, response) {
+        this.minionStateController.setCurrentState(this.minionStateController.getIdle());
+        return {
+            status: 'success',
+            success: true,
+            message: 'Operation was successfully executed.',
+            smartServiceConfigurationItem: smartServiceConfigurationItem,
+            matchingResponse: response,
+            state: this.minionStateController.getCurrentState()
+        };
+    }
+}
+
+/**
+ * @class
+ */
+class ExecutionPossible extends MinionState {
+
+    /**
+     * Creates a new ExecutionPossible state.
+     * @param {MinionStateController} minionStateController: The underlying minion state controller.
+     */
+    constructor(minionStateController) {
+        super(minionStateController);
+    }
+
+    /**
+     * Gets executed in order to bind all minions w.r.t. the service configuration within the smart sertvice controller.
+     * @param {SmartServiceConfigurationItem} smartServiceConfigurationItem: The underlying smart service configuration.
+     * @param {Array} response: The result of the minion matching call
+     * @return {Object} The result of the call.
+     */
+    async bindMinions(smartServiceConfigurationItem, response, terminateCallback) {
+        await this.minionStateController._getSmartServiceController().bindMinions(smartServiceConfigurationItem, response, terminateCallback);
+        this.minionStateController.setCurrentState(this.minionStateController.getMinionsBound());
+
+        return {
+            status: 'success',
+            success: true,
+            message: 'Operation was successfully executed.',
+            smartServiceConfigurationItem: smartServiceConfigurationItem,
+            matchingResponse: response,
+            state: this.minionStateController.getCurrentState()
+        };
+    }
+}
+
+/**
+ * @class
+ */
+class MinionsBound extends MinionState {
+
+    /**
+     * Creates a new MinionsBound state.
+     * @param {MinionStateController} minionStateController: The underlying minion state controller.
+     */
+    constructor(minionStateController) {
+        super(minionStateController);
+    }
+
+    /**
+     * Runs the smart service according to the smart service configuration once all minions are loaded and bound.
+     * @return {Promise&lt;Object>} The result of the call.
+     */
+    async runSmartService() {
+        await this.minionStateController._getSmartServiceController().activateLoadedService();
+        this.minionStateController.setCurrentState(this.minionStateController.getSmartServiceRunning());
+
+        return {
+            status: 'success',
+            success: true,
+            message: 'Operation was successfully executed.',
+            state: this.minionStateController.getCurrentState()
+        };
+    }
+}
+
+/**
+ * @class
+ */
+class SmartServiceRunning extends MinionState {
+
+    /**
+     * Creates a new SmartServiceRunning state.
+     * @param {MinionStateController} minionStateController: The underlying minion state controller.
+     */
+    constructor(minionStateController) {
+        super(minionStateController);
+    }
+
+    /**
+     * Terminates the running smart service once started.
+     * @return {Promise&lt;Object>} The result of the call.
+     */
+    terminateSmartService() {
+        this.minionStateController._getSmartServiceController().terminateRunningService();
+        this.minionStateController.setCurrentState(this.minionStateController.getIdle());
+
+        return {
+            status: 'success',
+            success: true,
+            message: 'Operation was successfully executed.',
+            state: this.minionStateController.getCurrentState()
+        };
+    }
+}
+
+module.exports.MinionState = MinionState;
+module.exports.MinionsBound = MinionsBound;
+module.exports.MinionStateController = MinionStateController;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<footer>
+    <img class="logo" src="http://iss.uni-saarland.de/workspace/grayscale/img/logo_iss1.png" style="width: 90px; height: 30px">
+    <div class="footer-text">NHN Entertainment. Frontend Development Lab</div>
+</footer>
+<script>prettyPrint();</script>
+<script src="scripts/jquery.min.js"></script>
+<script src="scripts/tui-doc.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+    <script>
+        var id = '_sub'.replace(/"/g, '_');
+        var selectedApi = document.getElementById(id); // do not use jquery selector
+        var $selectedApi = $(selectedApi);
+
+        $selectedApi.removeClass('hidden');
+        $selectedApi.parent().find('.glyphicon').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+        showLnbApi();
+    </script>
+
+</body>
+</html>

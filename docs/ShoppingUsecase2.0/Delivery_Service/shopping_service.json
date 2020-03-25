@@ -1,0 +1,21 @@
+{
+  "id": "Delivery Service",
+  "version": "0.2",
+  "name": "Delivery Service",
+  "descriptionText": "This service offers concierge delivery service to customer",
+  "configuration": [{
+    "softwareItemId": "getcustomerdata.js",
+    "instanceId": "getcustomerdata.js0",
+    "targetMinionIds": ["display"],
+    "name": "Customer Data",
+    "type": "P"
+  },{
+    "softwareItemId": "ShoppingCmin.js",
+    "instanceId": "display",
+    "targetMinionIds": [],
+    "name": "Orders",
+    "type": "P",
+    "description": "Customer shown new deal from store"
+  }],
+  "context": {}
+}

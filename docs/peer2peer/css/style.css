@@ -1,0 +1,172 @@
+.mdl-layout {
+    background: linear-gradient(to right, #d53369, #daae51);
+    font-family: serif;
+}
+
+.mdl-layout__header{
+    margin: 10px 20px;
+}
+
+.header-divider {
+    border: solid 1px #d53369;
+    margin:0px 10px;
+}
+
+#logoutButton {
+    display: inline;
+}
+.mdl-button {
+    color: snow;
+    font-weight: bold;
+}
+
+.card-media {
+    width: 100%;
+    background: snow;
+    border-bottom: solid 2px cornflowerblue;
+}
+
+.service-container {
+    display: flex;
+    margin: 0px 10px;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+.mdl-card {
+    border: ridge cornflowerblue 3px;
+    background: snow;
+    color: snow;
+    max-height: 98%;
+}
+
+.mdl-card__title-text {
+    color:white;
+    background: dodgerblue;
+
+}
+.mdl-card__supporting-text {
+    color: black;
+    display:none;
+    max-height: 35%;
+    overflow: auto;
+}
+
+
+/* mobile style */
+
+@media only screen and (max-width: 576px) {
+    .service-container {
+        flex-direction: column;
+    }
+
+
+    .mdl-card {
+        width: 100%;
+    }
+
+    .mdl-layout-title {
+        font-size: 2em;
+    }
+
+
+    .service-header {
+        background: transparent;
+        display: inline;
+        font-weight: bold;
+        color: snow;
+    }
+
+    .service-sidebar {
+        padding: 5px 0px;
+        width: 100%;
+    }
+
+
+    .service-sidebar>* {
+        margin: 3px;
+        vertical-align: middle;
+    }
+
+
+
+    /*container body: grid layout style*/
+
+
+
+    .mdl-card__title-text {
+        font-size: 1.5em;
+        padding: 5px 10px;
+    }
+
+    .mdl-card__supporting-text {
+        padding: 5px;
+    }
+
+}
+
+
+
+
+/* desktop style */
+
+@media only screen and (min-width:577px) {
+
+    .service-container {
+        display: flex;
+        margin: 0px 10px;
+        height: 90%;
+    }
+
+    .service-header {
+        background: transparent;
+        display: inline;
+        font-weight: bold;
+        color: black;
+    }
+
+    .service-sidebar {
+        padding: 10px 10px;
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mdl-grid{
+        width:80%;
+    }
+    /* container header style*/
+
+    .mdl-layout-title {
+        font-size: 3em;
+        color: snow;
+    }
+
+
+    .service-sidebar>* {
+        margin: 10px;
+        vertical-align: middle;
+    }
+
+
+
+    /*container body: grid layout style*/
+
+    /*.card-media{
+        min-height:300px;
+    }*/
+
+
+    .mdl-card__title-text {
+        font-size: 2.5em;
+        padding: 5px 10px;
+    }
+
+    .mdl-card__supporting-text {
+        font-size: 1.5em;
+    }
+
+
+}

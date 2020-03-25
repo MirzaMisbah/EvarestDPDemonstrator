@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>TUCANA</title>
+		
+		<link rel="import" href="head.html">
+		<link rel="import" href="common.html">
+		<link rel="stylesheet" href="styles/custom.css">
+		<link rel="icon"  href="styles/themes/hilti/icons/sprovider2.png">		
+		
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="application-name" content="TUCANA">
+		<meta name="apple-mobile-web-app-title" content="TUCANA">
+		
+		
+		<script	src="https://code.jquery.com/jquery-3.2.1.min.js" 	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="	crossorigin="anonymous"></script> 
+		
+
+		<script src="https://d3js.org/d3.v4.min.js"></script>
+		<script>
+			// to use version 4 of d3 one should use d34 object instead of d3!
+			d34 = window.d3;
+			window.d3 = null;
+		</script>
+
+
+		<link rel="stylesheet" href="styles/jquery.bxslider.css">
+  		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
+  		<script src="../libs/ui/thirdparty/jquery.bxslider.js"></script>
+		<script type="application/javascript" src="../scripts/globals.js"></script>
+
+
+
+
+
+		<script type="application/javascript" src="scripts/UI/ddl.js"></script>
+		<script type="application/javascript" src="scripts/UI/collapsible.js"></script>
+		<script type="application/javascript" src="scripts/UI/ui_contacts.js"></script>
+		<script type="application/javascript" src="scripts/UI/ui_table.js"></script>
+		<script type="application/javascript" src="scripts/contact.js"></script>
+
+
+
+	 	<script type="application/javascript" src="../minions/gmins/idb/db_minion_interface.js" ></script>
+	 
+	 
+		<script type="application/javascript" src="../libs/reqlib/browserReq.js" ></script>
+		<script type="application/javascript" src="../libs/sensors/generic_sensor_api/sensor.js"></script>	
+		<script type="application/javascript" src="../libs/sensors/generic_sensor_api/random_sensor.js"></script>
+
+		<script type="application/javascript" src="ressources/minionrepository.js"></script>
+
+		
+		<script type="application/javascript" src="../libs/datalib/data-channel.js"></script>
+		<script type="application/javascript" src="scripts/home-view.js"></script>
+		<script type="application/javascript" src="scripts/control.js"></script>
+		<script type="application/javascript" src="scripts/control_html.js"></script>
+		<script type="application/javascript" src="scripts/control_communication.js"></script>
+		<script type="application/javascript" src="scripts/control_sensors.js"></script>
+		<script type="application/javascript" src="scripts/control_minions.js"></script>
+		<script type="application/javascript" src="scripts/sender.js"></script>
+		<script type="application/javascript" src="../libs/commlib/CommunicationHelper.js"></script>
+	</head>
+
+	<body class="mdl-container mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+
+		<div id ="motherDiv" class="container-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header mdl-layout--fixed-tabs">			
+			<header class="mdl-layout__header mdl-color--primary" >
+				<div class="mdl-layout__header-row">
+					<span class="mdl-layout-title"> <img  class="drminion" alt="dummy"/> TUCANA </span>
+				</div>
+				<div class="mdl-layout_mdl-js-ripple-effect mdl-color--primary-dark contacts-bar">
+					<div id="divPeers" class="slider"></div>
+				</div>
+			</header>
+			
+			<main class="mdl-layout__content">
+				<div class="mdl-layout__tab-panel is-active" id="dummy">
+					<div id="minions"></div>
+					<section id="dummysection" class="section--center mdl-grid mdl-shadow--4dp" style="margin-top: 50px;">
+
+						<div  class="mdl-card mdl-cell mdl-cell--12-col">
+
+							<div id='divMain'>
+
+								<div id="divSensors">
+									<div id="divSensorsConent" style="margin-top:20px">
+										<div id="tblSensors" ></div>
+									</div>
+								</div>
+
+								<div id="divMinionsTable">
+									<div id="divMinionsTableContent" style="margin-top:20px">
+										<div id="tblMinions" ></div>
+									</div>
+								</div>
+
+								<div id="divComm">
+									<div id="divCommContent" style="margin-top:20px">
+										<div id="tblMessages" ></div>
+										<textarea id="txtSend" style="border:1px solid" class="mdl-textfield__input" type="text" rows= "5" id="sample5" style="margin-top:2px"></textarea>										
+										 
+
+										<div class="send-button-div">
+											<button id="btnSendComment" class="mdl-button mdl-js-button send-button">
+												<!-- TODO: -->
+												Send
+											</button>
+										</div>
+									</div>
+								</div>
+
+								<div id="divAddPeer">
+									<div id="divPeer" style="margin-top:20px">
+										<label>Peer Email:</label>
+										<div class="mdl-textfield mdl-js-textfield">
+											<input class="mdl-textfield__input" type="text" id="txtPeerEmail">
+											<label class="mdl-textfield__label" for="txtPeerEmail">email@test.com...</label>
+										</div>
+										<div class="send-button-div">
+											<button id="btnAddPeer" class="mdl-button mdl-js-button send-button">
+												Add
+											</button>
+										</div>
+										<hr/>
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="cbSensor">
+											<input type="checkbox" id="cbSensor" class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label"><label>Activate my sensors</label></span> </label>
+									</div>
+								</div>
+
+								<div id="divLapControlMother">
+									<div id="divLapControl" style="margin-top:20px">
+										<label>Sending interval in milliseconds:</label>
+										<div class="mdl-textfield mdl-js-textfield">
+											<input class="mdl-textfield__input" type="text" id="txtInterval" value ='1000'>
+											<label class="mdl-textfield__label" for="txtInterval">200</label>
+										</div>
+										<br/>
+
+										<label>Lap Name:</label>
+										<div class="mdl-textfield mdl-js-textfield">
+											<input class="mdl-textfield__input" type="text" id="txtRound" value =''>
+											<label class="mdl-textfield__label" for="txtRound"></label>
+										</div>
+										<br/>
+
+										<div class="send-button-div">
+											<button id="btnStartRound" class="mdl-button mdl-js-button send-button">
+												Start
+											</button>
+										</div>
+										<div class="send-button-div">
+											<button id="btnStopRound" class="mdl-button mdl-js-button send-button">
+												Stop
+											</button>
+										</div>
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+
+					</section>
+				</div>
+			</main>
+
+		</div>
+		<link rel="import" href="scripts.html">
+	</body>
+</html>

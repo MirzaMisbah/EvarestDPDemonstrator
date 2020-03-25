@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Integrate meta information -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>#AppName</title>
+
+    <!-- Import favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+
+    <!-- Author information -->
+    <link type="text/plain" rel="author" href="/humans.txt" />
+
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- Web Application Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <!-- TODO specify app name and touch icon -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="#AppName">
+    <link rel="icon" sizes="192x192" href="assets/touch/chrome-touch-icon-192x192.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <!-- TODO specify app name and touch icon -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="#AppName">
+    <link rel="apple-touch-icon" href="assets/touch/apple-touch-icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <!-- TODO specify touch icon -->
+    <meta name="msapplication-TileImage" content="assets/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#2F3BA2">
+
+    <!-- Color the status bar on mobile devices -->
+    <!-- TODO color the status bar in mobile devices -->
+    <meta name="theme-color" content="#7b2ea1">
+
+    <!-- Material Design Lite page styles:
+      You can choose other color schemes from the CDN, more info here http://www.getmdl.io/customize/index.html
+      Format: material.color1-color2.min.css, some examples:
+      material.red-teal.min.css
+      material.blue-orange.min.css
+      material.purple-indigo.min.css -->
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+    <!-- Material Design icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+    <!-- Import main stylesheet of app shell -->
+    <link rel="stylesheet" href="styles/main.css">
+
+    <!-- TODO your custom stylesheets-->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+</head>
+
+<body class="mdl-container mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+
+<div class="container-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header mdl-layout--fixed-tabs">
+    <div class="drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-100">
+        <header class="drawer-header">
+            <img class="avatar" alt="avatar">
+            <div class="avatar-dropdown">
+                <span id="username"></span>
+                <div class="mdl-layout-spacer"></div>
+                <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                    <i class="material-icons" role="presentation">arrow_drop_down</i>
+                    <span class="visuallyhidden">Account</span>
+                </button>
+                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
+                    <li id="btn-logout" class="mdl-menu__item">Log Out</li>
+                </ul>
+            </div>
+        </header>
+        <nav class="drawer-navigation mdl-navigation mdl-color--blue-grey-800">
+            <a class="mdl-navigation__link" href="/"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Home</a>
+            <a class="mdl-navigation__link is-active" href="/profile.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">people</i>Profile</a>
+            <a class="mdl-navigation__link" href="/sync.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">import_export</i>Data management</a>
+            <a id="visit" target="_blank" class="mdl-navigation__link" href="#"><i class="mdl-color-text--blue-grey-400 material-icons fa fa-database" role="presentation"></i>Local Storage</a>
+
+        </nav>
+    </div>
+    <header class="mdl-layout__header mdl-color--primary">
+        <div class="mdl-layout__header-row">
+            <!-- Title -->
+            <!-- TODO specify app name -->
+            <span class="mdl-layout-title">Heartrate Minion</span>
+        </div>
+        <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
+            <a id="tab-profile-information" href="#profile-information" class="mdl-layout__tab is-active"><img class="iconize" alt="profile" src="assets/icons/profile.png"><span class="mdl-layout--large-screen-only icon-text">Profile</span></a>
+            <a id="tab-role-management" href="#role-management" class="mdl-layout__tab"><img class="iconize"  alt="Share" src="assets/icons/role-management.png"><span class="mdl-layout--large-screen-only icon-text">Role Management</span></a>
+            <a id="tab-calendar-integration" href="#calendar-integration" class="mdl-layout__tab"><img class="iconize"  alt="Share" src="assets/icons/calendar.png"><span class="mdl-layout--large-screen-only icon-text">Calendar integration</span></a>
+        </div>
+    </header>
+
+    <main class="mdl-layout__content">
+        <div class="mdl-layout__tab-panel is-active" id="profile-information">
+            <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" >
+                <header class="section__play-btn mdl-cell mdl-cell--4-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
+                    <img id="profile-picture" alt="avatar" class="avatar" style="visibility: hidden;width: 100%">
+                </header>
+                <div class="mdl-card mdl-cell mdl-cell--8-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+                    <div class="mdl-card__supporting-text">
+                        <h4>Your personal profile</h4>
+                        <ul class="demo-list-icon mdl-list" style="width: 100%; height: 100%">
+                            <li id="user-email" class="mdl-list__item" style="visibility: hidden;">
+                              <span class="mdl-list__item-primary-content">
+                                <i class="material-icons mdl-list__item-icon">account_box</i>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                  <input id="useremail" class="mdl-textfield__input" type="text" readonly tabIndex="-1">
+                                  <label for="useremail" class="mdl-textfield__label">Username</label>
+                                </div>
+                               </span>
+                            </li>
+                            <li  id="user-lastname" class="mdl-list__item" style="visibility: hidden;">
+                              <span class="mdl-list__item-primary-content">
+                                <i class="material-icons mdl-list__item-icon">person</i>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                  <input id="name" class="mdl-textfield__input" type="text" readonly tabIndex="-1">
+                                  <label for="name" class="mdl-textfield__label">Name</label>
+                                </div>
+                              </span>
+                            </li>
+                            <li  id="user-prename" class="mdl-list__item" style="visibility: hidden;">
+                              <span class="mdl-list__item-primary-content">
+                                <i class="material-icons mdl-list__item-icon">person_outline</i>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                  <input id="prename" class="mdl-textfield__input" type="text" readonly tabIndex="-1">
+                                  <label for="prename" class="mdl-textfield__label">Prename</label>
+                                </div>
+                              </span>
+                            </li>
+                            <li  id="user-sport" class="mdl-list__item" style="visibility: hidden;">
+                              <span class="mdl-list__item-primary-content">
+                                <i class="material-icons mdl-list__item-icon">directions_bike</i>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                  <input id="sport" class="mdl-textfield__input" type="text" readonly tabIndex="-1">
+                                  <label for="sport" class="mdl-textfield__label">Sport</label>
+                                </div>
+                              </span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="submit-profile" class="mdl-card__actions" style="visibility: hidden;">
+                        <a class="mdl-button"><i class="material-icons">send</i> Submit your changes</a>
+                    </div>
+                </div>
+                <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn1">
+                    <i class="material-icons">more_vert</i>
+                </button>
+                <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn1">
+                    <li id="edit" class="mdl-menu__item">Edit profile</li>
+                </ul>
+            </section>
+            <section class="section--footer">
+            </section>
+        </div>
+        <div class="mdl-layout__tab-panel" id="role-management">
+            <section id="requested-pending-container" class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp hidden-container">
+                <div class="mdl-card mdl-cell mdl-cell--12-col">
+                    <div class="mdl-card__supporting-text">
+                        <h4>Users requesting for your data</h4>
+                        <div style="max-height: 400px; overflow: scroll;">
+                            <table id="requested-pending" class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="width: 100%; overflow: visible">
+                                <thead>
+                                <tr>
+                                    <th class="mdl-data-table__cell--non-numeric">User email</th>
+                                    <th class="mdl-data-table__cell--non-numeric">Status</th>
+                                    <th class="mdl-data-table__cell--non-numeric">Answer</th>
+                                    <th class="mdl-data-table__cell--non-numeric">Decline</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="requested-container" class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp hidden-container">
+                <div class="mdl-card mdl-cell mdl-cell--12-col">
+                    <div class="mdl-card__supporting-text">
+                        <h4>Your data is shared with</h4>
+                        <div style="max-height: 400px; overflow: scroll;">
+                            <table id="requested" class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="width: 100%; overflow: visible">
+                                <thead>
+                                <tr>
+                                    <th class="mdl-data-table__cell--non-numeric">User email</th>
+                                    <th class="mdl-data-table__cell--non-numeric">Status</th>
+                                    <th class="mdl-data-table__cell--non-numeric">Answer</th>
+                                    <th class="mdl-data-table__cell--non-numeric">Decline</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" style="margin-top: 70px;">
+                <div class="mdl-card mdl-cell mdl-cell--12-col mdl-shadow--2dp">
+                    <div class="mdl-card__supporting-text" >
+                        <h4>Request for data access</h4>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="email" id="shareEmail">
+                            <label class="mdl-textfield__label" for="shareEmail">Request data access for user email</label>
+                        </div>
+                    </div>
+                    <div class="mdl-card__actions">
+                        <a id="requestEmail" class="mdl-button" style="margin-bottom: 5px; margin-top: 5px;"><i class="material-icons" style="margin-right: 20px;">send</i>Submit</a>
+                    </div>
+                </div>
+            </section>
+            <section id="requesting-container" class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp hidden-container">
+                <div class="mdl-card mdl-cell mdl-cell--12-col">
+                    <div class="mdl-card__supporting-text">
+                        <h4>Accessible ressources</h4>
+                        <div style="max-height: 400px; overflow: scroll;">
+                            <table id="requesting" class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="width: 100%; overflow: visible">
+                                <thead>
+                                <tr>
+                                    <th class="mdl-data-table__cell--non-numeric">User email</th>
+                                    <th class="mdl-data-table__cell--non-numeric">Status</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="mdl-layout__tab-panel" id="calendar-integration">
+            <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+                <div class="mdl-card mdl-cell mdl-cell--12-col">
+                    <div class="mdl-card__supporting-text">
+                        <h4>Google calendar integration</h4>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width: 100%">
+                            <input class="mdl-textfield__input" type="text" id="shareCalendar">
+                            <label class="mdl-textfield__label" for="shareCalendar">Share access to google calendar for data labelling</label>
+                        </div>
+                    </div>
+                    <div class="mdl-card__actions">
+                        <a id="shareCalendarLink" class="mdl-button" style="margin-bottom: 5px; margin-top: 5px;"><i class="material-icons" style="margin-right: 20px;">send</i>Submit</a>
+                    </div>
+                </div>
+            </section>
+            <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+                <div class="mdl-card mdl-cell mdl-cell--12-col">
+                    <div class="mdl-card__supporting-text">
+                        <h4>Your current calendar link</h4>
+                        <div id="calendarLink" style="overflow: auto; margin-top: 20px; min-height: 60px; width: 100%"><p style="font-size: larger;">No calendar integrated</p></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Integration of spinner element -->
+    <spinner id="spinner">
+        <img src="assets/loading.svg" alt="Loading spinner">
+    </spinner>
+
+    <!-- Integration of snackbar for notifications -->
+    <div id="notificationbar" class="mdl-js-snackbar mdl-snackbar">
+        <div class="mdl-snackbar__text"></div>
+        <button class="mdl-snackbar__action" type="button"></button>
+    </div>
+</div>
+
+
+<!-- Installation script for Service Workers -->
+<script type="application/javascript" src="scripts/install-service-worker.js"></script>
+
+<!-- Import material design javascript -->
+<script type="application/javascript" src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+
+<!-- Import Auth0 Lock -->
+<script type="application/javascript" src="libs/ui/thirdparty/lock11_0_1.min.js"></script>
+
+<!-- Import subMinion libraries -->
+<script type="application/javascript" src="libs/oauthlib/auth0connection.js"></script>
+<script type="application/javascript" src="libs/encapsulationlib/customformat.js"></script>
+<script type="application/javascript" src="libs/localstoragelib/crossdatastorageclient.js"></script>
+<script type="application/javascript" src="libs/serversychronizationlib/synchronization.js"></script>
+
+
+<!-- Import main application logic -->
+<!-- TODO customize the app logic to your specific needs -->
+<script type="application/javascript" src="scripts/globals.js"></script>
+<script type="application/javascript" src="scripts/profile-view.js"></script>
+
+</body>
+</html>

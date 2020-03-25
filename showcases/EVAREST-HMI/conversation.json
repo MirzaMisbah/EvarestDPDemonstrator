@@ -1,0 +1,757 @@
+[
+    
+    {
+        "intent":"greetings",
+        "id":"1",
+        "question": [
+            "Hey", 
+            "Hi", 
+            "Hello",
+            "Good Morning",
+            "Hey", 
+            "Hi", 
+            "Hello",
+            "Good Morning"
+        ],
+        "answer":[
+            "Welcome to EVAREST.",
+            "Hello and welcome to our service.",
+            "Hey, I am glad to hear from you.",
+            "Hi, I hope you are good today."
+
+        ],
+        "auto_generated":"0",
+        "multi_response": "1",
+        "show_button" : "0",
+        "lang":"en"
+    },
+    {
+        "intent":"pleasantry",
+        "id":"2",
+        "question": [
+            "How are you doing?", 
+            "How are you doing today?", 
+            "How are you today?",
+            "I hope you are doing well.",
+            "I hope everything is good",
+            "I hope everything is good for you"
+        ],
+        "answer":[
+            "I am fine and you?",
+            "I feel great today.",
+            "I feel good.",
+            "I’m happy."
+
+        ],
+        "auto_generated":"0",
+        "multi_response": "1",
+        "show_button" : "0",
+        "lang":"en"
+    },
+    {
+        "intent":"help",
+        "id":"3",
+        "question": [
+            "I need help.", 
+            "I need your help.", 
+            "I want you to help me out.",
+            "Can you help me?"
+        ],
+        "answer":[
+            "What are you looking for ?",
+            "How can I help you?",
+            "What sort of help you want from me?",
+            "Is there some way I can help you out?",
+            "I am here to help you out."
+
+        ],
+        "auto_generated":"0",
+        "multi_response": "1",
+        "show_button" : "0",
+        "lang":"en"
+    },
+    {
+        "intent":"evarest",
+        "id":"4",
+        "question": [
+            "What is the aim of EVAREST?", 
+            "What is EVAREST all about?", 
+            "Tell me something about EVAREST?",
+            "What basically EVAREST offers?",
+            "What is interesting about EVAREST?",
+            "How is EVAREST helpful for food producers?"
+        ],
+        "answer":[
+            "EVAREST aims to help 'Food Producers' is becoming 'Data producers' as well by offering data products that are networked to higher-quality data products using smart services at a national level. Please find more info: https://www.evarest.de/"
+
+        ],
+        "auto_generated":"0",
+        "multi_response": "0",
+        "show_button" : "0",
+        "lang":"en"
+    },
+    {
+        "intent":"more_evarest",
+        "id":"5",
+        "question": [
+            "Tell me more about EVAREST.", 
+            "How can I got to know more about EVAREST?", 
+            "Is there some additional source which helps me to know more about EVAREST?"
+        ],
+        "answer":[
+            "For detailed information, you can scroll to ‘Goal & Implementation’ section of the same website.",
+            "For more information you can visit our webpage. https://www.evarest.de/",
+            "For additional information please have a look at EVAREST Flyer. https://www.evarest.de/assets/Flyer.pdf"
+
+        ],
+        "auto_generated":"0",
+        "multi_response": "1",
+        "show_button" : "0",
+        "lang":"en"
+    },    
+    {
+        "intent":"upload",
+        "id":"26",
+        "question": [
+            "I want to upload data", 
+            "How to upload data ?", 
+            "Is there some way I can upload data for visualization?"
+        ],
+        "answer":[
+            "Please use the button if you want to upload data."
+        ],
+        "auto_generated":"0",
+        "multi_response": "1",
+        "show_button": "2",
+        "button_text" : "Upload Data",
+        "lang":"en"
+    },
+    {
+        "intent":"Visualizatiom",
+        "id":"27",
+        "question": [
+            "What is CO2 emmission in supply chain", 
+            "What is CO2 emission in supply chain",
+            "ghg", "emission"
+        ],
+        "answer":[
+            "CO2 can be produced in several during production cycle. There are several parts in supply chain that results in CO2 Emission. You can upload data, if you want to see more about CO2 emission."
+        ],
+        "auto_generated":"0",
+        "multi_response": "1",
+        "show_button": "0",
+        "lang":"en"
+    },
+    {
+        "intent":"Cost_reduction",
+        "id":"28",
+        "question": [
+            "reduce", 
+            "reduce cost",
+            "reduce cost in supply chain", "emission"
+        ],
+        "answer":[
+            "Cost in supply chain can be reduced in several ways. There are several parts in supply chain that results in producing CO2. Some of the example components that results in CO2 emmision are Land usage, Farm Usage, transportation and many more"
+
+        ],
+        "auto_generated":"0",
+        "multi_response": "0",
+        "show_button" : "0",
+        "lang":"en"
+    },
+    {
+        "intent":"Land",
+        "id":"30",
+        "question": [
+            "Land", 
+            "Land usage",
+            "Land results", "Land results emission"
+        ],
+        "answer":[
+            "Forestation, Soil and weather conditions are the main components that contributes from Land's perspective in producing CO2."
+
+        ],
+        "auto_generated":"0",
+        "multi_response": "0",
+        "show_button" : "0",
+        "lang":"en"
+    },
+    {
+        "intent":"Farm",
+        "id":"31",
+        "question": [
+            "Farm", 
+            "Farm usage",
+            "Farm results", "Farm results emission"
+        ],
+        "answer":[
+            "Type of fertilizer and usage of milk in choclate production are the main components that contributes from Farm's perspective in producing CO2."
+
+        ],
+        "auto_generated":"0",
+        "multi_response": "0",
+        "show_button" : "0",
+        "lang":"en"
+    },
+    {
+        "intent":"Transport",
+        "id":"32",
+        "question": [
+            "Transport", 
+            "Transportation",
+            "Transport results", "Transport results emission", "Transportation results", "Transportation results emission"
+        ],
+        "answer":[
+            "Increase in Air routes for transportation contributes alot in producing CO2."
+
+        ],
+        "auto_generated":"0",
+        "multi_response": "0",
+        "show_button" : "0",
+        "lang":"en"
+    },
+    {
+        "intent":"Forestation",
+        "id":"33",
+        "question": [
+            "Forestation", "Forest",
+            "Forest usage",
+            "Forest results", "Forestation results", "Forestation results emission"
+        ],
+        "answer":[
+            "Increase in deforestation and decrease in Reafforestation results in producing CO2."
+
+        ],
+        "auto_generated":"0",
+        "multi_response": "0",
+        "show_button" : "0",
+        "lang":"en"
+    },
+    {
+        "intent":"Fertilizer",
+        "id":"34",
+        "question": [
+            "Fertilizer", "Fertilize",
+            "Fertilizer usage",
+            "Fertilizer results", "Fertilize results", "Fertilizer results emission"
+        ],
+        "answer":[
+            "Organic fertilizer helps in decreasing CO2 emission whereas chemical fertilizers causes increase in CO2 production."
+
+        ],
+        "auto_generated":"0",
+        "multi_response": "0",
+        "show_button" : "0",
+        "lang":"en"
+    },
+    {
+        "intent":"IcePudding",
+        "id":"29",
+        "question": [
+            "ice", 
+            "pudding",
+            "ice & pudding", "ice and pudding"
+        ],
+        "answer":[
+            "You can evaluate CO2 cost reduction. Please use the button for visualization."
+
+        ],
+        "auto_generated":"0",
+        "multi_response": "1",
+        "show_button": "3",
+        "button_text" : "Ice & Pudding",
+        "visualization": "pudding.html",
+        "lang":"en"
+    },
+    {
+        "intent":"news",
+        "id":"6",
+        "question": [
+            "Is there something new about EVAREST, I am missing on?" 
+        ],
+        "answer":[
+            "Anything which is new is always updated to the news section of the webpage.", 
+            "You can keep yourself tuned with the latest updates through ‘News Feed’ section of the website."
+
+        ],
+        "auto_generated":"0",
+        "multi_response": "1",
+        "show_button" : "0",
+        "lang":"en"
+    },
+    {
+        "intent":"social_media",
+        "id":"7",
+        "question": [
+            "How can I get myself updated with the project.",
+            "What is the easiest ways to keep myself updated with EVAREST.",
+            "What are the possible ways to keep myself updated."
+        ],
+        "answer":[
+            "You can keep yourself updated by either using our web page or social media thread.", 
+            "For your convenience, we also maintain social media platform along with the webpage."
+
+        ],
+        "auto_generated":"0",
+        "multi_response": "1",
+        "show_button" : "0",
+        "lang":"en"
+    },
+    {
+        "intent":"instagram",
+        "id":"8",
+        "question": [
+            "Can you please share your Instagram ?"
+        ],
+        "answer":[
+            "You can follow us through Instagram using "
+
+        ],
+        "auto_generated":"0",
+        "multi_response": "0",
+        "show_button" : "0",
+        "lang":"en"
+    },
+    {
+        "intent":"linkedIn",
+        "id":"9",
+        "question": [
+            "Can you please share your linkedIn ?"
+        ],
+        "answer":[
+            "You can follow us through linkedIn using "
+
+        ],
+        "auto_generated":"0",
+        "multi_response": "1",
+        "show_button" : "0",
+        "lang":"en"
+    },
+    {
+        "intent":"twitter",
+        "id":"10",
+        "question": [
+            "Can you please share your twitter ?"
+        ],
+        "answer":[
+            "You can follow us through twitter using "
+
+        ],
+        "auto_generated":"0",
+        "multi_response": "1",
+        "show_button" : "0",
+        "lang":"en"
+    },
+    {
+        "intent":"data_product",
+        "id":"11",
+        "question": [
+            "Tell me about Data products?",
+            "What sort of data products do you offer?",
+            "Are there some specific type of Data products you dealt with?",
+            "What are the different types of data product you offer?",
+            "Can you give me an example of data product you have?",
+            "I am interested in data products",
+            "I am looking for data",
+            "Tell me about Data products?",
+            "What sort of data product do you offer?",
+            "Are there some specific type of Data you dealt with?",
+            "What are the different types of data you offer?",
+            "Can you give me an example of data you have?",
+            "I am interested in data",
+            "I am looking for data"
+        ],
+        "answer":[
+            "We offer market-related, product-related & process-related data products. Please describe about your requirements.",
+            "Data products we offer can be utilized in food production ecosystem. Please provide more information about your requirements."
+
+        ],
+        "auto_generated":"0",
+        "multi_response": "1",
+        "show_button" : "0",
+        "lang":"en"
+    },
+    {
+        "intent":"importance_DP",
+        "id":"12",
+        "question": [
+            "Explain Data Products.",
+            "What are data products?",
+            "How is data product important?",
+            "Why to convert data into a product?",
+            "How is data product useful?"
+        ],
+        "answer":[
+            "In the context of digital transformation, data has an ability to be converted into a product to provide additional opportunity for the basis of a data economy.",
+            "If all the data that industry produces is brought together, analyzed and compressed into data products,  it will help in creating an extremely large digital market."
+
+        ],
+        "auto_generated":"0",
+        "multi_response": "1",
+        "show_button" : "0",
+        "lang":"en"
+    },
+    {
+        "intent":"usefulness_DP",
+        "id":"13",
+        "question": [
+            "How is data product useful ?",
+            "Give an example of the usefulness of DP?",
+            "Can you explain the Importance of data product with its usability.",
+            "It would be good If you give an example of usability of data product.",
+            "I don’t think that data products are really useful."
+        ],
+        "answer":[
+            "A very basic usability of data product is when a farmer has an access to data product he can use it in order to optimize the planning for the next season."
+
+        ],
+        "auto_generated":"0",
+        "multi_response": "0",
+        "show_button" : "0",
+        "lang":"en"
+    },
+    {
+        "intent":"example_DP",
+        "id":"14",
+        "question": [
+            "What different types of data products do you offer?",
+            "Tell me about data products you offer?",
+            "Is there some specific type of data product EVAREST offers?",            
+            "Give me an example of data product you offer?",            
+            "What data products does EVAREST offers?",            
+            "What types of data streams you offer?",            
+            "I think, all you have is food production related data products.",            
+            "I guess, you have domain related data products."
+        ],
+        "answer":[
+            "We can provide you quality and quantity data during production, machine related data used during production, sales and HR related data, prescan data e.t.c",
+            "We can offer food production related data products e.g Temperature data of product, Sales / PoS data, HR employee data, production quantity data, raw product quality data e.t.c"
+
+        ],
+        "auto_generated":"0",
+        "multi_response": "1",
+        "show_button" : "0",
+        "lang":"en"
+    },
+    {
+        "intent":"exchange_DP",
+        "id":"15",
+        "question": [
+            "If I want to buy some data product, how can we proceed?",
+            "How some data product can be exchanged?",
+            "What is the procedure to buy a data product?",            
+            "How we can move forward with a purchase?", "trade", "deal", "exchange", "purchase", "trade", "deal", "exchange", "purchase"
+        ],
+        "answer":[
+            "Purchase can be made by setting a smart contract for you according to your requirements and choice of data product you are interested in.",
+            "If you are interested in purchase of data product you can tell us the description of your requirement and then we will set a smart contract for you."
+        ],
+        "auto_generated":"0",
+        "multi_response": "1",
+        "show_button" : "0",
+        "lang":"en"
+    },
+    {
+        "intent":"smart_contract",
+        "id":"16",
+        "question": [
+            "What is smart contract?",
+            "Tell me about smart contract.",
+            "I never heard of smart contracts before.",            
+            "What do you mean by smart contract?",
+            "smart contract"
+        ],
+        "answer":[
+            "Smart contract is a type of contract which makes agreement more secure for users because it doesn't involve any third party. You can also see a demo of how smart contract work by using the following button."
+        ],
+        "auto_generated":"0",
+        "multi_response": "0",
+        "show_button" : "1",
+        "button_text" : "Smart Contract",
+        "visualization": "sc.html",
+        "lang":"en"
+    },
+    {
+        "intent":"search",
+        "id":"17",
+        "question": [
+            "I want to purchase data.",
+            "I am looking for data stream.",
+            "I am looking for data?",            
+            " I need some data.",
+            "Stream"
+        ],
+        "answer":[
+            "This service is provided to exchange data, tell me in detail about your requirements.",
+            "We are here to provide data streams according to you need.",
+            "Please tell me in more detail about your requirements."
+        ],
+        "auto_generated":"0",
+        "multi_response": "1",
+        "show_button" : "0",
+        "lang":"en"
+    },
+    {
+        "intent":"dataproduct_description",
+        "id":"18",
+        "question": [
+            "I want data of temperature.",
+            "I am looking for temperature data.",
+            "Do you have some data products related to temperature.",            
+            "I want temperature data of products.",
+            "I am looking for heating/cooling data products.",
+            "show me some data that can be used for Performance Report",
+            "tell me some data that can be used for Performance Report",
+            "show me some data that can be used for evaluation of Performance Report",
+            "tell me some data that can be used for evaluation of Performance Report", "evaluation", "evaluating",
+            "Prescan", "Quality Assurance", "Retraceability", "Labelling", "prescans", "prescan", "prescans", "prescan","prescanning", "pre scan", "pre scans", "pre scanning", "pre-scan", "pre-scans", "pre-scannings", "pre-scan", "pre-scans", "pre-scannings", "pallets","pallet",
+            "looking for data product", "Produktionsmenge", "Logistics", "Logistic",  "Performance Report", "Leistungsbericht",
+            "OEE/GEFF calculation", "OEE", "GEFF", "calculation", "OEE/GEFF", "calculation", "OEE calculation", "GEFF calculation"
+
+        ],
+        "answer":[
+            "No Answer"
+        ],
+        "auto_generated":"1",
+        "multi_response": "0",
+        "show_button" : "0",
+        "lang":"en"
+    },
+    {
+        "intent":"pricing",
+        "id":"19",
+        "question": [
+            "I am afraid it would be really costly.",
+            "I wonder it must be costly.",
+            "I wanted to know the cost of this.",            
+            "I want to know the price of this.",
+            "What is the price of this ?"
+        ],
+        "answer":[
+            "No Answer"
+        ],
+        "auto_generated":"1.1",
+        "multi_response": "0",
+        "show_button" : "0",
+        "lang":"en"
+    },
+    {
+        "intent":"validity",
+        "id":"20",
+        "question": [
+            "I am not sure about the validity of the data product.",
+            "I am not sure how long this is valid.",
+            "I wonder it will not valid for long."
+        ],
+        "answer":[
+            "No Answer"
+        ],
+        "auto_generated":"1.1",
+        "multi_response": "0",
+        "show_button" : "0",
+        "lang":"en"
+    },
+    {
+        "intent":"vendor",
+        "id":"21",
+        "question": [
+            "It would be great if i got to know about the vendor of this data product.",
+            "I hope it is possible to get to know about the vendor of this product.",
+            "Who is providing this data product?",            
+            "Who is the vendor of this data product?",
+            "Who is dealing in this data",
+            "Who is dealing in this data set",
+            "Who is the vendor of this data",
+            "Who is the vendor of this data set"
+        ],
+        "answer":[
+            "No Answer"
+        ],
+        "auto_generated":"1.1",
+        "multi_response": "0",
+        "show_button" : "0",
+        "lang":"en"
+    },
+    {
+        "intent":"format",
+        "id":"22",
+        "question": [
+            "I hope this data product is in excel format.",
+            "I really want this to be in sql format.",
+            "Is this data product in XML format?",            
+            "Please tell me it is in  image format."
+        ],
+        "answer":[
+            "No Answer"
+        ],
+        "auto_generated":"1.1",
+        "multi_response": "0",
+        "show_button" : "0",
+        "lang":"en"
+    },
+    {
+        "intent":"negative_Feedback",
+        "id":"23",
+        "question": [
+            "It was horrible interacting with you.",
+            "It seems like I'm wasting my time.",
+            "I am not finding it useful investing time here.",            
+            "I dont seems worthy investing time here"
+        ],
+        "answer":[
+            "I’m sorry to hear that.",
+            "I will pass on your feedback.",
+            "I will try to make improvements in future.",
+            "I am sorry, you can try once again.",    
+            "I am hoping not to disappoint you next time."
+        ],
+        "auto_generated":"0",
+        "multi_response": "1",
+        "show_button" : "0",
+        "lang":"en"
+    },    
+    {
+        "intent":"search_Again",
+        "id":"24",
+        "question": [
+            "Okay, tell me about HR data.",
+            "I hope you won’t disappoint me with human resource data.",
+            "Tell me about HR data then."
+        ],
+        "answer":[
+            "Smart contract is a type of contract which makes agreement more secure for users because it doesn't involve any third party."
+        ],
+        "auto_generated":"1.1",
+        "multi_response": "0",
+        "show_button" : "0",
+        "lang":"en"
+    },
+    {
+        "intent":"positive_Feedback",
+        "id":"25",
+        "question": [
+            "It was nice talking to you.",
+            "It was nice interacting with you.",
+            "You really helped me alot.",            
+            "You are good.",
+            ""
+        ],
+        "answer":[
+            "Thank you so much.",
+            "We appreciate your feedback"  
+        ],
+        "auto_generated":"0",
+        "multi_response": "1",
+        "show_button" : "0",
+        "lang":"en"
+    },    
+    {
+        "intent":"closing",
+        "id":"26",
+        "question": [
+            "Hope to see you back.",
+            "Ok, thank you.",
+            "Good bye.",            
+            "Bye.",
+            "See you next time."
+        ],
+        "answer":[
+            "See you later.",
+            "I hope to hear back positively from you."
+        ],
+        "auto_generated":"0",
+        "multi_response": "1",
+        "show_button" : "0",
+        "lang":"en"
+    }
+
+
+
+
+
+
+
+ 
+
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+    
+
+
+
+    
+
+    
+    
+    
+    
+    
+    
+   
+     
+    
+
+
+
+
+
+
+
+ 
+
+    
+
+
+
+
+    
+
+
+
+    
+
+    
+    
+  
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+]

@@ -1,0 +1,308 @@
+@import "https://code.getmdl.io/1.3.0/material.light_blue-light_green.min.css";
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+@import url('https://fonts.googleapis.com/css?family=Lato|Oswald&display=swap');
+body {
+    background: linear-gradient(to right, #d53369, #daae51);
+}
+
+.mdl-layout {
+    font-family: 'Lato', sans-serif;
+}
+
+.mdl-layout__header {
+    margin: 10px 20px;
+}
+
+.mdl-layout-title {
+    font-family: "Oswald", sans-serif;
+}
+
+.mdl-layout__header-row .mdl-navigation__link {
+    color: snow;
+    font-weight: bold;
+    font-family: "Oswald", sans-serif;
+}
+
+.header-divider {
+    border: solid 1px #d53369;
+    margin: 0px 10px;
+}
+
+#logoutButton {
+    display: none;
+}
+
+.mdl-dialog {
+    width: 80%;
+    height: 80%;
+}
+
+#service-settings {
+    width: 100%;
+}
+
+.mdl-switch__label {
+    color: snow;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+iframe {
+    height: 100%;
+}
+
+.mdl-button {
+    color: snow;
+    font-weight: bold;
+    font-family: "Oswald", sans-serif;
+}
+
+.red-button.mdl-button {
+    color: red;
+}
+
+.expand-button.mdl-button {
+    color: indigo;
+    transition: all .25s ease-in-out;
+}
+
+.expand-button.mdl-button.rot {
+    -ms-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.action-button.mdl-button {
+    color: rgb(3,169,244);
+    font-weight: bold;
+    margin:auto;
+    border: solid 2px rgb(3,169,244,0.5);
+}
+
+.mdl-card__actions{
+    text-align: center;
+}
+
+.interaction-button-container {
+    position: absolute;
+    right: 10px;
+}
+
+.card-media {
+    width: 100%;
+    background: snow;
+    border-bottom: solid 2px rgba(0, 0, 0, .1);
+}
+
+.service-container {
+    display: flex;
+    margin: 0px 10px;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.mdl-card {
+    border: ridge cornflowerblue 3px;
+    background: snow;
+    max-height: 98%;
+    transition: all .5s ease-in-out;
+    min-width: 0px;
+    min-height: 0px;
+}
+
+.mdl-card.collapsed-card {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    -webkit-transform-origin:0px;
+    transform-origin: 0px;
+}
+
+.mdl-card__title {
+    padding: 5px 10px;
+}
+
+.mdl-card__title-text {
+    color: black;
+    margin: auto 5px;
+    font-family: "Oswald", sans-serif;
+}
+
+.card-icon {
+    margin: 5px;
+}
+
+
+.mdl-card__supporting-text {
+    color: black;
+    max-height: 0px;
+    overflow: hidden;
+    padding-top: 0px;
+    padding-bottom: 0px;
+
+    transition: max-height .25s ease-in-out, padding-top .25s ease-in-out, padding-bottom .25s ease-in-out;
+}
+
+.mdl-card__supporting-text.show-description{
+    max-height: 350px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+.mdl-card__title>.card-icon:hover + .mdl-card__supporting-text{
+    max-height: 350px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+
+
+/* mobile style */
+
+@media only screen and (max-width: 576px) {
+    .service-container {
+        flex-direction: column;
+    }
+
+
+    .mdl-card {
+        width: 100%;
+    }
+
+    .mdl-layout-title {
+        font-size: 40px;
+    }
+
+
+    .service-header {
+        background: transparent;
+        display: inline;
+        font-weight: bold;
+        color: snow;
+    }
+
+    .service-sidebar {
+        padding: 5px 0px;
+        width: 100%;
+    }
+
+
+    .service-sidebar>* {
+        margin: 3px;
+        vertical-align: middle;
+    }
+
+
+
+    /*container body: grid layout style*/
+
+    
+    .card-icon{
+        min-width: 30px;
+        min-height: 30px;
+        width:30px;
+        height:30px;
+        font-size: 20px;
+    }
+
+    .mdl-card__title-text {
+        font-size: 30px;
+    }
+
+    .mdl-card__supporting-text {
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+
+    .mdl-card__supporting-text.show-description{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+}
+
+
+
+
+/* desktop style */
+
+@media only screen and (min-width:577px) {
+
+    .card-icon{
+        min-width: 48px;
+        min-height: 48px;
+        width:48px;
+        height:48px;
+    }
+
+    #main-place {
+        height: 100%;
+    }
+
+    .service-container {
+        display: flex;
+        margin: 0px 10px;
+        height: 100%;
+    }
+
+    .service-header {
+        background: transparent;
+        display: inline;
+        font-weight: bold;
+        color: snow;
+    }
+
+    .service-sidebar {
+        padding: 10px 10px;
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+        overflow: scroll;
+    }
+
+    .mdl-grid {
+        width: 80%;
+    }
+
+    /* container header style*/
+
+    .mdl-layout-title {
+        color: snow;
+        font-size: 50px;
+    }
+    .mdl-navigation__link {
+        font-size: 20px;
+    }    
+
+    .service-sidebar>* {
+        margin: 10px;
+        vertical-align: middle;
+    }
+
+    .minion-button {
+        font-size: 20px;
+        height: 40px;
+    }
+
+    .action-button.mdl-button{
+        font-size: 20px;
+    }
+
+    /*container body: grid layout style*/
+
+    /*.card-media{
+        min-height:300px;
+    }*/
+
+
+    .mdl-card__title-text {
+        font-size: 30px;
+    }
+
+    .mdl-card__supporting-text {
+        font-size: 1.1em;
+    }
+
+
+}

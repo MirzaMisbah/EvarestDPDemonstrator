@@ -1,0 +1,13 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+/* TEAM */
+Your title: Mirco Pyrtek
+Site: mirco.pyrtek@icloud.com
+Location: Saarbruecken, Germany
+
+/* SITE */
+Last update: 2017/04/25
+Standards: HTML5, CSS3
+Components: Modernizr, jQuery
+Software: RequireJS, PouchDB

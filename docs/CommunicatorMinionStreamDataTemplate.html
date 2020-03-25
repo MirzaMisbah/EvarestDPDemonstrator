@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Namespace: CommunicatorMinionStreamDataTemplate | TUCANA Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-jsdoc.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/tui-doc.css">
+
+    
+</head>
+<body>
+<nav class="lnb" id="lnb">
+    <div class="logo" style="width: 90px; height: 30px">
+        
+            <a href="https://github.com/InformationServiceSystems/tucana" rel="noopener noreferrer" target="_blank">
+                <img src="http://iss.uni-saarland.de/workspace/grayscale/img/logo_iss1.png" width="100%" height="100%">
+            </a>
+        
+    </div>
+    <div class="title">
+        <h1><a href="index.html" class="link">TUCANA Documentation</a></h1>
+        
+    </div>
+    <div class="search-container" id="search-container">
+        <input type="text" placeholder="Search">
+        <ul></ul>
+    </div>
+    
+    <div class="lnb-api hidden"><h3>Classes</h3><ul><li><a href="CrossDataStorageClient.html">CrossDataStorageClient</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="CrossDataStorageClient_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="CrossDataStorageClient.html#~init">init</a></li><li><a href="CrossDataStorageClient.html#~reConnect">reConnect</a></li><li><a href="CrossDataStorageClient.html#~sendCreateRequest">sendCreateRequest</a></li><li><a href="CrossDataStorageClient.html#~sendDeleteRequest">sendDeleteRequest</a></li><li><a href="CrossDataStorageClient.html#~sendReadRequest">sendReadRequest</a></li><li><a href="CrossDataStorageClient.html#~sendUpdateRequest">sendUpdateRequest</a></li></ul></div></li><li><a href="PeerCommunication.html">PeerCommunication</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="PeerCommunication_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="PeerCommunication.html#.COMM_STATUS">COMM_STATUS</a></li><li><a href="PeerCommunication.html#.ERROR">ERROR</a></li><li><a href="PeerCommunication.html#.MSG_TAGS">MSG_TAGS</a></li><li><a href="PeerCommunication.html#.ServerMsgs">ServerMsgs</a></li></ul><div class="member-type">Methods</div><ul class="inner"><li><a href="PeerCommunication.html#~connectToPeer">connectToPeer</a></li><li><a href="PeerCommunication.html#~disconnect">disconnect</a></li><li><a href="PeerCommunication.html#~formatServerMsg">formatServerMsg</a></li><li><a href="PeerCommunication.html#~handleAnswer">handleAnswer</a></li><li><a href="PeerCommunication.html#~handleCandidate">handleCandidate</a></li><li><a href="PeerCommunication.html#~handleOffer">handleOffer</a></li><li><a href="PeerCommunication.html#~init">init</a></li><li><a href="PeerCommunication.html#~issueStatusUpdate">issueStatusUpdate</a></li><li><a href="PeerCommunication.html#~loginToSS">loginToSS</a></li><li><a href="PeerCommunication.html#~onSSError">onSSError</a></li><li><a href="PeerCommunication.html#~onSSMessage">onSSMessage</a></li><li><a href="PeerCommunication.html#~sendChunckedToPeer">sendChunckedToPeer</a></li><li><a href="PeerCommunication.html#~sendToPeer">sendToPeer</a></li><li><a href="PeerCommunication.html#~sendToSS">sendToSS</a></li></ul></div></li></ul></div><div class="lnb-api hidden"><h3>Namespaces</h3><ul><li><a href="CommunicatorMinionStreamDataExample.html">CommunicatorMinionStreamDataExample</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="CommunicatorMinionStreamDataExample_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="CommunicatorMinionStreamDataExample.html#.minionObject">minionObject</a></li></ul><div class="member-type">Methods</div><ul class="inner"><li><a href="CommunicatorMinionStreamDataExample.html#~addStyles">addStyles</a></li><li><a href="CommunicatorMinionStreamDataExample.html#~build_chart">build_chart</a></li><li><a href="CommunicatorMinionStreamDataExample.html#~checkStarted">checkStarted</a></li><li><a href="CommunicatorMinionStreamDataExample.html#~clearMinionEnvironment">clearMinionEnvironment</a></li><li><a href="CommunicatorMinionStreamDataExample.html#~loadDependencies">loadDependencies</a></li><li><a href="CommunicatorMinionStreamDataExample.html#~newValue">newValue</a></li><li><a href="CommunicatorMinionStreamDataExample.html#~startApp">startApp</a></li></ul></div></li><li><a href="CommunicatorMinionStreamDataTemplate.html">CommunicatorMinionStreamDataTemplate</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="CommunicatorMinionStreamDataTemplate_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="CommunicatorMinionStreamDataTemplate.html#.minionObject">minionObject</a></li></ul><div class="member-type">Methods</div><ul class="inner"><li><a href="CommunicatorMinionStreamDataTemplate.html#~addStyles">addStyles</a></li><li><a href="CommunicatorMinionStreamDataTemplate.html#~build_chart">build_chart</a></li><li><a href="CommunicatorMinionStreamDataTemplate.html#~checkStarted">checkStarted</a></li><li><a href="CommunicatorMinionStreamDataTemplate.html#~clearMinionEnvironment">clearMinionEnvironment</a></li><li><a href="CommunicatorMinionStreamDataTemplate.html#~loadDependencies">loadDependencies</a></li><li><a href="CommunicatorMinionStreamDataTemplate.html#~newValue">newValue</a></li><li><a href="CommunicatorMinionStreamDataTemplate.html#~startApp">startApp</a></li></ul></div></li><li><a href="PerceiverMinionTemplate.html">PerceiverMinionTemplate</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="PerceiverMinionTemplate_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="PerceiverMinionTemplate.html#.minionObject">minionObject</a></li></ul><div class="member-type">Methods</div><ul class="inner"><li><a href="PerceiverMinionTemplate.html#~checkStarted">checkStarted</a></li><li><a href="PerceiverMinionTemplate.html#~clearMinionEnvironment">clearMinionEnvironment</a></li><li><a href="PerceiverMinionTemplate.html#~loadDependencies">loadDependencies</a></li><li><a href="PerceiverMinionTemplate.html#~startApp">startApp</a></li></ul></div></li><li><a href="ThinkerMinionWebWorkerTemplate.html">ThinkerMinionWebWorkerTemplate</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="ThinkerMinionWebWorkerTemplate_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="ThinkerMinionWebWorkerTemplate.html#.minionObject">minionObject</a></li></ul><div class="member-type">Methods</div><ul class="inner"><li><a href="ThinkerMinionWebWorkerTemplate.html#.fetchScripts">fetchScripts</a></li><li><a href="ThinkerMinionWebWorkerTemplate.html#.transformInternalUris">transformInternalUris</a></li></ul></div></li></ul></div>
+</nav>
+<div id="resizer"></div>
+
+<div class="main" id="main">
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>CommunicatorMinionStreamDataTemplate</h2>
+        
+    
+</header>
+
+<article>
+    
+        <div class="container-overview">
+        
+            
+                <div class="description"><p>This file contains a template for the implementation of a visualization minion (cmin) of streaming data.</p></div>
+            
+
+            
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+            
+        
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        <dl>
+            
+
+<dt>
+<h4 class="name" id=".minionObject">
+    <span class="type-signature"><span class="icon green">static</span>, <span class="icon green">constant</span> </span>minionObject<span class="type-signature"> :Object</span>
+    
+    <div class="container-source members">
+        <code><a href="minion_templates_cmins_cmin_streamdatatemplate.js.html">minion_templates/cmins/cmin_streamdatatemplate.js</a></code>,
+        <code><a href="minion_templates_cmins_cmin_streamdatatemplate.js.html#line14">line 14</a></code>
+    </div>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Defines all necessary data of a minion</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Object</span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        </dl>
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        <dl>
+                
+
+<dt>
+    
+        <h4 class="name" id="~addStyles">
+            
+                <span class="type-signature"><span class="icon green">inner</span> </span>addStyles<span class="signature">()</span><span class="type-signature"></span>
+                
+            
+            <div class="container-source members">
+                <code><a href="minion_templates_cmins_cmin_streamdatatemplate.js.html">minion_templates/cmins/cmin_streamdatatemplate.js</a></code>,
+                <code><a href="minion_templates_cmins_cmin_streamdatatemplate.js.html#line119">line 119</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Creates the required style classes and appends them to the document head</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="~build_chart">
+            
+                <span class="type-signature"><span class="icon green">inner</span> </span>build_chart<span class="signature">()</span><span class="type-signature"></span>
+                
+            
+            <div class="container-source members">
+                <code><a href="minion_templates_cmins_cmin_streamdatatemplate.js.html">minion_templates/cmins/cmin_streamdatatemplate.js</a></code>,
+                <code><a href="minion_templates_cmins_cmin_streamdatatemplate.js.html#line79">line 79</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Builds the visualization</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="~checkStarted">
+            
+                <span class="type-signature"><span class="icon green">inner</span> </span>checkStarted<span class="signature">()</span><span class="type-signature"> &rarr; {boolean}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="minion_templates_cmins_cmin_streamdatatemplate.js.html">minion_templates/cmins/cmin_streamdatatemplate.js</a></code>,
+                <code><a href="minion_templates_cmins_cmin_streamdatatemplate.js.html#line160">line 160</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Checks if the minion is started of stopped.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">boolean</span>
+
+
+
+
+
+- <p>True if started.</p>
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="~clearMinionEnvironment">
+            
+                <span class="type-signature"><span class="icon green">inner</span> </span>clearMinionEnvironment<span class="signature">()</span><span class="type-signature"></span>
+                
+            
+            <div class="container-source members">
+                <code><a href="minion_templates_cmins_cmin_streamdatatemplate.js.html">minion_templates/cmins/cmin_streamdatatemplate.js</a></code>,
+                <code><a href="minion_templates_cmins_cmin_streamdatatemplate.js.html#line136">line 136</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Clear the div at the beginning of the minion start and remove all event listeners already registered at the inputDataChannels</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="~loadDependencies">
+            
+                <span class="type-signature"><span class="icon green">inner</span> </span>loadDependencies<span class="signature">(callback)</span><span class="type-signature"></span>
+                
+            
+            <div class="container-source members">
+                <code><a href="minion_templates_cmins_cmin_streamdatatemplate.js.html">minion_templates/cmins/cmin_streamdatatemplate.js</a></code>,
+                <code><a href="minion_templates_cmins_cmin_streamdatatemplate.js.html#line89">line 89</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Loads required libs dynamically</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The function to be called when loading is done, it takes a boolean which value is true if the library was loaded successfully.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="~newValue">
+            
+                <span class="type-signature"><span class="icon green">inner</span> </span>newValue<span class="signature">(added_value)</span><span class="type-signature"></span>
+                
+            
+            <div class="container-source members">
+                <code><a href="minion_templates_cmins_cmin_streamdatatemplate.js.html">minion_templates/cmins/cmin_streamdatatemplate.js</a></code>,
+                <code><a href="minion_templates_cmins_cmin_streamdatatemplate.js.html#line52">line 52</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Hanling of a new data point received by the minion</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>added_value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The new value object</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="~startApp">
+            
+                <span class="type-signature"><span class="icon green">inner</span> </span>startApp<span class="signature">()</span><span class="type-signature"></span>
+                
+            
+            <div class="container-source members">
+                <code><a href="minion_templates_cmins_cmin_streamdatatemplate.js.html">minion_templates/cmins/cmin_streamdatatemplate.js</a></code>,
+                <code><a href="minion_templates_cmins_cmin_streamdatatemplate.js.html#line61">line 61</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Starts the main application.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            </dl>
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<footer>
+    <img class="logo" src="http://iss.uni-saarland.de/workspace/grayscale/img/logo_iss1.png" style="width: 90px; height: 30px">
+    <div class="footer-text">NHN Entertainment. Frontend Development Lab</div>
+</footer>
+<script>prettyPrint();</script>
+<script src="scripts/jquery.min.js"></script>
+<script src="scripts/tui-doc.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+    <script>
+        var id = 'CommunicatorMinionStreamDataTemplate_sub'.replace(/"/g, '_');
+        var selectedApi = document.getElementById(id); // do not use jquery selector
+        var $selectedApi = $(selectedApi);
+
+        $selectedApi.removeClass('hidden');
+        $selectedApi.parent().find('.glyphicon').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+        showLnbApi();
+    </script>
+
+</body>
+</html>

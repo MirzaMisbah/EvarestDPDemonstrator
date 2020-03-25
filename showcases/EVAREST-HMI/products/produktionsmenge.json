@@ -1,0 +1,34 @@
+{
+    "@context": "EVAREST",
+    "name": "Produktionsmenge",
+    "location": "http://www.evarest.de/iot/produktionsmenge",
+    "consumption": "Internal",
+    "lang": "DE",
+    "keyWords": "Produktionsmenge, Logistics, Performance Report, Leistungsbericht",
+    "description": "It contains Data on amount of produced product. Its really useful for OEE/GEFF calculation. ",
+    "productType": {
+        "@tpe": "Dataset",
+        "tier_1": "Produktionsmenge"
+    },
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "30"
+    },
+    "smartContract": {
+        "@type": "smartContract",
+        "location": "http://www.evarest.de/iot/produktionsmenge",
+        "terms": "http://www.evarest.de/iot/produktionsmenge"
+    },
+    "offers": {
+        "@type": "Offer",
+        "priceCurrency": "EUR",
+        "price": "30.00",
+        "priceValidUntil": "03-10-2020",
+        "availability": "yes",
+        "seller": {
+            "@type": "Lindt",
+            "location": "https://www.lindt.de/startseite/"
+        }
+    }
+}

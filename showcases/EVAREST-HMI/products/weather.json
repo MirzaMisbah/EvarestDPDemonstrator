@@ -1,0 +1,35 @@
+{
+    "@context": "EVAREST",
+    "name": "Weather",
+    "location": "http://www.evarest.de/iot/weather",
+    "consumption": "Internal",
+    "lang": "DE",
+    "keyWords": "Weather, Sales, Open Source, Internet",
+    "description": "This dataset contains weather data collected from internet for past several years. No further processing is required for this dataset. ",
+    "productType": {
+        "@tpe": "Dataset",
+        "tier_1": "Weather",
+        "tier_2": "Sales"
+    },
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.1",
+        "reviewCount": "53"
+    },
+    "smartContract": {
+        "@type": "smartContract",
+        "location": "http://www.evarest.de/iot/weather",
+        "terms": "http://www.evarest.de/iot/weather"
+    },
+    "offers": {
+        "@type": "Offer",
+        "priceCurrency": "EUR",
+        "price": "9.99",
+        "priceValidUntil": "11-07-2020",
+        "availability": "yes",
+        "seller": {
+            "@type": "Lindt",
+            "location": "https://www.lindt.de/startseite/"
+        }
+    }
+}

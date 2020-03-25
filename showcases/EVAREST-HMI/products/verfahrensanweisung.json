@@ -1,0 +1,35 @@
+{
+    "@context": "EVAREST",
+    "name": "Verfahrensanweisung",
+    "location": "http://www.evarest.de/iot/verfahrensanweisung",
+    "consumption": "Internal",
+    "lang": "DE",
+    "keyWords": "Verfahrensanweisung, Process Instruction, Process Engineering, Quality Assurance",
+    "description": "New product comes with new process instruction. Employee at maschine can print and use the process instruction. If the new product is similar to old one, similar new product to reuse the process instruction and simply adjust the old one. Process instruction helps with correct adjustment of the forming maschine for the product",
+    "productType": {
+        "@tpe": "Dataset",
+        "tier_1": "Verfahrensanweisung",
+        "tier_2": "Process Instruction"
+    },
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "3.3",
+        "reviewCount": "52"
+    },
+    "smartContract": {
+        "@type": "smartContract",
+        "location": "http://www.evarest.de/iot/verfahrensanweisung",
+        "terms": "http://www.evarest.de/iot/verfahrensanweisung"
+    },
+    "offers": {
+        "@type": "Offer",
+        "priceCurrency": "EUR",
+        "price": "100.00",
+        "priceValidUntil": "03-04-2020",
+        "availability": "yes",
+        "seller": {
+            "@type": "Lindt",
+            "location": "https://www.lindt.de/startseite/"
+        }
+    }
+}

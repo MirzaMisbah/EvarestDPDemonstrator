@@ -1,0 +1,50 @@
+{
+  "name": "TUCANA",
+  "version": "0.2.0",
+  "description": "TUCANA platform for edge oriented programming",
+  "repository": "https://github.com/InformationServiceSystems/tucana",
+  "main": "src/tucana.js",
+  "scripts": {
+    "test": "istanbul cover -x *.test.js ./node_modules/mocha/bin/_mocha -- -R spec test/",
+    "check-coverage": "istanbul check-coverage --statements 0 --functions 0 --lines 0",
+    "report-coverage": "cat ./coverage/lcov.info | codecov",
+    "document": "jsdoc -c docu-conf.json --verbose",
+    "makebrowser": "rimraf dist && browserify src/tucana.js --standalone tucana -o dist/tucana.js",
+    "build": "npm run makebrowser && npm run document",
+    "start": "serve --port 5000 --ssl",
+    "commitall": "npm run build && git add -A && git commit"
+  },
+  "config": {
+    "ghooks": {
+      "pre-commit": "npm test && npm run check-coverage"
+    }
+  },
+  "keywords": [
+    "machine learning",
+    "artificial intelligence",
+    "peer to peer",
+    "distributed",
+    "edge computing"
+  ],
+  "devDependencies": {
+    "browser-env": "^3.2.5",
+    "chai": "4.1.2",
+    "ghooks": "2.0.2",
+    "istanbul": "1.1.0-alpha.1",
+    "jest": "^23.6.0",
+    "mocha": "5.0.5",
+    "node-fetch": "^2.3.0",
+    "rimraf": "2.6.2",
+    "jsdoc": "^3.6.2",
+    "sinon": "^7.1.1",
+    "browserify": "16.2.0",
+    "serve": "^7.1.3",
+    "tui-jsdoc-template": "^1.2.2"
+  },
+  "dependencies": {
+    "@tensorflow/tfjs": "^1.2.1",
+    "@tensorflow/tfjs-vis": "^1.0.3",
+    "fingerprintjs2": "^2.0.6",
+    "jquery": "^3.4.1"
+  }
+}

@@ -1,0 +1,589 @@
+/**
+Stylesheet containing the main elements of the app framwork
+ */
+
+#spinner {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+}
+
+.minion-spinner {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+}
+
+#profile-button {
+    position: fixed;
+    display: block;
+    right: 0;
+    top: 0;
+    margin-right: 20px;
+    margin-top: 5%;
+    z-index: 900;
+}
+
+#visit {
+    position: fixed;
+    display: block;
+    right: 0;
+    bottom: 0;
+    margin-right: 40px;
+    margin-bottom: 40px;
+    z-index: 900;
+}
+
+.minionSearch {
+    border-box: box-sizing;
+    background-image: url('../../assets/icons/searchicon.png');
+    background-position: 14px 12px;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    padding: 14px 0px 12px 50px;
+    margin: inherit;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    width: calc(100% - 50px);
+}
+
+#minionSearch:focus {outline: 3px solid #ddd;}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: block;
+    position: relative;
+    background-color: #f6f6f6;
+    min-width: 230px;
+    overflow: auto;
+    border: 1px solid #ddd;
+    z-index: 1;
+    width: 100%;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 0px 12px 10px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #ddd}
+
+.hide {display:none;}
+
+
+.hidden-container {
+    display: none;
+}
+
+.show {display:block;}
+
+.section-large-width {
+    max-width: 1300px !important;
+}
+
+.icon-text {
+    color: #ffffff;
+    margin-left: 20px;
+}
+
+.iconize {
+    height: 60%;
+    filter: brightness(0) invert(1);
+}
+
+.drawer {
+    border: none;
+}
+/* iOS Safari specific workaround */
+.drawer .mdl-menu__container {
+    z-index: -1;
+}
+.drawer .drawer-navigation {
+    z-index: -2;
+}
+/* END iOS Safari specific workaround */
+.drawer .mdl-menu .mdl-menu__item {
+    display: flex;
+    align-items: center;
+}
+.drawer-header {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 16px;
+    height: 151px;
+}
+.avatar-dropdown {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+/**
+ * Copyright 2015 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+/*
+Note: any .css or .scss files included in the 'styles' directory
+will be correctly compiled during `gulp serve` and `gulp`
+ */
+
+.mdl-layout__drawer .avatar {
+    margin-bottom: 16px;
+    width: 48px;
+    height: 48px;
+    border-radius: 24px;
+}
+
+.mdl-layout__drawer .mdl-navigation {
+    padding-top: 0px;
+}
+
+.container-layout .drawer-navigation .mdl-navigation__link {
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.56);
+    font-weight: 500;
+}
+.container-layout .drawer-navigation .mdl-navigation__link:hover {
+    background-color: #00BCD4;
+    color: #ffffff;
+}
+
+.container-layout .drawer-navigation .is-active {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.drawer-navigation .mdl-navigation__link .material-icons {
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.56);
+    margin-right: 32px;
+}
+
+html,
+body {
+    font-family: 'Roboto', 'Helvetica', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.mdl-container .mdl-layout.is-small-screen .mdl-layout__header-row h3 {
+    font-size: inherit;
+}
+
+.mdl-container .mdl-layout__tab-bar-button {
+    display: none;
+}
+
+.mdl-container .mdl-layout.is-small-screen .mdl-layout__tab-bar .mdl-button {
+    display: none;
+}
+
+.mdl-container .mdl-layout:not(.is-small-screen) .mdl-layout__tab-bar,
+.mdl-container .mdl-layout:not(.is-small-screen) .mdl-layout__tab-bar-container {
+    overflow: visible;
+}
+
+.mdl-container .mdl-layout__tab-bar-container {
+    height: 64px;
+}
+
+.mdl-container .mdl-layout__tab-bar {
+    padding: 0;
+    padding-left: 0px;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+}
+
+.mdl-container .mdl-layout__tab-bar .mdl-layout__tab {
+    height: 64px;
+    line-height: 64px;
+}
+
+.mdl-container .mdl-layout__tab-bar .mdl-layout__tab.is-active::after {
+    background-color: white;
+    height: 4px;
+}
+
+.mdl-container main>.mdl-layout__tab-panel {
+    padding: 8px;
+    padding-top: 48px;
+}
+
+.mdl-container .mdl-card {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.mdl-container .mdl-card>* {
+    height: auto;
+}
+
+.mdl-container .mdl-card .mdl-card__supporting-text {
+    margin: 20px;
+    flex-grow: 1;
+    padding: 0;
+    color: inherit;
+    width: calc(100% - 80px);
+}
+
+.mdl-container.mdl-container .mdl-card__supporting-text h4 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.mdl-container .mdl-card__actions {
+    margin: 0;
+    padding: 4px 40px;
+    color: inherit;
+}
+
+.mdl-container .mdl-card__actions a {
+    color: #00BCD4;
+    margin: 0;
+}
+
+.mdl-container .mdl-card__actions a:hover,
+.mdl-container .mdl-card__actions a:active {
+    color: inherit;
+    background-color: transparent;
+}
+
+.mdl-container .mdl-card__supporting-text+.mdl-card__actions {
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.mdl-container #add {
+    position: absolute;
+    right: 40px;
+    top: 36px;
+    z-index: 999;
+}
+
+.mdl-container .mdl-layout__content section {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.mdl-container section.section--center {
+    max-width: 1300px;
+}
+
+.mdl-container #features section.section--center {
+    max-width: 620px;
+}
+
+.mdl-container section>header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mdl-container section>.section__play-btn {
+    min-height: 200px;
+}
+
+.mdl-container section>header>.material-icons {
+    font-size: 3rem;
+}
+
+.mdl-container section>button {
+    position: absolute;
+    z-index: 99;
+    top: 8px;
+    right: 8px;
+}
+
+.mdl-container section .section__circle {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-grow: 0;
+    flex-shrink: 1;
+}
+
+.mdl-container section .section__text {
+    flex-grow: 1;
+    flex-shrink: 0;
+    padding-top: 8px;
+}
+
+.mdl-container section .section__text h5 {
+    font-size: inherit;
+    margin: 0;
+    margin-bottom: 0.5em;
+}
+
+.mdl-container section .section__text a {
+    text-decoration: none;
+}
+
+.mdl-container section .section__circle-container>.section__circle-container__circle {
+    width: 64px;
+    height: 64px;
+    border-radius: 32px;
+    margin: 8px 0;
+}
+
+.mdl-container section.section--footer .section__circle--big {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    margin: 8px 32px;
+}
+
+.mdl-container .is-small-screen section.section--footer .section__circle--big {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    margin: 8px 16px;
+}
+
+.mdl-container section.section--footer {
+    padding: 64px 0;
+    margin: 0 -8px -8px -8px;
+}
+
+.mdl-container section.section--center .section__text:not(:last-child) {
+    border-bottom: 1px solid rgba(0, 0, 0, .13);
+}
+
+.mdl-container .mdl-card .mdl-card__supporting-text>h3:first-child {
+    margin-bottom: 24px;
+}
+
+.mdl-container #features section {
+    margin-bottom: 72px;
+}
+
+.mdl-container #features h4,
+#features h5 {
+    margin-bottom: 16px;
+}
+
+.mdl-container .toc {
+    border-left: 4px solid #C1EEF4;
+    margin: 24px;
+    padding: 0;
+    padding-left: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mdl-container .toc h4 {
+    font-size: 0.9rem;
+    margin-top: 0;
+}
+
+.mdl-container .toc a {
+    color: #4DD0E1;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 28px;
+    display: block;
+}
+
+.mdl-container .mdl-menu__container {
+    z-index: 99;
+}
+
+.box-body {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    padding: 10px;
+}
+
+.datathead,
+.datatbody,
+.datatr,
+.datatd,
+.datath {
+    display: block;
+}
+
+.datatr:after {
+    content: ' ';
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+.datath {
+    height: 30px;
+    /*text-align: left;*/
+}
+
+.datatbody {
+    height: 350px;
+    overflow-y: auto;
+}
+
+.datathead {
+    /* fallback */
+}
+
+.datatd,
+.datath {
+    width: 16.4%;
+    float: left;
+}
+
+.to_white {
+    filter: brightness(0) invert(100%);
+}
+.mdl-button{
+    margin: auto;
+
+}
+.box_color {
+    float: left;
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    border: 1px solid rgba(0, 0, 0, .2);
+}
+
+.orange {
+    background: orange;
+}
+
+/*.loader {*/
+/*border: 10px solid #f3f3f3; !* Light grey *!*/
+/*border-top: 10px solid #3498db; !* Blue *!*/
+/*border-radius: 50%;*/
+/*width: 50px;*/
+/*height: 50px;*/
+/*animation: spin 0.5s linear infinite;*/
+/*}*/
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.bordered-box {
+    border:1.5px;
+    border-style:solid;
+    border-color: darkgrey;
+    border-radius: 16px;
+    padding: 4px 4px;
+}
+
+.cart {
+    width: 100%;
+}
+
+.hasTooltip span {
+    display: none;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    text-decoration: none;
+    padding: 3px;
+}
+
+.hasTooltip:hover span {
+    display: block;
+    position: absolute;
+    right: 0px;
+    top: 30px;
+    padding: 2px 10px;
+    z-index: 999;
+    overflow: visible;
+}
+
+.header-fixed {
+    width: 100%
+}
+
+.header-fixed > thead,
+.header-fixed > tbody,
+.header-fixed > thead > tr,
+.header-fixed > tbody > tr,
+.header-fixed > thead > tr > th,
+.header-fixed > tbody > tr > td {
+    display: block;
+}
+
+.header-fixed > tbody > tr:after,
+.header-fixed > thead > tr:after {
+    content: ' ';
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+.header-fixed > tbody {
+    overflow-y: auto;
+    height: 400px;
+}
+
+.header-fixed > tbody > tr > td,
+.header-fixed > thead > tr > th {
+    width: 9%;
+    float: left;
+}
+
+/* Below style for Sign up*/
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+/* Add a background color when the inputs get focus */
+input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+

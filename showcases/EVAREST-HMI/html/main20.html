@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/signUp.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  <script defer src="../js/init.js" type="module"></script>
+  <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+
+  <!-- Intent extraction and search libraries -->
+  <script src="../js/bravey.js"></script>
+  <script src="../js/elasticlunr.min.js"></script>
+  <script type="text/javascript" src="../js/evarest.js"></script>
+
+
+
+  <title>EVAREST Data Marketplace</title>
+</head>
+
+<body>
+  <script src="../../../dist/tucana.js" type="application/javascript"></script>
+  <!-- Always shows a header, even in smaller screens. -->
+  <div class="mdl-layout mdl-js-layout">
+
+    <header class="mdl-layout__header mdl-layout__header--transparent mdl-layout__header--scroll">
+
+      <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <img class="mdl-layout-icon" src="../images/logo_evarest.png" style="margin-right: 10px">
+          <span class="mdl-layout-title" style="align-items: center;">Welcome to EVAREST Data-Marketplace!</span>
+          <div class="mdl-layout-spacer"></div>
+      </div>
+
+
+  </header>
+    <div class="header-divider"></div>
+
+  </div>
+<div class= "body" style="width: 80%; margin-left: 10%; margin-right: 10%; margin-top: 1%; margin-bottom: 20%;">
+  <h1 style = "text-align: center">We answer your bussiness questions offering:</h1>
+ 
+
+  <link rel="stylesheet" href="../css/sideByside.css">
+  <div id="wrapper">
+    <div id="outer">
+      <div class = "itemwrapper">
+        <img src ="../images/sas.png" alt="sas" />
+        <button id="dp" type="submit" onclick="showalert('You can use SAS for better visualization and understanding of dataproducts')" class="myButton" style="margin-top: 10%; margin-left: 17%;"> 
+          Data Products
+        </button>
+      </div>
+      
+
+      <div class = "itemgap"></div>
+
+      <div class = "itemwrapper" >
+        <img src ="../images/dp.png" alt="sas" />
+        <button id="sas" type="submit" onclick="openlink('main01.html')" class="myButton" style="margin-top: 10%; margin-left: 5%;"> 
+          Smart Analytical Service
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <h1 style = "text-align: left; margin-left: 20%;">And you can ...</h1>
+  <div class= "body" style="width: 80%; margin-left: 30%; margin-bottom: 5%;">
+    <link rel="stylesheet" href="../css/dummy.css">
+    <button id="dp" class="myButton" type="submit" onclick="openlink('main02.html')" class="myButton" style="margin-top: 1%; margin-left: 17%;"> 
+    Upload Your Data
+    </button>     
+  
+        <div class = "itemgap"></div>
+  </div>
+
+  <link rel="stylesheet" href="../css/seachbar.css">
+  <div class="search" style = "width: 50; align-items: center;">
+    <input type="text" class="searchTerm" id='msg'  placeholder="What are you looking for?" aria-describedby="button-addon2">
+    <div class="input-group-append">
+      <button id="button-addon2" type="submit" onclick="questionMessage();" class="btn btn-link"> 
+        <i class="fa fa-search" aria-hidden="true"></i>
+      </button>
+
+      <script>
+        var input = document.getElementById("msg");
+        input.addEventListener("keyup", function(event) {
+          if (event.keyCode === 13) {
+           event.preventDefault();
+           document.getElementById("button-addon2").click();
+          }
+        });
+        function enableButton(id) {
+            document.getElementById().disabled = false;
+        }
+        </script>
+    </div>        
+  </div>
+  
+</div>
+
+  
+  </body>
+
+</html>
+
+
+
+
+
+

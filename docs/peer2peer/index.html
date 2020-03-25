@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<button id="logoutButton" class="mdl-navigation__link"><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                          role="presentation">&#xe163</i>Logout
+</button>
+
+<div id="id01" class="modal"></div>
+
+<main id="minionContainer"></main>
+
+<script src="./js/tucana.js" type="application/javascript"></script>
+
+<script type="application/javascript">
+
+    const database = new tucana.adapter.IndexedDBDatabaseHandler();
+    const baasCommunicationHandler = new tucana.adapter.RESTAPIBaaSCommunicationHandler();
+    const identificationHandler = new tucana.adapter.BrowserFingerprintIdentificationHandler('id01', 'logoutButton');
+    const uiAdapter = new tucana.adapter.DOMUIAdapter(document.getElementById('minionContainer'));
+    const uPeerCommunicationHandler = new tucana.adapter.WebRTCUPeerCommunicationHandler();
+
+    const tucanaPlatform = new tucana.TucanaCoreService(database, uPeerCommunicationHandler, baasCommunicationHandler, identificationHandler, uiAdapter);
+
+    tucanaPlatform.getSmartServiceConfigurationItemIds()
+        .then(res => {
+            if (res && res.success && res.smartServiceConfigurationItemIds) {
+                for (let item of res.smartServiceConfigurationItemIds) {
+                    if (item.id === 'Test Peer Communication Service 1') {
+                        return Promise.resolve(item);
+                    }
+                }
+            }
+            return Promise.resolve(fetch('smart_service.json')
+                .then((response) => {
+                    return response.json();
+                }).then(json => {
+                    var sscItem = tucana.model.SmartServiceConfigurationItem.fromJSON(json);
+                    return Promise.all([tucanaPlatform.createSmartServiceConfiguration(sscItem), new Promise((resolve, reject) => resolve(json))]);
+                }).then(result => {
+                    console.log(result);
+                    if (result[0]) {
+                        return result[1]
+                    } else {
+                        return null;
+                    }
+                }));
+        }).then(result => {
+        if (result && result.id) {
+            return tucanaPlatform.loadSmartServiceConfiguration(result.id);
+        } else {
+            return null;
+        }
+    }).then(result => {
+        if (result) {
+            if (result.success && result.state instanceof tucana.minionstate.MinionsBound) {
+                tucanaPlatform.runSmartService()
+                    .then(res => {
+                        setTimeout(() => {
+                            console.log('Terminated');
+                            tucanaPlatform.terminateSmartService();
+                        }, 20000);
+                    });
+            }
+        } else {
+            console.log('Not authenticated yet!');
+        }
+
+    });
+</script>
+</body>
+</html>

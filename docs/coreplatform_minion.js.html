@@ -1,0 +1,655 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Source: coreplatform/minion.js | TUCANA Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-jsdoc.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/tui-doc.css">
+
+    
+</head>
+<body>
+<nav class="lnb" id="lnb">
+    <div class="logo" style="width: 90px; height: 30px">
+        
+            <a href="https://github.com/InformationServiceSystems/tucana" rel="noopener noreferrer" target="_blank">
+                <img src="http://iss.uni-saarland.de/workspace/grayscale/img/logo_iss1.png" width="100%" height="100%">
+            </a>
+        
+    </div>
+    <div class="title">
+        <h1><a href="index.html" class="link">TUCANA Documentation</a></h1>
+        
+    </div>
+    <div class="search-container" id="search-container">
+        <input type="text" placeholder="Search">
+        <ul></ul>
+    </div>
+    
+    <div class="lnb-api hidden"><h3>Classes</h3><ul><li><a href="AwaitBroadcastResponse.html">AwaitBroadcastResponse</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="AwaitBroadcastResponse_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="AwaitBroadcastResponse.html#ressourceNotAvailable">ressourceNotAvailable</a></li><li><a href="AwaitBroadcastResponse.html#ressourceProtected">ressourceProtected</a></li><li><a href="AwaitBroadcastResponse.html#ressourceProvided">ressourceProvided</a></li><li><a href="AwaitBroadcastResponse.html#toString">toString</a></li></ul></div></li><li><a href="BaaSCommunicationHandler.html">BaaSCommunicationHandler</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="BaaSCommunicationHandler_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="BaaSCommunicationHandler.html#broadcastDBaaS">broadcastDBaaS</a></li><li><a href="BaaSCommunicationHandler.html#broadcastMBaaS">broadcastMBaaS</a></li><li><a href="BaaSCommunicationHandler.html#broadcastRessourceAccess">broadcastRessourceAccess</a></li><li><a href="BaaSCommunicationHandler.html#broadcastSBaaS">broadcastSBaaS</a></li><li><a href="BaaSCommunicationHandler.html#broadcastSSCBaaS">broadcastSSCBaaS</a></li></ul></div></li><li><a href="BroadcastConfiguration.html">BroadcastConfiguration</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="BroadcastConfiguration_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="BroadcastConfiguration.html#.fromJSON">fromJSON</a></li><li><a href="BroadcastConfiguration.html#getBroadcastCondition">getBroadcastCondition</a></li><li><a href="BroadcastConfiguration.html#getSource">getSource</a></li><li><a href="BroadcastConfiguration.html#getTargets">getTargets</a></li><li><a href="BroadcastConfiguration.html#getTrigger">getTrigger</a></li><li><a href="BroadcastConfiguration.html#getType">getType</a></li><li><a href="BroadcastConfiguration.html#toJSON">toJSON</a></li></ul></div></li><li><a href="BroadcastRequestReceived.html">BroadcastRequestReceived</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="BroadcastRequestReceived_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="BroadcastRequestReceived.html#broadcastRessourceAccess">broadcastRessourceAccess</a></li><li><a href="BroadcastRequestReceived.html#toString">toString</a></li></ul></div></li><li><a href="BrowserFingerprintIdentificationHandler.html">BrowserFingerprintIdentificationHandler</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="BrowserFingerprintIdentificationHandler_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="BrowserFingerprintIdentificationHandler.html#getContentOffering">getContentOffering</a></li><li><a href="BrowserFingerprintIdentificationHandler.html#getGeography">getGeography</a></li><li><a href="BrowserFingerprintIdentificationHandler.html#getKeywords">getKeywords</a></li><li><a href="BrowserFingerprintIdentificationHandler.html#getLocalID">getLocalID</a></li><li><a href="BrowserFingerprintIdentificationHandler.html#getModelOffering">getModelOffering</a></li><li><a href="BrowserFingerprintIdentificationHandler.html#getName">getName</a></li><li><a href="BrowserFingerprintIdentificationHandler.html#getProperties">getProperties</a></li><li><a href="BrowserFingerprintIdentificationHandler.html#getSoftwareOffering">getSoftwareOffering</a></li><li><a href="BrowserFingerprintIdentificationHandler.html#getType">getType</a></li></ul></div></li><li><a href="Cmin.html">Cmin</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Cmin_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="Cmin.html#broadcastDataCreateOperation">broadcastDataCreateOperation</a></li><li><a href="Cmin.html#broadcastDataDeleteOperation">broadcastDataDeleteOperation</a></li><li><a href="Cmin.html#broadcastDataReadOperation">broadcastDataReadOperation</a></li><li><a href="Cmin.html#broadcastDataUpdateOperation">broadcastDataUpdateOperation</a></li></ul></div></li><li><a href="CRUDOperation.html">CRUDOperation</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="CRUDOperation_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="CRUDOperation.html#.fromJSON">fromJSON</a></li><li><a href="CRUDOperation.html#getBroadcastConfiguration">getBroadcastConfiguration</a></li><li><a href="CRUDOperation.html#getBroadcastTargets">getBroadcastTargets</a></li><li><a href="CRUDOperation.html#getObject">getObject</a></li><li><a href="CRUDOperation.html#getObjectType">getObjectType</a></li><li><a href="CRUDOperation.html#getOperationType">getOperationType</a></li><li><a href="CRUDOperation.html#getQuery">getQuery</a></li><li><a href="CRUDOperation.html#setBroadcastConfiguration">setBroadcastConfiguration</a></li><li><a href="CRUDOperation.html#setObject">setObject</a></li><li><a href="CRUDOperation.html#setObjectType">setObjectType</a></li><li><a href="CRUDOperation.html#setOperationType">setOperationType</a></li><li><a href="CRUDOperation.html#setQuery">setQuery</a></li><li><a href="CRUDOperation.html#toJSON">toJSON</a></li></ul></div></li><li><a href="DataAccessController.html">DataAccessController</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="DataAccessController_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="DataAccessController.html#broadcastRessourceAccess">broadcastRessourceAccess</a></li><li><a href="DataAccessController.html#executeCRUDOperation">executeCRUDOperation</a></li><li><a href="DataAccessController.html#executeLocalCRUDOperation">executeLocalCRUDOperation</a></li><li><a href="DataAccessController.html#getDomainItemIds">getDomainItemIds</a></li><li><a href="DataAccessController.html#getFilteredPeerIds">getFilteredPeerIds</a></li><li><a href="DataAccessController.html#getLocalID">getLocalID</a></li><li><a href="DataAccessController.html#getModelItemIds">getModelItemIds</a></li><li><a href="DataAccessController.html#getProperties">getProperties</a></li><li><a href="DataAccessController.html#getSmartServiceConfigurationItemIds">getSmartServiceConfigurationItemIds</a></li><li><a href="DataAccessController.html#getSoftwareItemIds">getSoftwareItemIds</a></li><li><a href="DataAccessController.html#requestAccessPermission">requestAccessPermission</a></li></ul></div></li><li><a href="DataAccessService.html">DataAccessService</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="DataAccessService_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="DataAccessService.html#getDomainItemIds">getDomainItemIds</a></li><li><a href="DataAccessService.html#getFilteredPeerIds">getFilteredPeerIds</a></li><li><a href="DataAccessService.html#getLocalID">getLocalID</a></li><li><a href="DataAccessService.html#getModelItemIds">getModelItemIds</a></li><li><a href="DataAccessService.html#getProperties">getProperties</a></li><li><a href="DataAccessService.html#getSmartServiceConfigurationItemIds">getSmartServiceConfigurationItemIds</a></li><li><a href="DataAccessService.html#getSoftwareItemIds">getSoftwareItemIds</a></li></ul></div></li><li><a href="DatabaseHandler.html">DatabaseHandler</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="DatabaseHandler_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="DatabaseHandler.html#_createData">_createData</a></li><li><a href="DatabaseHandler.html#_createModel">_createModel</a></li><li><a href="DatabaseHandler.html#_createSmartServiceConfiguration">_createSmartServiceConfiguration</a></li><li><a href="DatabaseHandler.html#_createSoftwareComponent">_createSoftwareComponent</a></li><li><a href="DatabaseHandler.html#_deleteData">_deleteData</a></li><li><a href="DatabaseHandler.html#_deleteModel">_deleteModel</a></li><li><a href="DatabaseHandler.html#_deleteSmartServiceConfiguration">_deleteSmartServiceConfiguration</a></li><li><a href="DatabaseHandler.html#_deleteSoftwareComponent">_deleteSoftwareComponent</a></li><li><a href="DatabaseHandler.html#_readData">_readData</a></li><li><a href="DatabaseHandler.html#_readModel">_readModel</a></li><li><a href="DatabaseHandler.html#_readSmartServiceConfiguration">_readSmartServiceConfiguration</a></li><li><a href="DatabaseHandler.html#_readSoftwareComponent">_readSoftwareComponent</a></li><li><a href="DatabaseHandler.html#_updateData">_updateData</a></li><li><a href="DatabaseHandler.html#_updateModel">_updateModel</a></li><li><a href="DatabaseHandler.html#_updateSmartServiceConfiguration">_updateSmartServiceConfiguration</a></li><li><a href="DatabaseHandler.html#_updateSoftwareComponent">_updateSoftwareComponent</a></li><li><a href="DatabaseHandler.html#create">create</a></li><li><a href="DatabaseHandler.html#delete">delete</a></li><li><a href="DatabaseHandler.html#executeLocalCRUDOperation">executeLocalCRUDOperation</a></li><li><a href="DatabaseHandler.html#getDomainItemIDs">getDomainItemIDs</a></li><li><a href="DatabaseHandler.html#getModelItemIDs">getModelItemIDs</a></li><li><a href="DatabaseHandler.html#getSmartServiceConfigurationItemIDs">getSmartServiceConfigurationItemIDs</a></li><li><a href="DatabaseHandler.html#getSoftwareItemIDs">getSoftwareItemIDs</a></li><li><a href="DatabaseHandler.html#read">read</a></li><li><a href="DatabaseHandler.html#update">update</a></li></ul></div></li><li><a href="DatabaseQuery.html">DatabaseQuery</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="DatabaseQuery_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="DatabaseQuery.html#.fromJSON">fromJSON</a></li><li><a href="DatabaseQuery.html#getParams">getParams</a></li><li><a href="DatabaseQuery.html#getQueryType">getQueryType</a></li><li><a href="DatabaseQuery.html#getRessource">getRessource</a></li><li><a href="DatabaseQuery.html#toJSON">toJSON</a></li><li><a href="DatabaseQuery.html#toURI">toURI</a></li></ul></div></li><li><a href="DataRequestStateController.html">DataRequestStateController</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="DataRequestStateController_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="DataRequestStateController.html#broadcastOperationExecuted">broadcastOperationExecuted</a></li><li><a href="DataRequestStateController.html#broadcastRessourceAccess">broadcastRessourceAccess</a></li><li><a href="DataRequestStateController.html#cancelBroadcastOperation">cancelBroadcastOperation</a></li><li><a href="DataRequestStateController.html#executeLocalOperation">executeLocalOperation</a></li><li><a href="DataRequestStateController.html#getAwaitBroadcastResponse">getAwaitBroadcastResponse</a></li><li><a href="DataRequestStateController.html#getBroadcastRequestReceived">getBroadcastRequestReceived</a></li><li><a href="DataRequestStateController.html#getCurrentState">getCurrentState</a></li><li><a href="DataRequestStateController.html#getIdle">getIdle</a></li><li><a href="DataRequestStateController.html#getRequestReceived">getRequestReceived</a></li><li><a href="DataRequestStateController.html#getRessourceAccessNotAvailable">getRessourceAccessNotAvailable</a></li><li><a href="DataRequestStateController.html#getRessourceAccessProtected">getRessourceAccessProtected</a></li><li><a href="DataRequestStateController.html#getRessourceAccessProvided">getRessourceAccessProvided</a></li><li><a href="DataRequestStateController.html#requestBroadcastCRUDOperation">requestBroadcastCRUDOperation</a></li><li><a href="DataRequestStateController.html#requestCRUDOperation">requestCRUDOperation</a></li><li><a href="DataRequestStateController.html#requestRessourceAccess">requestRessourceAccess</a></li><li><a href="DataRequestStateController.html#ressourceNotAvailable">ressourceNotAvailable</a></li><li><a href="DataRequestStateController.html#ressourceProtected">ressourceProtected</a></li><li><a href="DataRequestStateController.html#ressourceProvided">ressourceProvided</a></li><li><a href="DataRequestStateController.html#setCurrentState">setCurrentState</a></li></ul></div></li><li><a href="DomainItem.html">DomainItem</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="DomainItem_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="DomainItem.html#.fromJSON">fromJSON</a></li><li><a href="DomainItem.html#getId">getId</a></li><li><a href="DomainItem.html#getObject">getObject</a></li><li><a href="DomainItem.html#setId">setId</a></li><li><a href="DomainItem.html#setObject">setObject</a></li><li><a href="DomainItem.html#toJSON">toJSON</a></li></ul></div></li><li><a href="ExecutionFailed.html">ExecutionFailed</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="ExecutionFailed_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="ExecutionFailed.html#cancel">cancel</a></li></ul></div></li><li><a href="ExecutionPossible.html">ExecutionPossible</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="ExecutionPossible_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="ExecutionPossible.html#bindMinions">bindMinions</a></li></ul></div></li><li><a href="ExecutionProtected.html">ExecutionProtected</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="ExecutionProtected_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="ExecutionProtected.html#cancel">cancel</a></li><li><a href="ExecutionProtected.html#removeProtection">removeProtection</a></li></ul></div></li><li><a href="FeatureRequest.html">FeatureRequest</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="FeatureRequest_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="FeatureRequest.html#.fromJSON">fromJSON</a></li><li><a href="FeatureRequest.html#getCRUDOperation">getCRUDOperation</a></li><li><a href="FeatureRequest.html#getId">getId</a></li><li><a href="FeatureRequest.html#getTrigger">getTrigger</a></li><li><a href="FeatureRequest.html#getType">getType</a></li><li><a href="FeatureRequest.html#toJSON">toJSON</a></li></ul></div></li><li><a href="FeatureResponse.html">FeatureResponse</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="FeatureResponse_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="FeatureResponse.html#.fromJSON">fromJSON</a></li><li><a href="FeatureResponse.html#getRequest">getRequest</a></li><li><a href="FeatureResponse.html#getResult">getResult</a></li><li><a href="FeatureResponse.html#toJSON">toJSON</a></li></ul></div></li><li><a href="Idle.html">Idle</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Idle_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="Idle.html#getSmartServiceConfigurationItemIds">getSmartServiceConfigurationItemIds</a></li><li><a href="Idle.html#loadSmartServiceConfiguration">loadSmartServiceConfiguration</a></li><li><a href="Idle.html#requestCRUDOperation">requestCRUDOperation</a></li><li><a href="Idle.html#toString">toString</a></li></ul></div></li><li><a href="LocalDSOMinion.html">LocalDSOMinion</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="LocalDSOMinion_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="LocalDSOMinion.html#deleteData">deleteData</a></li><li><a href="LocalDSOMinion.html#readData">readData</a></li><li><a href="LocalDSOMinion.html#saveData">saveData</a></li><li><a href="LocalDSOMinion.html#updateData">updateData</a></li></ul></div></li><li><a href="Minion.html">Minion</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Minion_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="Minion.html#.interpretMinionCode">interpretMinionCode</a></li><li><a href="Minion.html#.loadMinion">loadMinion</a></li><li><a href="Minion.html#activate">activate</a></li><li><a href="Minion.html#getCode">getCode</a></li><li><a href="Minion.html#getConstructor">getConstructor</a></li><li><a href="Minion.html#getId">getId</a></li><li><a href="Minion.html#getInstanceId">getInstanceId</a></li><li><a href="Minion.html#getName">getName</a></li><li><a href="Minion.html#getRunning">getRunning</a></li><li><a href="Minion.html#initialize">initialize</a></li><li><a href="Minion.html#notify">notify</a></li><li><a href="Minion.html#saveMinionLocally">saveMinionLocally</a></li><li><a href="Minion.html#setId">setId</a></li><li><a href="Minion.html#setInstanceId">setInstanceId</a></li><li><a href="Minion.html#setRunning">setRunning</a></li><li><a href="Minion.html#terminate">terminate</a></li></ul></div></li><li><a href="MinionCommunicationMap.html">MinionCommunicationMap</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="MinionCommunicationMap_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="MinionCommunicationMap.html#addMinion">addMinion</a></li><li><a href="MinionCommunicationMap.html#addTransition">addTransition</a></li><li><a href="MinionCommunicationMap.html#getColumnRows">getColumnRows</a></li><li><a href="MinionCommunicationMap.html#getMap">getMap</a></li><li><a href="MinionCommunicationMap.html#getSourceMinionIDs">getSourceMinionIDs</a></li><li><a href="MinionCommunicationMap.html#getTargetMinionIDs">getTargetMinionIDs</a></li><li><a href="MinionCommunicationMap.html#removeTransition">removeTransition</a></li></ul></div></li><li><a href="MinionController.html">MinionController</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="MinionController_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="MinionController.html#activate">activate</a></li><li><a href="MinionController.html#bind">bind</a></li><li><a href="MinionController.html#clearRuntimeEnvironment">clearRuntimeEnvironment</a></li><li><a href="MinionController.html#getMinionClass">getMinionClass</a></li><li><a href="MinionController.html#getMinionClasses">getMinionClasses</a></li><li><a href="MinionController.html#notify">notify</a></li><li><a href="MinionController.html#register">register</a></li><li><a href="MinionController.html#terminate">terminate</a></li></ul></div></li><li><a href="MinionMatchingChecked.html">MinionMatchingChecked</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="MinionMatchingChecked_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="MinionMatchingChecked.html#allMinionsAvailable">allMinionsAvailable</a></li><li><a href="MinionMatchingChecked.html#someMinionNotAvailable">someMinionNotAvailable</a></li><li><a href="MinionMatchingChecked.html#someMinionProtected">someMinionProtected</a></li></ul></div></li><li><a href="MinionsBound.html">MinionsBound</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="MinionsBound_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="MinionsBound.html#runSmartService">runSmartService</a></li></ul></div></li><li><a href="MinionSpecification.html">MinionSpecification</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="MinionSpecification_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="MinionSpecification.html#.fromJSON">fromJSON</a></li><li><a href="MinionSpecification.html#getDescription">getDescription</a></li><li><a href="MinionSpecification.html#getInstanceId">getInstanceId</a></li><li><a href="MinionSpecification.html#getName">getName</a></li><li><a href="MinionSpecification.html#getSoftwareItemId">getSoftwareItemId</a></li><li><a href="MinionSpecification.html#getTargetMinionIds">getTargetMinionIds</a></li><li><a href="MinionSpecification.html#getType">getType</a></li><li><a href="MinionSpecification.html#setInstanceId">setInstanceId</a></li><li><a href="MinionSpecification.html#toJSON">toJSON</a></li></ul></div></li><li><a href="MinionState.html">MinionState</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="MinionState_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="MinionState.html#allMinionsAvailable">allMinionsAvailable</a></li><li><a href="MinionState.html#bindMinions">bindMinions</a></li><li><a href="MinionState.html#cancel">cancel</a></li><li><a href="MinionState.html#checkMinionMatching">checkMinionMatching</a></li><li><a href="MinionState.html#deliverSmartServiceConfigurationItemIds">deliverSmartServiceConfigurationItemIds</a></li><li><a href="MinionState.html#getSmartServiceConfigurationItemIds">getSmartServiceConfigurationItemIds</a></li><li><a href="MinionState.html#loadSmartServiceConfiguration">loadSmartServiceConfiguration</a></li><li><a href="MinionState.html#removeProtection">removeProtection</a></li><li><a href="MinionState.html#runSmartService">runSmartService</a></li><li><a href="MinionState.html#someMinionNotAvailable">someMinionNotAvailable</a></li><li><a href="MinionState.html#someMinionProtected">someMinionProtected</a></li><li><a href="MinionState.html#terminateSmartService">terminateSmartService</a></li></ul></div></li><li><a href="MinionStateController.html">MinionStateController</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="MinionStateController_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="MinionStateController.html#allMinionsAvailable">allMinionsAvailable</a></li><li><a href="MinionStateController.html#bindMinions">bindMinions</a></li><li><a href="MinionStateController.html#cancel">cancel</a></li><li><a href="MinionStateController.html#checkMinionMatching">checkMinionMatching</a></li><li><a href="MinionStateController.html#deliverSmartServiceConfigurationItemIds">deliverSmartServiceConfigurationItemIds</a></li><li><a href="MinionStateController.html#getCurrentState">getCurrentState</a></li><li><a href="MinionStateController.html#getExecutionFailed">getExecutionFailed</a></li><li><a href="MinionStateController.html#getExecutionPossible">getExecutionPossible</a></li><li><a href="MinionStateController.html#getExecutionProtected">getExecutionProtected</a></li><li><a href="MinionStateController.html#getIdle">getIdle</a></li><li><a href="MinionStateController.html#getMinionMatchingChecked">getMinionMatchingChecked</a></li><li><a href="MinionStateController.html#getMinionsBound">getMinionsBound</a></li><li><a href="MinionStateController.html#getSmartServiceConfigurationItemIds">getSmartServiceConfigurationItemIds</a></li><li><a href="MinionStateController.html#getSmartServiceConfigurationLoaded">getSmartServiceConfigurationLoaded</a></li><li><a href="MinionStateController.html#getSmartServiceConfigurationsFound">getSmartServiceConfigurationsFound</a></li><li><a href="MinionStateController.html#getSmartServiceRunning">getSmartServiceRunning</a></li><li><a href="MinionStateController.html#loadSmartServiceConfiguration">loadSmartServiceConfiguration</a></li><li><a href="MinionStateController.html#removeProtection">removeProtection</a></li><li><a href="MinionStateController.html#runSmartService">runSmartService</a></li><li><a href="MinionStateController.html#setCurrentState">setCurrentState</a></li><li><a href="MinionStateController.html#someMinionNotAvailable">someMinionNotAvailable</a></li><li><a href="MinionStateController.html#someMinionProtected">someMinionProtected</a></li><li><a href="MinionStateController.html#terminateSmartService">terminateSmartService</a></li></ul></div></li><li><a href="ModelItem.html">ModelItem</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="ModelItem_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="ModelItem.html#.fromJSON">fromJSON</a></li><li><a href="ModelItem.html#getId">getId</a></li><li><a href="ModelItem.html#getModel">getModel</a></li><li><a href="ModelItem.html#setId">setId</a></li><li><a href="ModelItem.html#setModel">setModel</a></li><li><a href="ModelItem.html#toJSON">toJSON</a></li></ul></div></li><li><a href="Pmin.html">Pmin</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Pmin_sub"></div></li><li><a href="RequestReceived.html">RequestReceived</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="RequestReceived_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="RequestReceived.html#executeLocalOperation">executeLocalOperation</a></li><li><a href="RequestReceived.html#requestBroadcastCRUDOperation">requestBroadcastCRUDOperation</a></li><li><a href="RequestReceived.html#toString">toString</a></li></ul></div></li><li><a href="RessourceAccessNotAvailable.html">RessourceAccessNotAvailable</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="RessourceAccessNotAvailable_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="RessourceAccessNotAvailable.html#cancelBroadcastOperation">cancelBroadcastOperation</a></li><li><a href="RessourceAccessNotAvailable.html#toString">toString</a></li></ul></div></li><li><a href="RessourceAccessProtected.html">RessourceAccessProtected</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="RessourceAccessProtected_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="RessourceAccessProtected.html#cancelBroadcastOperation">cancelBroadcastOperation</a></li><li><a href="RessourceAccessProtected.html#requestRessourceAccess">requestRessourceAccess</a></li></ul></div></li><li><a href="RessourceAccessProvided.html">RessourceAccessProvided</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="RessourceAccessProvided_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="RessourceAccessProvided.html#broadcastOperationExecuted">broadcastOperationExecuted</a></li><li><a href="RessourceAccessProvided.html#toString">toString</a></li></ul></div></li><li><a href="SmartServiceConfigurationItem.html">SmartServiceConfigurationItem</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="SmartServiceConfigurationItem_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="SmartServiceConfigurationItem.html#.fromJSON">fromJSON</a></li><li><a href="SmartServiceConfigurationItem.html#getConfiguration">getConfiguration</a></li><li><a href="SmartServiceConfigurationItem.html#getContext">getContext</a></li><li><a href="SmartServiceConfigurationItem.html#getDescriptionText">getDescriptionText</a></li><li><a href="SmartServiceConfigurationItem.html#getDescriptionTitle">getDescriptionTitle</a></li><li><a href="SmartServiceConfigurationItem.html#getId">getId</a></li><li><a href="SmartServiceConfigurationItem.html#getName">getName</a></li><li><a href="SmartServiceConfigurationItem.html#getVersion">getVersion</a></li><li><a href="SmartServiceConfigurationItem.html#toJSON">toJSON</a></li></ul></div></li><li><a href="SmartServiceConfigurationLoaded.html">SmartServiceConfigurationLoaded</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="SmartServiceConfigurationLoaded_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="SmartServiceConfigurationLoaded.html#checkMinionMatching">checkMinionMatching</a></li></ul></div></li><li><a href="SmartServiceConfigurationsFound.html">SmartServiceConfigurationsFound</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="SmartServiceConfigurationsFound_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="SmartServiceConfigurationsFound.html#deliverSmartServiceConfigurationItemIds">deliverSmartServiceConfigurationItemIds</a></li></ul></div></li><li><a href="SmartServiceController.html">SmartServiceController</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="SmartServiceController_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="SmartServiceController.html#activateLoadedService">activateLoadedService</a></li><li><a href="SmartServiceController.html#bindMinions">bindMinions</a></li><li><a href="SmartServiceController.html#getDataAccessService">getDataAccessService</a></li><li><a href="SmartServiceController.html#getMinionController">getMinionController</a></li><li><a href="SmartServiceController.html#getSmartServiceConfigurationItemIds">getSmartServiceConfigurationItemIds</a></li><li><a href="SmartServiceController.html#loadSmartServiceConfiguration">loadSmartServiceConfiguration</a></li><li><a href="SmartServiceController.html#match">match</a></li><li><a href="SmartServiceController.html#notifyMinions">notifyMinions</a></li><li><a href="SmartServiceController.html#removeProtections">removeProtections</a></li><li><a href="SmartServiceController.html#terminateRunningService">terminateRunningService</a></li></ul></div></li><li><a href="SmartServiceRunning.html">SmartServiceRunning</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="SmartServiceRunning_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="SmartServiceRunning.html#terminateSmartService">terminateSmartService</a></li></ul></div></li><li><a href="SoftwareItem.html">SoftwareItem</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="SoftwareItem_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="SoftwareItem.html#.fromJSON">fromJSON</a></li><li><a href="SoftwareItem.html#getClass">getClass</a></li><li><a href="SoftwareItem.html#getCode">getCode</a></li><li><a href="SoftwareItem.html#getId">getId</a></li><li><a href="SoftwareItem.html#setCode">setCode</a></li><li><a href="SoftwareItem.html#setId">setId</a></li><li><a href="SoftwareItem.html#toJSON">toJSON</a></li></ul></div></li><li><a href="TENVIdentificationHandler.html">TENVIdentificationHandler</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="TENVIdentificationHandler_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="TENVIdentificationHandler.html#getContentOffering">getContentOffering</a></li><li><a href="TENVIdentificationHandler.html#getGeography">getGeography</a></li><li><a href="TENVIdentificationHandler.html#getKeywords">getKeywords</a></li><li><a href="TENVIdentificationHandler.html#getLocalID">getLocalID</a></li><li><a href="TENVIdentificationHandler.html#getModelOffering">getModelOffering</a></li><li><a href="TENVIdentificationHandler.html#getName">getName</a></li><li><a href="TENVIdentificationHandler.html#getProperties">getProperties</a></li><li><a href="TENVIdentificationHandler.html#getSoftwareOffering">getSoftwareOffering</a></li><li><a href="TENVIdentificationHandler.html#getType">getType</a></li></ul></div></li><li><a href="Tmin.html">Tmin</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Tmin_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="Tmin.html#createModel">createModel</a></li><li><a href="Tmin.html#deleteModel">deleteModel</a></li><li><a href="Tmin.html#predictModel">predictModel</a></li><li><a href="Tmin.html#readModel">readModel</a></li><li><a href="Tmin.html#updateModel">updateModel</a></li></ul></div></li><li><a href="Trigger.html">Trigger</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Trigger_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="Trigger.html#.fromJSON">fromJSON</a></li><li><a href="Trigger.html#getMinionSpecs">getMinionSpecs</a></li><li><a href="Trigger.html#getTriggerMethod">getTriggerMethod</a></li><li><a href="Trigger.html#toJSON">toJSON</a></li></ul></div></li><li><a href="TucanaCoreService.html">TucanaCoreService</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="TucanaCoreService_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="TucanaCoreService.html#notifyMinions">notifyMinions</a></li><li><a href="TucanaCoreService.html#requestCRUDOperation">requestCRUDOperation</a></li><li><a href="TucanaCoreService.html#startService">startService</a></li></ul></div></li><li><a href="UPeerCommunicationHandler.html">UPeerCommunicationHandler</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="UPeerCommunicationHandler_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="UPeerCommunicationHandler.html#_executeBroadcastCRUDOperation">_executeBroadcastCRUDOperation</a></li><li><a href="UPeerCommunicationHandler.html#answer">answer</a></li><li><a href="UPeerCommunicationHandler.html#broadcastRessourceAccess">broadcastRessourceAccess</a></li><li><a href="UPeerCommunicationHandler.html#connectToCore">connectToCore</a></li><li><a href="UPeerCommunicationHandler.html#getFilteredPeerIds">getFilteredPeerIds</a></li><li><a href="UPeerCommunicationHandler.html#handleCRUDOperation">handleCRUDOperation</a></li><li><a href="UPeerCommunicationHandler.html#handleRequest">handleRequest</a></li><li><a href="UPeerCommunicationHandler.html#handleResponse">handleResponse</a></li><li><a href="UPeerCommunicationHandler.html#handleTrigger">handleTrigger</a></li><li><a href="UPeerCommunicationHandler.html#init">init</a></li><li><a href="UPeerCommunicationHandler.html#requestAccessPermission">requestAccessPermission</a></li><li><a href="UPeerCommunicationHandler.html#setupEventListener">setupEventListener</a></li><li><a href="UPeerCommunicationHandler.html#transfer">transfer</a></li></ul></div></li><li><a href="VisualizationCmin.html">VisualizationCmin</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="VisualizationCmin_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="VisualizationCmin.html#clearUserInterface">clearUserInterface</a></li></ul></div></li></ul></div><div class="lnb-api hidden"><h3>Global</h3><ul><li><a href="global.html#BROADCAST_CONDITION">BROADCAST_CONDITION</a></li><li><a href="global.html#BROADCAST_TYPE">BROADCAST_TYPE</a></li><li><a href="global.html#CRUD_OPERATION_TYPE">CRUD_OPERATION_TYPE</a></li><li><a href="global.html#MINION_TYPE">MINION_TYPE</a></li><li><a href="global.html#OBJECT_TYPE">OBJECT_TYPE</a></li><li><a href="global.html#QUERY_TYPE">QUERY_TYPE</a></li><li><a href="global.html#REQUEST_TYPE">REQUEST_TYPE</a></li><li><a href="global.html#RESPONSE_STATUS">RESPONSE_STATUS</a></li></ul></div>
+</nav>
+<div id="resizer"></div>
+
+<div class="main" id="main">
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const model = require('../model');
+const tf= require('@tensorflow/tfjs');
+
+/**
+ * Interface of classes that represent a Minion.
+ * @interface
+ */
+class Minion {
+    /**
+     * Interface for an executable software component called minion.
+     * @param {DataAccessService} dataAccessService: Interface for data access.
+     * @param {MinionController} minionController: The minion controller to interact with.
+     * @param {String} id: The id of the minion.
+     * @param {Array&lt;Object>} dependencies: List of required libraries of the minion with their URI and name within the object.
+     */
+    constructor(dataAccessService, minionController, id, uiAdapter = null, dependencies) {
+        if (new.target === Minion) {
+            throw new Error('Abstract Class cannot be instantiated.');
+        }
+        this.instId = null;
+        this.run = false;
+        this.uiAdapt = uiAdapter;
+
+        Object.defineProperty(this, 'dataAccessService', {
+            get: function () {
+                return dataAccessService;
+            }
+        });
+        Object.defineProperty(this, 'dependencies', {
+            get: function () {
+                return dependencies;
+            }
+        });
+
+        Object.defineProperty(this, 'minionController', {
+            get: function () {
+                return minionController;
+            }
+        });
+
+        Object.defineProperty(this, 'running', {
+            get: function () {
+                return this.run;
+            },
+            set : function (v) {
+                this.run = v;
+            }
+        });
+
+        Object.defineProperty(this, 'id', {
+            get: function () {
+                return id;
+            }
+        });
+
+        Object.defineProperty(this, 'instanceId', {
+            get: function () {
+                return this.instId;
+            },
+
+            set(v) {
+                this.instId = v;
+            }
+        });
+
+        Object.defineProperty(this, 'uiAdapter', {
+            get : function () {
+                return this.uiAdapt;
+            },
+
+            set : function(v) {
+                this.uiAdapt = v;
+            }
+        });
+    }
+
+    /**
+     * Initializes the minion first while loading the required dependencies.
+     * @return {Promise&lt;void>}
+     */
+    async initialize() {
+        await this._loadJSDependencies();
+    }
+
+
+    /**
+     * Avticates a minion by loading the required dependencies and starting the minion runtime (e.g. measurement, dedicated threads etc.)
+     * @return {Promise&lt;void>}
+     */
+    async activate() {
+        await this.initialize();
+        this.running = true;
+        throw new Error('You have to implement the method activate!');
+    }
+
+    /**
+     * Terminates a running minion by clearing the runtime environment.
+     */
+    terminate() {
+        this.running = false;
+        throw new Error('You have to implement the method terminate!');
+    }
+
+    /**
+     * Saves a minion in the local storage of the TUCANA environment.
+     * @return {Promise&lt;Object>} The status of the operation.
+     */
+    async saveMinionLocally() {
+        let operationType = model.CRUD_OPERATION_TYPE.CREATE;
+        const code = this.getCode();
+        const id = this.getId();
+        const swComponent = new model.SoftwareItem(id, code);
+        const crudOperation = new model.CRUDOperation(operationType, model.OBJECT_TYPE.SOFTWARE, swComponent, null, null);
+        return await this.dataAccessService.requestCRUDOperation(crudOperation);
+    }
+
+    /**
+     * Loads a minion specified by its ID from the database.
+     * @param {DataAccessService} dataAccessService: The DataAccessService.
+     * @param {String} softwareItemId: The ID of the minion to load.
+     * @return {Promise&lt;Object>} The request result with the software item.
+     */
+    static async loadMinion(dataAccessService, softwareItemId) {
+        const query = new model.DatabaseQuery(model.QUERY_TYPE.STATIC, softwareItemId, []);
+        const operation = new model.CRUDOperation(model.CRUD_OPERATION_TYPE.READ, model.OBJECT_TYPE.SOFTWARE, null, query, null);
+        return await dataAccessService.requestCRUDOperation(operation);
+    }
+
+
+    /**
+     * Interprets the code of the software item.
+     * @param {SoftwareItem} softwareItem: The software item.
+     * @return {Class} The interpreted minion.
+     */
+    static interpretMinionCode(softwareItem) {
+        return softwareItem.getClass();
+    }
+
+
+    /**
+     * Notifies a minion whenever there is new data provided as input.
+     * @param {*} newData: Data generated by the previous minion.
+     */
+    notify(newData) {
+        throw new Error('You have to implement the method notify!');
+    }
+
+
+    /**
+     * Returns the running status of the minion.
+     * @return {boolean} Running or not.
+     */
+    getRunning() {
+        return this.running;
+    }
+
+    /**
+     * Sets the running status of a minion.
+     * @param {boolean} running: The new running status.
+     */
+    setRunning(running) {
+        this.running = running;
+    }
+
+    /**
+     * Returns the constructor of the minion.
+     * @return {Class} The constructor.
+     */
+    getConstructor() {
+        return this.constructor;
+    }
+
+    /**
+     * Loads the dependecies i.e. libraries necessary for the minion execution.
+     * @return {Promise&lt;void>}
+     * @private
+     */
+    async _loadJSDependencies() {
+        if (this.dependencies instanceof Array &amp;&amp; this.dependencies.length > 0) {
+            const fetchPromises = [];
+            for (let dependency of this.dependencies) {
+                try {
+                    fetchPromises.push(self.fetch(dependency.uri, {
+                        method: 'GET',
+                        headers: {'Accept': 'application/javascript'},
+                        mode: 'cors',
+                        cache: 'default'
+                    })
+                        .then(function (res) {
+                            return res.text()
+                                .then(function (script) {
+                                    if (script.toLowerCase() !== 'not found') {
+                                        eval(script);
+                                        console.log('Loaded: ' + dependency.name);
+                                    }
+                                });
+                        }));
+                } catch (e) {
+                    return new Error('Not possible to load: ' + dependency.uri);
+                }
+            }
+            return Promise.all(fetchPromises);
+        } else {
+            return Promise.resolve();
+        }
+    }
+
+    /**
+     * Returns the code i.e. the class of the minion as a string.
+     * @return {String} The class string.
+     */
+    getCode() {
+        return this.constructor.toString();
+    }
+
+    /**
+     * Returns the name of the particular minion i.e. the name of the class.
+     * @return {String} The minion name.
+     */
+    getName() {
+        return this.constructor.name;
+    }
+
+    /**
+     * Returns the unique ID of the particular minion
+     * @return {String} The minion ID.
+     */
+    getId() {
+        return this.id;
+    }
+
+    /**
+     * Returns the unique ID of a running instance of a minion.
+     * @return {String} The Instance ID.
+     */
+    getInstanceId() {
+        return this.instanceId;
+    }
+
+    /**
+     * Sets the ID of the minion.
+     * @param {String} newID: The new ID
+     */
+    setId(newID) {
+        this.id = newID;
+    }
+
+    /**
+     * Sets the instance ID of the running minion.
+     * @param {String} newInstanceID: The new instance ID.
+     */
+    setInstanceId(newInstanceID) {
+        this.instanceId = newInstanceID;
+    }
+
+}
+
+/**
+ * Interface of a minion performing local data storage operations.
+ * @interface
+ */
+class LocalDSOMinion extends Minion {
+
+    /**
+     * Abstract class for all minion types performing local data storage operations i.e. local CRUD Operations.
+     * @param {DataAccessService} dataAccessService: The data access service object.
+     * @param {MinionController} minionController: The minion controller.
+     * @param {String} id: The id of the minion.
+     * @param {Array&lt;Object>} dependencies: The dependant libraries of this minion.
+     */
+    constructor(dataAccessService, minionController, id, uiAdapter=null, dependencies) {
+        super(dataAccessService, minionController, id, uiAdapter, dependencies);
+        if (new.target === LocalDSOMinion) {
+            throw new Error('Abstract Class cannot be instantiated.');
+        }
+    }
+
+    /**
+     * Performs a CREATE storage operation for newly produced data
+     * @param {String} id: The id of the new object.
+     * @param {Object} dataObject: The data object to be created.
+     * @return {Promise&lt;Object>} The result of the storage request.
+     */
+    async saveData(id, dataObject) {
+        const domainItem = new model.DomainItem(id, dataObject);
+        const crudOperation = new model.CRUDOperation(model.CRUD_OPERATION_TYPE.CREATE, model.OBJECT_TYPE.DATA, domainItem, null, null);
+        return await this.dataAccessService.requestCRUDOperation(crudOperation);
+    }
+
+    /**
+     * Performs a READ storage operation on the local database.
+     * @param {String} id: The identifier of the object to be read.
+     * @return {Promise&lt;Object>} The result of the operation.
+     */
+    async readData(id) {
+        const databaseQuery = new model.DatabaseQuery(model.QUERY_TYPE.STATIC, id, []);
+        const crudOperation = new model.CRUDOperation(model.CRUD_OPERATION_TYPE.READ, model.OBJECT_TYPE.DATA, null, databaseQuery, null);
+        return await this.dataAccessService.requestCRUDOperation(crudOperation);
+    }
+
+    /**
+     * Performs an UPDATE storage operation for produced data output.
+     * @param {String} id: The identifier of the initial object.
+     * @param {Object} dataObject: The updated version of the data object.
+     * @return {Promise&lt;Object>} The result of the executed operation.
+     */
+    async updateData(id, dataObject) {
+        const databaseQuery = new model.DatabaseQuery(model.QUERY_TYPE.STATIC, id, []);
+        const domainItem = new model.DomainItem(id, dataObject);
+        const crudOperation = new model.CRUDOperation(model.CRUD_OPERATION_TYPE.UPDATE, model.OBJECT_TYPE.DATA, domainItem, databaseQuery, null);
+        return await this.dataAccessService.requestCRUDOperation(crudOperation);
+    }
+
+    /**
+     * Performs an DELETE storage operation.
+     * @param {String} id: The identifier of the object to be deleted.
+     * @return {Promise&lt;Object>} The result of the executed operation.
+     */
+    async deleteData(id) {
+        const databaseQuery = new model.DatabaseQuery(model.QUERY_TYPE.STATIC, id, []);
+        const crudOperation = new model.CRUDOperation(model.CRUD_OPERATION_TYPE.DELETE, model.OBJECT_TYPE.DATA, null, databaseQuery, null);
+        return await this.dataAccessService.requestCRUDOperation(crudOperation);
+    }
+}
+
+
+/**
+ * Interface of a Communicator Minion.
+ * @interface
+ */
+class Cmin extends Minion {
+
+    /**
+     * Class for Communicator Minions with no data storage operations.
+     * @param {DataAccessService} dataAccessService: The data access service object.
+     * @param {MinionController} minionController: The minion controller.
+     * @param {String} id: The id of the minion.
+     * @param {Array&lt;Object>} dependencies: The dependant libraries of this minion.
+     */
+    constructor(dataAccessService, minionController, id, uiAdapter=null, dependencies) {
+        super(dataAccessService, minionController, id, uiAdapter, dependencies);
+        if (new.target === Cmin) {
+            throw new Error('Abstract Class cannot be instantiated.');
+        }
+    }
+
+    /**
+     * Broadcasts a CREATE operation.
+     * @param {String} id: The identifier of the data object.
+     * @param {Object} dataObject: The data object to be broadcasted.
+     * @param {BroadcastConfiguration} broadcastConfiguration: The configuration of the broadcasting channels.
+     * @return {Promise&lt;Object>} The result of the operation.
+     */
+    async broadcastDataCreateOperation(id, dataObject, broadcastConfiguration) {
+        const domainItem = new model.DomainItem(id, dataObject);
+        const crudOperation = new model.CRUDOperation(model.CRUD_OPERATION_TYPE.CREATE, model.OBJECT_TYPE.DATA, domainItem, null, broadcastConfiguration);
+        return await this.dataAccessService.requestCRUDOperation(crudOperation);
+    }
+
+    NewbroadcastDataCreateOperation(id, dataObject, broadcastConfiguration) {
+        const domainItem = new model.DomainItem(id, dataObject);
+        const crudOperation = new model.CRUDOperation(model.CRUD_OPERATION_TYPE.CREATE, model.OBJECT_TYPE.DATA, domainItem, null, broadcastConfiguration);
+        this.dataAccessService.NewrequestCRUDOperation(crudOperation);
+    }
+    /**
+     * Broadcasts a READ operation.
+     * @param {String} id: The identifier of the data object.
+     * @param {BroadcastConfiguration} broadcastConfiguration: The configuration of the broadcasting channels.
+     * @return {Promise&lt;Object>} The result of the operation.
+     */
+    async broadcastDataReadOperation(id, broadcastConfiguration) {
+        const databaseQuery = new model.DatabaseQuery(model.QUERY_TYPE.STATIC, id, []);
+        const crudOperation = new model.CRUDOperation(model.CRUD_OPERATION_TYPE.READ, model.OBJECT_TYPE.DATA, null, databaseQuery, broadcastConfiguration);
+        return await this.dataAccessService.requestCRUDOperation(crudOperation);
+    }
+
+    /**
+     * Broadcasts an UPDATE operation.
+     * @param {String} id: The identifier of the data object.
+     * @param {Object} dataObject: The new data object to be broadcasted.
+     * @param {BroadcastConfiguration} broadcastConfiguration: The configuration of the broadcasting channels.
+     * @return {Promise&lt;Object>} The result of the operation.
+     */
+    async broadcastDataUpdateOperation(id, dataObject, broadcastConfiguration) {
+        const domainItem = new model.DomainItem(id, dataObject);
+        const databaseQuery = new model.DatabaseQuery(model.QUERY_TYPE.STATIC, id, []);
+        const crudOperation = new model.CRUDOperation(model.CRUD_OPERATION_TYPE.UPDATE, model.OBJECT_TYPE.DATA, domainItem, databaseQuery, broadcastConfiguration);
+        return await this.dataAccessService.requestCRUDOperation(crudOperation);
+    }
+
+    /**
+     * Broadcasts a DELETE operation.
+     * @param {String} id: The identifier of the data object.
+     * @param {BroadcastConfiguration} broadcastConfiguration: The configuration of the broadcasting channels.
+     * @return {Promise&lt;Object>} The result of the operation.
+     */
+    async broadcastDataDeleteOperation(id, broadcastConfiguration) {
+        const databaseQuery = new model.DatabaseQuery(model.QUERY_TYPE.STATIC, id, []);
+        const crudOperation = new model.CRUDOperation(model.CRUD_OPERATION_TYPE.DELETE, model.OBJECT_TYPE.DATA, null, databaseQuery, broadcastConfiguration);
+        return await this.dataAccessService.requestCRUDOperation(crudOperation);
+    }
+}
+
+/**
+ * Interface of a special class of Cmin with additional visualization purposes.
+ * @interface
+ */
+class VisualizationCmin extends Cmin {
+    /**
+     * Contructor of the Visualization Cmin.
+     * @param {DataAccessService} dataAccessService: The data access service object.
+     * @param {MinionController} minionController: The minion controller.
+     * @param {String} id: The id of the minion.
+     * @param {*} uiAdapter
+     * @param {Array&lt;Object>} dependencies: The dependant libraries of this minion.
+     */
+    constructor(dataAccessService, minionController, id, uiAdapter, dependencies) {
+        super(dataAccessService, minionController, id, uiAdapter, dependencies);
+        if (new.target === VisualizationCmin) {
+            throw new Error('Abstract Class cannot be instantiated.');
+        }
+    }
+
+    /**
+     * Clears the user interface.
+     */
+    clearUserInterface() {
+        throw new Error('You have to implement the method clearUserInterface!');
+    }
+}
+
+/**
+ * Interface of a Thinker Minion containing local EdgeAI.
+ * @interface
+ */
+class Tmin extends LocalDSOMinion {
+
+    /**
+     * Class for Thinker Minions supporting data storage operations.
+     * @param {DataAccessService} dataAccessService: The data access service object.
+     * @param {MinionController} minionController: The minion controller.
+     * @param {String} id: The id of the minion.
+     * @param {Array&lt;Object>} dependencies: The dependant libraries of this minion.
+     */
+    constructor(dataAccessService, minionController, id, uiAdapter=null, dependencies) {
+        super(dataAccessService, minionController, id, uiAdapter, dependencies);
+        if (new.target === Tmin) {
+            throw new Error('Abstract Class cannot be instantiated.');
+        }
+        this.tmpModel = null;
+        Object.defineProperty(this, 'model', {
+            get: function () {
+                return this.tmpModel;
+            },
+            set : function (v) {
+                this.tmpModel = v;
+            }
+        });
+    }
+
+    
+    /**
+     * Saves a model in the Indexed DB
+     * @param {String} id: The identifier of the model object (For ex: gist url of the model)
+     * @param {Tensor} model: The pre-trained edgeAi model.
+     * @return {Promise&lt;Object>} The result of the operation.
+    */
+    async createModel(id, model){
+        return await model.save('indexeddb://'+id);
+    } 
+
+
+    /**
+     * Reads a model in the Indexed DB
+     * @param {String} id: The identifier of the model object (For ex: gist url of the model)
+     * @return {Promise&lt;Object>} The result of the operation. (i.e. Model)
+     */
+    async readModel(id) {
+        var result;
+        try {
+       //checking model in indexDB
+            result=  await tf.loadLayersModel('indexeddb://'+id);
+            }catch(e1){
+            //if not present, getting from gist
+                try{
+                    result= await tf.loadLayersModel(id);
+                    await this.createModel(id, result);
+                    } catch(e){   
+                        console.warn(e);
+                        return null;
+                    }
+            }
+   result.summary();
+   return result;
+   }
+    
+ /**
+     * Updates a model with exisitng id in the Indexed DB
+     * @param {String} id: The identifier of the model object (For ex: gist url of the model)
+     * @param {Tensor} model: The modified edgeAi model.
+     * @return {Promise&lt;Object>} The result of the operation.
+*/    
+
+async updateModel(id, edgeAIModel) {
+    try{
+         const result= await edgeAIModel.save('indexedDB://'+id);
+         return result;
+       }catch(e){
+           return e;
+       }
+}
+    
+ /**
+     * Deletes a model with exisitng id in the Indexed DB
+     * @param {String} id: The identifier of the model object (For ex: gist url of the model)
+     * @return {Promise&lt;Object>} The result of the operation.
+ */
+
+async deleteModel(id){
+    try{
+        return await tf.io.removeModel('indexeddb://'+id);
+    }
+    catch(e){
+            throw ('Model not found on gist');
+    }    
+}
+
+ /**
+     * predicts the test data using pre-trained model
+     * Alternative: prediction can be done in the application speicifc Tmin
+     * @param {String} testdata: Data to be tested (i.e. Received from Pmin) 
+     * @return {Array} The result of the operation. (i.e. Predicitons in thr form of array)
+ */
+
+predictModel(testdata)
+{
+    const tensortestdata= tf.tensor3d(testdata);
+    const axis=1;
+    const _this = this;
+    const preds= tf.tidy(()=> {
+        return _this.model.predict(tensortestdata).argMax(axis);
+    });
+    return Array.from(preds.dataSync());
+}
+
+}
+
+/**
+ * Interface of a Perceiver Minion performing perception of data and similar tasks.
+ * @interface
+ */
+class Pmin extends LocalDSOMinion {
+
+    /**
+     * Class for Perceiver Minions supporting data storage operations.
+     * @param {DataAccessService} dataAccessService: The data access service object.
+     * @param {MinionController} minionController: The minion controller.
+     * @param {String} id: The id of the minion.
+     * @param {Array&lt;Object>} dependencies: The dependant libraries of this minion.
+     */
+    constructor(dataAccessService, minionController, id, uiAdapter=null, dependencies) {
+        super(dataAccessService, minionController, id, uiAdapter=null, dependencies);
+        if (new.target === Pmin) {
+            throw new Error('Abstract Class cannot be instantiated.');
+        }
+    }
+}
+
+module.exports.Minion = Minion;
+module.exports.LocalDSOMinion = LocalDSOMinion;
+module.exports.Cmin = Cmin;
+module.exports.VisualizationCmin = VisualizationCmin;
+module.exports.Pmin = Pmin;
+module.exports.Tmin = Tmin;
+module.exports.tf= tf;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<footer>
+    <img class="logo" src="http://iss.uni-saarland.de/workspace/grayscale/img/logo_iss1.png" style="width: 90px; height: 30px">
+    <div class="footer-text">NHN Entertainment. Frontend Development Lab</div>
+</footer>
+<script>prettyPrint();</script>
+<script src="scripts/jquery.min.js"></script>
+<script src="scripts/tui-doc.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+    <script>
+        var id = '_sub'.replace(/"/g, '_');
+        var selectedApi = document.getElementById(id); // do not use jquery selector
+        var $selectedApi = $(selectedApi);
+
+        $selectedApi.removeClass('hidden');
+        $selectedApi.parent().find('.glyphicon').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+        showLnbApi();
+    </script>
+
+</body>
+</html>

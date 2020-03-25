@@ -1,0 +1,35 @@
+{
+    "@context": "EVAREST",
+    "name": "Kundenstammdaten",
+    "location": "http://www.evarest.de/iot/kundenstammdaten",
+    "consumption": "Internal",
+    "lang": "DE",
+    "keyWords": "Kundenstammdaten, Sales, Market Size, Customer Data",
+    "description": "This data set contains information about market size, shelf length etc. of all customers.",
+    "productType": {
+        "@tpe": "Dataset",
+        "tier_1": "Kundenstammdaten",
+        "tier_2": "Sales"
+    },
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "3.5",
+        "reviewCount": "80"
+    },
+    "smartContract": {
+        "@type": "smartContract",
+        "location": "http://www.evarest.de/iot/kundenstammdaten",
+        "terms": "http://www.evarest.de/iot/kundenstammdaten"
+    },
+    "offers": {
+        "@type": "Offer",
+        "priceCurrency": "EUR",
+        "price": "129.99",
+        "priceValidUntil": "20-06-2020",
+        "availability": "yes",
+        "seller": {
+            "@type": "Lindt",
+            "location": "https://www.lindt.de/startseite/"
+        }
+    }
+}

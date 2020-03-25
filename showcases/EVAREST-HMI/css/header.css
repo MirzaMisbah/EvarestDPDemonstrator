@@ -1,0 +1,153 @@
+
+body {
+    background: linear-gradient(to right, #d53369, #daae51);
+}
+
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	font: normal 16px sans-serif;
+	padding: 0 10%;
+	background: #eee;
+}
+
+body .container{
+	max-width:1200px;
+	margin:0 auto;
+}
+
+/*	Header	*/
+
+header{
+	/* Enable flex mode. */
+	display: flex; 
+	/* Spread out the elements inside the header. */
+	justify-content: space-between;
+	/* Align items vertically in the center. */
+	align-items: center;
+
+	padding: 40px 100px;
+	color: #fff;
+	background-color: #488EAD;
+}
+
+.header-left{
+	font: normal 28px 'Fugaz One', cursive;
+}
+
+.header-left span{
+	color: #EAD314;
+}
+
+.header-center ul{
+	list-style: none;
+}
+
+.header-center ul li{
+	display: inline-block;
+	margin: 0 15px;
+}
+
+.header-center ul li a{
+	text-decoration: none;
+	color: #fff;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+.header-right button{
+    color: #fff;
+    cursor: pointer;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 12px 30px;
+    border: 2px solid #FFFFFF;
+    border-radius: 4px;
+    background-color: transparent;
+}
+
+.header-right button:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+/*	Main content	*/
+
+.main-content{
+	padding: 60px 100px;
+	background-color: #fff;
+    line-height: 1.5;
+    color: #444;
+}
+
+.main-content h2{
+	margin-bottom: 38px;
+}
+
+.main-content p{
+	margin: 30px 0;
+}
+
+
+.main-content .placeholder{
+	margin: 40px 0;
+	height:380px;
+	background-color: #e3e3e3;
+}
+
+
+/*	Media queries	*/
+
+@media (max-width: 1200px){
+	header{
+		padding: 40px 60px;
+	}
+
+	.main-content{
+		padding: 100px 60px;
+	}
+
+	body {
+	    padding: 0 5%;
+	}
+}
+
+@media (max-width: 1000px){
+	header{
+		/* Reverse the axis of the header, making it vertical. */
+		flex-direction: column;
+		/* Align items to the begining (the left) of the header. */
+		align-items: flex-start;
+	}
+
+	header > div{
+		margin: 12px 0;
+	}
+
+	.header-center ul li{
+		margin: 0 15px 0 0;
+	}
+
+}
+
+@media (max-width: 600px){
+	body {
+	    padding: 0 10px;
+	}
+
+	.header-left{
+		margin-top:0;
+	}
+
+	header {
+	    padding: 30px;
+	}
+
+	.main-content{
+		padding:30px;
+	}
+}

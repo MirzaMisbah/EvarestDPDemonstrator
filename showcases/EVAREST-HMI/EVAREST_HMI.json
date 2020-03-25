@@ -1,0 +1,41 @@
+{
+  "id": "EVARESTHMI",
+  "version": "0.2",
+  "name": "EVAREST Demonstrator",
+  "descriptionText": "This service shows interaction between producer and provider at EVAREST Data Marketplace along with smart contract visualization.",
+  "configuration": [{
+    "softwareItemId": "../Pmin.js",
+    "instanceId": "Pmin",
+    "targetMinionIds": ["Tmin"],
+    "name": "Perceiver Minion",
+    "type": "P"
+
+  }, {
+    "softwareItemId": "../Tmin.js",
+    "instanceId": "Tmin",
+    "targetMinionIds": ["Cmin"],
+    "name": "Thinker Minion",
+    "type": "T"
+  },{
+    "softwareItemId": "../Cmin.js",
+    "instanceId": "Cmin",
+    "targetMinionIds": ["PeerCommunicatorA","PeerCommunicatorB"],
+    "name": "Communication Minion",
+    "type": "C"
+  },{
+      "softwareItemId": "../PeerCommunicatorA.js", 
+      "instanceId": "PeerCommunicatorA", 
+      "targetMinionIds": [], 
+      "name": "Communicator",
+      "type": "C", 
+      "description": "Request Data products"
+  },{
+      "softwareItemId": "../PeerCommunicatorB.js", 
+      "instanceId": "PeerCommunicatorB", 
+      "targetMinionIds": [], 
+      "name": "Communicator",
+      "type": "C", 
+      "description": "Respond with data product"
+  } ],
+  "context": {}
+}

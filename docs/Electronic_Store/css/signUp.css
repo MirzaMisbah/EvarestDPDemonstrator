@@ -1,0 +1,119 @@
+.submit-button {
+    background-color: #00477a;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    border-radius: 12px;
+}
+
+.submit-button:hover {
+    opacity: 1;
+}
+.submitButtonText {
+    cursor: pointer;
+}
+.cancelButtonText {
+    cursor:pointer;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    padding: 14px 20px;
+    background-color: #d54466;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .submit-button {
+    float: left;
+    width: 50%;
+
+}
+
+/* Add padding to container elements */
+.container {
+    padding: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: absolute; /* Stay in place */
+    z-index: 10; /* Sit on top */
+    left: 50%;
+    top: 50%;
+    /*width: 50%; /* Full width */
+    /*height: auto; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    transform: translate(-50%, -50%);
+    background-color: #00477a;
+    background-size: 50%;
+
+
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: rgb(237, 226, 245);
+    margin: 3% auto 3% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 93%; /* Could be more or less, depending on screen size */
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccb996;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+/* Style the horizontal ruler */
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 0px;
+    font-size: 15px;
+    line-height: 0.5;
+    font-weight: 700;
+    color: #000000;
+}
+
+.close:hover,
+.close:focus {
+    color: #d55c61;
+    cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 400px) {
+    .cancelbtn, .signupbtn {
+        width: 50%;
+    }
+
+    .modal {
+        top: 25%;
+        left: 25%;
+        transform: translate(-25%, -25%);
+
+
+    }
+}

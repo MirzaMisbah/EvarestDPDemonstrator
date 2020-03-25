@@ -1,0 +1,114 @@
+{
+  "id": "Customer",
+  "version": "0.2",
+  "name": "Customer",
+  "descriptionText": "This service shows Customer who get offers from this store",
+  "configuration": [
+    {
+      "softwareItemId": "getcustomerdata.js",
+      "instanceId": "getcustomerdata.js0",
+      "targetMinionIds": [],
+      "name": "Customer Data",
+      "type": "P"
+    },
+    {
+      "softwareItemId": "getoffers.js",
+      "instanceId": "getoffers.js0",
+      "targetMinionIds": [
+        "matchoffers.js0","mapMinion.js0"
+      ],
+      "name": "Store Offers",
+      "type": "P"
+    },
+    {
+      "softwareItemId": "DeliveryUpdate.js",
+      "instanceId": "DeliveryUpdate.js0",
+      "targetMinionIds": [],
+      "name": "Delivery Update Status",
+      "type": "P"
+    },
+    {
+      "softwareItemId": "delstatus.js",
+      "instanceId": "delstatus.js0",
+      "targetMinionIds": [
+        "peercommdelivery",
+        "DeliveryUpdate.js0"
+      ],
+      "name": "Get Delivery",
+      "type": "P"
+    },
+    {
+      "softwareItemId": "savetabstate.js",
+      "instanceId": "savetabstate.js0",
+      "targetMinionIds": [
+        "tabclick.js0"
+      ],
+      "name": "TAB SATUTS",
+      "type": "P"
+    },
+    {
+      "softwareItemId": "tabclick.js",
+      "instanceId": "tabclick.js0",
+      "targetMinionIds": [],
+      "name": "CLICKED TAB SATUTS",
+      "type": "P"
+    },
+    {
+      "softwareItemId": "exploreitems.js",
+      "instanceId": "exploreitems.js0",
+      "targetMinionIds": [],
+      "name": "See matched items before going shopping",
+      "type": "P"
+    },
+    {
+      "softwareItemId": "matchoffer.js",
+      "instanceId": "matchoffers.js0",
+      "targetMinionIds": [
+        "exploreitems.js0"
+      ],
+      "name": "Match offers with items",
+      "type": "T"
+    },
+    {
+      "softwareItemId": "PeerCommunicator.js",
+      "instanceId": "peercommunicator",
+      "targetMinionIds": [
+        "getcustomerdata.js0"
+      ],
+      "name": "Communicator",
+      "type": "C",
+      "description": "Request Data from Store",
+      "defaultShow": false
+    },
+    {
+      "softwareItemId": "PeerCommDelivery.js",
+      "instanceId": "peercommdelivery",
+      "targetMinionIds": [],
+      "name": "Communicator",
+      "type": "C",
+      "description": "Send Data to Delivery service",
+      "defaultShow": false
+    },
+    {
+      "softwareItemId": "mapMinion.js",
+      "instanceId": "mapMinion.js0",
+      "targetMinionIds": [],
+      "name": "MapMinion",
+      "type": "P",
+      "description": "The selected items to the corresponding shops are displayed on the map",
+      "defaultShow": false
+    },
+    {
+      "softwareItemId": "instore_item_lists.js",
+      "instanceId": "instore.js",
+      "targetMinionIds": [
+        "delstatus.js0"
+      ],
+      "name": "instore",
+      "type": "P",
+      "description": "In-store shopping items",
+      "defaultShow": false
+    }
+  ],
+  "context": {}
+}

@@ -1,0 +1,207 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Source: minion_templates/tmins/tmin_webworkertemplate.js | TUCANA Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-jsdoc.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/tui-doc.css">
+
+    
+</head>
+<body>
+<nav class="lnb" id="lnb">
+    <div class="logo" style="width: 90px; height: 30px">
+        
+            <a href="https://github.com/InformationServiceSystems/tucana" rel="noopener noreferrer" target="_blank">
+                <img src="http://iss.uni-saarland.de/workspace/grayscale/img/logo_iss1.png" width="100%" height="100%">
+            </a>
+        
+    </div>
+    <div class="title">
+        <h1><a href="index.html" class="link">TUCANA Documentation</a></h1>
+        
+    </div>
+    <div class="search-container" id="search-container">
+        <input type="text" placeholder="Search">
+        <ul></ul>
+    </div>
+    
+    <div class="lnb-api hidden"><h3>Classes</h3><ul><li><a href="CrossDataStorageClient.html">CrossDataStorageClient</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="CrossDataStorageClient_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="CrossDataStorageClient.html#~init">init</a></li><li><a href="CrossDataStorageClient.html#~reConnect">reConnect</a></li><li><a href="CrossDataStorageClient.html#~sendCreateRequest">sendCreateRequest</a></li><li><a href="CrossDataStorageClient.html#~sendDeleteRequest">sendDeleteRequest</a></li><li><a href="CrossDataStorageClient.html#~sendReadRequest">sendReadRequest</a></li><li><a href="CrossDataStorageClient.html#~sendUpdateRequest">sendUpdateRequest</a></li></ul></div></li><li><a href="PeerCommunication.html">PeerCommunication</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="PeerCommunication_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="PeerCommunication.html#.COMM_STATUS">COMM_STATUS</a></li><li><a href="PeerCommunication.html#.ERROR">ERROR</a></li><li><a href="PeerCommunication.html#.MSG_TAGS">MSG_TAGS</a></li><li><a href="PeerCommunication.html#.ServerMsgs">ServerMsgs</a></li></ul><div class="member-type">Methods</div><ul class="inner"><li><a href="PeerCommunication.html#~connectToPeer">connectToPeer</a></li><li><a href="PeerCommunication.html#~disconnect">disconnect</a></li><li><a href="PeerCommunication.html#~formatServerMsg">formatServerMsg</a></li><li><a href="PeerCommunication.html#~handleAnswer">handleAnswer</a></li><li><a href="PeerCommunication.html#~handleCandidate">handleCandidate</a></li><li><a href="PeerCommunication.html#~handleOffer">handleOffer</a></li><li><a href="PeerCommunication.html#~init">init</a></li><li><a href="PeerCommunication.html#~issueStatusUpdate">issueStatusUpdate</a></li><li><a href="PeerCommunication.html#~loginToSS">loginToSS</a></li><li><a href="PeerCommunication.html#~onSSError">onSSError</a></li><li><a href="PeerCommunication.html#~onSSMessage">onSSMessage</a></li><li><a href="PeerCommunication.html#~sendChunckedToPeer">sendChunckedToPeer</a></li><li><a href="PeerCommunication.html#~sendToPeer">sendToPeer</a></li><li><a href="PeerCommunication.html#~sendToSS">sendToSS</a></li></ul></div></li></ul></div><div class="lnb-api hidden"><h3>Namespaces</h3><ul><li><a href="CommunicatorMinionStreamDataExample.html">CommunicatorMinionStreamDataExample</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="CommunicatorMinionStreamDataExample_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="CommunicatorMinionStreamDataExample.html#.minionObject">minionObject</a></li></ul><div class="member-type">Methods</div><ul class="inner"><li><a href="CommunicatorMinionStreamDataExample.html#~addStyles">addStyles</a></li><li><a href="CommunicatorMinionStreamDataExample.html#~build_chart">build_chart</a></li><li><a href="CommunicatorMinionStreamDataExample.html#~checkStarted">checkStarted</a></li><li><a href="CommunicatorMinionStreamDataExample.html#~clearMinionEnvironment">clearMinionEnvironment</a></li><li><a href="CommunicatorMinionStreamDataExample.html#~loadDependencies">loadDependencies</a></li><li><a href="CommunicatorMinionStreamDataExample.html#~newValue">newValue</a></li><li><a href="CommunicatorMinionStreamDataExample.html#~startApp">startApp</a></li></ul></div></li><li><a href="CommunicatorMinionStreamDataTemplate.html">CommunicatorMinionStreamDataTemplate</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="CommunicatorMinionStreamDataTemplate_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="CommunicatorMinionStreamDataTemplate.html#.minionObject">minionObject</a></li></ul><div class="member-type">Methods</div><ul class="inner"><li><a href="CommunicatorMinionStreamDataTemplate.html#~addStyles">addStyles</a></li><li><a href="CommunicatorMinionStreamDataTemplate.html#~build_chart">build_chart</a></li><li><a href="CommunicatorMinionStreamDataTemplate.html#~checkStarted">checkStarted</a></li><li><a href="CommunicatorMinionStreamDataTemplate.html#~clearMinionEnvironment">clearMinionEnvironment</a></li><li><a href="CommunicatorMinionStreamDataTemplate.html#~loadDependencies">loadDependencies</a></li><li><a href="CommunicatorMinionStreamDataTemplate.html#~newValue">newValue</a></li><li><a href="CommunicatorMinionStreamDataTemplate.html#~startApp">startApp</a></li></ul></div></li><li><a href="PerceiverMinionTemplate.html">PerceiverMinionTemplate</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="PerceiverMinionTemplate_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="PerceiverMinionTemplate.html#.minionObject">minionObject</a></li></ul><div class="member-type">Methods</div><ul class="inner"><li><a href="PerceiverMinionTemplate.html#~checkStarted">checkStarted</a></li><li><a href="PerceiverMinionTemplate.html#~clearMinionEnvironment">clearMinionEnvironment</a></li><li><a href="PerceiverMinionTemplate.html#~loadDependencies">loadDependencies</a></li><li><a href="PerceiverMinionTemplate.html#~startApp">startApp</a></li></ul></div></li><li><a href="ThinkerMinionWebWorkerTemplate.html">ThinkerMinionWebWorkerTemplate</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="ThinkerMinionWebWorkerTemplate_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="ThinkerMinionWebWorkerTemplate.html#.minionObject">minionObject</a></li></ul><div class="member-type">Methods</div><ul class="inner"><li><a href="ThinkerMinionWebWorkerTemplate.html#.fetchScripts">fetchScripts</a></li><li><a href="ThinkerMinionWebWorkerTemplate.html#.transformInternalUris">transformInternalUris</a></li></ul></div></li></ul></div>
+</nav>
+<div id="resizer"></div>
+
+<div class="main" id="main">
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * This file contains a template for the implementation of a thinker minion implemented as a web worker.
+ * @namespace ThinkerMinionWebWorkerTemplate
+ */
+
+/**
+ * Defines all necessary data of a minion
+ * @memberOf ThinkerMinionWebWorkerTemplate
+ * @type {Object}
+ */
+var minionObject = {
+    _self : self,
+    origin : self.origin,
+
+    internalDependencies : [{name : 'ressourceName', uri: '/sources/that/are/in/your/project/folders'}, {name : 'keras', uri : 'libs/thirdparty/keras.min.js'}],
+    externalDependencies : [{name : 'ressourceName', uri: 'https://example.com/sources/that/are/not/in/your/project/folders'}, {name : 'numjs', uri:'https://cdnjs.cloudflare.com/ajax/libs/numjs/0.16.0/numjs.js'}],
+
+    /* More models possible here */
+    modelSource : self.origin + '/path/to/the/model/binary',
+
+    /* Specific minion configurations */
+    buffer : [],
+    max_buffer_size : 100,
+};
+
+/**
+ * Transforms the uri of the dependencies such that they are accessible from the web worker thread
+ * @memberOf ThinkerMinionWebWorkerTemplate
+ * @param {String} origin The applications origin consisting of [protocol]://[domain]:[port]
+ * @param {Object} dependencies All the internal dependecies with name and uri
+ * @returns {Object} The transformed dependencies.
+ */
+var transformInternalUris = function (origin, dependencies) {
+    dependencies.forEach(function (dependency) {
+        dependency.uri = origin + '/' + dependency.uri;
+    });
+    return dependencies;
+};
+
+/**
+ * Fetches all necessary dependant libraries and then asynchronously calls a callback function
+ * @memberOf ThinkerMinionWebWorkerTemplate
+ * @param {Object} dependencies All dependecies of the minion with name and uri
+ * @param {function} callback Callback function that is triggered once all libraries are loaded.
+ */
+var fetchScripts = function (dependencies, callback) {
+    var fetchPromises = [];
+    dependencies.forEach(function (dependency) {
+        fetchPromises.push(fetch(dependency.uri, {method : 'GET', headers : {'Accept' : 'application/javascript'}, mode : 'cors', cache : 'default'})
+            .catch(function(err){
+                console.warn('Not possible to load: ' + dependency.uri);
+                return null;
+            }).then(function (res) {
+                if (res) {
+                    return res.text()
+                        .then(function (script) {
+                            if (script.toLowerCase() !== 'not found'){
+                                eval(script);
+                            }
+                        });
+                }
+                return;
+        }));
+    });
+
+    Promise.all(fetchPromises)
+        .then(function () {
+            callback();
+        })
+};
+
+minionObject.dependencies = minionObject.externalDependencies.concat(transformInternalUris(minionObject.origin, minionObject.internalDependencies));
+
+
+fetchScripts(minionObject.dependencies, function () {
+    function estimationClass () {
+        // Implement a constructor that is able to solve the estimation problem
+
+
+        this.load = function (config, onLoaded) {
+            var filePath = config.model;
+
+            /* Initialize a model like in this example with a keras model
+                this.model = new KerasJS.Model({filepath:filePath, gpu:false});
+                this.model.ready().then(function () {
+                    onLoaded();
+                });
+            */
+            onLoaded();
+        };
+        this.predict = function (X, onPredict) {
+            // Do a prediction
+            var res = 1;
+            onPredict(res);
+        }
+    }
+
+
+    // Create the model
+    minionObject.model = new estimationClass();
+
+    // Load the model from the given binary file
+    minionObject.model.load({"model": minionObject.modelSource}, function(){
+
+        // Setup the Event listener of the Web Worker once the model is loaded
+        minionObject._self.addEventListener('message', function(e) {
+            var name = e.data.creator;
+            var sensor_features = [e.data.value.value.x, e.data.value.value.y, e.data.value.value.z];
+            minionObject.buffer.push(e.data);
+            if (minionObject.buffer.length > minionObject.max_buffer_size) {
+                minionObject.buffer.shift();
+            }
+        }, false);
+
+        // Do estamations in a regularly repeated intvall (this is not a need, the estmation could also be done directly when data arrives in the event listener defined above)
+        minionObject._self.estimationInterval = setInterval(function(){
+            // Get the minion buffer
+            var x = minionObject.buffer;
+
+            // Do the prediction on the buffered data and send it back to the main thread
+            // This works similar to sklearn: you provide an array of inputs [x], and get an array of outputs.
+            minionObject.model.predict([x], function(yp, err){
+                minionObject._self.postMessage({value: yp, timestamp : Date.now()});
+            })
+        }, 1000);
+    });
+
+});</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<footer>
+    <img class="logo" src="http://iss.uni-saarland.de/workspace/grayscale/img/logo_iss1.png" style="width: 90px; height: 30px">
+    <div class="footer-text">NHN Entertainment. Frontend Development Lab</div>
+</footer>
+<script>prettyPrint();</script>
+<script src="scripts/jquery.min.js"></script>
+<script src="scripts/tui-doc.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+    <script>
+        var id = '_sub'.replace(/"/g, '_');
+        var selectedApi = document.getElementById(id); // do not use jquery selector
+        var $selectedApi = $(selectedApi);
+
+        $selectedApi.removeClass('hidden');
+        $selectedApi.parent().find('.glyphicon').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+        showLnbApi();
+    </script>
+
+</body>
+</html>

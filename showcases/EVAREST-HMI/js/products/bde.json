@@ -1,0 +1,35 @@
+{
+    "@context": "EVAREST",
+    "name": "BDE (Betriebsdatenerfassung)",
+    "location": "http://www.evarest.de/iot/bde",
+    "consumption": "Internal",
+    "lang": "DE",
+    "keyWords": "Betriebsdatenerfassung, BDE,  Fault Analysis, Deployments",
+    "description": "Betriebsdatenerfassung is meant for  fault analysis for department technics. Average size is around 10GB per year. It is useful for project improvements and deployments. ",
+    "productType": {
+        "@tpe": "Visualization",
+        "tier_1": "BDE (Betriebsdatenerfassung)",
+        "tier_2": "Process Instruction"
+    },
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.4",
+        "reviewCount": "89"
+    },
+    "smartContract": {
+        "@type": "smartContract",
+        "location": "http://www.evarest.de/iot/bde",
+        "terms": "http://www.evarest.de/iot/bde"
+    },
+    "offers": {
+        "@type": "Offer",
+        "priceCurrency": "EUR",
+        "price": "119.99",
+        "priceValidUntil": "05-11-2020",
+        "availability": "yes",
+        "seller": {
+            "@type": "Lindt",
+            "location": "https://www.lindt.de/startseite/"
+        }
+    }
+}

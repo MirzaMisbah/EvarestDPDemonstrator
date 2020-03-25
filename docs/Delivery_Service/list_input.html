@@ -1,0 +1,52 @@
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<div class="col-md-12">
+        <div class="form-group">
+          <div class="input-group">
+            <input id = "t" type="text" placeholder="Add Item" >
+            <div class="input-group-btn">
+              <button id = "add" type="button" class="btn btn-warning" style="padding: 13px 13px;">
+                +
+              </button>
+              <button id = "sub" type="button" class="btn btn-warning" style="padding: 13px 13px;"
+              onclick="sub()">
+                -
+              </button>
+            </div>
+          </div>
+        </div>
+       
+       <div class="input-group">
+            <input type="text" id = "f" readonly style="background-color: light-gray" value="" placeholder="List">
+            <div class="input-group-btn">
+              <button id = "send" type="button" class="btn btn-warning" style="padding: 13px 13px;">
+                send
+              </button>
+              <button id = "empty" type="button" class="btn btn-warning" style="padding: 13px 13px;"
+              onclick="empty()">
+                empty
+              </button>
+            </div>
+          </div>
+        
+      
+        
+      </div>
+      
+<script>
+   function empty () {
+            var f = document.getElementById("f");
+            var t = document.getElementById("t");
+            f.value="";
+            t.value="";
+
+        }
+    function sub () {
+            var t = document.getElementById("t");
+            t.value="";
+
+        }    
+</script>

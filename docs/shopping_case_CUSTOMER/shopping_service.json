@@ -1,0 +1,48 @@
+{
+  "id": "Shopping Assistant CUSTOMER",
+  "version": "0.2",
+  "name": "Shopping Assistant CUSTOMER",
+  "descriptionText": "This service shows great deals at appropriate times using neural networks and sensory data",
+  "configuration": [{
+    "softwareItemId": "linearAcceleration.js",
+    "instanceId": "linearAcceleration.js0",
+    "targetMinionIds": ["activitypredictor0","accelerationmin0"],
+    "name": "Sensor Acc.",
+    "type": "P"
+  },{
+    "softwareItemId": "geoLocation.js",
+    "instanceId": "geoLocation.js0",
+    "targetMinionIds": ["activitypredictor0"],
+    "name": "Geo location",
+    "type": "P"
+  }, {
+    "softwareItemId": "activitypredictor0.js",
+    "instanceId": "activitypredictor0",
+    "targetMinionIds": ["dealminion0","peercommunicator"],
+    "name": "Thinker",
+    "type": "T"
+  },{
+    "softwareItemId": "ShoppingDealCmin.js",
+    "instanceId": "dealminion0",
+    "targetMinionIds": [],
+    "name": "Deals",
+    "type": "C",
+    "description": "Got a minute? Check out these deals!"
+  },{
+    "softwareItemId": "accelerationCmin.js",
+    "instanceId": "accelerationmin0",
+    "targetMinionIds": [],
+    "name": "Acceleration",
+    "type": "C",
+    "description": "Shows the acceleration",
+    "defaultShow": true 
+    },{
+       "softwareItemId": "PeerCommunicator.js", 
+      "instanceId": "peercommunicator", 
+      "targetMinionIds": [], 
+      "name": "Communicator",
+       "type": "C", 
+       "description": "Send Data to Store", 
+       "defaultShow": true } ],
+  "context": {}
+}

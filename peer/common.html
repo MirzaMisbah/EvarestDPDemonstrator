@@ -1,0 +1,112 @@
+<div class="drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-100">
+    <header class="drawer-header">
+        <img class="avatar" alt="avatar">
+        <div class="avatar-dropdown">
+            <span id="username"></span>
+            <div class="mdl-layout-spacer"></div>
+            <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                <i class="material-icons" role="presentation">arrow_drop_down</i>
+                <span class="visuallyhidden">Account</span>
+            </button>
+            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
+                <li id="btn-logout" class="mdl-menu__item">
+                    Log Out
+                </li>
+            </ul>
+        </div>
+    </header>
+    <nav class="drawer-navigation mdl-navigation mdl-color--blue-grey-800">
+        <a class="mdl-navigation__link">
+            <i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">accessibility</i>PMINS
+            <div class="mdl-layout-spacer"></div>
+            <button id="togglePMinions" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                <i class="material-icons" role="presentation">arrow_drop_down</i>
+                <span class="visuallyhidden">Account</span>
+            </button>
+        </a>
+    </nav>
+    <div class="dropdown">
+        <div id="pminMinionDropdown" class="dropdown-content">
+            <input type="text" class="minionSearch" placeholder="Search.." id="pminMinionSearch">
+        </div>
+    </div>
+    <nav class="drawer-navigation mdl-navigation mdl-color--blue-grey-800">
+        <a class="mdl-navigation__link">
+            <i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">accessibility</i>CMINS
+            <div class="mdl-layout-spacer"></div>
+            <button id="toggleCMinions" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                <i class="material-icons" role="presentation">arrow_drop_down</i>
+                <span class="visuallyhidden">Account</span>
+            </button>
+        </a>
+    </nav>
+    <div class="dropdown">
+        <div id="cminMinionDropdown" class="dropdown-content">
+            <input type="text" class="minionSearch" placeholder="Search.." id="cminMinionSearch">
+        </div>
+    </div>
+    <nav class="drawer-navigation mdl-navigation mdl-color--blue-grey-800">
+        <a class="mdl-navigation__link">
+            <i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">accessibility</i>TMINS
+            <div class="mdl-layout-spacer"></div>
+            <button id="toggleTMinions" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                <i class="material-icons" role="presentation">arrow_drop_down</i>
+                <span class="visuallyhidden">Account</span>
+            </button>
+        </a>
+    </nav>
+    <div class="dropdown">
+        <div id="tminMinionDropdown" class="dropdown-content">
+            <input type="text" class="minionSearch" placeholder="Search.." id="tminMinionSearch">
+        </div>
+    </div>
+
+    <nav class="drawer-navigation mdl-navigation mdl-color--blue-grey-800">
+        <a class="mdl-navigation__link">
+            <i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">accessibility</i>GMINS
+            <div class="mdl-layout-spacer"></div>
+            <button id="toggleGMinions" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                <i class="material-icons" role="presentation">arrow_drop_down</i>
+                <span class="visuallyhidden">Account</span>
+            </button>
+        </a>
+    </nav>
+    <div class="dropdown">
+        <div id="gminMinionDropdown" class="dropdown-content">
+            <input type="text" class="minionSearch" placeholder="Search.." id="gminMinionSearch">
+        </div>
+    </div>
+
+    <nav class="drawer-navigation mdl-navigation mdl-color--blue-grey-800">
+        <a class="mdl-navigation__link">
+            <i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">accessibility</i>Macros
+            <div class="mdl-layout-spacer"></div>
+            <button id="toggleMacroMinions" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                <i class="material-icons" role="presentation">arrow_drop_down</i>
+                <span class="visuallyhidden">Account</span>
+            </button>
+        </a>
+    </nav>
+    <div class="dropdown">
+        <div id="macroMinionDropdown" class="dropdown-content">
+            <input type="text" class="minionSearch" placeholder="Search.." id="macroMinionSearch">
+        </div>
+    </div>
+
+    <nav id="menu" class="drawer-navigation mdl-navigation mdl-color--blue-grey-800">
+        <!-- <a class="mdl-navigation__link is-active" href="index.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Home</a> -->
+    </nav>
+
+</div>
+
+<!-- Integration of spinner element -->
+<spinner id="spinner">
+    <img src="../assets/loading.svg" alt="Loading spinner">
+</spinner>
+
+<!-- Integration of snackbar for notifications -->
+<div id="notificationbar" class="mdl-js-snackbar mdl-snackbar">
+    <div class="mdl-snackbar__text"></div>
+    <button class="mdl-snackbar__action" type="button"></button>
+</div>
+

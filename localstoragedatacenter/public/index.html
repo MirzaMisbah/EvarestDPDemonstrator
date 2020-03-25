@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage Center</title>
+
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- Web Application Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- We are humans -->
+    <link rel="author" href="humans.txt" />
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Local Storage Center">
+    <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Local Storage Center">
+    <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#2F3BA2">
+
+    <!-- Color the status bar on mobile devices -->
+    <meta name="theme-color" content="#2F3BA2">
+
+    <!-- Setting the right viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <!--
+    <link rel="canonical" href="http://www.example.com/">
+    -->
+
+    <!-- Material Design icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+
+    <!-- Material Design Lite page styles:
+    You can choose other color schemes from the CDN, more info here http://www.getmdl.io/customize/index.html
+    Format: material.color1-color2.min.css, some examples:
+    material.red-teal.min.css
+    material.blue-orange.min.css
+    material.purple-indigo.min.css
+    -->
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+
+    <!-- Your styles -->
+    <link rel="stylesheet" href="styles/main.css">
+
+    <style>
+      .demo-layout-transparent {
+      }
+      .demo-layout-transparent .mdl-layout__header,
+      .demo-layout-transparent .mdl-layout__tab-bar {
+        /* This background is dark, so we set text to white. Use 87% black instead if
+           your background is light. */
+
+        color: white;
+      }
+
+      #profile-button {
+        position: fixed;
+        display: block;
+        right: 0;
+        top: 0;
+        margin-right: 20px;
+        margin-top: 10px;
+        z-index: 900;
+      }
+    </style>
+  </head>
+  <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+    <div class=" mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
+      <header class="demo-layout-transparent mdl-layout__header">
+        <div class="mdl-layout--large-screen-only mdl-layout__header-row mdl-layout__header--transparent">
+          <span class="mdl-layout-title">Local Storage Center</span>
+        </div>
+        <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
+          <a href="#apps" class="mdl-layout__tab is-active"><img alt="Apps" class="to_white" src="images/icons/06_menu_grid-512.png" style="height: 60%;"></a>
+          <a href="#settings" class="mdl-layout__tab"><img alt="Settings" class="to_white" src="images/icons/settings-5-xxl.png" style="height: 60%;"></a>
+        </div>
+      </header>
+      <main class="mdl-layout__content">
+        <div class="mdl-layout__tab-panel is-active" id="apps">
+        </div>
+        <div class="mdl-layout__tab-panel" id="settings">
+        </div>
+      </main>
+    </div>
+
+    <button id="profile-button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color--accent mdl-color-text--accent-contrast">
+      <img alt="avatar" class="avatar" style="display:none; height: 100%; width: 100%">
+    </button>
+    <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="profile-button">
+      <li id="username" class="mdl-menu__item"></li>
+      <li id="btn-logout" class="mdl-menu__item">Log Out</li>
+    </ul>
+
+    <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+    <!--<script src="scripts/lib/lock11_0_1.min.js" type="application/javascript"></script>-->
+    <script src="https://cdn.auth0.com/js/lock/10.24.1/lock.min.js"></script>
+    <!--<script src="scripts/test/auth0connection.js" type="application/javascript"></script>-->
+
+    <!--import requirejs-->
+    <script data-main="config" src="scripts/lib/r.js"></script>
+
+    <!-- Built with love using Web Starter Kit -->
+  </body>
+</html>

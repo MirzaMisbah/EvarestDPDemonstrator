@@ -1,0 +1,97 @@
+tr:nth-of-type(odd) {
+	background: #eee;
+}
+th {
+	background: #333;
+	color: white;
+	font-weight: bold;
+	cursor: s-resize;
+	background-repeat: no-repeat;
+	background-position: 3% center;
+}
+td, th {
+	padding: 6px;
+	border: 1px solid #ccc;
+	text-align: center;
+	
+}
+
+th.des:after {
+	content: "\21E9";
+}
+
+th.aes:after {
+	content: "\21E7";
+}
+
+tr {
+	border: 1px solid #ccc;
+}
+
+td {
+	border: none;
+	border-bottom: 1px solid #eee;
+	text-align: center;
+}
+table.scroll { 
+    border-spacing: 0;
+    border: 2px solid black;
+    width: 100%;
+    
+    overflow: auto;	
+	border-collapse: collapse;
+}
+
+table.scroll tbody,
+table.scroll thead {	 
+	display: block;
+	width: 100%;
+}
+
+table.scroll tbody {
+   max-height: 250px; /*3 rows*/   
+   overflow-y: auto;
+   overflow-x: hidden;
+}
+table.scroll thead tr th { 
+    height: 30px;
+    line-height: 30px;
+    width: 400px;
+    text-align: center; 
+    word-break: break-all;
+}
+table.scroll tbody tr td { 
+	height: 30px;
+    line-height: 30px;
+   	width: 400px;
+   	word-break: break-all;
+    text-align: center; 
+}
+table.scroll thead tr th:first-child,
+table.scroll tbody tr td:first-child {
+ /* width: 20px;*/  
+}
+table.scroll thead tr th:second-child,
+table.scroll tbody tr td:second-child {
+  /*width: 40px;*/ 
+  word-break: break-all;  
+}
+table.scroll thead tr th:third-child,
+table.scroll tbody tr td:third-child {
+   /*width: 40px;*/ 
+  word-break: break-all;  
+}
+img.msgopen {
+	content: url(../styles/icons/opened.png);
+	max-width: 24px;
+	max-height: 24px;
+	width: auto;
+	height: auto;
+}
+img.msgclose {
+	max-width: 24px;
+	max-height: 24px;
+	width: auto;
+	height: auto;
+	content: url(../styles/icons/closed.png);
+}

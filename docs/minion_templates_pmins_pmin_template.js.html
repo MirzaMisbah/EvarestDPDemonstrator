@@ -1,0 +1,203 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Source: minion_templates/pmins/pmin_template.js | TUCANA Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-jsdoc.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/tui-doc.css">
+
+    
+</head>
+<body>
+<nav class="lnb" id="lnb">
+    <div class="logo" style="width: 90px; height: 30px">
+        
+            <a href="https://github.com/InformationServiceSystems/tucana" rel="noopener noreferrer" target="_blank">
+                <img src="http://iss.uni-saarland.de/workspace/grayscale/img/logo_iss1.png" width="100%" height="100%">
+            </a>
+        
+    </div>
+    <div class="title">
+        <h1><a href="index.html" class="link">TUCANA Documentation</a></h1>
+        
+    </div>
+    <div class="search-container" id="search-container">
+        <input type="text" placeholder="Search">
+        <ul></ul>
+    </div>
+    
+    <div class="lnb-api hidden"><h3>Classes</h3><ul><li><a href="CrossDataStorageClient.html">CrossDataStorageClient</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="CrossDataStorageClient_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="CrossDataStorageClient.html#~init">init</a></li><li><a href="CrossDataStorageClient.html#~reConnect">reConnect</a></li><li><a href="CrossDataStorageClient.html#~sendCreateRequest">sendCreateRequest</a></li><li><a href="CrossDataStorageClient.html#~sendDeleteRequest">sendDeleteRequest</a></li><li><a href="CrossDataStorageClient.html#~sendReadRequest">sendReadRequest</a></li><li><a href="CrossDataStorageClient.html#~sendUpdateRequest">sendUpdateRequest</a></li></ul></div></li><li><a href="PeerCommunication.html">PeerCommunication</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="PeerCommunication_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="PeerCommunication.html#.COMM_STATUS">COMM_STATUS</a></li><li><a href="PeerCommunication.html#.ERROR">ERROR</a></li><li><a href="PeerCommunication.html#.MSG_TAGS">MSG_TAGS</a></li><li><a href="PeerCommunication.html#.ServerMsgs">ServerMsgs</a></li></ul><div class="member-type">Methods</div><ul class="inner"><li><a href="PeerCommunication.html#~connectToPeer">connectToPeer</a></li><li><a href="PeerCommunication.html#~disconnect">disconnect</a></li><li><a href="PeerCommunication.html#~formatServerMsg">formatServerMsg</a></li><li><a href="PeerCommunication.html#~handleAnswer">handleAnswer</a></li><li><a href="PeerCommunication.html#~handleCandidate">handleCandidate</a></li><li><a href="PeerCommunication.html#~handleOffer">handleOffer</a></li><li><a href="PeerCommunication.html#~init">init</a></li><li><a href="PeerCommunication.html#~issueStatusUpdate">issueStatusUpdate</a></li><li><a href="PeerCommunication.html#~loginToSS">loginToSS</a></li><li><a href="PeerCommunication.html#~onSSError">onSSError</a></li><li><a href="PeerCommunication.html#~onSSMessage">onSSMessage</a></li><li><a href="PeerCommunication.html#~sendChunckedToPeer">sendChunckedToPeer</a></li><li><a href="PeerCommunication.html#~sendToPeer">sendToPeer</a></li><li><a href="PeerCommunication.html#~sendToSS">sendToSS</a></li></ul></div></li></ul></div><div class="lnb-api hidden"><h3>Namespaces</h3><ul><li><a href="CommunicatorMinionStreamDataExample.html">CommunicatorMinionStreamDataExample</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="CommunicatorMinionStreamDataExample_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="CommunicatorMinionStreamDataExample.html#.minionObject">minionObject</a></li></ul><div class="member-type">Methods</div><ul class="inner"><li><a href="CommunicatorMinionStreamDataExample.html#~addStyles">addStyles</a></li><li><a href="CommunicatorMinionStreamDataExample.html#~build_chart">build_chart</a></li><li><a href="CommunicatorMinionStreamDataExample.html#~checkStarted">checkStarted</a></li><li><a href="CommunicatorMinionStreamDataExample.html#~clearMinionEnvironment">clearMinionEnvironment</a></li><li><a href="CommunicatorMinionStreamDataExample.html#~loadDependencies">loadDependencies</a></li><li><a href="CommunicatorMinionStreamDataExample.html#~newValue">newValue</a></li><li><a href="CommunicatorMinionStreamDataExample.html#~startApp">startApp</a></li></ul></div></li><li><a href="CommunicatorMinionStreamDataTemplate.html">CommunicatorMinionStreamDataTemplate</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="CommunicatorMinionStreamDataTemplate_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="CommunicatorMinionStreamDataTemplate.html#.minionObject">minionObject</a></li></ul><div class="member-type">Methods</div><ul class="inner"><li><a href="CommunicatorMinionStreamDataTemplate.html#~addStyles">addStyles</a></li><li><a href="CommunicatorMinionStreamDataTemplate.html#~build_chart">build_chart</a></li><li><a href="CommunicatorMinionStreamDataTemplate.html#~checkStarted">checkStarted</a></li><li><a href="CommunicatorMinionStreamDataTemplate.html#~clearMinionEnvironment">clearMinionEnvironment</a></li><li><a href="CommunicatorMinionStreamDataTemplate.html#~loadDependencies">loadDependencies</a></li><li><a href="CommunicatorMinionStreamDataTemplate.html#~newValue">newValue</a></li><li><a href="CommunicatorMinionStreamDataTemplate.html#~startApp">startApp</a></li></ul></div></li><li><a href="PerceiverMinionTemplate.html">PerceiverMinionTemplate</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="PerceiverMinionTemplate_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="PerceiverMinionTemplate.html#.minionObject">minionObject</a></li></ul><div class="member-type">Methods</div><ul class="inner"><li><a href="PerceiverMinionTemplate.html#~checkStarted">checkStarted</a></li><li><a href="PerceiverMinionTemplate.html#~clearMinionEnvironment">clearMinionEnvironment</a></li><li><a href="PerceiverMinionTemplate.html#~loadDependencies">loadDependencies</a></li><li><a href="PerceiverMinionTemplate.html#~startApp">startApp</a></li></ul></div></li><li><a href="ThinkerMinionWebWorkerTemplate.html">ThinkerMinionWebWorkerTemplate</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="ThinkerMinionWebWorkerTemplate_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="ThinkerMinionWebWorkerTemplate.html#.minionObject">minionObject</a></li></ul><div class="member-type">Methods</div><ul class="inner"><li><a href="ThinkerMinionWebWorkerTemplate.html#.fetchScripts">fetchScripts</a></li><li><a href="ThinkerMinionWebWorkerTemplate.html#.transformInternalUris">transformInternalUris</a></li></ul></div></li></ul></div>
+</nav>
+<div id="resizer"></div>
+
+<div class="main" id="main">
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * This file contains a template for the implementation of a perceiver minion (pmin) that is able to produce streaming data as well as fetching static third party data.
+ * @namespace PerceiverMinionTemplate
+ */
+
+
+(function (divId, outputChannels) {
+
+    /**
+     * Defines all necessary data of a minion
+     * @memberOf PerceiverMinionTemplate
+     * @type {Object}
+     */
+    const minionObject ={
+        // Define all libraries and dependencies of your current minion here, name is the name of the attached object to window, uir the ressource uri and source is the default name of the loaded library object.
+        dependencies : [
+            {"name": "d34", "uri": "https://d3js.org/d3.v4.min.js", source : "d3"}
+        ],
+        // Initialization of a container
+        div : document.getElementById(divId),
+
+        // Custom HTML elements
+
+
+        // Custom visualization variables
+
+    };
+
+    // Start the functionality of the minion
+    if (checkStarted()){
+        loadDependencies(function(success) {
+            if (success) {
+                clearMinionEnvironment();
+                startApp();
+            } else {
+                console.log("no data found or no libs are loaded!");
+            }
+        }, minionObject.dependencies);
+    } else {
+        clearMinionEnvironment();
+    }
+
+    /**
+     * Starts the main application.
+     * @inner
+     * @memberOf PerceiverMinionTemplate
+     */
+    function startApp() {
+
+        // Example for the startup with random data generation
+        outputChannels.forEach(function (chan) {
+            chan.intervalObject = setInterval(function () {
+                chan.push({timestamp : Date.now(), value : Math.random()});
+            }, 100);
+        });
+
+        // Insert custom start code here
+
+    }
+
+    /**
+     * Loads required libs dynamically
+     * @inner
+     * @memberOf PerceiverMinionTemplate
+     * @param {function} callback The function to be called when loading is done, it takes a boolean which value is true if the library was loaded successfully.
+     */
+    function loadDependencies (callback, dependencies=minionObject.dependencies){
+        if (dependencies.length > 0) {
+            var dependency = dependencies.pop();
+            if (!(dependency.name in window)) {
+                var scriptTag = document.createElement('script');
+                scriptTag.src = dependency.uri;
+                var cb = function(){
+                    window[dependency.name] = window[dependency.source];
+                    window[dependency.source] = null;
+                    loadDependencies(callback, dependencies);
+                };
+                scriptTag.onload = cb;
+                scriptTag.onreadystatechange = cb;
+                document.querySelector('body').appendChild(scriptTag);
+            } else {
+                loadDependencies(callback, dependencies);
+            }
+        } else {
+            var cb = function(success) {
+                callback(success);
+            };
+            cb(true);
+        }
+    }
+
+    /**
+     * Clear the div at the beginning of the minion start and remove all event listeners already registered at the inputDataChannels
+     * @inner
+     * @memberOf PerceiverMinionTemplate
+     */
+    function clearMinionEnvironment() {
+
+        // Clear the frontend
+        while (minionObject.div.firstChild) {
+            minionObject.div.removeChild(minionObject.div.firstChild);
+        }
+        minionObject.div.style.width = '100%';
+
+        // Clear the output data channels
+        if (outputChannels){
+            outputChannels.forEach(function (chan) {
+                if (chan.intervalObject) {
+                    clearInterval(chan.intervalObject);
+                }
+            });
+        }
+    }
+
+    /**
+     * Checks if the minion is started of stopped.
+     * @inner
+     * @memberOf PerceiverMinionTemplate
+     * @returns {boolean} True if started.
+     */
+    function checkStarted () {
+        return (document.getElementById(divId)) ? (document.getElementById(divId).getAttribute('data-active').toLowerCase() === 'true') : false;
+    }
+});</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<footer>
+    <img class="logo" src="http://iss.uni-saarland.de/workspace/grayscale/img/logo_iss1.png" style="width: 90px; height: 30px">
+    <div class="footer-text">NHN Entertainment. Frontend Development Lab</div>
+</footer>
+<script>prettyPrint();</script>
+<script src="scripts/jquery.min.js"></script>
+<script src="scripts/tui-doc.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+    <script>
+        var id = '_sub'.replace(/"/g, '_');
+        var selectedApi = document.getElementById(id); // do not use jquery selector
+        var $selectedApi = $(selectedApi);
+
+        $selectedApi.removeClass('hidden');
+        $selectedApi.parent().find('.glyphicon').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+        showLnbApi();
+    </script>
+
+</body>
+</html>

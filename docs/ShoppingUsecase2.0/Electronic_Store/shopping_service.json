@@ -1,0 +1,28 @@
+{
+  "id": "Shopping Assistant Electo Store",
+  "version": "0.2",
+  "name": "Shopping Assistant Electo Store",
+  "descriptionText": "This service shows Customer who get offers from this store",
+  "configuration": [{
+    "softwareItemId": "getcustomerdata.js",
+    "instanceId": "getcustomerdata.js0",
+    "targetMinionIds": ["dealminion0","peercommunicator"],
+    "name": "Customer Data",
+    "type": "P"
+  },{
+    "softwareItemId": "ShoppingDealCmin.js",
+    "instanceId": "dealminion0",
+    "targetMinionIds": [],
+    "name": "Shared Deals",
+    "type": "C",
+    "description": "Customer shown new deal from store"
+  },{
+       "softwareItemId": "PeerCommunicator.js", 
+      "instanceId": "peercommunicator", 
+      "targetMinionIds": [], 
+      "name": "Communicator",
+       "type": "C", 
+       "description": "Send Data to Store", 
+       "defaultShow": false } ],
+  "context": {}
+}

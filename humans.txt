@@ -1,0 +1,14 @@
+/* TEAM */
+	Developer: Mirco Pyrtek
+	From:Saarbruecken, Saarland, Germany
+
+	Developer: Shahd Zahran
+	From: Saarbruecken, Saarland, Germany
+
+/* THANKS */
+		
+
+/* SITE */
+	Language: Deutsch / English
+	Doctype:HTML5
+	IDE: Jetbrains WebStorm

@@ -1,0 +1,4059 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Class: DatabaseHandler | TUCANA Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-jsdoc.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/tui-doc.css">
+
+    
+</head>
+<body>
+<nav class="lnb" id="lnb">
+    <div class="logo" style="width: 90px; height: 30px">
+        
+            <a href="https://github.com/InformationServiceSystems/tucana" rel="noopener noreferrer" target="_blank">
+                <img src="http://iss.uni-saarland.de/workspace/grayscale/img/logo_iss1.png" width="100%" height="100%">
+            </a>
+        
+    </div>
+    <div class="title">
+        <h1><a href="index.html" class="link">TUCANA Documentation</a></h1>
+        
+    </div>
+    <div class="search-container" id="search-container">
+        <input type="text" placeholder="Search">
+        <ul></ul>
+    </div>
+    
+    <div class="lnb-api hidden"><h3>Classes</h3><ul><li><a href="AwaitBroadcastResponse.html">AwaitBroadcastResponse</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="AwaitBroadcastResponse_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="AwaitBroadcastResponse.html#ressourceNotAvailable">ressourceNotAvailable</a></li><li><a href="AwaitBroadcastResponse.html#ressourceProtected">ressourceProtected</a></li><li><a href="AwaitBroadcastResponse.html#ressourceProvided">ressourceProvided</a></li><li><a href="AwaitBroadcastResponse.html#toString">toString</a></li></ul></div></li><li><a href="BaaSCommunicationHandler.html">BaaSCommunicationHandler</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="BaaSCommunicationHandler_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="BaaSCommunicationHandler.html#broadcastDBaaS">broadcastDBaaS</a></li><li><a href="BaaSCommunicationHandler.html#broadcastMBaaS">broadcastMBaaS</a></li><li><a href="BaaSCommunicationHandler.html#broadcastRessourceAccess">broadcastRessourceAccess</a></li><li><a href="BaaSCommunicationHandler.html#broadcastSBaaS">broadcastSBaaS</a></li><li><a href="BaaSCommunicationHandler.html#broadcastSSCBaaS">broadcastSSCBaaS</a></li></ul></div></li><li><a href="BroadcastConfiguration.html">BroadcastConfiguration</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="BroadcastConfiguration_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="BroadcastConfiguration.html#.fromJSON">fromJSON</a></li><li><a href="BroadcastConfiguration.html#getBroadcastCondition">getBroadcastCondition</a></li><li><a href="BroadcastConfiguration.html#getSource">getSource</a></li><li><a href="BroadcastConfiguration.html#getTargets">getTargets</a></li><li><a href="BroadcastConfiguration.html#getTrigger">getTrigger</a></li><li><a href="BroadcastConfiguration.html#getType">getType</a></li><li><a href="BroadcastConfiguration.html#toJSON">toJSON</a></li></ul></div></li><li><a href="BroadcastRequestReceived.html">BroadcastRequestReceived</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="BroadcastRequestReceived_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="BroadcastRequestReceived.html#broadcastRessourceAccess">broadcastRessourceAccess</a></li><li><a href="BroadcastRequestReceived.html#toString">toString</a></li></ul></div></li><li><a href="BrowserFingerprintIdentificationHandler.html">BrowserFingerprintIdentificationHandler</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="BrowserFingerprintIdentificationHandler_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="BrowserFingerprintIdentificationHandler.html#getContentOffering">getContentOffering</a></li><li><a href="BrowserFingerprintIdentificationHandler.html#getGeography">getGeography</a></li><li><a href="BrowserFingerprintIdentificationHandler.html#getKeywords">getKeywords</a></li><li><a href="BrowserFingerprintIdentificationHandler.html#getLocalID">getLocalID</a></li><li><a href="BrowserFingerprintIdentificationHandler.html#getModelOffering">getModelOffering</a></li><li><a href="BrowserFingerprintIdentificationHandler.html#getName">getName</a></li><li><a href="BrowserFingerprintIdentificationHandler.html#getProperties">getProperties</a></li><li><a href="BrowserFingerprintIdentificationHandler.html#getSoftwareOffering">getSoftwareOffering</a></li><li><a href="BrowserFingerprintIdentificationHandler.html#getType">getType</a></li></ul></div></li><li><a href="Cmin.html">Cmin</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Cmin_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="Cmin.html#broadcastDataCreateOperation">broadcastDataCreateOperation</a></li><li><a href="Cmin.html#broadcastDataDeleteOperation">broadcastDataDeleteOperation</a></li><li><a href="Cmin.html#broadcastDataReadOperation">broadcastDataReadOperation</a></li><li><a href="Cmin.html#broadcastDataUpdateOperation">broadcastDataUpdateOperation</a></li></ul></div></li><li><a href="CRUDOperation.html">CRUDOperation</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="CRUDOperation_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="CRUDOperation.html#.fromJSON">fromJSON</a></li><li><a href="CRUDOperation.html#getBroadcastConfiguration">getBroadcastConfiguration</a></li><li><a href="CRUDOperation.html#getBroadcastTargets">getBroadcastTargets</a></li><li><a href="CRUDOperation.html#getObject">getObject</a></li><li><a href="CRUDOperation.html#getObjectType">getObjectType</a></li><li><a href="CRUDOperation.html#getOperationType">getOperationType</a></li><li><a href="CRUDOperation.html#getQuery">getQuery</a></li><li><a href="CRUDOperation.html#setBroadcastConfiguration">setBroadcastConfiguration</a></li><li><a href="CRUDOperation.html#setObject">setObject</a></li><li><a href="CRUDOperation.html#setObjectType">setObjectType</a></li><li><a href="CRUDOperation.html#setOperationType">setOperationType</a></li><li><a href="CRUDOperation.html#setQuery">setQuery</a></li><li><a href="CRUDOperation.html#toJSON">toJSON</a></li></ul></div></li><li><a href="DataAccessController.html">DataAccessController</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="DataAccessController_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="DataAccessController.html#broadcastRessourceAccess">broadcastRessourceAccess</a></li><li><a href="DataAccessController.html#executeCRUDOperation">executeCRUDOperation</a></li><li><a href="DataAccessController.html#executeLocalCRUDOperation">executeLocalCRUDOperation</a></li><li><a href="DataAccessController.html#getDomainItemIds">getDomainItemIds</a></li><li><a href="DataAccessController.html#getFilteredPeerIds">getFilteredPeerIds</a></li><li><a href="DataAccessController.html#getLocalID">getLocalID</a></li><li><a href="DataAccessController.html#getModelItemIds">getModelItemIds</a></li><li><a href="DataAccessController.html#getProperties">getProperties</a></li><li><a href="DataAccessController.html#getSmartServiceConfigurationItemIds">getSmartServiceConfigurationItemIds</a></li><li><a href="DataAccessController.html#getSoftwareItemIds">getSoftwareItemIds</a></li><li><a href="DataAccessController.html#requestAccessPermission">requestAccessPermission</a></li></ul></div></li><li><a href="DataAccessService.html">DataAccessService</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="DataAccessService_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="DataAccessService.html#getDomainItemIds">getDomainItemIds</a></li><li><a href="DataAccessService.html#getFilteredPeerIds">getFilteredPeerIds</a></li><li><a href="DataAccessService.html#getLocalID">getLocalID</a></li><li><a href="DataAccessService.html#getModelItemIds">getModelItemIds</a></li><li><a href="DataAccessService.html#getProperties">getProperties</a></li><li><a href="DataAccessService.html#getSmartServiceConfigurationItemIds">getSmartServiceConfigurationItemIds</a></li><li><a href="DataAccessService.html#getSoftwareItemIds">getSoftwareItemIds</a></li></ul></div></li><li><a href="DatabaseHandler.html">DatabaseHandler</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="DatabaseHandler_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="DatabaseHandler.html#_createData">_createData</a></li><li><a href="DatabaseHandler.html#_createModel">_createModel</a></li><li><a href="DatabaseHandler.html#_createSmartServiceConfiguration">_createSmartServiceConfiguration</a></li><li><a href="DatabaseHandler.html#_createSoftwareComponent">_createSoftwareComponent</a></li><li><a href="DatabaseHandler.html#_deleteData">_deleteData</a></li><li><a href="DatabaseHandler.html#_deleteModel">_deleteModel</a></li><li><a href="DatabaseHandler.html#_deleteSmartServiceConfiguration">_deleteSmartServiceConfiguration</a></li><li><a href="DatabaseHandler.html#_deleteSoftwareComponent">_deleteSoftwareComponent</a></li><li><a href="DatabaseHandler.html#_readData">_readData</a></li><li><a href="DatabaseHandler.html#_readModel">_readModel</a></li><li><a href="DatabaseHandler.html#_readSmartServiceConfiguration">_readSmartServiceConfiguration</a></li><li><a href="DatabaseHandler.html#_readSoftwareComponent">_readSoftwareComponent</a></li><li><a href="DatabaseHandler.html#_updateData">_updateData</a></li><li><a href="DatabaseHandler.html#_updateModel">_updateModel</a></li><li><a href="DatabaseHandler.html#_updateSmartServiceConfiguration">_updateSmartServiceConfiguration</a></li><li><a href="DatabaseHandler.html#_updateSoftwareComponent">_updateSoftwareComponent</a></li><li><a href="DatabaseHandler.html#create">create</a></li><li><a href="DatabaseHandler.html#delete">delete</a></li><li><a href="DatabaseHandler.html#executeLocalCRUDOperation">executeLocalCRUDOperation</a></li><li><a href="DatabaseHandler.html#getDomainItemIDs">getDomainItemIDs</a></li><li><a href="DatabaseHandler.html#getModelItemIDs">getModelItemIDs</a></li><li><a href="DatabaseHandler.html#getSmartServiceConfigurationItemIDs">getSmartServiceConfigurationItemIDs</a></li><li><a href="DatabaseHandler.html#getSoftwareItemIDs">getSoftwareItemIDs</a></li><li><a href="DatabaseHandler.html#read">read</a></li><li><a href="DatabaseHandler.html#update">update</a></li></ul></div></li><li><a href="DatabaseQuery.html">DatabaseQuery</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="DatabaseQuery_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="DatabaseQuery.html#.fromJSON">fromJSON</a></li><li><a href="DatabaseQuery.html#getParams">getParams</a></li><li><a href="DatabaseQuery.html#getQueryType">getQueryType</a></li><li><a href="DatabaseQuery.html#getRessource">getRessource</a></li><li><a href="DatabaseQuery.html#toJSON">toJSON</a></li><li><a href="DatabaseQuery.html#toURI">toURI</a></li></ul></div></li><li><a href="DataRequestStateController.html">DataRequestStateController</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="DataRequestStateController_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="DataRequestStateController.html#broadcastOperationExecuted">broadcastOperationExecuted</a></li><li><a href="DataRequestStateController.html#broadcastRessourceAccess">broadcastRessourceAccess</a></li><li><a href="DataRequestStateController.html#cancelBroadcastOperation">cancelBroadcastOperation</a></li><li><a href="DataRequestStateController.html#executeLocalOperation">executeLocalOperation</a></li><li><a href="DataRequestStateController.html#getAwaitBroadcastResponse">getAwaitBroadcastResponse</a></li><li><a href="DataRequestStateController.html#getBroadcastRequestReceived">getBroadcastRequestReceived</a></li><li><a href="DataRequestStateController.html#getCurrentState">getCurrentState</a></li><li><a href="DataRequestStateController.html#getIdle">getIdle</a></li><li><a href="DataRequestStateController.html#getRequestReceived">getRequestReceived</a></li><li><a href="DataRequestStateController.html#getRessourceAccessNotAvailable">getRessourceAccessNotAvailable</a></li><li><a href="DataRequestStateController.html#getRessourceAccessProtected">getRessourceAccessProtected</a></li><li><a href="DataRequestStateController.html#getRessourceAccessProvided">getRessourceAccessProvided</a></li><li><a href="DataRequestStateController.html#requestBroadcastCRUDOperation">requestBroadcastCRUDOperation</a></li><li><a href="DataRequestStateController.html#requestCRUDOperation">requestCRUDOperation</a></li><li><a href="DataRequestStateController.html#requestRessourceAccess">requestRessourceAccess</a></li><li><a href="DataRequestStateController.html#ressourceNotAvailable">ressourceNotAvailable</a></li><li><a href="DataRequestStateController.html#ressourceProtected">ressourceProtected</a></li><li><a href="DataRequestStateController.html#ressourceProvided">ressourceProvided</a></li><li><a href="DataRequestStateController.html#setCurrentState">setCurrentState</a></li></ul></div></li><li><a href="DomainItem.html">DomainItem</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="DomainItem_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="DomainItem.html#.fromJSON">fromJSON</a></li><li><a href="DomainItem.html#getId">getId</a></li><li><a href="DomainItem.html#getObject">getObject</a></li><li><a href="DomainItem.html#setId">setId</a></li><li><a href="DomainItem.html#setObject">setObject</a></li><li><a href="DomainItem.html#toJSON">toJSON</a></li></ul></div></li><li><a href="ExecutionFailed.html">ExecutionFailed</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="ExecutionFailed_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="ExecutionFailed.html#cancel">cancel</a></li></ul></div></li><li><a href="ExecutionPossible.html">ExecutionPossible</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="ExecutionPossible_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="ExecutionPossible.html#bindMinions">bindMinions</a></li></ul></div></li><li><a href="ExecutionProtected.html">ExecutionProtected</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="ExecutionProtected_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="ExecutionProtected.html#cancel">cancel</a></li><li><a href="ExecutionProtected.html#removeProtection">removeProtection</a></li></ul></div></li><li><a href="FeatureRequest.html">FeatureRequest</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="FeatureRequest_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="FeatureRequest.html#.fromJSON">fromJSON</a></li><li><a href="FeatureRequest.html#getCRUDOperation">getCRUDOperation</a></li><li><a href="FeatureRequest.html#getId">getId</a></li><li><a href="FeatureRequest.html#getTrigger">getTrigger</a></li><li><a href="FeatureRequest.html#getType">getType</a></li><li><a href="FeatureRequest.html#toJSON">toJSON</a></li></ul></div></li><li><a href="FeatureResponse.html">FeatureResponse</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="FeatureResponse_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="FeatureResponse.html#.fromJSON">fromJSON</a></li><li><a href="FeatureResponse.html#getRequest">getRequest</a></li><li><a href="FeatureResponse.html#getResult">getResult</a></li><li><a href="FeatureResponse.html#toJSON">toJSON</a></li></ul></div></li><li><a href="Idle.html">Idle</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Idle_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="Idle.html#getSmartServiceConfigurationItemIds">getSmartServiceConfigurationItemIds</a></li><li><a href="Idle.html#loadSmartServiceConfiguration">loadSmartServiceConfiguration</a></li><li><a href="Idle.html#requestCRUDOperation">requestCRUDOperation</a></li><li><a href="Idle.html#toString">toString</a></li></ul></div></li><li><a href="LocalDSOMinion.html">LocalDSOMinion</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="LocalDSOMinion_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="LocalDSOMinion.html#deleteData">deleteData</a></li><li><a href="LocalDSOMinion.html#readData">readData</a></li><li><a href="LocalDSOMinion.html#saveData">saveData</a></li><li><a href="LocalDSOMinion.html#updateData">updateData</a></li></ul></div></li><li><a href="Minion.html">Minion</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Minion_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="Minion.html#.interpretMinionCode">interpretMinionCode</a></li><li><a href="Minion.html#.loadMinion">loadMinion</a></li><li><a href="Minion.html#activate">activate</a></li><li><a href="Minion.html#getCode">getCode</a></li><li><a href="Minion.html#getConstructor">getConstructor</a></li><li><a href="Minion.html#getId">getId</a></li><li><a href="Minion.html#getInstanceId">getInstanceId</a></li><li><a href="Minion.html#getName">getName</a></li><li><a href="Minion.html#getRunning">getRunning</a></li><li><a href="Minion.html#initialize">initialize</a></li><li><a href="Minion.html#notify">notify</a></li><li><a href="Minion.html#saveMinionLocally">saveMinionLocally</a></li><li><a href="Minion.html#setId">setId</a></li><li><a href="Minion.html#setInstanceId">setInstanceId</a></li><li><a href="Minion.html#setRunning">setRunning</a></li><li><a href="Minion.html#terminate">terminate</a></li></ul></div></li><li><a href="MinionCommunicationMap.html">MinionCommunicationMap</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="MinionCommunicationMap_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="MinionCommunicationMap.html#addMinion">addMinion</a></li><li><a href="MinionCommunicationMap.html#addTransition">addTransition</a></li><li><a href="MinionCommunicationMap.html#getColumnRows">getColumnRows</a></li><li><a href="MinionCommunicationMap.html#getMap">getMap</a></li><li><a href="MinionCommunicationMap.html#getSourceMinionIDs">getSourceMinionIDs</a></li><li><a href="MinionCommunicationMap.html#getTargetMinionIDs">getTargetMinionIDs</a></li><li><a href="MinionCommunicationMap.html#removeTransition">removeTransition</a></li></ul></div></li><li><a href="MinionController.html">MinionController</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="MinionController_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="MinionController.html#activate">activate</a></li><li><a href="MinionController.html#bind">bind</a></li><li><a href="MinionController.html#clearRuntimeEnvironment">clearRuntimeEnvironment</a></li><li><a href="MinionController.html#getMinionClass">getMinionClass</a></li><li><a href="MinionController.html#getMinionClasses">getMinionClasses</a></li><li><a href="MinionController.html#notify">notify</a></li><li><a href="MinionController.html#register">register</a></li><li><a href="MinionController.html#terminate">terminate</a></li></ul></div></li><li><a href="MinionMatchingChecked.html">MinionMatchingChecked</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="MinionMatchingChecked_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="MinionMatchingChecked.html#allMinionsAvailable">allMinionsAvailable</a></li><li><a href="MinionMatchingChecked.html#someMinionNotAvailable">someMinionNotAvailable</a></li><li><a href="MinionMatchingChecked.html#someMinionProtected">someMinionProtected</a></li></ul></div></li><li><a href="MinionsBound.html">MinionsBound</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="MinionsBound_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="MinionsBound.html#runSmartService">runSmartService</a></li></ul></div></li><li><a href="MinionSpecification.html">MinionSpecification</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="MinionSpecification_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="MinionSpecification.html#.fromJSON">fromJSON</a></li><li><a href="MinionSpecification.html#getDescription">getDescription</a></li><li><a href="MinionSpecification.html#getInstanceId">getInstanceId</a></li><li><a href="MinionSpecification.html#getName">getName</a></li><li><a href="MinionSpecification.html#getSoftwareItemId">getSoftwareItemId</a></li><li><a href="MinionSpecification.html#getTargetMinionIds">getTargetMinionIds</a></li><li><a href="MinionSpecification.html#getType">getType</a></li><li><a href="MinionSpecification.html#setInstanceId">setInstanceId</a></li><li><a href="MinionSpecification.html#toJSON">toJSON</a></li></ul></div></li><li><a href="MinionState.html">MinionState</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="MinionState_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="MinionState.html#allMinionsAvailable">allMinionsAvailable</a></li><li><a href="MinionState.html#bindMinions">bindMinions</a></li><li><a href="MinionState.html#cancel">cancel</a></li><li><a href="MinionState.html#checkMinionMatching">checkMinionMatching</a></li><li><a href="MinionState.html#deliverSmartServiceConfigurationItemIds">deliverSmartServiceConfigurationItemIds</a></li><li><a href="MinionState.html#getSmartServiceConfigurationItemIds">getSmartServiceConfigurationItemIds</a></li><li><a href="MinionState.html#loadSmartServiceConfiguration">loadSmartServiceConfiguration</a></li><li><a href="MinionState.html#removeProtection">removeProtection</a></li><li><a href="MinionState.html#runSmartService">runSmartService</a></li><li><a href="MinionState.html#someMinionNotAvailable">someMinionNotAvailable</a></li><li><a href="MinionState.html#someMinionProtected">someMinionProtected</a></li><li><a href="MinionState.html#terminateSmartService">terminateSmartService</a></li></ul></div></li><li><a href="MinionStateController.html">MinionStateController</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="MinionStateController_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="MinionStateController.html#allMinionsAvailable">allMinionsAvailable</a></li><li><a href="MinionStateController.html#bindMinions">bindMinions</a></li><li><a href="MinionStateController.html#cancel">cancel</a></li><li><a href="MinionStateController.html#checkMinionMatching">checkMinionMatching</a></li><li><a href="MinionStateController.html#deliverSmartServiceConfigurationItemIds">deliverSmartServiceConfigurationItemIds</a></li><li><a href="MinionStateController.html#getCurrentState">getCurrentState</a></li><li><a href="MinionStateController.html#getExecutionFailed">getExecutionFailed</a></li><li><a href="MinionStateController.html#getExecutionPossible">getExecutionPossible</a></li><li><a href="MinionStateController.html#getExecutionProtected">getExecutionProtected</a></li><li><a href="MinionStateController.html#getIdle">getIdle</a></li><li><a href="MinionStateController.html#getMinionMatchingChecked">getMinionMatchingChecked</a></li><li><a href="MinionStateController.html#getMinionsBound">getMinionsBound</a></li><li><a href="MinionStateController.html#getSmartServiceConfigurationItemIds">getSmartServiceConfigurationItemIds</a></li><li><a href="MinionStateController.html#getSmartServiceConfigurationLoaded">getSmartServiceConfigurationLoaded</a></li><li><a href="MinionStateController.html#getSmartServiceConfigurationsFound">getSmartServiceConfigurationsFound</a></li><li><a href="MinionStateController.html#getSmartServiceRunning">getSmartServiceRunning</a></li><li><a href="MinionStateController.html#loadSmartServiceConfiguration">loadSmartServiceConfiguration</a></li><li><a href="MinionStateController.html#removeProtection">removeProtection</a></li><li><a href="MinionStateController.html#runSmartService">runSmartService</a></li><li><a href="MinionStateController.html#setCurrentState">setCurrentState</a></li><li><a href="MinionStateController.html#someMinionNotAvailable">someMinionNotAvailable</a></li><li><a href="MinionStateController.html#someMinionProtected">someMinionProtected</a></li><li><a href="MinionStateController.html#terminateSmartService">terminateSmartService</a></li></ul></div></li><li><a href="ModelItem.html">ModelItem</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="ModelItem_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="ModelItem.html#.fromJSON">fromJSON</a></li><li><a href="ModelItem.html#getId">getId</a></li><li><a href="ModelItem.html#getModel">getModel</a></li><li><a href="ModelItem.html#setId">setId</a></li><li><a href="ModelItem.html#setModel">setModel</a></li><li><a href="ModelItem.html#toJSON">toJSON</a></li></ul></div></li><li><a href="Pmin.html">Pmin</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Pmin_sub"></div></li><li><a href="RequestReceived.html">RequestReceived</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="RequestReceived_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="RequestReceived.html#executeLocalOperation">executeLocalOperation</a></li><li><a href="RequestReceived.html#requestBroadcastCRUDOperation">requestBroadcastCRUDOperation</a></li><li><a href="RequestReceived.html#toString">toString</a></li></ul></div></li><li><a href="RessourceAccessNotAvailable.html">RessourceAccessNotAvailable</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="RessourceAccessNotAvailable_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="RessourceAccessNotAvailable.html#cancelBroadcastOperation">cancelBroadcastOperation</a></li><li><a href="RessourceAccessNotAvailable.html#toString">toString</a></li></ul></div></li><li><a href="RessourceAccessProtected.html">RessourceAccessProtected</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="RessourceAccessProtected_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="RessourceAccessProtected.html#cancelBroadcastOperation">cancelBroadcastOperation</a></li><li><a href="RessourceAccessProtected.html#requestRessourceAccess">requestRessourceAccess</a></li></ul></div></li><li><a href="RessourceAccessProvided.html">RessourceAccessProvided</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="RessourceAccessProvided_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="RessourceAccessProvided.html#broadcastOperationExecuted">broadcastOperationExecuted</a></li><li><a href="RessourceAccessProvided.html#toString">toString</a></li></ul></div></li><li><a href="SmartServiceConfigurationItem.html">SmartServiceConfigurationItem</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="SmartServiceConfigurationItem_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="SmartServiceConfigurationItem.html#.fromJSON">fromJSON</a></li><li><a href="SmartServiceConfigurationItem.html#getConfiguration">getConfiguration</a></li><li><a href="SmartServiceConfigurationItem.html#getContext">getContext</a></li><li><a href="SmartServiceConfigurationItem.html#getDescriptionText">getDescriptionText</a></li><li><a href="SmartServiceConfigurationItem.html#getDescriptionTitle">getDescriptionTitle</a></li><li><a href="SmartServiceConfigurationItem.html#getId">getId</a></li><li><a href="SmartServiceConfigurationItem.html#getName">getName</a></li><li><a href="SmartServiceConfigurationItem.html#getVersion">getVersion</a></li><li><a href="SmartServiceConfigurationItem.html#toJSON">toJSON</a></li></ul></div></li><li><a href="SmartServiceConfigurationLoaded.html">SmartServiceConfigurationLoaded</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="SmartServiceConfigurationLoaded_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="SmartServiceConfigurationLoaded.html#checkMinionMatching">checkMinionMatching</a></li></ul></div></li><li><a href="SmartServiceConfigurationsFound.html">SmartServiceConfigurationsFound</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="SmartServiceConfigurationsFound_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="SmartServiceConfigurationsFound.html#deliverSmartServiceConfigurationItemIds">deliverSmartServiceConfigurationItemIds</a></li></ul></div></li><li><a href="SmartServiceController.html">SmartServiceController</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="SmartServiceController_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="SmartServiceController.html#activateLoadedService">activateLoadedService</a></li><li><a href="SmartServiceController.html#bindMinions">bindMinions</a></li><li><a href="SmartServiceController.html#getDataAccessService">getDataAccessService</a></li><li><a href="SmartServiceController.html#getMinionController">getMinionController</a></li><li><a href="SmartServiceController.html#getSmartServiceConfigurationItemIds">getSmartServiceConfigurationItemIds</a></li><li><a href="SmartServiceController.html#loadSmartServiceConfiguration">loadSmartServiceConfiguration</a></li><li><a href="SmartServiceController.html#match">match</a></li><li><a href="SmartServiceController.html#notifyMinions">notifyMinions</a></li><li><a href="SmartServiceController.html#removeProtections">removeProtections</a></li><li><a href="SmartServiceController.html#terminateRunningService">terminateRunningService</a></li></ul></div></li><li><a href="SmartServiceRunning.html">SmartServiceRunning</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="SmartServiceRunning_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="SmartServiceRunning.html#terminateSmartService">terminateSmartService</a></li></ul></div></li><li><a href="SoftwareItem.html">SoftwareItem</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="SoftwareItem_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="SoftwareItem.html#.fromJSON">fromJSON</a></li><li><a href="SoftwareItem.html#getClass">getClass</a></li><li><a href="SoftwareItem.html#getCode">getCode</a></li><li><a href="SoftwareItem.html#getId">getId</a></li><li><a href="SoftwareItem.html#setCode">setCode</a></li><li><a href="SoftwareItem.html#setId">setId</a></li><li><a href="SoftwareItem.html#toJSON">toJSON</a></li></ul></div></li><li><a href="TENVIdentificationHandler.html">TENVIdentificationHandler</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="TENVIdentificationHandler_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="TENVIdentificationHandler.html#getContentOffering">getContentOffering</a></li><li><a href="TENVIdentificationHandler.html#getGeography">getGeography</a></li><li><a href="TENVIdentificationHandler.html#getKeywords">getKeywords</a></li><li><a href="TENVIdentificationHandler.html#getLocalID">getLocalID</a></li><li><a href="TENVIdentificationHandler.html#getModelOffering">getModelOffering</a></li><li><a href="TENVIdentificationHandler.html#getName">getName</a></li><li><a href="TENVIdentificationHandler.html#getProperties">getProperties</a></li><li><a href="TENVIdentificationHandler.html#getSoftwareOffering">getSoftwareOffering</a></li><li><a href="TENVIdentificationHandler.html#getType">getType</a></li></ul></div></li><li><a href="Tmin.html">Tmin</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Tmin_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="Tmin.html#createModel">createModel</a></li><li><a href="Tmin.html#deleteModel">deleteModel</a></li><li><a href="Tmin.html#predictModel">predictModel</a></li><li><a href="Tmin.html#readModel">readModel</a></li><li><a href="Tmin.html#updateModel">updateModel</a></li></ul></div></li><li><a href="Trigger.html">Trigger</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Trigger_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="Trigger.html#.fromJSON">fromJSON</a></li><li><a href="Trigger.html#getMinionSpecs">getMinionSpecs</a></li><li><a href="Trigger.html#getTriggerMethod">getTriggerMethod</a></li><li><a href="Trigger.html#toJSON">toJSON</a></li></ul></div></li><li><a href="TucanaCoreService.html">TucanaCoreService</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="TucanaCoreService_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="TucanaCoreService.html#notifyMinions">notifyMinions</a></li><li><a href="TucanaCoreService.html#requestCRUDOperation">requestCRUDOperation</a></li><li><a href="TucanaCoreService.html#startService">startService</a></li></ul></div></li><li><a href="UPeerCommunicationHandler.html">UPeerCommunicationHandler</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="UPeerCommunicationHandler_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="UPeerCommunicationHandler.html#_executeBroadcastCRUDOperation">_executeBroadcastCRUDOperation</a></li><li><a href="UPeerCommunicationHandler.html#answer">answer</a></li><li><a href="UPeerCommunicationHandler.html#broadcastRessourceAccess">broadcastRessourceAccess</a></li><li><a href="UPeerCommunicationHandler.html#connectToCore">connectToCore</a></li><li><a href="UPeerCommunicationHandler.html#getFilteredPeerIds">getFilteredPeerIds</a></li><li><a href="UPeerCommunicationHandler.html#handleCRUDOperation">handleCRUDOperation</a></li><li><a href="UPeerCommunicationHandler.html#handleRequest">handleRequest</a></li><li><a href="UPeerCommunicationHandler.html#handleResponse">handleResponse</a></li><li><a href="UPeerCommunicationHandler.html#handleTrigger">handleTrigger</a></li><li><a href="UPeerCommunicationHandler.html#init">init</a></li><li><a href="UPeerCommunicationHandler.html#requestAccessPermission">requestAccessPermission</a></li><li><a href="UPeerCommunicationHandler.html#setupEventListener">setupEventListener</a></li><li><a href="UPeerCommunicationHandler.html#transfer">transfer</a></li></ul></div></li><li><a href="VisualizationCmin.html">VisualizationCmin</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="VisualizationCmin_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="VisualizationCmin.html#clearUserInterface">clearUserInterface</a></li></ul></div></li></ul></div><div class="lnb-api hidden"><h3>Global</h3><ul><li><a href="global.html#BROADCAST_CONDITION">BROADCAST_CONDITION</a></li><li><a href="global.html#BROADCAST_TYPE">BROADCAST_TYPE</a></li><li><a href="global.html#CRUD_OPERATION_TYPE">CRUD_OPERATION_TYPE</a></li><li><a href="global.html#MINION_TYPE">MINION_TYPE</a></li><li><a href="global.html#OBJECT_TYPE">OBJECT_TYPE</a></li><li><a href="global.html#QUERY_TYPE">QUERY_TYPE</a></li><li><a href="global.html#REQUEST_TYPE">REQUEST_TYPE</a></li><li><a href="global.html#RESPONSE_STATUS">RESPONSE_STATUS</a></li></ul></div>
+</nav>
+<div id="resizer"></div>
+
+<div class="main" id="main">
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2><span class="attribs"><span class="type-signature"></span></span>DatabaseHandler<span class="signature">()</span><span class="type-signature"></span></h2>
+        
+    
+</header>
+
+<article>
+    
+        <div class="container-overview">
+        
+            
+
+<dt>
+    
+        <h4 class="name" id="DatabaseHandler">
+            
+                new <span class="type-signature"></span>DatabaseHandler<span class="signature">()</span><span class="type-signature"></span>
+                
+            
+            <div class="container-source members">
+                <code><a href="dataallocation_handler_databasehandler.js.html">dataallocation/handler/databasehandler.js</a></code>,
+                <code><a href="dataallocation_handler_databasehandler.js.html#line12">line 12</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Interface for classes that represent a DatabaseHandler Adapter.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+        
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        <dl>
+                
+
+<dt>
+    
+        <h4 class="name" id="_createData">
+            
+                <span class="type-signature"><span class="icon green">async</span> </span>_createData<span class="signature">(object:)</span><span class="type-signature"> &rarr; {Promise.&lt;boolean>}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="dataallocation_handler_databasehandler.js.html">dataallocation/handler/databasehandler.js</a></code>,
+                <code><a href="dataallocation_handler_databasehandler.js.html#line170">line 170</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Creates a new data object.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>object:</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The object to create.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">Promise.&lt;boolean></span>
+
+
+
+
+
+- <p>Success or not</p>
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="_createModel">
+            
+                <span class="type-signature"><span class="icon green">async</span> </span>_createModel<span class="signature">(object:)</span><span class="type-signature"> &rarr; {Promise.&lt;boolean>}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="dataallocation_handler_databasehandler.js.html">dataallocation/handler/databasehandler.js</a></code>,
+                <code><a href="dataallocation_handler_databasehandler.js.html#line188">line 188</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Creates a new model object.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>object:</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The object to create.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">Promise.&lt;boolean></span>
+
+
+
+
+
+- <p>Success or not</p>
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="_createSmartServiceConfiguration">
+            
+                <span class="type-signature"><span class="icon green">async</span> </span>_createSmartServiceConfiguration<span class="signature">(object:)</span><span class="type-signature"> &rarr; {Promise.&lt;boolean>}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="dataallocation_handler_databasehandler.js.html">dataallocation/handler/databasehandler.js</a></code>,
+                <code><a href="dataallocation_handler_databasehandler.js.html#line197">line 197</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Creates a new smart service configuration item.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>object:</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The object to create.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">Promise.&lt;boolean></span>
+
+
+
+
+
+- <p>Success or not</p>
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="_createSoftwareComponent">
+            
+                <span class="type-signature"><span class="icon green">async</span> </span>_createSoftwareComponent<span class="signature">(object:)</span><span class="type-signature"> &rarr; {Promise.&lt;boolean>}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="dataallocation_handler_databasehandler.js.html">dataallocation/handler/databasehandler.js</a></code>,
+                <code><a href="dataallocation_handler_databasehandler.js.html#line179">line 179</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Creates a new software component object.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>object:</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The object to create.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">Promise.&lt;boolean></span>
+
+
+
+
+
+- <p>Success or not</p>
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="_deleteData">
+            
+                <span class="type-signature"><span class="icon green">async</span> </span>_deleteData<span class="signature">(query:)</span><span class="type-signature"> &rarr; {Promise.&lt;boolean>}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="dataallocation_handler_databasehandler.js.html">dataallocation/handler/databasehandler.js</a></code>,
+                <code><a href="dataallocation_handler_databasehandler.js.html#line282">line 282</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Deletes a data object.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>query:</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>DatabaseQuery defining the query parameter e.g. id, type etc. of the data.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">Promise.&lt;boolean></span>
+
+
+
+
+
+- <p>Success or not</p>
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="_deleteModel">
+            
+                <span class="type-signature"><span class="icon green">async</span> </span>_deleteModel<span class="signature">(query:)</span><span class="type-signature"> &rarr; {Promise.&lt;boolean>}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="dataallocation_handler_databasehandler.js.html">dataallocation/handler/databasehandler.js</a></code>,
+                <code><a href="dataallocation_handler_databasehandler.js.html#line300">line 300</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Deletes a model object.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>query:</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>DatabaseQuery defining the query parameter e.g. id, type etc. of the data.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">Promise.&lt;boolean></span>
+
+
+
+
+
+- <p>Success or not</p>
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="_deleteSmartServiceConfiguration">
+            
+                <span class="type-signature"><span class="icon green">async</span> </span>_deleteSmartServiceConfiguration<span class="signature">(query:)</span><span class="type-signature"> &rarr; {Promise.&lt;boolean>}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="dataallocation_handler_databasehandler.js.html">dataallocation/handler/databasehandler.js</a></code>,
+                <code><a href="dataallocation_handler_databasehandler.js.html#line309">line 309</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Deletes a smart service configuration item.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>query:</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>DatabaseQuery defining the query parameter e.g. id, type etc. of the data.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">Promise.&lt;boolean></span>
+
+
+
+
+
+- <p>Success or not</p>
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="_deleteSoftwareComponent">
+            
+                <span class="type-signature"><span class="icon green">async</span> </span>_deleteSoftwareComponent<span class="signature">(query:)</span><span class="type-signature"> &rarr; {Promise.&lt;boolean>}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="dataallocation_handler_databasehandler.js.html">dataallocation/handler/databasehandler.js</a></code>,
+                <code><a href="dataallocation_handler_databasehandler.js.html#line291">line 291</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Deletes a software component object.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>query:</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>DatabaseQuery defining the query parameter e.g. id, type etc. of the data.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">Promise.&lt;boolean></span>
+
+
+
+
+
+- <p>Success or not</p>
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="_readData">
+            
+                <span class="type-signature"><span class="icon green">async</span> </span>_readData<span class="signature">(query:)</span><span class="type-signature"> &rarr; {Promise.&lt;Array>}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="dataallocation_handler_databasehandler.js.html">dataallocation/handler/databasehandler.js</a></code>,
+                <code><a href="dataallocation_handler_databasehandler.js.html#line206">line 206</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Reads a new data object.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>query:</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>DatabaseQuery defining the query parameter e.g. id, type etc. of the data.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">Promise.&lt;Array></span>
+
+
+
+
+
+- <p>Array of objects.</p>
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="_readModel">
+            
+                <span class="type-signature"><span class="icon green">async</span> </span>_readModel<span class="signature">(query:)</span><span class="type-signature"> &rarr; {Promise.&lt;Array>}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="dataallocation_handler_databasehandler.js.html">dataallocation/handler/databasehandler.js</a></code>,
+                <code><a href="dataallocation_handler_databasehandler.js.html#line224">line 224</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Reads a new model object.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>query:</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>DatabaseQuery defining the query parameter e.g. id, type etc. of the data.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">Promise.&lt;Array></span>
+
+
+
+
+
+- <p>Array of objects.</p>
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="_readSmartServiceConfiguration">
+            
+                <span class="type-signature"><span class="icon green">async</span> </span>_readSmartServiceConfiguration<span class="signature">(query:)</span><span class="type-signature"> &rarr; {Promise.&lt;Array>}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="dataallocation_handler_databasehandler.js.html">dataallocation/handler/databasehandler.js</a></code>,
+                <code><a href="dataallocation_handler_databasehandler.js.html#line233">line 233</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Reads a new smart service configuration item.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>query:</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>DatabaseQuery defining the query parameter e.g. id, type etc. of the data.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">Promise.&lt;Array></span>
+
+
+
+
+
+- <p>Array of objects.</p>
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="_readSoftwareComponent">
+            
+                <span class="type-signature"><span class="icon green">async</span> </span>_readSoftwareComponent<span class="signature">(query:)</span><span class="type-signature"> &rarr; {Promise.&lt;Array>}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="dataallocation_handler_databasehandler.js.html">dataallocation/handler/databasehandler.js</a></code>,
+                <code><a href="dataallocation_handler_databasehandler.js.html#line215">line 215</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Reads a new software component object.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>query:</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>DatabaseQuery defining the query parameter e.g. id, type etc. of the data.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">Promise.&lt;Array></span>
+
+
+
+
+
+- <p>Array of objects.</p>
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="_updateData">
+            
+                <span class="type-signature"><span class="icon green">async</span> </span>_updateData<span class="signature">(query:, object:)</span><span class="type-signature"> &rarr; {Promise.&lt;boolean>}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="dataallocation_handler_databasehandler.js.html">dataallocation/handler/databasehandler.js</a></code>,
+                <code><a href="dataallocation_handler_databasehandler.js.html#line243">line 243</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Updates a data object.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>query:</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>DatabaseQuery defining the query parameter e.g. id, type etc. of the data.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>object:</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The object to be updated.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">Promise.&lt;boolean></span>
+
+
+
+
+
+- <p>Success or not</p>
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="_updateModel">
+            
+                <span class="type-signature"><span class="icon green">async</span> </span>_updateModel<span class="signature">(query:, object:)</span><span class="type-signature"> &rarr; {Promise.&lt;boolean>}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="dataallocation_handler_databasehandler.js.html">dataallocation/handler/databasehandler.js</a></code>,
+                <code><a href="dataallocation_handler_databasehandler.js.html#line263">line 263</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Updates a model object.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>query:</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>DatabaseQuery defining the query parameter e.g. id, type etc. of the data.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>object:</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The object to be updated.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">Promise.&lt;boolean></span>
+
+
+
+
+
+- <p>Success or not</p>
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="_updateSmartServiceConfiguration">
+            
+                <span class="type-signature"><span class="icon green">async</span> </span>_updateSmartServiceConfiguration<span class="signature">(query:, object:)</span><span class="type-signature"> &rarr; {Promise.&lt;boolean>}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="dataallocation_handler_databasehandler.js.html">dataallocation/handler/databasehandler.js</a></code>,
+                <code><a href="dataallocation_handler_databasehandler.js.html#line273">line 273</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Updates a new smart service configuration item.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>query:</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>DatabaseQuery defining the query parameter e.g. id, type etc. of the data.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>object:</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The object to be updated.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">Promise.&lt;boolean></span>
+
+
+
+
+
+- <p>Success or not</p>
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="_updateSoftwareComponent">
+            
+                <span class="type-signature"><span class="icon green">async</span> </span>_updateSoftwareComponent<span class="signature">(query:, object:)</span><span class="type-signature"> &rarr; {Promise.&lt;boolean>}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="dataallocation_handler_databasehandler.js.html">dataallocation/handler/databasehandler.js</a></code>,
+                <code><a href="dataallocation_handler_databasehandler.js.html#line253">line 253</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Updates a software component object.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>query:</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>DatabaseQuery defining the query parameter e.g. id, type etc. of the data.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>object:</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The object to be updated.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">Promise.&lt;boolean></span>
+
+
+
+
+
+- <p>Success or not</p>
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="create">
+            
+                <span class="type-signature"><span class="icon green">async</span> </span>create<span class="signature">(object:, objectType:)</span><span class="type-signature"> &rarr; {Promise.&lt;boolean>}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="dataallocation_handler_databasehandler.js.html">dataallocation/handler/databasehandler.js</a></code>,
+                <code><a href="dataallocation_handler_databasehandler.js.html#line46">line 46</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Creates an object in the local database</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>object:</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The object to create.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>objectType:</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The type of the object i.e. data, software or model.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">Promise.&lt;boolean></span>
+
+
+
+
+
+- <p>Success or not.</p>
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="delete">
+            
+                <span class="type-signature"><span class="icon green">async</span> </span>delete<span class="signature">(query:, objectType:)</span><span class="type-signature"> &rarr; {Promise.&lt;boolean>}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="dataallocation_handler_databasehandler.js.html">dataallocation/handler/databasehandler.js</a></code>,
+                <code><a href="dataallocation_handler_databasehandler.js.html#line116">line 116</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Deletes an object</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>query:</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>DatabaseQuery defining the query parameter e.g. id, type etc. of the data.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>objectType:</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The type of the object i.e. data, software or model.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">Promise.&lt;boolean></span>
+
+
+
+
+
+- <p>Success or not.</p>
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="executeLocalCRUDOperation">
+            
+                <span class="type-signature"><span class="icon green">async</span> </span>executeLocalCRUDOperation<span class="signature">(crudOperation:)</span><span class="type-signature"> &rarr; {Promise.&lt;(boolean|Array)>}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="dataallocation_handler_databasehandler.js.html">dataallocation/handler/databasehandler.js</a></code>,
+                <code><a href="dataallocation_handler_databasehandler.js.html#line24">line 24</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Given a well definded CRUDOperation this function executes the right function.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>crudOperation:</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The operation to be executed.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">Promise.&lt;(boolean|Array)></span>
+
+
+
+
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="getDomainItemIDs">
+            
+                <span class="type-signature"><span class="icon green">async</span> </span>getDomainItemIDs<span class="signature">()</span><span class="type-signature"> &rarr; {Promise.&lt;Array>}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="dataallocation_handler_databasehandler.js.html">dataallocation/handler/databasehandler.js</a></code>,
+                <code><a href="dataallocation_handler_databasehandler.js.html#line137">line 137</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns all cached domain item IDs accessible withing the database.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">Promise.&lt;Array></span>
+
+
+
+
+
+- <p>The IDs of the stored domain items.</p>
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="getModelItemIDs">
+            
+                <span class="type-signature"><span class="icon green">async</span> </span>getModelItemIDs<span class="signature">()</span><span class="type-signature"> &rarr; {Promise.&lt;Array>}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="dataallocation_handler_databasehandler.js.html">dataallocation/handler/databasehandler.js</a></code>,
+                <code><a href="dataallocation_handler_databasehandler.js.html#line153">line 153</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns all cached model item IDs accessible withing the database.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">Promise.&lt;Array></span>
+
+
+
+
+
+- <p>The IDs of the stored model items.</p>
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="getSmartServiceConfigurationItemIDs">
+            
+                <span class="type-signature"><span class="icon green">async</span> </span>getSmartServiceConfigurationItemIDs<span class="signature">()</span><span class="type-signature"> &rarr; {Promise.&lt;Array>}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="dataallocation_handler_databasehandler.js.html">dataallocation/handler/databasehandler.js</a></code>,
+                <code><a href="dataallocation_handler_databasehandler.js.html#line161">line 161</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns all cached Smart Service Configuration Item IDs accessible withing the database.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">Promise.&lt;Array></span>
+
+
+
+
+
+- <p>The IDs of the stored Smart Service Configuration Items.</p>
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="getSoftwareItemIDs">
+            
+                <span class="type-signature"><span class="icon green">async</span> </span>getSoftwareItemIDs<span class="signature">()</span><span class="type-signature"> &rarr; {Promise.&lt;Array>}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="dataallocation_handler_databasehandler.js.html">dataallocation/handler/databasehandler.js</a></code>,
+                <code><a href="dataallocation_handler_databasehandler.js.html#line145">line 145</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns all cached software item names accessible withing the database.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">Promise.&lt;Array></span>
+
+
+
+
+
+- <p>The names of the cached software items.</p>
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="read">
+            
+                <span class="type-signature"><span class="icon green">async</span> </span>read<span class="signature">(query:, objectType:)</span><span class="type-signature"> &rarr; {Promise.&lt;Array>}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="dataallocation_handler_databasehandler.js.html">dataallocation/handler/databasehandler.js</a></code>,
+                <code><a href="dataallocation_handler_databasehandler.js.html#line69">line 69</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Reads an object from the local database.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>query:</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>DatabaseQuery defining the query parameter e.g. id, type etc. of the data.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>objectType:</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The type of the object i.e. data, software or model.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">Promise.&lt;Array></span>
+
+
+
+
+
+- <p>Array of objects.</p>
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="update">
+            
+                <span class="type-signature"><span class="icon green">async</span> </span>update<span class="signature">(query:, object:, objectType:)</span><span class="type-signature"> &rarr; {Promise.&lt;boolean>}</span>
+                
+            
+            <div class="container-source members">
+                <code><a href="dataallocation_handler_databasehandler.js.html">dataallocation/handler/databasehandler.js</a></code>,
+                <code><a href="dataallocation_handler_databasehandler.js.html#line93">line 93</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Updates an object and replaces it with a new one.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>query:</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>DatabaseQuery defining the query parameter e.g. id, type etc. of the data.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>object:</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The new object.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>objectType:</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The type of the object i.e. data, software or model.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">Promise.&lt;boolean></span>
+
+
+
+
+
+- <p>Success or not.</p>
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            </dl>
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<footer>
+    <img class="logo" src="http://iss.uni-saarland.de/workspace/grayscale/img/logo_iss1.png" style="width: 90px; height: 30px">
+    <div class="footer-text">NHN Entertainment. Frontend Development Lab</div>
+</footer>
+<script>prettyPrint();</script>
+<script src="scripts/jquery.min.js"></script>
+<script src="scripts/tui-doc.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+    <script>
+        var id = 'DatabaseHandler_sub'.replace(/"/g, '_');
+        var selectedApi = document.getElementById(id); // do not use jquery selector
+        var $selectedApi = $(selectedApi);
+
+        $selectedApi.removeClass('hidden');
+        $selectedApi.parent().find('.glyphicon').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+        showLnbApi();
+    </script>
+
+</body>
+</html>

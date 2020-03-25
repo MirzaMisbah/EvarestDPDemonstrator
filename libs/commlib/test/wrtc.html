@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<script src="../peerComm.js" ></script>
+
+		<!-- external Dependencies -->
+		<script	src="https://code.jquery.com/jquery-3.2.1.min.js" 	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="	crossorigin="anonymous"></script>
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Expires" content="-1">
+		<meta http-equiv="CACHE-CONTROL" content="NO-CACHE">
+
+	</head>
+	<body>
+		<script>
+			$(document).ready(function() {
+				var conn = null;
+				var config = new Object();
+				config.ssAddress = 'ws://51.15.218.10:9090';
+
+				$.getJSON("iceservers.json").done(function(json) {
+					console.log("JSON Data: " + JSON.stringify(json));
+					config.rtcConfig = {
+						iceServers : json.iceServers,
+						iceTransports: "relay"
+					};
+					alert("We are ready!");
+
+				}).fail(function(jqxhr, textStatus, error) {
+					var err = textStatus + ", " + error;
+					console.log("Request Failed: " + err);
+				});
+
+				/**
+				 *  onStatusUpdate, onPeerMsg, onPeerConnected, onPeerDisconnected, onError
+				 */
+				var callbacks = {
+					onStatusUpdate : function(status) {
+						$('#txtLog').append(status + '\n');
+
+					},
+					onPeerMsg : function(peerId, msg) {
+						console.log(msg.data);
+						$('#txtChat').append(peerId + ': ' + msg.data + '\n');
+
+					},
+					onPeerConnected : function(peerId) {
+						// peer is now connected!
+						$('#connectedUsers').append('<li id="' + peerId + '">' + peerId + '</li>');
+					},
+					onPeerDisconnected : function(peerId) {
+						$('#' + peerId).remove();
+					},
+					onError : function(err) {
+						console.error("ERROR HANDLER: ", err);
+					}
+				};
+				$('#btnConnect').click(function() {
+					config.myId = $('#myId').val();
+					conn = new PeerCommunication(config, callbacks);
+				});
+				$('#btnDisconnect').click(function() {
+					if (conn)
+						conn.disconnect();
+				});
+				$('#btnSend').click(function() {
+					var target = $('#peerId').val();
+
+					var msg = {
+						type : MSG_TAGS.TYPE_TEXT,
+						data : $('#message').val()
+					};
+					console.log(msg.data);
+					conn.sendToPeer(target, msg);
+					$('#txtChat').append(config.myId + '->' + target + ': ' + msg.data + '\n');
+					$('#message').val("");
+				});
+				testConfig();
+				function testConfig() {
+					checkTURNServer({
+						url : 'turn:numb.viagenie.ca',
+						username : 'zahran.shahd@gmail.com',
+						credential : 'shahd218'
+					}, 10000).then(function(bool) {
+						console.log('is TURN server active? ', bool ? 'yes' : 'no');
+					}).catch(console.error.bind(console));
+					
+					
+					
+					function checkTURNServer(turnConfig, timeout) {
+
+						return new Promise(function(resolve, reject) {
+
+							setTimeout(function() {
+								if (promiseResolved)
+									return;
+								resolve(false);
+								promiseResolved = true;
+							}, timeout || 5000);
+
+							var promiseResolved = false,
+							    myPeerConnection = window.RTCPeerConnection 
+							    || window.mozRTCPeerConnection ||
+							     window.webkitRTCPeerConnection//compatibility for firefox and chrome
+							,
+							    pc = new myPeerConnection({
+								iceServers : [turnConfig]
+							}),
+							    noop = function() {
+							};
+							pc.createDataChannel("");
+							//create a bogus data channel
+							pc.createOffer(function(sdp) {
+								if (sdp.sdp.indexOf('typ relay') > -1) {// sometimes sdp contains the ice candidates...
+									promiseResolved = true;
+									resolve(true);
+								}
+								pc.setLocalDescription(sdp, noop, noop);
+							}, noop);
+							// create offer and set local description
+							pc.onicecandidate = function(ice) {//listen for candidate events
+								if (promiseResolved || !ice || !ice.candidate || !ice.candidate.candidate || !(ice.candidate.candidate.indexOf('typ relay') > -1))
+									return;
+								promiseResolved = true;
+								resolve(true);
+							};
+						});
+					}
+
+				}
+
+			});
+		</script>
+		<table>
+			<tr>
+				<td>
+				<table>
+					<tr>
+						<td>My ID:</td>
+						<td>
+						<input id="myId" type="text" />
+						</td>
+					</tr>
+					<tr>
+						<td>Click Here to Open Connection</td>
+						<td>
+						<button	id="btnConnect">
+							Open Connection
+						</button>
+						<button	id="btnDisconnect">
+							Disconnect
+						</button></td>
+					</tr>
+
+					<tr>
+						<td>Peer ID:</td>
+						<td>
+						<input id="peerId" type="text" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+						<input id="message" type="text" />
+						</td>
+						<td>
+						<button	id="btnSend">
+							Send Message
+						</button></td>
+					</tr>
+					<tr>
+						<td>Chat:</td>
+						<td>						<textarea id="txtChat" disabled="true" rows="10" cols="50"></textarea></td>
+					</tr>
+				</table></td>
+				<td><label>Connected Users:</label></td>
+				<td><ul id="connectedUsers"></ul></td>
+			</tr>
+			<tr>
+				<td colspan="4">				<textarea id="txtLog" disabled="true" rows="10" cols="80"></textarea></td>
+			</tr>
+		</table>
+	</body>
+</html>

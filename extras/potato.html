@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        span {font-size: 40px}
+        body {transition: background .1 ease-in-out }
+    </style>
+    
+</head>
+<body style="background-color: 'rbga(145,57,233,1)'">
+    <span>Potato count:</span><span id="count">1</span>
+    <div></div>
+    <input type="range" min="1" max="100" value="1" class="slider" id="myRange" style=" margin:20px auto;width:80%">
+    <div id="container" style="margin-top: 50px">
+        <img src="icon.gif" height="100%">
+    </div>
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+    <script>
+        const container = document.getElementById("container");
+        function nPotatos(count){
+            count = parseInt(count);
+            var increase = count > container.childElementCount;
+            while(count !== container.childElementCount){
+                if(increase){
+                    let potato = document.createElement("img");
+                    potato.style.height = "100%";
+                    potato.src = "icon.gif";
+                    container.appendChild(potato);
+                } else {
+                    container.removeChild(container.lastChild);
+                }
+            }
+            console.log("rbga(145,57,233," + (count / 100).toString() + ")")
+            $("body").css("backgroundColor", "rbga(145,57,233," + (count / 100).toString() + ")");
+        }
+        const range = document.getElementById("myRange");
+        const count = document.getElementById("count");
+        range.onchange = function(){
+            count.innerText = range.value;
+            nPotatos(range.value);
+        }
+    </script>
+    
+</body>
+</html>

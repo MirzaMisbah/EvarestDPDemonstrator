@@ -1,0 +1,35 @@
+{
+    "@context": "EVAREST",
+    "name": "Viscocity",
+    "location": "http://www.evarest.de/iot/viscocity",
+    "consumption": "External",
+    "lang": " ",
+    "keyWords": "Viscocity, Forming Machines, Sollich, ",
+    "description": "Measure of viscosity (in labour and at chocolate producing/forming maschines) (Sollich) ",
+    "productType": {
+        "@tpe": "Visualization",
+        "tier_1": "Viscocity",
+        "tier_2": "Machine Data"
+    },
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.1",
+        "reviewCount": "75"
+    },
+    "smartContract": {
+        "@type": "smartContract",
+        "location": "http://www.evarest.de/iot/viscocity",
+        "terms": "http://www.evarest.de/iot/viscocity"
+    },
+    "offers": {
+        "@type": "Offer",
+        "priceCurrency": "EUR",
+        "price": "19.00",
+        "priceValidUntil": "02-05-2020",
+        "availability": "yes",
+        "seller": {
+            "@type": "Lindt",
+            "location": "https://www.lindt.de/startseite/"
+        }
+    }
+}
