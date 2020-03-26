@@ -220,19 +220,6 @@ function printAnswerAndButton(value, button_text, button_id, link) {
     if(button){
         button_id = button_id + Math.random();
     }
-
-    /*var html = '<div class="media-body ml-3"> ' +
-        '<div class="bg-light rounded py-2 px-3 mb-2">' +
-        '<p class="text-small mb-0 text-muted" style="font-size:18px; color=black;">' + value + '</p>' +
-        '</div> ' +
-        '<p class="small text-muted"><span>' + timestamp + '</span> </p>' +
-        '<button id="' + button_id + '" style="margin: 10px;" type="button" class="btn btn-info" >' + button_text + '</button>' +
-        '</div>'
-        */
-   // newElement.innerHTML = html;
-   // p.appendChild(newElement);
-   // document.getElementById(button_id).onclick = function() {show_vis(link)};
-   // p.scrollTop = p.scrollHeight;
 }
 function openlink(link) {
     window.close();
@@ -269,7 +256,7 @@ function connectedPeers(){
         });
 }
 
-async function requestContract() {
+function requestContract() {
     var d = new Date();
     //check = setScReqValue();
     var answer = window.confirm('Your are about to request Sindo for SAS. Do you really want to do this?');
@@ -277,18 +264,21 @@ async function requestContract() {
         showalert('Your request has been send to sindo!');
         DeleteDB();
         removeConnectedPeer();
-            StartService();
-            if (checkConnectedPeer()){  
-                location.reload();  
-            }
-            else{}          
-          }
-          for (var i = 0; i = 0; i++){
+            //StartService();
+            doAsync().then(function (response) {
+                if (checkConnectedPeer()){  
+                    location.reload();  
+                }
+                else{}          
+            })  
             if (checkConnectedPeer()){  
                 removeConnectedPeer();  
             }
             else{i = 1;}
-          }
+            }
+            console.log("Contract requested")
+
+            
 }
 
 function checkConnectedPeer(){
@@ -308,41 +298,6 @@ function DeleteDB(){
        req.onsuccess = function () {
        console.log("Deleted database successfully");
         };
-}
-async function StartService(){
-    const uiAdapter = new tucana.adapter.DOMUIAdapter(document.getElementById("main-place"));
-
-    const database = new tucana.adapter.IndexedDBDatabaseHandler();
-    const identificationHandler = new tucana.adapter.Browser();
-    const baasCommunicationHandler = new tucana.adapter.RESTAPIBaaSCommunicationHandler();
-    const uPeerCommunicationHandler = new tucana.adapter.WebRTCUPeerCommunicationHandler({
-        myId: identificationHandler.getLocalID(),
-        myLocalId: identificationHandler.getLocalID(),
-        rtcConfig: {
-            "iceServers": [{
-                "url": "stun:stun2.1.google.com:19302"
-            }]
-        }
-    });
-
-    const tucanaPlatform = new tucana.TucanaCoreService(database, uPeerCommunicationHandler, baasCommunicationHandler, identificationHandler, uiAdapter);
-      
-    fetch('../EVAREST_HMI.json')
-    .then((response) => {
-        return response.json();
-    }).then(json => {
-        var sscItem = tucana.model.SmartServiceConfigurationItem.fromJSON(json);
-        tucanaPlatform.createSmartServiceConfiguration(sscItem)
-    }).then(() => {
-        tucanaPlatform.getSmartServiceConfigurationItemIds().then((ids) => {
-            console.log(ids)
-            tucanaPlatform.startService('EVARESTHMI');
-        }, () => {
-            console.log("service id fetch error");
-        });
-    }).then(() => {
-        removeConnectedPeer();    
-    });
 }
 
 function checkResponse(){
@@ -375,8 +330,9 @@ function checkResponse(){
             if (answer)
             {   
                 showalert('We are setting a smart contract for you.');
-                console.log(checkConnectedPeer()) 
-                    StartService();
+                //StartService();
+                doAsync().then(function (response) {
+                    })
             }
             break label;      
         } 
@@ -392,5 +348,50 @@ function checkResponse(){
       else if (i<100){
         _return = true;
       }
+      
+      console.log("contract responded");
       return _return;
     }
+
+
+    function StartService(){
+        const uiAdapter = new tucana.adapter.DOMUIAdapter(document.getElementById("main-place"));
+    
+        const database = new tucana.adapter.IndexedDBDatabaseHandler();
+        const identificationHandler = new tucana.adapter.Browser();
+        const baasCommunicationHandler = new tucana.adapter.RESTAPIBaaSCommunicationHandler();
+        const uPeerCommunicationHandler = new tucana.adapter.WebRTCUPeerCommunicationHandler({
+            myId: identificationHandler.getLocalID(),
+            myLocalId: identificationHandler.getLocalID(),
+            rtcConfig: {
+                "iceServers": [{
+                    "url": "stun:stun2.1.google.com:19302"
+                }]
+            }
+        });
+    
+        const tucanaPlatform = new tucana.TucanaCoreService(database, uPeerCommunicationHandler, baasCommunicationHandler, identificationHandler, uiAdapter);
+          
+        fetch('../EVAREST_HMI.json')
+        .then((response) => {
+            return response.json();
+        }).then(json => {
+            var sscItem = tucana.model.SmartServiceConfigurationItem.fromJSON(json);
+            tucanaPlatform.createSmartServiceConfiguration(sscItem)
+        }).then(() => {
+            tucanaPlatform.getSmartServiceConfigurationItemIds().then((ids) => {
+                console.log(ids)
+                tucanaPlatform.startService('EVARESTHMI');
+            }, () => {
+                console.log("service id fetch error");
+            });
+        }).then(() => {
+            removeConnectedPeer();    
+        });
+    }
+    
+    async function doAsync () {
+        // we are now using promise all to await all promises to settle
+        var responses = await Promise.all([StartService()]);
+        return responses;
+      }
