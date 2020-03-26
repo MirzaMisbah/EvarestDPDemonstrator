@@ -252,44 +252,22 @@ async function requestContract() {
         showalert('Your request has been send to sindo!');
         DeleteDB();
         removeConnectedPeer();
-        const uiAdapter = new tucana.adapter.DOMUIAdapter(document.getElementById("main-place"));
-
-        const database = new tucana.adapter.IndexedDBDatabaseHandler();
-        const identificationHandler = new tucana.adapter.Browser();
-        const baasCommunicationHandler = new tucana.adapter.RESTAPIBaaSCommunicationHandler();
-        const uPeerCommunicationHandler = new tucana.adapter.WebRTCUPeerCommunicationHandler({
-            myId: identificationHandler.getLocalID(),
-            myLocalId: identificationHandler.getLocalID(),
-            rtcConfig: {
-                "iceServers": [{
-                    "url": "stun:stun2.1.google.com:19302"
-                }]
+            StartService();
+            if (checkConnectedPeer()){  
+                location.reload();  
             }
-        });
-    
-        const tucanaPlatform = new tucana.TucanaCoreService(database, uPeerCommunicationHandler, baasCommunicationHandler, identificationHandler, uiAdapter);
-          
-        fetch('../EVAREST_HMI.json')
-        .then((response) => {
-            return response.json();
-        }).then(json => {
-            var sscItem = tucana.model.SmartServiceConfigurationItem.fromJSON(json);
-            tucanaPlatform.createSmartServiceConfiguration(sscItem)
-        }).then(() => {
-            tucanaPlatform.getSmartServiceConfigurationItemIds().then((ids) => {
-                console.log(ids)
-                tucanaPlatform.startService('EVARESTHMI');
-            }, () => {
-                console.log("service id fetch error");
-            });
-        });            
-    }
-    removeConnectedPeer();
-
+            else{}          
+          }
+          for (var i = 0; i = 0; i++){
+            if (checkConnectedPeer()){  
+                removeConnectedPeer();  
+            }
+            else{i = 1;}
+          }
 }
 
 function checkConnectedPeer(){
-    if(localStorage.getItem("Connected peer")){
+    if(window.localStorage.getItem('Connected peer')){
         return true;
     }
     else{
@@ -298,7 +276,7 @@ function checkConnectedPeer(){
 }
 
 function removeConnectedPeer(){
-    localStorage.removeItem("Connected peer")
+    window.localStorage.removeItem("Connected peer");
 }
 function DeleteDB(){
     var req = indexedDB.deleteDatabase('sscItem');
@@ -337,6 +315,8 @@ async function StartService(){
         }, () => {
             console.log("service id fetch error");
         });
+    }).then(() => {
+        removeConnectedPeer();    
     });
 }
 
@@ -351,39 +331,32 @@ function checkResponse(){
           i = 10;
       }          
     }
-    }, 10000);
+    }, 50000);
     if (i==10){
       showalert('Unfortunately, your request has not been accepted by Sindo!');
     }
   }
 
-  function respond(){
-    this.i = 0;
-    
+  function respondContract(){
+    removeConnectedPeer();
+    var i = 0;
     setTimeout(function () {
         label:
         while (i < 100) {
-        location.reload();
-        var checkRespond =  checkConnectedPeer()
-        if (checkRespond == true){
+        var checkRespond =  checkConnectedPeer();
+        if (checkRespond){
             var answer = window.confirm('Mero requested for your service. Do you want to share it!');
             if (answer)
-            {   showalert('We are setting a smart contract for you.');
-                StartService();
-                openlink("main12.html");
-                
-            } 
-            console.log(i);  
-            i=100;
-            console.log(i); 
+            {   
+                showalert('We are setting a smart contract for you.');
+                console.log(checkConnectedPeer()) 
+            }
             break label;      
         } 
         else{
             i++;
         }         
-      }
-
-      }, 10000);
+      }}, 10000);
 
       if (i==100){
         showalert('Unfortunately, No one contacted you for your service recently');

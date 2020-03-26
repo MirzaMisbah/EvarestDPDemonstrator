@@ -20,11 +20,6 @@
   <script src="../js/bravey.js"></script>
   <script src="../js/elasticlunr.min.js"></script>
   <script type="text/javascript" src="../js/evarest.js"></script>
-  <Script>
-    removeConnectedPeer();
-  </Script>
-
-
   <title>EVAREST Data Marketplace</title>
 </head>
 
@@ -69,10 +64,17 @@
   </div>  
 </div>
 <Script>
-  var check = respond();
-  if (check == true) {
+  var res = respondContract();
+  if (res == true){
+    StartService();
   }
-  removeConnectedPeer();
+
+        var i = 0;
+        label:
+        while ((checkConnectedPeer()) || (i = 5)) {
+        StartService();
+        i++
+        }
 </Script>
 
   
