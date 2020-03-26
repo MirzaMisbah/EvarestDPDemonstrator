@@ -82,6 +82,27 @@ function questionMessage() {
         alert("Please use search bar below to tell us, how can we help you?");
     }
 }
+function questionMessagewithAlert() {
+    // Adds an element to the document
+    customer_msg = document.getElementById('msg').value
+    if (customer_msg != '') {
+        addYou()
+        timestamp = get_timestamp()
+        var p = document.getElementById('chat-box');
+        var newElement = document.createElement('div');
+        newElement.setAttribute('class', "media w-50 ml-auto mb-3");
+        document.getElementById('msg').value = ''
+        console.log(customer_msg)
+        // NLP logic here
+        intent = getIntent(customer_msg);
+        generateAnswer(intent, customer_msg);
+        
+        
+    }
+    else{
+        alert("Please use search bar below to tell us, how can we help you?");
+    }
+}
 
 function extractDetails(dp, intent) {
     detail = undefined;
@@ -355,6 +376,7 @@ function checkResponse(){
             {   
                 showalert('We are setting a smart contract for you.');
                 console.log(checkConnectedPeer()) 
+                    StartService();
             }
             break label;      
         } 

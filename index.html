@@ -44,10 +44,10 @@
   
 
 
- <script type="application/javascript">
+ <script>
   window.onload = clearDB;
   var clearDB = function () {
-    localStorage.clear();
+    window.localStorage.clear();
     const indexedDB = window.indexedDB || window.mozIndexedDB
             || window.webkitIndexedDB || window.msIndexedDB;
     const databases = ['data', 'model', 'swComponent', 'sscItem', 'tensorflowjs'];
