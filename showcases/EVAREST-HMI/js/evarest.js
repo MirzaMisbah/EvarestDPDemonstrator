@@ -264,22 +264,22 @@ function requestContract() {
         showalert('Your request has been send to sindo!');
         DeleteDB();
         removeConnectedPeer();
-            //StartService();
+            //StartService()
             doAsync().then(function (response) {
                 if (checkConnectedPeer()){  
                     location.reload();  
                 }
                 else{}          
-            })  
-            if (checkConnectedPeer()){  
-                removeConnectedPeer();  
-            }
-            else{i = 1;}
-            }
-            console.log("Contract requested")
-
             
-}
+              }).then(function(){
+                if (checkConnectedPeer()){  
+                    removeConnectedPeer();  
+                }
+                else{}
+                showalert('There is some network issue please try again after some time!');
+              }).then(function(){removeConnectedPeer()}).then(function(){removeConnectedPeer()}).then(function(){removeConnectedPeer()})
+            }
+        }
 
 function checkConnectedPeer(){
     if(window.localStorage.getItem('Connected peer')){
@@ -303,17 +303,22 @@ function DeleteDB(){
 function checkResponse(){
     var i = 0;
     setTimeout(function () {
-      for (i = 0;i < 10; i++) {
+      for (i = 0;i < 1000; i++) {
       var checkRequest =  checkConnectedPeer()
       if (checkRequest == true){
           showalert('Congratulations !! Sindo accepted your request. We are setting a smartcontract for you');
           openlink('main02.html')
-          i = 10;
+          i = 1000;
       }          
     }
-    }, 50000);
-    if (i==10){
-      showalert('Unfortunately, your request has not been accepted by Sindo!');
+    }, 1000);
+    if (i==1000){
+        var answer = window.confirm('Unfortunately, your request has not been accepted by Sindo! Do you still want to wait for sindos reply?');
+                if (answer)
+                {
+                    checkResponse();
+                }
+                else{openlink('main.html')}
     }
   }
 
@@ -321,34 +326,38 @@ function checkResponse(){
   function respondContract(){
     removeConnectedPeer();
     var i = 0;
-    setTimeout(function () {
-        label:
-        while (i < 100) {
-        var checkRespond =  checkConnectedPeer();
-        if (checkRespond){
-            var answer = window.confirm('Mero requested for your service. Do you want to share it!');
-            if (answer)
-            {   
-                showalert('We are setting a smart contract for you.');
-                //StartService();
-                doAsync().then(function (response) {
-                    })
-            }
-            break label;      
-        } 
-        else{
-            i++;
-        }         
-      }}, 10000);
+    chk = true;
+    (function myLoop (chk) {          
+        setTimeout(function () {   
+            console.log("checking response");
+            var checkRespond =  checkConnectedPeer();
+                console.log(checkRespond);
+            if (checkRespond){
+                var answer = window.confirm('Mero requested for your service. Do you want to share it!');
+                if (answer)
+                {   
+                    showalert('We are setting a smart contract for you.');
+                    //StartService()
+                    removeConnectedPeer();
+                    doAsync().then(function (response) {
+                    console.log(response)
+                    openlink('main12.html')
+                    chk == false;
+                    i++;
+                    
+                })
+                }     
+            }                
+           if ((chk)) myLoop(i);      //  decrement i and call myLoop again if i > 0
+        }, 10000)
+     })(true);  
 
-      if (i==100){
-        showalert('Unfortunately, No one contacted you for your service recently');
-        _return = false;
-      }
-      else if (i<100){
-        _return = true;
-      }
-      
+    if (i==0){
+    _return = false;
+    }
+    else if (i > 0){
+    _return = true;
+    }
       console.log("contract responded");
       return _return;
     }
@@ -385,8 +394,6 @@ function checkResponse(){
             }, () => {
                 console.log("service id fetch error");
             });
-        }).then(() => {
-            removeConnectedPeer();    
         });
     }
     
@@ -394,4 +401,4 @@ function checkResponse(){
         // we are now using promise all to await all promises to settle
         var responses = await Promise.all([StartService()]);
         return responses;
-      }
+    }

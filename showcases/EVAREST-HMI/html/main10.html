@@ -70,11 +70,12 @@
     var res = respondContract();
     // we are now using promise all to await all promises to settle
     var res = await Promise.all([respondContract()]);
+    console.log(res);
         return res;
-      }
+    }
     dosync().then(function (res) {
       if (res == true){
-      openlink('main11.html')
+      openlink('main12.html')
       }
     })
 </Script>
