@@ -215,7 +215,11 @@ function printAnswerAndButton(value, button_text, button_id, link) {
 }
 function openlink(link) {
     window.close();
-    window.open("../html/" + link);
+    if (localStorage.getItem("producer") == "true") {role = "producer"}
+    else if (localStorage.getItem("provider") == "true") {role = "provider"}
+    else if (localStorage.getItem("guest") == "true") {role = "guest"}
+
+    window.open("../html/" + link + "?role=" + role + "?name=" + localStorage.getItem("name"));
     
 }
 
@@ -336,6 +340,7 @@ function checkResponse(){
       showalert('Unfortunately, your request has not been accepted by Sindo!');
     }
   }
+
 
   function respondContract(){
     removeConnectedPeer();
