@@ -268,7 +268,7 @@ function requestContract() {
                 setTimeout(function () {
                     if (checkConnectedPeer()){  
                     removeConnectedPeer(); 
-                    checkResponse(); 
+                    openlink('main010.html')
                     }
                     else{
                         showalert('There is some network issue please try again after some time!');
