@@ -262,8 +262,6 @@ function requestContract() {
     var answer = window.confirm('Your are about to request Sindo for SAS. Do you really want to do this?');
     if (answer){
         showalert('Your request has been send to sindo!');
-        DeleteDB();
-        removeConnectedPeer();
             //StartService()
             doAsync().then(function(){
                 
@@ -274,8 +272,6 @@ function requestContract() {
                     }
                     else{
                         showalert('There is some network issue please try again after some time!');
-                        removeConnectedPeer(); 
-                        checkResponse(); 
                     }
                 }, 40000)
               });

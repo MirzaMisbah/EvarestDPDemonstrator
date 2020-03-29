@@ -86524,7 +86524,8 @@ class WebRTCUPeerCommunicationHandler extends UPeerCommunicationHandler {
         if (this.connectedPeers[targetID]) {
             var sendChannel = this.connectedPeers[targetID].sendChannel;
             if (sendChannel) {
-                if (sendChannel.readyState === "open") {// we can only send if the send channel is open
+                console.log(sendChannel.readyState)
+                if (sendChannel.readyState === "open" || sendChannel.readyState === "closed"  || sendChannel.readyState === "connected") {// we can only send if the send channel is open
                     try {
                         //sendChannel.send(json);
                         this.sendChunckedToPeer(sendChannel, JSON.stringify(obj)); // add smaller packets for large message
@@ -86889,7 +86890,7 @@ class WebRTCUPeerCommunicationHandler extends UPeerCommunicationHandler {
                 resolve(list);})
             
         
-        })}, 500);
+        })}, 1500);
 
     }
 }
