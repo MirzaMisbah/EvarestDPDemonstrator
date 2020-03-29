@@ -259,16 +259,17 @@ function connectedPeers(){
 function requestContract() {
     var d = new Date();
     //check = setScReqValue();
-    var answer = window.confirm('Your are about to request Sindo for SAS. Do you really want to do this?');
+    var answer = true; 
+    showalert('Your are about to request Sindo for SAS. Do you really want to do this?');
     if (answer){
         showalert('Your request has been send to sindo!');
             //StartService()
             doAsync().then(function(){
                 
                 setTimeout(function () {
-                    if (checkConnectedPeer()){  
+                    if (checkConnectedPeer() || !checkConnectedPeer()){  
                     removeConnectedPeer(); 
-                    openlink('main010.html')
+                    openlink('main02.html')
                     }
                     else{
                         showalert('There is some network issue please try again after some time!');
@@ -278,6 +279,29 @@ function requestContract() {
             }
         }
 
+        function uploadData() {
+            var d = new Date();
+            //check = setScReqValue();
+            var answer = window.alert('Your are about to upload your data. Do you really want to upload it?');
+            if (answer){
+                showalert('Your data has been send to sindo!');
+                    //StartService()
+                    doAsync().then(function(){
+                        
+                        setTimeout(function () {
+                            if (checkConnectedPeer() || !checkConnectedPeer()){  
+                            removeConnectedPeer(); 
+                            openlink('mainL.html')
+                            }
+                            else{
+                                showalert('There is some network issue please try again after some time!');
+                            }
+                        }, 40000)
+                      });
+                    }
+                    else{}
+                }
+        
 function checkConnectedPeer(){
     if(window.localStorage.getItem('Connected peer')){
         return true;
@@ -324,7 +348,34 @@ function checkResponse(){
       return _return;
     }
 
-
+    function checkUpload(){
+        removeConnectedPeer();
+        var i = 0;
+        chk = true;
+        (function myLoop (i) {          
+            setTimeout(function () {   
+                console.log("checking response");
+                var checkRespond =  checkConnectedPeer();
+                console.log(checkRespond);
+                if (checkRespond){
+                    showalert('Sindo uploaded his data. He is now visualizing your SAS.');
+                    openlink('main1L.html');                                                         
+                    } 
+                    else{showalert("Sindo didn't uploaded his data yet");}                  
+               if ((100)) myLoop(--i);      //  decrement i and call myLoop again if i > 0
+            }, 10000)
+         })(100);  
+    
+        if (i==0){
+        _return = false;
+        }
+        else if (i > 0){
+        _return = true;
+        }
+          console.log("contract responded");
+          return _return;
+        }
+    
   function respondContract(){
     removeConnectedPeer();
     var i = 0;
