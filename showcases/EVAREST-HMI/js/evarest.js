@@ -298,31 +298,31 @@ function DeleteDB(){
 }
 
 function checkResponse(){
+    removeConnectedPeer();
     var i = 0;
-    setTimeout(function () {
-        console.log('connected peer removed in timeout');
-        removeConnectedPeer();
-    }, 10000);
-
+    chk = true;
     (function myLoop (i) {          
         setTimeout(function () {   
             console.log("checking response");
-            console.log(checkConnectedPeer())
-            if (checkConnectedPeer()){
-                console.log(checkConnectedPeer())
-                showalert('Congratulations !! Sindo accepted your request. We are setting a smartcontract for you');
-                openlink('main02.html')
-                i=0;
-            }
-            else{
-                showalert("Please wait !! Sindo didn't accepted your request yet.");
-                if ((100)) myLoop(--i); //  decrement i and call myLoop again if i > 0
-                
-            }                 
-        }, 20000)
-        
-     })(100); 
-  }
+            var checkRespond =  checkConnectedPeer();
+            console.log(checkRespond);
+            if (checkRespond){
+                showalert('Sindo accepted your request. We are setting a smart contract for you.');
+                openlink('main12.html');                                                         
+                }                   
+           if ((100)) myLoop(--i);      //  decrement i and call myLoop again if i > 0
+        }, 10000)
+     })(100);  
+
+    if (i==0){
+    _return = false;
+    }
+    else if (i > 0){
+    _return = true;
+    }
+      console.log("contract responded");
+      return _return;
+    }
 
 
   function respondContract(){
