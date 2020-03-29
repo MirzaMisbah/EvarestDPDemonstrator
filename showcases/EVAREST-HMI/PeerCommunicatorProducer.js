@@ -28,7 +28,7 @@ class PeerProducer extends tucana.minion.Cmin {
                 console.log("no id connected");
             }
             else{
-            const broadcastConfig = new this.model.BroadcastConfiguration(this.dataAccessService.getLocalID(),  this.ids,  this.model.BROADCAST_TYPE.UPEER,BROADCAST_CONDITION.ANY,null);
+            const broadcastConfig = new this.model.BroadcastConfiguration(this.dataAccessService.getLocalID(),  this.ids,  this.model.BROADCAST_TYPE.UPEER,BROADCAST_CONDITION.ALL,null);
            
             console.log("only prediction result sent to store  "  ,this.data);
             console.log("this.dataID");

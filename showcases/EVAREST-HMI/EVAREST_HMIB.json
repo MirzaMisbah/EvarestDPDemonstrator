@@ -1,10 +1,10 @@
 {
   "id": "EVARESTHMIB",
   "version": "0.2",
-  "name": "EVAREST Demonstrator",
+  "name": "EVAREST DemonstratorB",
   "descriptionText": "This service shows interaction between producer and provider at EVAREST Data Marketplace along with smart contract visualization.",
   "configuration": [{
-      "softwareItemId": "./showcases/EVAREST-HMI/PeerCommunicatorB.js", 
+      "softwareItemId": "./showcases/EVAREST-HMI/PeerCommunicatorProvider.js", 
       "instanceId": "PeerCommunicatorProvider", 
       "targetMinionIds": [], 
       "name": "Communicator",

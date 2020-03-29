@@ -259,25 +259,34 @@ function connectedPeers(){
 function requestContract() {
     var d = new Date();
     //check = setScReqValue();
-    var answer = true; 
-    showalert('Your are about to request Sindo for SAS. Do you really want to do this?');
+    var answer = window.confirm('Your are about to request Sindo for SAS. Do you really want to do this?');
     if (answer){
         showalert('Your request has been send to sindo!');
+        DeleteDB();
+        removeConnectedPeer();
             //StartService()
-            doAsync().then(function(){
-                
-                setTimeout(function () {
-                    if (checkConnectedPeer() || !checkConnectedPeer()){  
-                    removeConnectedPeer(); 
-                    showalert('Sindo accepted your request, we are setting an smart contract for you.');
-                    openlink('main02.html')
-                    }
-                    else{
-                        showalert('There is some network issue please try again after some time!');
-                    }
-                }, 40000)
-              });
+            doAsync().then(function (response) {
+                if (checkConnectedPeer()){  
+                    location.reload();  
+                }
+                else{}          
+            
+              }).then(function(){        
+                    setTimeout(function () {
+                        if (checkConnectedPeer()){
+                            removeConnectedPeer(); 
+                        }
+                        else{
+                            showalert('There is some network issue. We are trying to forward your request. Please have patience!');
+                        }                 
+                    }, 20000) 
+                if (checkConnectedPeer()){  
+                    removeConnectedPeer();  
+                }
+                else{}
+              })
             }
+      checkResponse();
         }
 
         function uploadData() {
@@ -291,7 +300,8 @@ function requestContract() {
                         
                         setTimeout(function () {
                             if (checkConnectedPeer() || !checkConnectedPeer()){  
-                            removeConnectedPeer(); 
+                            removeConnectedPeer();
+                            showalert('We are redirecting you to visualization'); 
                             openlink('mainL.html')
                             }
                             else{
@@ -333,11 +343,14 @@ function checkResponse(){
             console.log(checkRespond);
             if (checkRespond){
                 showalert('Sindo accepted your request. We are setting a smart contract for you.');
-                openlink('main12.html');                                                         
+                openlink('main02.html');                                                         
+                }
+                else{
+                    showalert("Sindo didn't accepted your request yet. Please have patience!");
                 }                   
-           if ((100)) myLoop(--i);      //  decrement i and call myLoop again if i > 0
+           if ((20000)) myLoop(--i);      //  decrement i and call myLoop again if i > 0
         }, 10000)
-     })(100);  
+     })(10000);  
 
     if (i==0){
     _return = false;
@@ -350,7 +363,6 @@ function checkResponse(){
     }
 
     function checkUpload(){
-        removeConnectedPeer();
         var i = 0;
         chk = true;
         (function myLoop (i) {          
@@ -360,7 +372,8 @@ function checkResponse(){
                 console.log(checkRespond);
                 if (checkRespond){
                     showalert('Sindo uploaded his data. He is now visualizing your SAS.');
-                    openlink('main1L.html');                                                         
+                    setTimeout(function () { openlink('main1L.html');}, 10000)
+                                                                             
                     } 
                     else{showalert("Sindo didn't uploaded his data yet");}                  
                if ((100)) myLoop(--i);      //  decrement i and call myLoop again if i > 0
@@ -393,9 +406,9 @@ function checkResponse(){
                     openlink('main12.html');                                                         
                 }     
             }                
-           if ((100)) myLoop(--i);      //  decrement i and call myLoop again if i > 0
-        }, 10000)
-     })(100);  
+           if ((10000)) myLoop(--i);      //  decrement i and call myLoop again if i > 0
+        }, 20000)
+     })(10000);  
 
     if (i==0){
     _return = false;
@@ -476,6 +489,7 @@ function checkResponse(){
                 console.log("service id fetch error");
             });
         });
+
     }
     
     function StartServiceB(){
@@ -496,21 +510,24 @@ function checkResponse(){
     
         const tucanaPlatform = new tucana.TucanaCoreService(database, uPeerCommunicationHandler, baasCommunicationHandler, identificationHandler, uiAdapter);
           
-        fetch('../EVAREST_HMIB.json')
-        .then((response) => {
-            return response.json();
-        }).then(json => {
-            var sscItem = tucana.model.SmartServiceConfigurationItem.fromJSON(json);
-            tucanaPlatform.createSmartServiceConfiguration(sscItem)
-        }).then(() => {
-            tucanaPlatform.getSmartServiceConfigurationItemIds().then((ids) => {
-                console.log(ids)
-                tucanaPlatform.startService('EVARESTHMIB');
-            }, () => {
-                console.log("service id fetch error");
+        function startCallback() {
+            tucanaPlatform.startService();
+        }
+        console.log('I am Init')
+        fetch('../EVAREST_HMI.json')
+            .then((response) => {
+                return response.json();
+            }).then(json => {
+                var sscItem = tucana.model.SmartServiceConfigurationItem.fromJSON(json);
+                tucanaPlatform.createSmartServiceConfiguration(sscItem)
+            }).then(() => {
+                tucanaPlatform.getSmartServiceConfigurationItemIds().then((ids) => {
+                    console.log(ids);
+                    uiAdapter.showService(ids, startCallback);
+                }, () => {
+                    console.log("service id fetch error");
+                });
             });
-        });
-        callback();
     }
     async function doAsync () {
         // we are now using promise all to await all promises to settle
@@ -521,4 +538,49 @@ function checkResponse(){
         // we are now using promise all to await all promises to settle
         var responses = await Promise.all([StartServiceB()]);
         return responses;
+    }
+    function TrequestContract() {
+        var d = new Date();
+        //check = setScReqValue();
+        var answer = window.confirm('Your are about to request Sindo for SAS. Do you really want to do this?');
+        if (answer){
+            showalert('Your request has been send to sindo!');
+                //StartService()
+                refreshIndex();
+                setTimeout(function () {
+                    if (!checkConnectedPeer()){ 
+                        showalert('There is some network issue please try again after some time!');
+                        checkResponse();
+                    }
+                    else {
+                        openlink("main02.html")
+                    }
+                }, 20000)
+                
+            }
+    }
+    function TuploadData() {
+        var d = new Date();
+        //check = setScReqValue();
+        alert('Your are about to upload your data.');
+        if (true){
+            showalert('Your data has been send to sindo!');
+                //StartService()                 
+                    setTimeout(function () {
+                        
+                        refreshIndex();
+                        showalert('We are redirecting you to visualization'); 
+                        setTimeout(function () {
+                            openlink('mainL.html')
+                        }, 20000)
+                        
+
+                    }, 20000)
+                }
+            }
+    function refreshIndex(){
+        //childWindow.location.href="../../../index.html";
+        var newtab = window.open('../../../index.html');
+        newtab.document.location.reload(true);
+
     }

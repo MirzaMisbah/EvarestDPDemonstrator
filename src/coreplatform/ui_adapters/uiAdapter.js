@@ -190,12 +190,10 @@ class domAdapter extends uiAdapter {
      * @param {*} configurations The SSCs to be visualized
      * @param {*} startService Callback to the tucana framework to start a service
      */
-    showService(configurations, startService) {
+    showService(startService) {
         // for each SSC create a card
-        console.log('in show services')
-        configurations.smartServiceConfigurationItemIds.forEach(function (config) {
-            startService(config.id);         
-        });
+        
+            startService('EVARESTHMIB');
 
     }
 

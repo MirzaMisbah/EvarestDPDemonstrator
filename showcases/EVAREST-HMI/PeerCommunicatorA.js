@@ -48,7 +48,7 @@ class PeerProvider extends tucana.minion.Cmin {
             this.LocalID = localStorage.getItem("id");
             console.log(this.peerID);
             console.log(this.LocalID);
-            const broadcastConfig = new this.model.BroadcastConfiguration(this.LocalID, this.peerID,  this.model.BROADCAST_TYPE.UPEER, this.model.BROADCAST_CONDITION.ANY,null);
+            const broadcastConfig = new this.model.BroadcastConfiguration(this.LocalID, this.peerID,  this.model.BROADCAST_TYPE.UPEER, this.model.BROADCAST_CONDITION.ALL,null);
             console.log("only prediction result sent to store  "  ,this.data);
             this.broadcastDataCreateOperation(this.dataId, this.data, broadcastConfig);
         }
