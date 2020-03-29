@@ -59,10 +59,9 @@
 
 <Script>
   setInterval(myTimer, 30000);
-  function myTimer() {
+  doAsync().then(function myTimer() {
     openlink('main11.html');
-
-  }doAsync().then(function(){});
+  });
 </Script>
 
 
