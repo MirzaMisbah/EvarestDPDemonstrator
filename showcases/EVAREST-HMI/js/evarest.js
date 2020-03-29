@@ -269,6 +269,7 @@ function requestContract() {
                 setTimeout(function () {
                     if (checkConnectedPeer() || !checkConnectedPeer()){  
                     removeConnectedPeer(); 
+                    showalert('Sindo accepted your request, we are setting an smart contract for you.');
                     openlink('main02.html')
                     }
                     else{
@@ -282,11 +283,11 @@ function requestContract() {
         function uploadData() {
             var d = new Date();
             //check = setScReqValue();
-            var answer = window.alert('Your are about to upload your data. Do you really want to upload it?');
+            var answer = window.confirm('Your are about to upload your data. Do you really want to upload it?');
             if (answer){
                 showalert('Your data has been send to sindo!');
                     //StartService()
-                    doAsync().then(function(){
+                    doAsyncB().then(function(){
                         
                         setTimeout(function () {
                             if (checkConnectedPeer() || !checkConnectedPeer()){  
@@ -477,8 +478,47 @@ function checkResponse(){
         });
     }
     
+    function StartServiceB(){
+        const uiAdapter = new tucana.adapter.DOMUIAdapter(document.getElementById("main-place"));
+    
+        const database = new tucana.adapter.IndexedDBDatabaseHandler();
+        const identificationHandler = new tucana.adapter.Browser();
+        const baasCommunicationHandler = new tucana.adapter.RESTAPIBaaSCommunicationHandler();
+        const uPeerCommunicationHandler = new tucana.adapter.WebRTCUPeerCommunicationHandler({
+            myId: identificationHandler.getLocalID(),
+            myLocalId: identificationHandler.getLocalID(),
+            rtcConfig: {
+                "iceServers": [{
+                    "url": "stun:stun2.1.google.com:19302"
+                }]
+            }
+        });
+    
+        const tucanaPlatform = new tucana.TucanaCoreService(database, uPeerCommunicationHandler, baasCommunicationHandler, identificationHandler, uiAdapter);
+          
+        fetch('../EVAREST_HMIB.json')
+        .then((response) => {
+            return response.json();
+        }).then(json => {
+            var sscItem = tucana.model.SmartServiceConfigurationItem.fromJSON(json);
+            tucanaPlatform.createSmartServiceConfiguration(sscItem)
+        }).then(() => {
+            tucanaPlatform.getSmartServiceConfigurationItemIds().then((ids) => {
+                console.log(ids)
+                tucanaPlatform.startService('EVARESTHMIB');
+            }, () => {
+                console.log("service id fetch error");
+            });
+        });
+        callback();
+    }
     async function doAsync () {
         // we are now using promise all to await all promises to settle
         var responses = await Promise.all([StartService()]);
+        return responses;
+    }
+    async function doAsyncB () {
+        // we are now using promise all to await all promises to settle
+        var responses = await Promise.all([StartServiceB()]);
         return responses;
     }
