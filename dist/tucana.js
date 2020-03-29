@@ -87246,10 +87246,11 @@ class BrowserFingerprintIdentificationHandler extends TENVIdentificationHandler 
                 }
 
                 if (document.getElementById("guest").checked) {
-                    localStorage.setItem("guest", true);
+                    localStorage.setItem("producer", true);
+                    localStorage.setItem("guest", false);
                     localStorage.setItem("role", true);
                     this.role = true;
-                    this.guest = true;
+                    this.producer = true;
                 } 
                 else {
                     localStorage.setItem("guest", false);

@@ -10,7 +10,7 @@ class PeerProvider extends tucana.minion.Cmin {
 
     async activate() {
         const _this = this;
-        await _this.initialize();
+        _this.initialize();
         this.running = true;
         var prop =[[],"false","true","false","true","k","n"];
         console.log("Defined Properties in A");

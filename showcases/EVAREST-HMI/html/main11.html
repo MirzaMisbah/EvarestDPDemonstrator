@@ -21,6 +21,10 @@
   <script src="../js/elasticlunr.min.js"></script>
   <script type="text/javascript" src="../js/evarest.js"></script>
 
+  <script>
+    DeleteDB();
+    removeConnectedPeer();
+  </script>
 
 
   <title>EVAREST Data Marketplace</title>
@@ -63,13 +67,15 @@
 </div>
 <div class= "body" style="width: 80%; margin-left: 30%; margin-bottom: 20%;">
   <link rel="stylesheet" href="../css/dummy.css">
-  <button id="dp" class="myButton" type="submit" onclick="openlink('Main1L.html')" class="myButton" style="margin-top: 1%; margin-left: 17%;"> 
+  <button id="dp" class="myButton" type="submit" onclick="sendDataProduct()" class="myButton" style="margin-top: 1%; margin-left: 17%;"> 
   Transfer Data
   </button>     
 
       <div class = "itemgap"></div>
 </div>
-
+<script>
+  //openlink('Main1L.html')
+</script>
 
 
 

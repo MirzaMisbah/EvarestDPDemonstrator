@@ -265,21 +265,28 @@ function requestContract() {
         DeleteDB();
         removeConnectedPeer();
             //StartService()
-            doAsync().then(function(){
-                
-                setTimeout(function () {
-                    if (checkConnectedPeer()){  
-                    removeConnectedPeer(); 
-                    checkResponse(); 
-                    }
-                    else{
-                        showalert('There is some network issue please try again after some time!');
-                        removeConnectedPeer(); 
-                        checkResponse(); 
-                    }
-                }, 40000)
-              });
+            doAsyncA().then(function (response) {
+                if (checkConnectedPeer()){  
+                    location.reload();  
+                }
+                else{}          
+            
+              }).then(function(){        
+                    setTimeout(function () {
+                        if (checkConnectedPeer()){
+                            removeConnectedPeer(); 
+                        }
+                        else{
+                            showalert('There is some network issue. We are trying to forward your request. Please have patience!');
+                        }                 
+                    }, 20000) 
+                if (checkConnectedPeer()){  
+                    removeConnectedPeer();  
+                }
+                else{}
+              })
             }
+      checkResponse();
         }
 
 function checkConnectedPeer(){
@@ -295,7 +302,7 @@ function removeConnectedPeer(){
     window.localStorage.removeItem("Connected peer");
 }
 function DeleteDB(){
-    var req = indexedDB.deleteDatabase('sscItem');
+    var req = indexedDB.deleteDatabase('sscItem'|'data'|'swComponent');
        req.onsuccess = function () {
        console.log("Deleted database successfully");
         };
@@ -306,7 +313,7 @@ function checkResponse(){
     setTimeout(function () {
         console.log('connected peer removed in timeout');
         removeConnectedPeer();
-    }, 10000);
+    }, 30000);
 
     (function myLoop (i) {          
         setTimeout(function () {   
@@ -321,10 +328,8 @@ function checkResponse(){
             else{
                 showalert("Please wait !! Sindo didn't accepted your request yet.");
                 if ((100)) myLoop(--i); //  decrement i and call myLoop again if i > 0
-                
             }                 
-        }, 20000)
-        
+        }, 40000)
      })(100); 
   }
 
@@ -337,12 +342,23 @@ function checkResponse(){
         setTimeout(function () {   
             console.log("checking response");
             var checkRespond =  checkConnectedPeer();
-            console.log(checkRespond);
+                console.log(checkRespond);
             if (checkRespond){
                 var answer = window.confirm('Mero requested for your service. Do you want to share it!');
                 if (answer)
-                {   showalert('We are setting a smart contract for you.');
-                    openlink('main12.html');                                                         
+                {   
+                    doAsyncB().then(function(){        
+                        (function myLoop (i) {          
+                            setTimeout(function () { 
+                                //StartService()
+                                removeConnectedPeer();
+                                console.log(checkRespond)
+                                openlink('main12.html')
+                                i=0;
+                            }, 20000)
+                         })(100);
+                      })
+                    showalert('We are setting a smart contract for you.');                                     
                 }     
             }                
            if ((100)) myLoop(--i);      //  decrement i and call myLoop again if i > 0
@@ -360,43 +376,7 @@ function checkResponse(){
     }
 
 
-    function setSC(){
-        (function () { 
-                    //StartService()
-                    console.log(connectedPeers())
-                    openlink('main11.html')
-                    i=0;
-                }, 50000);
-          }
-
-          function sendDataProduct(){
-    var d = new Date();
-    //check = setScReqValue();
-    var answer = window.confirm('Your are about to Transfer your data. Do you really want to do this?');
-            if (answer){
-                showalert('We are trying to reach Mero. SAS will be send shortly!');
-                DeleteDB();
-        removeConnectedPeer();
-            //StartService()
-            doAsync().then(function(){
-                
-                setTimeout(function () {
-                    if (checkConnectedPeer()){
-                        showalert('SAS has been send to sindo!');
-                        removeConnectedPeer();
-                        openlink('main1L.html')
-                        i=0; 
-                    }
-                    else{
-                        showalert('There is some network issue. We are trying to establish connection. Please have patience!');
-                        removeConnectedPeer(); 
-                    }
-                }, 40000)
-              });
-            }
-        }
-
-    function StartService(){
+    function StartServiceA(){
         const uiAdapter = new tucana.adapter.DOMUIAdapter(document.getElementById("main-place"));
     
         const database = new tucana.adapter.IndexedDBDatabaseHandler();
@@ -414,7 +394,7 @@ function checkResponse(){
     
         const tucanaPlatform = new tucana.TucanaCoreService(database, uPeerCommunicationHandler, baasCommunicationHandler, identificationHandler, uiAdapter);
           
-        fetch('../EVAREST_HMI.json')
+        fetch('../EVAREST_HMIA.json')
         .then((response) => {
             return response.json();
         }).then(json => {
@@ -423,15 +403,100 @@ function checkResponse(){
         }).then(() => {
             tucanaPlatform.getSmartServiceConfigurationItemIds().then((ids) => {
                 console.log(ids)
-                tucanaPlatform.startService('EVARESTHMI');
+                tucanaPlatform.startService('EVARESTHMIA');
+            }, () => {
+                console.log("service id fetch error");
+            });
+        });
+    }
+    function StartServiceB(){
+        const uiAdapter = new tucana.adapter.DOMUIAdapter(document.getElementById("main-place"));
+    
+        const database = new tucana.adapter.IndexedDBDatabaseHandler();
+        const identificationHandler = new tucana.adapter.Browser();
+        const baasCommunicationHandler = new tucana.adapter.RESTAPIBaaSCommunicationHandler();
+        const uPeerCommunicationHandler = new tucana.adapter.WebRTCUPeerCommunicationHandler({
+            myId: identificationHandler.getLocalID(),
+            myLocalId: identificationHandler.getLocalID(),
+            rtcConfig: {
+                "iceServers": [{
+                    "url": "stun:stun2.1.google.com:19302"
+                }]
+            }
+        });
+    
+        const tucanaPlatform = new tucana.TucanaCoreService(database, uPeerCommunicationHandler, baasCommunicationHandler, identificationHandler, uiAdapter);
+          
+        fetch('../EVAREST_HMIB.json')
+        .then((response) => {
+            return response.json();
+        }).then(json => {
+            var sscItem = tucana.model.SmartServiceConfigurationItem.fromJSON(json);
+            tucanaPlatform.createSmartServiceConfiguration(sscItem)
+        }).then(() => {
+            tucanaPlatform.getSmartServiceConfigurationItemIds().then((ids) => {
+                console.log(ids)
+                tucanaPlatform.startService('EVARESTHMIB');
             }, () => {
                 console.log("service id fetch error");
             });
         });
     }
     
-    async function doAsync () {
+    function sendDataProduct(){
+            var answer = window.confirm('Your are about to Transfer your data. Do you really want to do this?');
+            if (answer){
+                showalert('We are trying to reach Mero. SAS will be send shortly!');
+                //StartService()
+                    doAsyncB().then(function(){        
+                        (function myLoop (i) {          
+                            setTimeout(function () {   
+                                console.log("checking response");
+                                var checkRespond =  checkConnectedPeer();
+                                console.log(checkRespond);
+                                if (checkConnectedPeer()){
+                                    showalert('SAS has been send to sindo!');
+                                    removeConnectedPeer();
+                                    openlink('main1L.html')
+                                    i=0; 
+                                }
+                                else{
+                                    showalert('There is some network issue. We are trying to establish connection. Please have patience!');
+                                    if ((100)) myLoop(--i);      //  decrement i and call myLoop again if i > 0                                
+                                }               
+                            }, 20000)
+                         })(100);
+                      })
+                    }
+    }
+    
+
+    function receivedDataProduct(){
+        (function myLoop (i) {          
+            setTimeout(function () {   
+                console.log("checking response");
+                var checkRespond =  checkConnectedPeer();
+                console.log(checkRespond);
+                if (checkConnectedPeer()){
+                    showalert("Yes you can upload data. SAS has been issued by 'Sindo'!");
+                    removeConnectedPeer();
+                    openlink('mainL.html')
+                    i=0; 
+                }
+                else{
+                    showalert("You didnt received any SAS by 'Sindo' yet!");
+                    if ((100)) myLoop(--i);      //  decrement i and call myLoop again if i > 0                                
+                }               
+            }, 20000)
+         })(100);
+    }
+    async function doAsyncA () {
         // we are now using promise all to await all promises to settle
-        var responses = await Promise.all([StartService()]);
+        var responses = await Promise.all([StartServiceA()]);
+        return responses;
+    }
+    async function doAsyncB () {
+        // we are now using promise all to await all promises to settle
+        var responses = await Promise.all([StartServiceB()]);
         return responses;
     }
