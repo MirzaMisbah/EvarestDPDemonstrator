@@ -343,13 +343,15 @@ function checkResponse(){
             console.log(checkRespond);
             if (checkRespond){
                 showalert('Sindo accepted your request. We are setting a smart contract for you.');
-                openlink('main02.html');                                                         
+                setTimeout(function () { 
+                openlink('main02.html');
+            }, 30000)                                                         
                 }
                 else{
                     showalert("Sindo didn't accepted your request yet. Please have patience!");
                 }                   
            if ((20000)) myLoop(--i);      //  decrement i and call myLoop again if i > 0
-        }, 10000)
+        }, 30000)
      })(10000);  
 
     if (i==0){
