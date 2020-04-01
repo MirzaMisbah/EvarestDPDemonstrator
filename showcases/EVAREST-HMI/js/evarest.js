@@ -345,7 +345,7 @@ function checkResponse(){
                 showalert('Sindo accepted your request. We are setting a smart contract for you.');
                 setTimeout(function () { 
                 openlink('main02.html');
-            }, 30000)                                                         
+                }, 30000)                                                         
                 }
                 else{
                     showalert("Sindo didn't accepted your request yet. Please have patience!");

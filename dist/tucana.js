@@ -89487,6 +89487,7 @@ class domAdapter extends uiAdapter {
             _this.addCardTitle(card, 'EVAREST Demonstrator', 'EVAREST Demonstrator' + "-presentation", false);
             _this.addCardText(card, 'This service shows interaction between producer and provider at EVAREST Data Marketplace along with smart contract visualization.', true);
             _this.addCardAction(card, "start", function () {
+
                 this.name = localStorage.getItem("name")
                 if(localStorage.getItem("role")){
                     if(localStorage.getItem("producer") == "true"){
@@ -89501,7 +89502,7 @@ class domAdapter extends uiAdapter {
                 }
                 else{_this.userType = 'guest'}
                 
-                if (_this.userType == 'producer') {
+                /* if (_this.userType == 'producer') {
                     //window.open('','_self').close()
                     window.open("showcases/EVAREST-HMI/html/main.html?role=producer?name=" + this.name);
                 }
@@ -89511,7 +89512,7 @@ class domAdapter extends uiAdapter {
                 }
                 else if (_this.userType == 'guest') {
                     window.open("showcases/EVAREST-HMI/html/main20.html?role=guest?name=" + this.name);
-                }
+                } */
                 //_this.clearView();
                 
 
