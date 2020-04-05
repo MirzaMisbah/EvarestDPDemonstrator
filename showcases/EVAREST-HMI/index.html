@@ -18,7 +18,7 @@
 
 <body>
   <script src="../../dist/tucana.js" type="application/javascript"></script>
-  <!-- Always shows a header, even in smaller screens. -->
+  <!-- Always shows a header, even in smaller screens... -->
   <div class="mdl-layout mdl-js-layout">
     <header class="mdl-layout__header mdl-layout__header--transparent mdl-layout__header--scroll">
 
@@ -40,11 +40,14 @@
   </div>
   <div id="id01" class="modal"></div>
   
+ 
   
 
 
-  <script type="application/javascript">
+ <script>
+  window.onload = clearDB;
   var clearDB = function () {
+    window.localStorage.clear();
     const indexedDB = window.indexedDB || window.mozIndexedDB
             || window.webkitIndexedDB || window.msIndexedDB;
     const databases = ['data', 'model', 'swComponent', 'sscItem', 'tensorflowjs'];
@@ -54,9 +57,25 @@
         console.log("Deleted database successfully");
       };
     });
-
     alert('All databases successfully deleted');
   };
+
+  OnFileLoad() {
+        var file = document.getElementById("FileReader").files[0];
+        var textType = /text.*/;
+        var fileDisplayArea = document.getElementById("FileContent");
+        if (file.type.match(textType)) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                fileDisplayArea.innerText = reader.result;
+            }
+
+            reader.readAsText(file);
+        } else {
+            fileDisplayArea.innerText = "File not supported!"
+        }
+    }
 </script>
 
 

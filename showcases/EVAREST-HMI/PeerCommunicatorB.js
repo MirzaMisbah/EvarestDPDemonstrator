@@ -19,8 +19,33 @@ class PeerProducer extends tucana.minion.Cmin {
         this.ids = await _this.dataAccessService.getFilteredPeerIds(prop);
         console.log("connected peers from B");
         console.log(this.ids);
-        _this.connection();
+        var myIndex = objectStore.index('index');
+                var getAllKeysRequest = myIndex.getAllKeys();
+                getAllKeysRequest.onsuccess = function() {
+                console.log(getAllKeysRequest.result);}
+        //_this.connection();
 
+    }
+    ReceivedData(){
+        (function myLoop (i) {          
+            setTimeout(function () { 
+                var myIndex = objectStore.index('index');
+                var getAllKeysRequest = myIndex.getAllKeys();
+                getAllKeysRequest.onsuccess = function() {
+                console.log(getAllKeysRequest.result);
+                }  
+                if (checkRespond){
+                    showalert('Sindo accepted your request. We are setting a smart contract for you.');
+                    setTimeout(function () { 
+                    openlink('main02.html');
+                    }, 30000)                                                         
+                    }
+                    else{
+                        showalert("Sindo didn't accepted your request yet. Please have patience!");
+                    }                   
+               if ((20000)) myLoop(--i);      //  decrement i and call myLoop again if i > 0
+            }, 30000)
+         })(10000);
     }
     connection(){
         if (this.running){

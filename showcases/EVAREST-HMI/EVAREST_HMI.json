@@ -4,34 +4,34 @@
   "name": "EVAREST Demonstrator",
   "descriptionText": "This service shows interaction between producer and provider at EVAREST Data Marketplace along with smart contract visualization.",
   "configuration": [{
-    "softwareItemId": "./showcases/EVAREST-HMI/Pmin.js",
     "instanceId": "Pmin",
+    "softwareItemId": "./showcases/EVAREST-HMI/Pmin.js",
     "targetMinionIds": ["Tmin"],
     "name": "Perceiver Minion",
     "type": "P"
 
   }, {
-    "softwareItemId": "./showcases/EVAREST-HMI/Tmin.js",
     "instanceId": "Tmin",
-    "targetMinionIds": ["Cmin"],
+    "softwareItemId": "./showcases/EVAREST-HMI/Tmin.js",
+    "targetMinionIds": ["display"],
     "name": "Thinker Minion",
     "type": "T"
   },{
+    "instanceId": "display",
     "softwareItemId": "./showcases/EVAREST-HMI/Cmin.js",
-    "instanceId": "Cmin",
     "targetMinionIds": ["PeerCommunicatorA","PeerCommunicatorB"],
     "name": "Communication Minion",
     "type": "C"
-  },{
-      "softwareItemId": "./showcases/EVAREST-HMI/PeerCommunicatorA.js", 
-      "instanceId": "PeerCommunicatorA", 
+  },{ 
+     "instanceId": "PeerCommunicatorA", 
+      "softwareItemId": "./showcases/EVAREST-HMI/PeerCommunicatorA.js",
       "targetMinionIds": [], 
       "name": "Communicator",
       "type": "C", 
       "description": "Request Data products"
   },{
-      "softwareItemId": "./showcases/EVAREST-HMI/PeerCommunicatorB.js", 
       "instanceId": "PeerCommunicatorB", 
+      "softwareItemId": "./showcases/EVAREST-HMI/PeerCommunicatorB.js", 
       "targetMinionIds": [], 
       "name": "Communicator",
       "type": "C", 

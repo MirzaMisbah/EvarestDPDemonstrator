@@ -2,7 +2,6 @@ class Cmin extends tucana.minion.VisualizationCmin {
     constructor(dataAccessService, minionController, id, uiAdapter, dependencies = []) {
         super(dataAccessService, minionController, id, uiAdapter, dependencies);
         this.model = tucana.model;
-        this._minionController = this.minionController;
         console.log('I am in Cmin')
     }
 
@@ -20,10 +19,18 @@ class Cmin extends tucana.minion.VisualizationCmin {
     async activate() {
         await this.initialize();
         this.running = true;
-        const _this = this;
+        var _this = this;
+        console.log(this.instanceId);
+        //this.uiAdapter.checkId("display");
+        //this.uiAdapter.requestInput(this.instanceId, "binary", "Orders", this.setActive.bind(this));
+        //this.uiAdapter.requestInput(this.instanceId, "action", "Orders", function () {
+            //_this.uiAdapter.addData(_this.instanceId, true);
+            //_this.uiAdapter.sendNotification(_this.instanceId, "New deal");
+        //});
         _this.minionController.notify(_this, JSON.parse(JSON.stringify(_this.result)));
 
     }
+    
 
     notify(newData) {
         const _this = this;

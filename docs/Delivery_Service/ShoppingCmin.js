@@ -7,18 +7,16 @@ class ShoppingDealCmin extends tucana.minion.VisualizationCmin {
     async activate() {
         await this.initialize();
         this.running = true;
-        this.active = true;
+        //this.active = true;
+        console.log(this.instanceId);
         this.uiAdapter.addCardImage(this.instanceId, "images/supermarkt.jpg")
         this.uiAdapter.showIframe(this.instanceId, "offers.html");
         this.uiAdapter.requestInput(this.instanceId, "binary", "Orders", this.setActive.bind(this));
         var _this = this;
         this.uiAdapter.requestInput(this.instanceId, "action", "Orders", function () {
-            _this.uiAdapter.addData(_this.instanceId, true);
-            _this.uiAdapter.sendNotification(_this.instanceId, "New deal");
+            //_this.uiAdapter.addData(_this.instanceId, true);
+            //_this.uiAdapter.sendNotification(_this.instanceId, "New deal");
         });
-
-
-
     }
 
     /**

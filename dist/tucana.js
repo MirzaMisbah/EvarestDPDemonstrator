@@ -89468,7 +89468,7 @@ class domAdapter extends uiAdapter {
         // for each SSC create a card
 
         configurations.smartServiceConfigurationItemIds.forEach(function (config) {
-            startService(config.id);
+            
             var card = document.createElement("div");
             card.className = "mdl-card selection-card mdl-cell mdl-cell--top";
             if (i == 0) {
@@ -89487,6 +89487,7 @@ class domAdapter extends uiAdapter {
             _this.addCardTitle(card, 'EVAREST Demonstrator', 'EVAREST Demonstrator' + "-presentation", false);
             _this.addCardText(card, 'This service shows interaction between producer and provider at EVAREST Data Marketplace along with smart contract visualization.', true);
             _this.addCardAction(card, "start", function () {
+                
 
                 this.name = localStorage.getItem("name")
                 if(localStorage.getItem("role")){
@@ -89514,8 +89515,8 @@ class domAdapter extends uiAdapter {
                     window.open("showcases/EVAREST-HMI/html/main20.html?role=guest?name=" + this.name);
                 } */
                 //_this.clearView();
-                
-
+                startService(config.id);
+                console.log("configuration started")
             });
 
 

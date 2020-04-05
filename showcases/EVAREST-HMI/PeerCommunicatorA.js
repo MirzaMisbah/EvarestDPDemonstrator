@@ -18,10 +18,22 @@ class PeerProvider extends tucana.minion.Cmin {
         this.ids = await _this.dataAccessService.getFilteredPeerIds(prop);
         console.log("connected peers from A");
         console.log(this.ids);
-        _this.connection();
+        if(localStorage.getItem("producer")  == "true"){
+                _this.created = true;
+                const reader = this.JSONReader((result) => {
+                    _this.result = result;
+                    console.log(result)
+                    console.log(_this.result)
+                });
+                console.log(reader);
+            }
+        setTimeout(function () {
+            _this.connection(_this.result);
+            },50000);
+        
         
     }
-    connection(){
+    connection(result){
         if (this.running){
             if (this.ids.lenght == 0){
                 console.log("no id connected");
@@ -34,7 +46,7 @@ class PeerProvider extends tucana.minion.Cmin {
             console.log(this.dataId);
             console.log("this.data");
             console.log(this.data);
-            this.broadcastDataCreateOperation(this.dataId, this.data, broadcastConfig)
+            this.broadcastDataCreateOperation("Received", result, broadcastConfig)
                     .then(function(res){
                         console.log(res);
                     });
@@ -50,9 +62,53 @@ class PeerProvider extends tucana.minion.Cmin {
             console.log(this.LocalID);
             const broadcastConfig = new this.model.BroadcastConfiguration(this.LocalID, this.peerID,  this.model.BROADCAST_TYPE.UPEER, this.model.BROADCAST_CONDITION.ALL,null);
             console.log("only prediction result sent to store  "  ,this.data);
-            this.broadcastDataCreateOperation(this.dataId, this.data, broadcastConfig);
+            this.broadcastDataCreateOperation("Received", result, broadcastConfig);
         }
     }
+
+    
+    JSONReader(completed = null) {
+        this.onCompleted = completed;
+        this.result = undefined;
+	    this.input = document.createElement('input');
+        this.input.type = 'file';
+        this.input.accept = 'text/json|application/json';
+        this.input.addEventListener('change', this.onChange.bind(this), false);
+        this.input.style.display = 'none';
+        document.body.appendChild(this.input);
+        this.input.click();
+    }
+ 
+    destroy() {
+        this.input.removeEventListener('change', this.onChange.bind(this), false);
+        document.body.removeChild(this.input);    
+    }
+ 
+    onChange(event) {
+	if (event.target.files.length > 0) {
+            this.readJSON(event.target.files[0]);
+        }
+    }
+ 
+    readJSON(file) {
+        const reader = new FileReader();
+        reader.onload = (event) => {
+            if (event.target.readyState === 2) {
+                this.result = JSON.parse(reader.result);
+                if (typeof this.onCompleted === 'function') {
+                    this.onCompleted(this.result);
+                }
+		this.destroy();
+            }
+        };
+        reader.readAsText(file);
+    }
+ 
+    read(callback = null) {
+        return new this.JSONReader(callback);
+    }
+    
+    
 
     /**
      * Terminates a running minion by clearing the runtime environment.
