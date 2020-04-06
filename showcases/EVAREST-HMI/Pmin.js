@@ -76,7 +76,13 @@ class Pmin extends tucana.minion.Pmin {
          */
         //console.log(_this.dataAccessService.getLocalID());
         //console.log((_this, JSON.parse(JSON.stringify(_this.readData(_this.dataAccessService.getLocalID())))));
-
+        await _this.readData("Received").then(function (res) {
+            if (res.response.res != null) {
+                _this.data = res.response.res.object;
+                console.log(res.response.res.object);
+                console.log("line 79")
+            }
+        });
     }
 
     JSONReader(completed = null) {

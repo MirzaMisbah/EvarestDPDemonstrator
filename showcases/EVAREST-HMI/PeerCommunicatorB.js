@@ -6,6 +6,7 @@ class PeerProducer extends tucana.minion.Cmin {
         this.dataId = id + Date.now();
         this.data = [];
         console.log('I am in Peer Communicator B')
+        this._accessdata = tucana.adapter.IndexedDBDatabaseHandler;
 
     }
 
@@ -17,36 +18,78 @@ class PeerProducer extends tucana.minion.Cmin {
         console.log("Defined Properties in B");
         console.log(prop);
         this.ids = await _this.dataAccessService.getFilteredPeerIds(prop);
+        this.domainItemIds = await _this.dataAccessService.getDomainItemIds();
+        //const ReadResults = await this.get('indexeddb://my-model-1');
+        //this.model = await this.readData();
+        //console.log(this.model)
+
+        //const domainItem = new this.model.DomainItem(this.instanceId, 'Received');
+        /* await _this.dataAccessService.readData("Received").then(function (res) {
+            if (res.response.res != null) {
+                _this.data = res.response.res.object;
+                console.log(res.response.res.object);
+            }
+        }); */
         console.log("connected peers from B");
         console.log(this.ids);
-        var myIndex = objectStore.index('index');
-                var getAllKeysRequest = myIndex.getAllKeys();
-                getAllKeysRequest.onsuccess = function() {
-                console.log(getAllKeysRequest.result);}
+        //console.log(this.data.read())
+        //console.log(await this.data.load());
+        if(localStorage.getItem("provider")  == "true"){
+            this.ReceivedData();
+        }
         //_this.connection();
 
+
     }
-    ReceivedData(){
-        (function myLoop (i) {          
+    async ReceivedData(){
+        //this.domainItemIds = await this._accessdata.domainItemIds();
+        /* await this.dataAccessService.readData("Received").then(function (res) {
+            if (res.response.res != null) {
+                this.data = res.response.res.object;
+                console.log(res.response.res.object);
+                console.log("line 42")
+            }
+            else{
+                console.log("line 45") 
+            }
+        });
+         */
+        (function myLoop (i) {    
+            const _this = this;      
             setTimeout(function () { 
-                var myIndex = objectStore.index('index');
-                var getAllKeysRequest = myIndex.getAllKeys();
-                getAllKeysRequest.onsuccess = function() {
-                console.log(getAllKeysRequest.result);
-                }  
-                if (checkRespond){
-                    showalert('Sindo accepted your request. We are setting a smart contract for you.');
-                    setTimeout(function () { 
-                    openlink('main02.html');
-                    }, 30000)                                                         
+                if (localStorage.getItem("Connected peer")){ //this.readData("Received")
+                    alert('You received some data. You want to send SAS.');
+                        setTimeout(function () {
+                            _this.connection();
+                        }, 10000)
+                        
+                            if (_this.ids.lenght == 0){
+                                console.log("no id connected");
+                            }
+                            else{
+                            const broadcastConfig = new this.model.BroadcastConfiguration(this.dataAccessService.getLocalID(),  this.ids,  this.model.BROADCAST_TYPE.UPEER,BROADCAST_CONDITION.ANY,null);
+                            console.log("only prediction result sent to store  "  ,this.data);
+                            console.log("this.dataID");
+                            console.log(this.dataId);
+                            console.log("this.data");
+                            console.log(this.data);
+                            this.broadcastDataCreateOperation(this.dataId, this.data, broadcastConfig)
+                                    .then(function(res){
+                                        console.log(res);
+                                    });
+                            }                                                   
+                }
+                    if(this.ids == 'USER_NA'){
+                        alert('No other user is connected right now to send data');
                     }
                     else{
-                        showalert("Sindo didn't accepted your request yet. Please have patience!");
-                    }                   
+                        alert('Some other user is connected but you dont received any data yet');
+                    }                  
                if ((20000)) myLoop(--i);      //  decrement i and call myLoop again if i > 0
             }, 30000)
          })(10000);
     }
+
     connection(){
         if (this.running){
             if (this.ids.lenght == 0){
