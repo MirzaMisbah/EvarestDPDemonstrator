@@ -89503,7 +89503,7 @@ class domAdapter extends uiAdapter {
                 }
                 else{_this.userType = 'guest'}
                 
-                /* if (_this.userType == 'producer') {
+                if (_this.userType == 'producer') {
                     //window.open('','_self').close()
                     window.open("showcases/EVAREST-HMI/html/main.html?role=producer?name=" + this.name);
                 }
@@ -89513,7 +89513,7 @@ class domAdapter extends uiAdapter {
                 }
                 else if (_this.userType == 'guest') {
                     window.open("showcases/EVAREST-HMI/html/main20.html?role=guest?name=" + this.name);
-                } */
+                } 
                 //_this.clearView();
                 startService(config.id);
                 console.log("configuration started")

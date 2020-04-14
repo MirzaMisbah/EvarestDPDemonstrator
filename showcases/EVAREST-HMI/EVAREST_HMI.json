@@ -19,19 +19,19 @@
   },{
     "instanceId": "display",
     "softwareItemId": "./showcases/EVAREST-HMI/Cmin.js",
-    "targetMinionIds": ["PeerCommunicatorA","PeerCommunicatorB"],
+    "targetMinionIds": ["PeerCommunicatorProducer","PeerCommunicatorProvider"],
     "name": "Communication Minion",
     "type": "C"
   },{ 
-     "instanceId": "PeerCommunicatorA", 
-      "softwareItemId": "./showcases/EVAREST-HMI/PeerCommunicatorA.js",
+     "instanceId": "PeerCommunicatorProducer", 
+      "softwareItemId": "./showcases/EVAREST-HMI/PeerCommunicatorProducer.js",
       "targetMinionIds": [], 
       "name": "Communicator",
       "type": "C", 
       "description": "Request Data products"
   },{
-      "instanceId": "PeerCommunicatorB", 
-      "softwareItemId": "./showcases/EVAREST-HMI/PeerCommunicatorB.js", 
+      "instanceId": "PeerCommunicatorProvider", 
+      "softwareItemId": "./showcases/EVAREST-HMI/PeerCommunicatorProvider.js", 
       "targetMinionIds": [], 
       "name": "Communicator",
       "type": "C", 

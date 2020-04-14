@@ -42,6 +42,7 @@ class PeerProducer extends tucana.minion.Cmin {
 
     }
     async ReceivedData(){
+        const _t = this;
         //this.domainItemIds = await this._accessdata.domainItemIds();
         /* await this.dataAccessService.readData("Received").then(function (res) {
             if (res.response.res != null) {
@@ -55,61 +56,64 @@ class PeerProducer extends tucana.minion.Cmin {
         });
          */
         (function myLoop (i) {    
-            const _this = this;      
-            setTimeout(function () { 
+            const _this = _t;      
+            setTimeout(function () {
+                const __this = _this; 
                 if (localStorage.getItem("Connected peer")){ //this.readData("Received")
-                    alert('You received some data. You want to send SAS.');
+                    var answer = window.confirm('You received some data. You want to send SAS.');
+                    if (answer){
+                        localStorage.removeItem("Connected peer");
                         setTimeout(function () {
-                            _this.connection();
-                        }, 10000)
-                        
-                            if (_this.ids.lenght == 0){
-                                console.log("no id connected");
-                            }
-                            else{
-                            const broadcastConfig = new this.model.BroadcastConfiguration(this.dataAccessService.getLocalID(),  this.ids,  this.model.BROADCAST_TYPE.UPEER,BROADCAST_CONDITION.ANY,null);
-                            console.log("only prediction result sent to store  "  ,this.data);
-                            console.log("this.dataID");
-                            console.log(this.dataId);
-                            console.log("this.data");
-                            console.log(this.data);
-                            this.broadcastDataCreateOperation(this.dataId, this.data, broadcastConfig)
-                                    .then(function(res){
-                                        console.log(res);
-                                    });
-                            }                                                   
+                            const ___this = __this; 
+                            ___this.connection();
+                        }, 10000)                                                
                 }
+            }
+                else{
                     if(this.ids == 'USER_NA'){
                         alert('No other user is connected right now to send data');
                     }
                     else{
                         alert('Some other user is connected but you dont received any data yet');
-                    }                  
+                    }
+                }                  
                if ((20000)) myLoop(--i);      //  decrement i and call myLoop again if i > 0
             }, 30000)
          })(10000);
     }
 
     connection(){
-        if (this.running){
-            if (this.ids.lenght == 0){
-                console.log("no id connected");
-            }
-            else{
-            const broadcastConfig = new this.model.BroadcastConfiguration(this.dataAccessService.getLocalID(),  this.ids,  this.model.BROADCAST_TYPE.UPEER,BROADCAST_CONDITION.ANY,null);
-           
-            console.log("only prediction result sent to store  "  ,this.data);
-            console.log("this.dataID");
-            console.log(this.dataId);
-            console.log("this.data");
-            console.log(this.data);
-            this.broadcastDataCreateOperation(this.dataId, this.data, broadcastConfig)
-                    .then(function(res){
-                        console.log(res);
-                    });
-            }
+        (function myLoop (i) {    
+            const _this = this;      
+            setTimeout(function () {
+                const _this = __this;
+                if(!(localStorage.getItem("Connected peer"))){
+                    if (__this.running){
 
-        }
+                        if (__this.ids.lenght == 0){
+                            console.log("no id connected");
+                        }
+                        else{
+                        const broadcastConfig = new __this.model.BroadcastConfiguration(__this.dataAccessService.getLocalID(),  __this.ids,  __this.model.BROADCAST_TYPE.UPEER,BROADCAST_CONDITION.ANY,null);
+                    
+                        console.log("only prediction result sent to store  "  ,__this.data);
+                        console.log("_this.dataID");
+                        console.log(__this.dataId);
+                        console.log("_this.data");
+                        console.log(__this.data);
+                        __this.broadcastDataCreateOperation(__this.dataId, __this.data, broadcastConfig)
+                                .then(function(res){
+                                    console.log(res);
+                                });
+                            }
+                        }
+                    }
+                    else{i=0;}
+                
+                
+            if ((20000)) myLoop(--i);      //  decrement i and call myLoop again if i > 0
+            }, 30000)
+        })(10000);
     }
 
     /**

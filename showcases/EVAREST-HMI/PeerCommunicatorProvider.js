@@ -3,7 +3,7 @@ class PeerProvider extends tucana.minion.Cmin {
     constructor(dataAccessService, minionController, id, uiAdapter, dependencies=[]) {
         super(dataAccessService,minionController,id,uiAdapter,dependencies);
         this.model = tucana.model;
-        this.dataId = id;
+        this.dataId = id + Date.now();
         this.data = [];
         console.log('I am in Peer Communicator A')
     }

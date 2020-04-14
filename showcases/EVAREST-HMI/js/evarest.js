@@ -289,29 +289,29 @@ function requestContract() {
       checkResponse();
         }
 
-        function uploadData() {
-            var d = new Date();
-            //check = setScReqValue();
-            var answer = window.confirm('Your are about to upload your data. Do you really want to upload it?');
-            if (answer){
-                showalert('Your data has been send to sindo!');
-                    //StartService()
-                    doAsyncB().then(function(){
-                        
-                        setTimeout(function () {
-                            if (checkConnectedPeer() || !checkConnectedPeer()){  
-                            removeConnectedPeer();
-                            showalert('We are redirecting you to visualization'); 
-                            openlink('mainL.html')
-                            }
-                            else{
-                                showalert('There is some network issue please try again after some time!');
-                            }
-                        }, 40000)
-                      });
-                    }
-                    else{}
+    function uploadData() {
+        var d = new Date();
+        //check = setScReqValue();
+        var answer = window.confirm('Your are about to upload your data. Do you really want to upload it?');
+        if (answer){
+            showalert('Your data has been uploaded. We are aggregating your data according to provided SAS by sindo');
+                //StartService()
+                doAsyncB().then(function(){
+                    
+                    setTimeout(function () {
+                        if (checkConnectedPeer() || !checkConnectedPeer()){  
+                        removeConnectedPeer();
+                        showalert('We are redirecting you to visualization'); 
+                        openlink('mainL.html')
+                        }
+                        else{
+                            showalert('There is some network issue please try again after some time!');
+                        }
+                    }, 40000)
+                    });
                 }
+                else{}
+            }
         
 function checkConnectedPeer(){
     if(window.localStorage.getItem('Connected peer')){
@@ -341,11 +341,11 @@ function checkResponse(){
             console.log("checking response");
             var checkRespond =  checkConnectedPeer();
             console.log(checkRespond);
-            if (checkRespond){
+            if (true){
                 showalert('Sindo accepted your request. We are setting a smart contract for you.');
-                setTimeout(function () { 
+                //setTimeout(function () { 
                 openlink('main02.html');
-                }, 30000)                                                         
+                //}, 10000)                                                         
                 }
                 else{
                     showalert("Sindo didn't accepted your request yet. Please have patience!");
@@ -353,7 +353,6 @@ function checkResponse(){
            if ((20000)) myLoop(--i);      //  decrement i and call myLoop again if i > 0
         }, 30000)
      })(10000);  
-
     if (i==0){
     _return = false;
     }
@@ -374,10 +373,10 @@ function checkResponse(){
                 console.log(checkRespond);
                 if (checkRespond){
                     showalert('Sindo uploaded his data. He is now visualizing your SAS.');
-                    setTimeout(function () { openlink('main1L.html');}, 10000)
+                    //setTimeout(function () { openlink('main1L.html');}, 10000)
                                                                              
                     } 
-                    else{showalert("Sindo didn't uploaded his data yet");}                  
+                    //else{showalert("Sindo didn't uploaded his data yet");}                  
                if ((100)) myLoop(--i);      //  decrement i and call myLoop again if i > 0
             }, 10000)
          })(100);  
@@ -566,9 +565,25 @@ function checkResponse(){
         //check = setScReqValue();
         alert('Your are about to upload your data.');
         if (true){
-            showalert('Your data has been send to sindo!');
-                //StartService()                 
-                    setTimeout(function () {
+
+            localStorage.removeItem("Connected peer");
+            if(localStorage.getItem("producer")  == "true"){
+            const reader = this.JSONReader((result) => {
+                console.log(result)
+                
+            });
+            console.log(reader);
+            //refreshIndex();
+            //doAsync();
+            setTimeout(function () {
+                //if(!this.ids == 'USER_NA'){
+                    this.checkSAS();
+                //}
+                },10000);
+        }
+        showalert('Your data has been uploaded. We are aggregating your data according to provided SAS by sindo');
+        //StartService()                 
+                    /*setTimeout(function () {
                         
                         refreshIndex();
                         showalert('We are redirecting you to visualization'); 
@@ -577,7 +592,7 @@ function checkResponse(){
                         }, 20000)
                         
 
-                    }, 20000)
+                    }, 20000)*/
                 }
             }
     function refreshIndex(){
@@ -586,3 +601,100 @@ function checkResponse(){
         newtab.document.location.reload(true);
 
     }
+
+    function checkSAS(){
+        
+        const _this = this;
+        (function myLoop (i) { 
+            const __this = _this;       
+            setTimeout(function () { 
+                if (true/*localStorage.getItem("Connected peer")*/){ 
+                    var answer = window.confirm('Your data has been aggregated. You want to download it.');
+                    if (answer){
+                        __this.createSAS();
+                        alert('Data downloaded');
+                    }                                                        
+                }
+                else{
+                    alert('You didnt received any SAS yet.');
+                }                   
+               if ((10000)) myLoop(--i);
+            }, 70000)  
+         })(10000);
+
+
+    }
+    function createSAS(){
+        const _this = this;
+        //JSONObject js = new JSONObject();
+        var dummy = _this.result["data"];
+        
+        var SAS =  {
+            id: _this.result["id"],
+            version: _this.result["version"],
+            name: _this.result["name"],
+            descriptionText: _this.result["descriptionText"],
+            data: [{
+                "Num1": "X"},{
+                "Num2": "X"},{
+                "Res": parseInt((dummy[0]['Num1'])) + parseInt((dummy[1]['Num2']))
+            }],
+            context: _this.result["context"]
+        };
+        console.log(SAS)
+        console.log(_this.result)
+        _this.downloadObjectAsJson(SAS, 'SAS');
+    }
+    
+    function downloadObjectAsJson(exportObj, exportName){
+        var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportObj));
+        var downloadAnchorNode = document.createElement('a');
+        downloadAnchorNode.setAttribute("href",     dataStr);
+        downloadAnchorNode.setAttribute("download", exportName + ".json");
+        document.body.appendChild(downloadAnchorNode); // required for firefox
+        downloadAnchorNode.click();
+        downloadAnchorNode.remove();
+        location.reload();
+      }
+    
+    function JSONReader(completed = null) {
+        this.onCompleted = completed;
+        this.result = undefined;
+	    this.input = document.createElement('input');
+        this.input.type = 'file';
+        this.input.accept = 'text/json|application/json';
+        this.input.addEventListener('change', this.onChange.bind(this), false);
+        this.input.style.display = 'none';
+        document.body.appendChild(this.input);
+        this.input.click();
+    }
+ 
+    function destroy() {
+        this.input.removeEventListener('change', this.onChange.bind(this), false);
+        document.body.removeChild(this.input);    
+    }
+ 
+    function onChange(event) {
+	if (event.target.files.length > 0) {
+            this.readJSON(event.target.files[0]);
+        }
+    }
+ 
+    function readJSON(file) {
+        const reader = new FileReader();
+        reader.onload = (event) => {
+            if (event.target.readyState === 2) {
+                this.result = JSON.parse(reader.result);
+                if (typeof this.onCompleted === 'function') {
+                    this.onCompleted(this.result);
+                }
+		this.destroy();
+            }
+        };
+        reader.readAsText(file);
+    }
+ 
+    function read(callback = null) {
+        return new this.JSONReader(callback);
+    }
+    

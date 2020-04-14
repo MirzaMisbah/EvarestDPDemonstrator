@@ -34,6 +34,7 @@ class PeerProvider extends tucana.minion.Cmin {
         }
     }
     connection(result){
+        const _this = this;
         if (this.running){
             if (this.ids.lenght == 0){
                 console.log("no id connected");
@@ -64,11 +65,15 @@ class PeerProvider extends tucana.minion.Cmin {
             console.log("only prediction result sent to store  "  ,this.data);
             this.broadcastDataCreateOperation("Received", result, broadcastConfig);
         }
-        window.localStorage.removeItem("Connected peer");
-        this.checkSAS();
+        setTimeout(function () {
+                localStorage.removeItem("Connected peer");
+                _this.checkSAS();
+            },10000);
+        
     }
 
     checkSAS(){
+        
         const _this = this;
         (function myLoop (i) { 
             const __this = _this;       
@@ -84,7 +89,7 @@ class PeerProvider extends tucana.minion.Cmin {
                     alert('You didnt received any SAS yet.');
                 }                   
                if ((20000)) myLoop(--i);
-            }, 50000)  
+            }, 70000)  
          })(10000);
 
 
