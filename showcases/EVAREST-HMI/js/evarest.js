@@ -619,7 +619,7 @@ function checkResponse(){
                     alert('You didnt received any SAS yet.');
                 }                   
                if ((10000)) myLoop(--i);
-            }, 70000)  
+            }, 50000)  
          })(10000);
 
 
