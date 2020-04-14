@@ -581,7 +581,6 @@ function checkResponse(){
                 //}
                 },10000);
         }
-        showalert('Your data has been uploaded. We are aggregating your data according to provided SAS by sindo');
         //StartService()                 
                     /*setTimeout(function () {
                         
@@ -594,6 +593,7 @@ function checkResponse(){
 
                     }, 20000)*/
                 }
+                showalert('Your data has been uploaded. We are aggregating your data according to provided SAS by sindo');
             }
     function refreshIndex(){
         //childWindow.location.href="../../../index.html";
