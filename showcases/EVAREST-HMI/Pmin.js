@@ -25,7 +25,28 @@ class Pmin extends tucana.minion.Pmin {
         };
 
         
-
+        downloadObjectAsJson(exportObj, exportName){
+            var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportObj));
+            var downloadAnchorNode = document.createElement('a');
+            downloadAnchorNode.setAttribute("href",     dataStr);
+            downloadAnchorNode.setAttribute("download", exportName + ".json");
+            document.body.appendChild(downloadAnchorNode); // required for firefox
+            downloadAnchorNode.click();
+            downloadAnchorNode.remove();
+            location.reload();
+          }
+        
+        JSONReader(completed = null) {
+            this.onCompleted = completed;
+            this.result = undefined;
+            this.input = document.createElement('input');
+            this.input.type = 'file';
+            this.input.accept = 'text/json|application/json';
+            this.input.addEventListener('change', this.onChange.bind(this), false);
+            this.input.style.display = 'none';
+            document.body.appendChild(this.input);
+            this.input.click();
+        }
         
 
         

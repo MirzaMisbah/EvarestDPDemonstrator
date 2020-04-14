@@ -115,7 +115,27 @@ class PeerProducer extends tucana.minion.Cmin {
             }, 30000)
         })(10000);
     }
-
+    generateSAS(){
+        const _this = this;
+        //JSONObject js = new JSONObject();
+        var dummy = _this.result["data"];
+        
+        var SAS =  {
+            id: _this.result["id"],
+            version: _this.result["version"],
+            name: _this.result["name"],
+            descriptionText: _this.result["descriptionText"],
+            data: [{
+                "Num1": "X"},{
+                "Num2": "X"},{
+                "Op": "+" 
+            }],
+            context: _this.result["context"]
+        };
+        console.log(SAS)
+        console.log(_this.result)
+        _this.downloadObjectAsJson(SAS, 'SAS');
+    }
     /**
      * Terminates a running minion by clearing the runtime environment.
      */
