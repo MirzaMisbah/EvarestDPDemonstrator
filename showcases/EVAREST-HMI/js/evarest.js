@@ -581,6 +581,7 @@ function checkResponse(){
                 //}
                 },10000);
         }
+        showalert('Your data has been uploaded. We are aggregating your data according to provided SAS by sindo');
         //StartService()                 
                     /*setTimeout(function () {
                         
@@ -618,7 +619,7 @@ function checkResponse(){
                     alert('You didnt received any SAS yet.');
                 }                   
                if ((10000)) myLoop(--i);
-            }, 30000)  
+            }, 40000)  
          })(10000);
 
 
