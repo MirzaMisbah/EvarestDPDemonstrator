@@ -658,7 +658,6 @@ function checkResponse(){
       }
     
     function JSONReader(completed = null) {
-        showalert('Your data has been uploaded. We are aggregating your data according to provided SAS by sindo');
         this.onCompleted = completed;
         this.result = undefined;
 	    this.input = document.createElement('input');
@@ -668,6 +667,8 @@ function checkResponse(){
         this.input.style.display = 'none';
         document.body.appendChild(this.input);
         this.input.click();
+        showalert('Your data has been uploaded. We are aggregating your data according to provided SAS by sindo');
+
     }
  
     function destroy() {
