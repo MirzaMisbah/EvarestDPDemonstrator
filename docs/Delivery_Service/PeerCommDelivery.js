@@ -1,3 +1,4 @@
+//chl ja bhai
 class TestPeerCommunicator extends tucana.minion.Cmin {
 
     constructor(dataAccessService, minionController, id, uiAdapter, dependencies=[]) {
