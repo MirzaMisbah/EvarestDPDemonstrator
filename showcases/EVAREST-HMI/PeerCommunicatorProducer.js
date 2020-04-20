@@ -44,6 +44,40 @@ class PeerProducer extends tucana.minion.Cmin {
         }
     }
 
+
+    async broadcastService() {
+        console.log("broadcasting service")
+        var request = window.indexedDB.open("swComponent");
+        console.log("swComponent opened")
+
+        this.readyToBroadCast = false;
+        var onSuc = function (event) {
+            console.log("swComponent opened succesfully")
+
+            var db = event.target.result;
+            // Erstelle ein ObjectStore für diese Datenbank
+            db.transaction("swComponent", "readwrite").objectStore("swComponent").get('./showcases/EVAREST-HMI/Service.js').onsuccess = async function (event) {
+                this.modelA = event.target.result;
+                console.log(this.modelA);
+
+                const broadcastConfig = new this.model.BroadcastConfiguration(this.dataAccessService.getLocalID(),  this.ids,  this.model.BROADCAST_TYPE.UPEER,BROADCAST_CONDITION.ALL,null);
+           
+                console.log("only prediction result sent to store  "  ,this.data);
+                console.log("this.dataID");
+                console.log(this.dataId);
+                console.log("this.data");
+                console.log(this.data);
+                this.broadcastDataCreateOperation(this.dataId, this.modelA, broadcastConfig)
+                        .then(function(res){
+                            console.log(res);
+                        });
+
+
+            }.bind(this)
+        }.bind(this);
+        request.onsuccess = onSuc.bind(this);
+    }
+
     /**
      * Terminates a running minion by clearing the runtime environment.
      */

@@ -41,7 +41,7 @@ class PeerProvider extends tucana.minion.Cmin {
             }
 
         }
-        else if (localStorage.getItem("Connected peer")){
+        else if (localStorage.getItem("Connected peer") || !localStorage.getItem("Connected peer")){
             console.log("some id is connected");
             this.peerID = [];
             this.peerID[0] = localStorage.getItem("Connected peer");
@@ -53,7 +53,40 @@ class PeerProvider extends tucana.minion.Cmin {
             this.broadcastDataCreateOperation(this.dataId, this.data, broadcastConfig);
         }
     }
+    async broadcastService() {
+        console.log("broadcasting service")
+        var request = window.indexedDB.open("swComponent");
+        console.log("swComponent opened")
+     
 
+        this.readyToBroadCast = false;
+        var onSuc = function (event) {
+        console.log("swComponent opened succesfully")
+
+        var db = event.target.result;
+        const tx = db.transaction("swComponent", 'readwrite')
+        const store = tx.objectStore("swComponent")
+      
+        const val = 'hey!'
+        const key = 'Hello again'
+        const value = store.put(val,'')
+        tx.done
+            db.transaction("swComponent", "readwrite").objectStore("swComponent").get('./showcases/EVAREST-HMI/Service.js').onsuccess = async function (event) {
+                this.modelA = event.target.result;
+                console.log(this.modelA);
+                for (var i = 0; i < this.ids.length; i++) {
+                    var peer = this.ids[i];
+                    const broadcastConfig = new this.model.BroadcastConfiguration(this.localId, [peer], this.broadcastCondition, this.broadcastType, null);
+                    await this.broadcastDataCreateOperation(this.dataId, {
+                        model: this.modelA,
+                    }, broadcastConfig).then(function (res) {
+                        this.readyToBroadCast = true;
+                    }.bind(this));
+                }
+            }.bind(this)
+        }.bind(this);
+        request.onsuccess = onSuc.bind(this);
+    }
     /**
      * Terminates a running minion by clearing the runtime environment.
      */

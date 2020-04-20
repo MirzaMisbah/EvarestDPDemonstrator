@@ -75,7 +75,7 @@ function questionMessage() {
         // NLP logic here
         intent = getIntent(customer_msg);
         generateAnswer(intent, customer_msg);
-        
+        storeData();
         
     }
     else{
@@ -342,6 +342,7 @@ function checkResponse(){
             var checkRespond =  checkConnectedPeer();
             console.log(checkRespond);
             if (true){
+                console.log(true);
                 showalert('Sindo accepted your request. We are setting a smart contract for you.');
                 //setTimeout(function () { 
                 openlink('main02.html');
@@ -351,7 +352,7 @@ function checkResponse(){
                     showalert("Sindo didn't accepted your request yet. Please have patience!");
                 }                   
            if ((20000)) myLoop(--i);      //  decrement i and call myLoop again if i > 0
-        }, 30000)
+        }, 50000)
      })(10000);  
     if (i==0){
     _return = false;
@@ -400,7 +401,7 @@ function checkResponse(){
             console.log("checking response");
             var checkRespond =  checkConnectedPeer();
             console.log(checkRespond);
-            if (checkRespond){
+            if (true){
                 var answer = window.confirm('Mero requested for your service. Do you want to share it!');
                 if (answer)
                 {   showalert('We are setting a smart contract for you.');
@@ -408,7 +409,7 @@ function checkResponse(){
                 }     
             }                
            if ((10000)) myLoop(--i);      //  decrement i and call myLoop again if i > 0
-        }, 20000)
+        }, 30000)
      })(10000);  
 
     if (i==0){
@@ -679,7 +680,6 @@ function checkResponse(){
             this.readJSON(event.target.files[0]);
         }
     }
- 
     function readJSON(file) {
         const reader = new FileReader();
         reader.onload = (event) => {
@@ -693,8 +693,65 @@ function checkResponse(){
         };
         reader.readAsText(file);
     }
- 
     function read(callback = null) {
         return new this.JSONReader(callback);
     }
-    
+    function storeData(){
+        if(localStorage.getItem("role")){
+            if(localStorage.getItem("producer")  == "true"){this.userType = 'producer'}
+            else if(localStorage.getItem("provider") == "true"){this.userType = 'provider'}
+            else {this.userType = 'guest'}
+        }
+        else{this.userType = 'guest'}
+                
+        this.result = {
+            userId: localStorage.getItem("id"),
+            userType: this.userType
+        };
+/* 
+        const dbName = "sscItem";
+        var request = indexedDB.open(dbName, 2);
+        request.onerror = function(event) {
+        // Handle errors.
+        };
+        request.onupgradeneeded = function(event) {
+        var db = event.target.result;
+        var objectStore = db.createObjectStore("sascItems", { keyPath: "id" });
+        objectStore.createIndex("name", "name", { unique: false });
+        objectStore.createIndex("email", "email", { unique: true });
+        objectStore.transaction.oncomplete = function(event) {
+            var customerObjectStore = db.transaction("sascItems", "readwrite").objectStore("sscItem");
+            customerData.forEach(function(customer) {
+            customerObjectStore.add(customer);
+            });
+        };
+        }; */
+
+        var request = indexedDB.open('sscItem', 2);
+        request.onupgradeneeded = function(event) {
+          console.log('Performing upgrade');
+          var db = event.target.result;
+          console.log('Creating object store');
+          db.createObjectStore('mystore', {keyPath: 'key', autoIncrement: true});
+        };
+        
+        request.onsuccess = function(event) {
+          console.log('Connected to database');
+          var db = event.target.result;
+          var tx = db.transaction('sscItem', "readwrite");
+          var store = tx.objectStore('sscItem');
+          console.log('Doing something with store "mystore"');
+          store.put({value: "Misbah"});
+          console.log('Finished doing something, now closing');
+          db.close();
+        };
+        
+        request.onerror = console.error;
+    }
+    function addData(data)  {
+        var tx = db.transaction("notes", "readwrite");
+        var store = tx.objectStore("notes");
+        store.put({content: data, ID:1});
+        store.put({content2: data, ID:1});
+        store.put({content3: data, ID:1});
+    }    

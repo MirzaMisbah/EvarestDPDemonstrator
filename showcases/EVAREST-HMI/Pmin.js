@@ -18,46 +18,11 @@ class Pmin extends tucana.minion.Pmin {
             else {_this.userType = 'guest'}
         }
         else{_this.userType = 'guest'}
-        
+                
         _this.result = {
             userId: localStorage.getItem("id"),
             userType: _this.userType
         };
-
-        
-        downloadObjectAsJson(exportObj, exportName){
-            var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportObj));
-            var downloadAnchorNode = document.createElement('a');
-            downloadAnchorNode.setAttribute("href",     dataStr);
-            downloadAnchorNode.setAttribute("download", exportName + ".json");
-            document.body.appendChild(downloadAnchorNode); // required for firefox
-            downloadAnchorNode.click();
-            downloadAnchorNode.remove();
-            location.reload();
-          }
-        
-        JSONReader(completed = null) {
-            this.onCompleted = completed;
-            this.result = undefined;
-            this.input = document.createElement('input');
-            this.input.type = 'file';
-            this.input.accept = 'text/json|application/json';
-            this.input.addEventListener('change', this.onChange.bind(this), false);
-            this.input.style.display = 'none';
-            document.body.appendChild(this.input);
-            this.input.click();
-        }
-        
-
-        
-        /*this.printFile("C:/Users/7seas/Desktop/EVAREST-HMI.json")
-        fetch("C:/Users/7seas/Desktop/EVAREST-HMI.json")
-        .then(response => response.json())
-        .then(jsonResponse => console.log(jsonResponse))
-        var tData = JSON.parse("C:/Users/7seas/Desktop/EVAREST-HMI.json");
-        console.log(tData);
-        */
-
 
         /**
         * Pushing data    
@@ -77,26 +42,12 @@ class Pmin extends tucana.minion.Pmin {
         else {
             await _this.saveData(_this.dataId, _this.data);
             _this.created = true;
-            /*const reader = this.JSONReader((result) => {
-                _this.result = result;
-                console.log(result)
-                console.log(_this.result)
-            });
-            console.log(reader);
-    
-            this.read((result) => {
-                console.log(result); 
-            });
-            this.activate();
-            location.reload();*/
         }
         _this.minionController.notify(_this, JSON.parse(JSON.stringify(_this.result)));
         console.log(_this.result)
         /**
          * Notifying the next minion     
          */
-        //console.log(_this.dataAccessService.getLocalID());
-        //console.log((_this, JSON.parse(JSON.stringify(_this.readData(_this.dataAccessService.getLocalID())))));
         await _this.readData("Received").then(function (res) {
             if (res.response.res != null) {
                 _this.data = res.response.res.object;

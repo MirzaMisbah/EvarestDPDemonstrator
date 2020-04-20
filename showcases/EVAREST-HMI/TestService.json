@@ -1,0 +1,15 @@
+{
+  "id": "TestService",
+  "version": "0.2",
+  "name": "EVAREST Demonstrator",
+  "descriptionText": "This test service for SAS.",
+  "configuration": [{
+      "softwareItemId": "./showcases/EVAREST-HMI/Service.js", 
+      "instanceId": "Service", 
+      "targetMinionIds": [], 
+      "name": "SAS",
+      "type": "P", 
+      "description": "Request Data products"
+  }],
+  "context": {}
+}

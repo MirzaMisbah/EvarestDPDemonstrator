@@ -32,9 +32,36 @@ fetch('./showcases/EVAREST-HMI/EVAREST_HMI.json')
         tucanaPlatform.createSmartServiceConfiguration(sscItem)
     }).then(() => {
         tucanaPlatform.getSmartServiceConfigurationItemIds().then((ids) => {
+            
             console.log(ids);
+            console.log(ids.smartServiceConfigurationItemIds[0]);
+            delete (ids.smartServiceConfigurationItemIds[1]);
+            console.log(ids)
             uiAdapter.showServiceSelection(ids, startCallback);
         }, () => {
             console.log("service id fetch error");
         });
     });
+
+    if(localStorage.getItem("provider")  == "true"){
+        fetch('./showcases/EVAREST-HMI/TestService.json')
+        .then((response) => {
+            return response.json();
+        }).then(json => {
+            var sscItem = tucana.model.SmartServiceConfigurationItem.fromJSON(json);
+            tucanaPlatform.createSmartServiceConfiguration(sscItem)
+        });
+    }
+
+    else{
+        setTimeout(function () {            
+            fetch('./showcases/EVAREST-HMI/TestService.json')
+            .then((response) => {
+                return response.json();
+            }).then(json => {
+                var sscItem = tucana.model.SmartServiceConfigurationItem.fromJSON(json);
+                tucanaPlatform.createSmartServiceConfiguration(sscItem)
+            });
+         }, 40000) 
+    }
+
