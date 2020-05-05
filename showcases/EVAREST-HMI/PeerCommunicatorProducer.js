@@ -13,7 +13,7 @@ class PeerProducer extends tucana.minion.Cmin {
         const _this = this;
         _this.initialize();
         this.running = true;
-        var prop =[[],"true","false","false","true","k","n"];
+        var prop =[[],"true","false","false","false","k","n"];
         console.log("Defined Properties in B");
         console.log(prop);
         this.ids = await _this.dataAccessService.getFilteredPeerIds(prop);
@@ -43,41 +43,25 @@ class PeerProducer extends tucana.minion.Cmin {
 
         }
     }
-
-
-    async broadcastService() {
+    async receiveService() {
         console.log("broadcasting service")
-        var request = window.indexedDB.open("swComponent");
-        console.log("swComponent opened")
-
+        var request = window.indexedDB.open("sscItem");
         this.readyToBroadCast = false;
         var onSuc = function (event) {
-            console.log("swComponent opened succesfully")
-
             var db = event.target.result;
             // Erstelle ein ObjectStore für diese Datenbank
-            db.transaction("swComponent", "readwrite").objectStore("swComponent").get('./showcases/EVAREST-HMI/Service.js').onsuccess = async function (event) {
-                this.modelA = event.target.result;
-                console.log(this.modelA);
-
-                const broadcastConfig = new this.model.BroadcastConfiguration(this.dataAccessService.getLocalID(),  this.ids,  this.model.BROADCAST_TYPE.UPEER,BROADCAST_CONDITION.ALL,null);
-           
-                console.log("only prediction result sent to store  "  ,this.data);
-                console.log("this.dataID");
-                console.log(this.dataId);
-                console.log("this.data");
-                console.log(this.data);
-                this.broadcastDataCreateOperation(this.dataId, this.modelA, broadcastConfig)
-                        .then(function(res){
-                            console.log(res);
-                        });
-
-
-            }.bind(this)
-        }.bind(this);
+            db.transaction("sscItem", "readwrite").objectStore("sscItem").put('Service').onsuccess = async function (event) {
+                this.service = event.target.result;
+                console.log(this.service);
+            }.then((response) => {
+                return response.json();
+            }).then(json => {
+                var sscItem = tucana.model.SmartServiceConfigurationItem.fromJSON(this.service);
+                tucana.createSmartServiceConfiguration(sscItem)
+            }).bind(this)
         request.onsuccess = onSuc.bind(this);
     }
-
+    }
     /**
      * Terminates a running minion by clearing the runtime environment.
      */
@@ -87,14 +71,14 @@ class PeerProducer extends tucana.minion.Cmin {
     }
 
     notify(newData) {
-        this.result = newData;
-        console.log("this.running = " + this.running);
+        this.service = newData;
+        if(newData != null){
+            receiveService();
+        }
         if(this.running) {       
             this.data.push(newData);
-            console.log("data pushed")
             const broadcastConfig = new this.model.BroadcastConfiguration(this.dataAccessService.getLocalID(),  this.ids,  this.model.BROADCAST_TYPE.UPEER,BROADCAST_CONDITION.ANY,null);
-            console.log("broadcast configs set")
-            this.broadcastDataCreateOperation(this.dataId, "hi", broadcastConfig)
+            this.broadcastDataCreateOperation(this.dataId, "", broadcastConfig)
                 .then(function(res){
                     console.log(res);
                 });

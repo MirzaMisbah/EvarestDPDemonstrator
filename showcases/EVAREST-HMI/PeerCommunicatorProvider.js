@@ -12,7 +12,7 @@ class PeerProvider extends tucana.minion.Cmin {
         const _this = this;
         _this.initialize();
         this.running = true;
-        var prop =[[],"false","true","false","true","k","n"];
+        var prop =[[],"false","true","false","false","k","n"];
         console.log("Defined Properties in A");
         console.log(prop);
         this.ids = await _this.dataAccessService.getFilteredPeerIds(prop);
@@ -61,24 +61,22 @@ class PeerProvider extends tucana.minion.Cmin {
 
         this.readyToBroadCast = false;
         var onSuc = function (event) {
-        console.log("swComponent opened succesfully")
 
         var db = event.target.result;
         const tx = db.transaction("swComponent", 'readwrite')
         const store = tx.objectStore("swComponent")
-      
         const val = 'hey!'
         const key = 'Hello again'
         const value = store.put(val,'')
         tx.done
-            db.transaction("swComponent", "readwrite").objectStore("swComponent").get('./showcases/EVAREST-HMI/Service.js').onsuccess = async function (event) {
-                this.modelA = event.target.result;
-                console.log(this.modelA);
+            db.transaction("sscItem", "readwrite").objectStore("sscItem").get('Service').onsuccess = async function (event) {
+                this.service = event.target.result;
+                console.log(this.service);
                 for (var i = 0; i < this.ids.length; i++) {
                     var peer = this.ids[i];
                     const broadcastConfig = new this.model.BroadcastConfiguration(this.localId, [peer], this.broadcastCondition, this.broadcastType, null);
                     await this.broadcastDataCreateOperation(this.dataId, {
-                        model: this.modelA,
+                        Service: this.service,
                     }, broadcastConfig).then(function (res) {
                         this.readyToBroadCast = true;
                     }.bind(this));
@@ -87,6 +85,43 @@ class PeerProvider extends tucana.minion.Cmin {
         }.bind(this);
         request.onsuccess = onSuc.bind(this);
     }
+    checkSAS(){
+        const result
+        (async () => {
+            //...
+          
+            const dbName = 'sscItem'
+            const storeName = 'TestService'
+            const version = 1 //versions start at 1
+            const db = await openDB(dbName, version, {
+              upgrade(db, oldVersion, newVersion, transaction) {
+                result = db.createObjectStore(storeName)
+              }
+            })
+          })()
+
+        var answer = window.confirm('Der von Sindo empfangene Service sagt "' + this.result["descriptionText"] + '". Ist es nützlich für Ihre Daten ?');
+        if (answer){
+        const _this = this;
+        (function myLoop (i) { 
+            const __this = _this;       
+            setTimeout(function () { 
+                if (true/*localStorage.getItem("Connected peer")*/){ 
+                    var answer = window.confirm('Ihre Daten wurden aggregiert. Sie möchten es herunterladen.');
+                    if (answer){
+                        __this.createSAS();
+                        alert('Daten heruntergeladen');
+                    }                                                        
+                }
+                else{
+                    alert('You didnt received any SAS yet.');
+                }                   
+               if ((10000)) myLoop(--i);
+            }, 10000)  
+         })(10000);
+        }
+    }
+    
     /**
      * Terminates a running minion by clearing the runtime environment.
      */

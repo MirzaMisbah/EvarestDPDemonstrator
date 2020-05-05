@@ -48,14 +48,17 @@
 
   </div>
 <div class= "body" style="width: 80%; margin-left: 10%; margin-right: 10%; margin-top: 5%; margin-bottom: 20%;">
-  <h1 style = "text-align: center">We are here to answer your queries!</h1>
+  <h1 style = "text-align: center">Wir sind hier, um Ihre Fragen zu beantworten</h1>
 
   <link rel="stylesheet" href="../css/sideByside.css">
   <div id="wrapper">
     <div id="outer">
       <div class = "itemwrapper">
         <img src ="../images/sas.png" alt="sas" />
-        <h4 style = "text-align: left; margin-left: 18%;">Data Products</h4>
+        <h4 id="dpP"style = "text-align: left; margin-left: 18%;">Datenprodukte</h4>
+        <button id="dpB" type="submit" onclick="showalert('You can use SAS for better visualization and understanding of dataproducts')" class="myButton" style="margin-top: 10%; margin-left: 17%; visibility:hidden"> 
+          Datenprodukte
+        </button>
       </div>
       
 
@@ -63,7 +66,10 @@
 
       <div class = "itemwrapper" >
         <img src ="../images/dp.png" alt="sas" />
-        <h4 style = "text-align: left; margin-left: 5%;">Smart Analytical Service</h4>
+        <h4 id = "sasP" style = "text-align: left; margin-left: 5%;">Smart Analytik Service</h4>
+        <button id="sasB" type="submit" onclick="openlink('main01.html')" class="myButton" style="margin-top: 10%; margin-left: 5%; visibility:hidden"> 
+          Smart Analytik Service
+        </button>
       </div>
     </div>
   </div>
@@ -73,7 +79,10 @@
   <div class="search" style = "width: 80; align-items: center;">
     <input type="text" class="searchTerm" id='msg'  placeholder="What are you looking for?" aria-describedby="button-addon2">
     <div class="input-group-append">
-      <button id="button-addon2" type="submit" onclick= "questionMessage();"  class="btn btn-link"> 
+      <button id="button-addon2P" type="submit" onclick= "questionMessage();"  class="btn btn-link"> 
+        <i class="fa fa-search" aria-hidden="true"></i>
+      </button>
+      <button id="button-addon2B" type="submit" onclick= "questionMessagewithAlert();"  class="btn btn-link" style="visibility:hidden"> 
         <i class="fa fa-search" aria-hidden="true"></i>
       </button>
 
@@ -82,7 +91,9 @@
         input.addEventListener("keyup", function(event) {
           if (event.keyCode === 13) {
            event.preventDefault();
-           document.getElementById("button-addon2").click();
+           if ($("button-addon2P").is(":visible") == true){document.getElementById("button-addon2P").click();}
+           else{document.getElementById("button-addon2B").click();}
+
           }
         });
         function enableButton(id) {

@@ -13,7 +13,7 @@ class swComponent extends tucana.minion.Pmin {
         _this.initialize();
         this.running = true;
         if(localStorage.getItem("producer")  == "true"){
-            _this.calculation();
+            this.useSAS();
         }
     }
     calculation(result){
@@ -58,11 +58,10 @@ class swComponent extends tucana.minion.Pmin {
         const _this = this;
         //JSONObject js = new JSONObject();
         var dummy = _this.result["data"];
-        
         this.calculation();
-        console.log(SAS)
-        console.log(_this.result)
-        _this.downloadObjectAsJson(SAS, 'SAS');
+        console.log(SAS);
+        console.log(_this.result);
+        _this.calculation(_this.downloadObjectAsJson(SAS, 'SAS',));
     } 
 
     /**

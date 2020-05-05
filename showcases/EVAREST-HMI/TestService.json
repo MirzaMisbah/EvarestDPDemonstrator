@@ -2,7 +2,7 @@
   "id": "TestService",
   "version": "0.2",
   "name": "EVAREST Demonstrator",
-  "descriptionText": "This test service for SAS.",
+  "descriptionText": "This service can be utilized to aggregate two integer values",
   "configuration": [{
       "softwareItemId": "./showcases/EVAREST-HMI/Service.js", 
       "instanceId": "Service", 

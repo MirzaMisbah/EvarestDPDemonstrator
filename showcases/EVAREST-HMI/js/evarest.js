@@ -1,5 +1,6 @@
 var nlp = new Bravey.Nlp.Fuzzy();
 var intents = undefined;
+var data = undefined;
 var sc = false;
 var index = elasticlunr(function () {
     this.addField('keyWords');
@@ -95,7 +96,7 @@ function questionMessagewithAlert() {
         console.log(customer_msg)
         // NLP logic here
         intent = getIntent(customer_msg);
-        generateAnswer(intent, customer_msg);
+        generateAnswerWithAlert(intent, customer_msg);
         
         
     }
@@ -178,14 +179,86 @@ function generateAnswer(intent, customer_msg) {
             }
         }
         if (check == true){
-            alert("We evaluated your query and we can help you .. ");  
-            openlink('main0.html')
+            alert("Herzliche Glückwünsche !! Ihre Anfrage wurde ausgewertet. ");  
+            //openlink('main0.html')
+            this.show_hide("dpP","dpB")
+            this.show_hide("sasP","sasB")
+            this.show_hide("button-addon2P","button-addon2B")
         }
         else{
             alert("Please repharase your query so that we can help you better!"); 
         } 
         return "Oops. I didn't understand. Please rephrase your query.";
 }
+
+function generateAnswerWithAlert(intent, customer_msg) {
+    console.log(intent);
+    if (intents == undefined) {
+        createIntents();
+    }
+    check = false;
+    for (i = 0; i < intents.length; i++) {
+        if (intent == intents[i].intent) {
+            if (intents[i].auto_generated == 0) {
+                reply = intents[i].answer[Math.floor(Math.random() * intents[i].answer.length)];
+                if (intents[i].show_button == 1) {
+                    text = intents[i].button_text;
+                    vis = intents[i].visualization;
+                    printAnswerAndButton(reply, text, "SC", vis);
+                    console.log(printAnswerAndButton)
+
+                }
+                else if (intents[i].show_button == 2) {
+                    producer = Math.floor(Math.random() * 2)
+                    console.log(producer)
+                    text = intents[i].button_text;
+                    vis = "";
+                    if (producer == 0){vis = "ProducerA.html"}
+                    if (producer == 1){vis = "ProducerB.html"}
+                    console.log(vis)
+                    printAnswerAndButton(reply, text, "upload", vis);
+                    console.log(printAnswerAndButton)
+
+                }
+                else{
+                    printAnswer(reply)
+                }
+            }
+            else {
+                if (intents[i].auto_generated == 1) {
+                    dp = predictDataproduct(customer_msg)
+                    console.log(dp)
+                    
+                    if (Array.isArray(dp) && dp.length) {
+                        dp_quried = dp[0].doc.id;
+                        return "Yes, we have a data product that fits your description. " + dp[0].doc.description;
+                    }
+                }
+                else if (dp_quried != undefined && intents[i].auto_generated == 1.1) {
+                    reply = extractDetails(dp[0], intent)
+                    return reply;
+                    }
+                else if (dp_quried == undefined && intents[i].auto_generated == 1.1) {
+                    return "You must decide on Data Product first before asking for details";
+                }
+                    
+                }
+                check = true;
+            }
+        }
+        if (check == true){
+            alert("Herzliche Glückwünsche !! Ihre Anfrage wurde ausgewertet. ");  
+            //openlink('main0.html')
+            this.show_hide("dpP","dpB")
+            this.show_hide("sasP","sasB")
+            this.show_hide("button-addon2P","button-addon2B")
+        }
+        else{
+            alert("Please repharase your query so that we can help you better!"); 
+        } 
+        return "Oops. I didn't understand. Please rephrase your query.";
+}
+
 
 
 function printAnswer(value) {
@@ -259,9 +332,9 @@ function connectedPeers(){
 function requestContract() {
     var d = new Date();
     //check = setScReqValue();
-    var answer = window.confirm('Your are about to request Sindo for SAS. Do you really want to do this?');
+    var answer = window.confirm('Sie sind dabei, Sindo für SAS anzufordern. Willst du das wirklich tun?');
     if (answer){
-        showalert('Your request has been send to sindo!');
+        showalert('Ihre Anfrage wurde an sindo gesendet!');
         DeleteDB();
         removeConnectedPeer();
             //StartService()
@@ -277,7 +350,7 @@ function requestContract() {
                             removeConnectedPeer(); 
                         }
                         else{
-                            showalert('There is some network issue. We are trying to forward your request. Please have patience!');
+                            showalert('Es gibt ein Netzwerkproblem. Wir versuchen Ihre Anfrage weiterzuleiten. Bitte haben Sie Geduld!');
                         }                 
                     }, 20000) 
                 if (checkConnectedPeer()){  
@@ -294,7 +367,6 @@ function requestContract() {
         //check = setScReqValue();
         var answer = window.confirm('Your are about to upload your data. Do you really want to upload it?');
         if (answer){
-            showalert('Your data has been uploaded. We are aggregating your data according to provided SAS by sindo');
                 //StartService()
                 doAsyncB().then(function(){
                     
@@ -343,7 +415,7 @@ function checkResponse(){
             console.log(checkRespond);
             if (true){
                 console.log(true);
-                showalert('Sindo accepted your request. We are setting a smart contract for you.');
+                showalert('Sindo hat Ihre Anfrage angenommen. Wir schließen einen intelligenten Vertrag für Sie.');
                 //setTimeout(function () { 
                 openlink('main02.html');
                 //}, 10000)                                                         
@@ -373,7 +445,7 @@ function checkResponse(){
                 var checkRespond =  checkConnectedPeer();
                 console.log(checkRespond);
                 if (checkRespond){
-                    showalert('Sindo uploaded his data. He is now visualizing your SAS.');
+                    showalert('Sindo hat seine Daten hochgeladen. Er kann es jetzt mit Ihrer SAS visualisieren.');
                     //setTimeout(function () { openlink('main1L.html');}, 10000)
                                                                              
                     } 
@@ -402,9 +474,9 @@ function checkResponse(){
             var checkRespond =  checkConnectedPeer();
             console.log(checkRespond);
             if (true){
-                var answer = window.confirm('Mero requested for your service. Do you want to share it!');
+                var answer = window.confirm('Mero hat um Ihren Dienst gebeten. Möchten Sie es teilen?');
                 if (answer)
-                {   showalert('We are setting a smart contract for you.');
+                {   showalert('Wir stellen smart contract für Sie ein.');
                     openlink('main12.html');                                                         
                 }     
             }                
@@ -432,7 +504,7 @@ function checkResponse(){
                 }, 50000);
           }
 
-          function sendDataProduct(){
+    function sendDataProduct(){
     var d = new Date();
     //check = setScReqValue();
     var answer = window.confirm('Your are about to Transfer your data. Do you really want to do this?');
@@ -564,23 +636,31 @@ function checkResponse(){
     function TuploadData() {
         var d = new Date();
         //check = setScReqValue();
-        alert('Your are about to upload your data.');
+        alert('Sie sind dabei, Ihre Daten hochzuladen.');
         if (true){
 
             localStorage.removeItem("Connected peer");
             if(localStorage.getItem("producer")  == "true"){
             const reader = this.JSONReader((result) => {
                 console.log(result)
-                
+                window['data'] = result;
+                console.log(data)
+                document.getElementById("p1").innerHTML = "Sie können den Smart Analytics Service “CO2-Ausstoß Supply-Chain” nun auf lokal auf Ihre Daten anwenden";
+                document.getElementById("p2").innerHTML = "";
+                document.getElementById("h2").innerHTML = "CO2-Ausstoß Supply-Chain” anwenden";
+                //document.getElementById("dp").innerHTML = "Service Nutzen";
+                this.show_hide("loadData","useSAS")
+                /* setTimeout(function () {
+                    //if(!this.ids == 'USER_NA'){
+
+                        this.checkSAS();
+                    //}
+                    },10000); */
             });
             console.log(reader);
             //refreshIndex();
             //doAsync();
-            setTimeout(function () {
-                //if(!this.ids == 'USER_NA'){
-                    this.checkSAS();
-                //}
-                },10000);
+            
         }
         //StartService()                 
                     /*setTimeout(function () {
@@ -594,8 +674,12 @@ function checkResponse(){
 
                     }, 20000)*/
                 }
-                showalert('Your data has been uploaded. We are aggregating your data according to provided SAS by sindo');
             }
+    function show_hide(id2hide, id2show)
+    {
+        document.getElementById(id2hide).style.visibility='hidden';
+        document.getElementById(id2show).style.visibility='visible';
+    }
     function refreshIndex(){
         //childWindow.location.href="../../../index.html";
         var newtab = window.open('../../../index.html');
@@ -604,28 +688,46 @@ function checkResponse(){
     }
 
     function checkSAS(){
-        
+
+        (async () => {
+            //...
+          
+            const dbName = 'sscItem'
+            const storeName = 'store1'
+            const version = 1 //versions start at 1
+          
+            const db = await openDB(dbName, version, {
+              upgrade(db, oldVersion, newVersion, transaction) {
+                const store = db.createObjectStore(storeName)
+              }
+            })
+          })()
+
+        //request.onerror = console.error;
+        var answer = window.confirm('Der von Sindo empfangene Service sagt "This service can be utilized to aggregate two integer values". Ist es nützlich für Ihre Daten ?');
+        if (answer){
         const _this = this;
         (function myLoop (i) { 
             const __this = _this;       
             setTimeout(function () { 
                 if (true/*localStorage.getItem("Connected peer")*/){ 
-                    var answer = window.confirm('Your data has been aggregated. You want to download it.');
+                    var answer = window.confirm('Ihre Daten wurden aggregiert. Sie möchten es herunterladen.');
                     if (answer){
                         __this.createSAS();
-                        alert('Data downloaded');
+                        alert('Daten heruntergeladen');
                     }                                                        
                 }
                 else{
                     alert('You didnt received any SAS yet.');
                 }                   
                if ((10000)) myLoop(--i);
-            }, 40000)  
+            }, 10000)  
          })(10000);
-
-
+        }
     }
-    function createSAS(){
+    function createSAS(result = window['data']){
+        console.log(result)
+        console.log(window.data)
         const _this = this;
         //JSONObject js = new JSONObject();
         var dummy = _this.result["data"];
@@ -736,13 +838,9 @@ function checkResponse(){
         };
         
         request.onsuccess = function(event) {
-          console.log('Connected to database');
           var db = event.target.result;
-          var tx = db.transaction('sscItem', "readwrite");
           var store = tx.objectStore('sscItem');
-          console.log('Doing something with store "mystore"');
           store.put({value: "Misbah"});
-          console.log('Finished doing something, now closing');
           db.close();
         };
         
@@ -755,3 +853,31 @@ function checkResponse(){
         store.put({content2: data, ID:1});
         store.put({content3: data, ID:1});
     }    
+    function getData() {
+        // open a read/write db transaction, ready for retrieving the data
+        var transaction = db.transaction(["sscItem"], "readwrite");
+      
+        // report on the success of the transaction completing, when everything is done
+        transaction.oncomplete = function(event) {
+            console.log('<li>Transaction completed.</li>');
+        };
+      
+        transaction.onerror = function(event) {
+            console.log('<li>Transaction not opened due to error: ' + transaction.error + '</li>');
+        };
+      
+        // create an object store on the transaction
+        var objectStore = transaction.objectStore("sscItem");
+      
+        // Make a request to get a record by key from the object store
+        var objectStoreRequest = objectStore.get(0);
+
+      
+        objectStoreRequest.onsuccess = function(event) {
+          // report the success of our request
+          console.log('<li>Request successful.</li>');
+          var myRecord = objectStoreRequest.result;
+          console.log(myRecord);
+        };
+      
+      };

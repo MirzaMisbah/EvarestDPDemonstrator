@@ -17,6 +17,7 @@
   <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
 
   <!-- Intent extraction and search libraries -->
+  
   <script src="../js/bravey.js"></script>
   <script src="../js/elasticlunr.min.js"></script>
   <script type="text/javascript" src="../js/evarest.js"></script>
@@ -49,8 +50,11 @@
   </div>
 <div class= "body" style="align-items: center; margin-top: 5%;">
   <div id="scVis" style = "align-items: center" >
-        <h2 style = "text-align: center">"CO2 in Supply chain" by Sindo</h2> 
-        <h4 style = "text-align: center">Provide data for Sindo</h4> 
+        <h2 id="h1" style = "text-align: center">"Lieferkette für CO2-Emissionen" von Sindo</h2> 
+        <h4 id="h2" style = "text-align: center">Geben Sie Daten für Sindo ein</h4> 
+        <p id="p1" style = "text-align: center">Sie haben den Smart Analytics Service “CO2-Ausstoß Supply-Chain” erhalten</p>
+        <p id="p2" style = "text-align: center">Zur Nutzung des SAS laden Sie die erforderlichen Daten in ihre lokale, abgesicherte EVAREST Node. </p>
+        </p> 
         
         
 
@@ -61,11 +65,13 @@
 </div>
 <div class= "body" style="width: 80%; margin-left: 30%; margin-bottom: 20%;">
   <link rel="stylesheet" href="../css/dummy.css">
-  <button id="dp" class="myButton" type="submit" onclick="TuploadData()" class="myButton" style="margin-top: 1%; margin-left: 17%;"> 
-  Upload Your Data
+  <button id="loadData" class="myButton" type="submit" onclick="TuploadData()" class="myButton" style="margin-top: 1%; margin-left: 17%;"> 
+  Daten laden 
+  </button>
+  <button id="useSAS" class="myButton" type="submit" onclick="checkSAS()" class="myButton" style="margin-top: 1%; margin-left: 17%; visibility:hidden"> 
+    Service Nutzen 
   </button>     
-
-      <div class = "itemgap"></div>
+  <div class = "itemgap"></div>
 </div>
 </body>
 

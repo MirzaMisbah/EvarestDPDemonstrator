@@ -10,11 +10,6 @@
     "name": "Perceiver Minion",
     "type": "P"
 
-  }, 
-  {
-    "instanceId": "service",
-    "softwareItemId": "./showcases/EVAREST-HMI/Service.js",
-    "name": "service"
   },
   {
     "instanceId": "Tmin",

@@ -42,7 +42,6 @@ fetch('./showcases/EVAREST-HMI/EVAREST_HMI.json')
             console.log("service id fetch error");
         });
     });
-
     if(localStorage.getItem("provider")  == "true"){
         fetch('./showcases/EVAREST-HMI/TestService.json')
         .then((response) => {
@@ -52,9 +51,29 @@ fetch('./showcases/EVAREST-HMI/EVAREST_HMI.json')
             tucanaPlatform.createSmartServiceConfiguration(sscItem)
         });
     }
+    /* if(localStorage.getItem("producer")  == "true"){
+        fetch('./showcases/EVAREST-HMI/TestService.json')
+        .then((response) => {
+            return response.json();
+        }).then(json => {
+            var sscItem = tucana.model.SmartServiceConfigurationItem.fromJSON(json);
+            tucanaPlatform.createSmartServiceConfiguration(sscItem)
+        });
+    } */
 
-    else{
-        setTimeout(function () {            
+
+
+
+
+
+
+
+
+
+
+
+    if(localStorage.getItem("producer")  == "true"){
+        setTimeout(function () { 
             fetch('./showcases/EVAREST-HMI/TestService.json')
             .then((response) => {
                 return response.json();
@@ -62,6 +81,7 @@ fetch('./showcases/EVAREST-HMI/EVAREST_HMI.json')
                 var sscItem = tucana.model.SmartServiceConfigurationItem.fromJSON(json);
                 tucanaPlatform.createSmartServiceConfiguration(sscItem)
             });
-         }, 40000) 
+        }, 10000) 
     }
+    
 

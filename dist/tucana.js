@@ -87120,9 +87120,11 @@ class BrowserFingerprintIdentificationHandler extends TENVIdentificationHandler 
         //createTextField("keywordField", container, "Enter some Keywords", "Keywords");
         //createCheckbox("Commercial use", "commercialBox", container);
         //createCheckbox("Content Offering", "contentOffering", container);
-        createCheckbox("Chocolate Producer", "producer", container);
+        createCheckbox("Raw Data Provider", "guest", container);
+        createCheckbox("DaaS Provider", "producer", container);
+        createCheckbox("DaaS User", "user", container);
         createCheckbox("SAS Provider", "provider", container);
-        createCheckbox("Guest", "guest", container);
+        //createCheckbox("Guest", "guest", container);
 
 
         var cancelLabel = document.createElement('label');
@@ -87152,6 +87154,7 @@ class BrowserFingerprintIdentificationHandler extends TENVIdentificationHandler 
         this.localId = localStorage.getItem("id");
         this.name = localStorage.getItem("name");
         this.producer = localStorage.getItem("producer");
+        this.user = localStorage.getItem("user");
         this.provider = localStorage.getItem("provider");
         this.guest = localStorage.getItem("guest");
 
@@ -87222,8 +87225,10 @@ class BrowserFingerprintIdentificationHandler extends TENVIdentificationHandler 
                 if (document.getElementById("commercialBox").checked) {
                     localStorage.setItem("commercial", true);
                     this.commercial = true;
-                }*/ 
+                }*/
+                this.guest = false; 
                 this.producer = false;
+                this.user = false;
                 this.provider = false;
                 this.guest = false;
                 if (document.getElementById("producer").checked) {
@@ -87234,6 +87239,15 @@ class BrowserFingerprintIdentificationHandler extends TENVIdentificationHandler 
                 } 
                 else {
                     localStorage.setItem("producer", false);
+                }
+                if (document.getElementById("user").checked) {
+                    localStorage.setItem("user", true);
+                    localStorage.setItem("role", true);
+                    this.role = true;
+                    this.producer = true;
+                } 
+                else {
+                    localStorage.setItem("user", false);
                 }
 
                 if (document.getElementById("provider").checked) {
@@ -87258,7 +87272,7 @@ class BrowserFingerprintIdentificationHandler extends TENVIdentificationHandler 
                 }
 
 
-                if (this.producer == false && this.provider == false && this.guest == false) {
+                if (this.producer == false && this.user == false && this.provider == false && this.guest == false) {
                     alert("You can only seek help but can't use any service as you did'nt choose any role!");
                     var answer = window.confirm("You want to choose Role?")
                     if (answer) {
@@ -87299,7 +87313,7 @@ class BrowserFingerprintIdentificationHandler extends TENVIdentificationHandler 
             commercial: this.producer,
             software: this.provider,
             content: this.guest,
-            model: 'true',
+            model: this.user,
             keywords: "k",
             name: "n"
 
