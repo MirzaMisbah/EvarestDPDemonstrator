@@ -1,0 +1,35 @@
+{
+    "@context": "EVAREST",
+    "name": "CO2 Footprints",
+    "location": "http://www.evarest.de/iot/bde",
+    "consumption": "Internal",
+    "lang": "DE",
+    "keyWords": "Co2 foot print, reducing CO2",
+    "description": "Analyse Ihrer Supply-Chain-Daten. Vergleich mit Lieferketten anderer Hersteller. Empfehlungen zur CO2-Reduzierung.",
+    "productType": {
+        "@tpe": "Visualization",
+        "tier_1": "Reduction of CO2 footprints",
+        "tier_2": "Process Instruction"
+    },
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.4",
+        "reviewCount": "89"
+    },
+    "smartContract": {
+        "@type": "smartContract",
+        "location": "http://www.evarest.de/iot/CO2",
+        "terms": "http://www.evarest.de/iot/CO2"
+    },
+    "offers": {
+        "@type": "Offer",
+        "priceCurrency": "EUR",
+        "price": "119.99",
+        "priceValidUntil": "05-11-2020",
+        "availability": "yes",
+        "seller": {
+            "@type": "Lindt",
+            "location": "https://www.lindt.de/startseite/"
+        }
+    }
+}

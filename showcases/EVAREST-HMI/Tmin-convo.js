@@ -14,84 +14,11 @@ class Tmin extends tucana.minion.Tmin {
         await this.initialize();
         this.running = true;
         const _this = this;
-        this.addDataProducts(); // isko hatana ha lazmi
+
         _this.minionController.notify(_this, JSON.parse(JSON.stringify(_this.result)));
 
     }
-    addDataProducts() {
-        $.getJSON("../products/products.json", function (json) {
-            for (i = 0; i < json.length; i++) {
-                index.addDoc(json[i]);
-            }
-        });
-    }
     
-    predictDataproduct(customer_msg) {
-        result = index.search(customer_msg);
-        return result;
-    }
-    
-    createIntents() {
-        $.getJSON("../conversation.json", function (json) {
-            for (i = 0; i < json.length; i++) {
-                for (j = 0; j < (json[i].question).length; j++) {
-                    addIntent(json[i].question[j], json[i].intent);
-                }
-            }
-            intents = json;
-        });
-    }
-    
-    addIntent(msg, intent) {
-        nlp.addDocument(msg, intent, { fromFullSentence: true, expandIntent: true });
-    }
-    
-    getIntent(msg) {
-        intent = nlp.test(msg).intent;
-        return intent;
-    }
-
-    questionMessage() {
-        // Adds an element to the document
-        customer_msg = document.getElementById('msg').value
-        if (customer_msg != '') {
-            addYou()
-            timestamp = get_timestamp()
-            var p = document.getElementById('chat-box');
-            var newElement = document.createElement('div');
-            newElement.setAttribute('class', "media w-50 ml-auto mb-3");
-            document.getElementById('msg').value = ''
-            console.log(customer_msg)
-            // NLP logic here
-            intent = getIntent(customer_msg);
-            generateAnswer(intent, customer_msg);
-            storeData();
-            
-        }
-        else{
-            alert("Please use search bar below to tell us, how can we help you?");
-        }
-    }
-    questionMessagewithAlert() {
-        // Adds an element to the document
-        customer_msg = document.getElementById('msg').value
-        if (customer_msg != '') {
-            addYou()
-            timestamp = get_timestamp()
-            var p = document.getElementById('chat-box');
-            var newElement = document.createElement('div');
-            newElement.setAttribute('class', "media w-50 ml-auto mb-3");
-            document.getElementById('msg').value = ''
-            console.log(customer_msg)
-            // NLP logic here
-            intent = getIntent(customer_msg);
-            generateAnswer(intent, customer_msg);
-            
-        }
-        else{
-            alert("Please use search bar below to tell us, how can we help you?");
-        }
-    }
     
     extractDetails(dp, intent) {
         detail = undefined;
@@ -193,20 +120,14 @@ class Tmin extends tucana.minion.Tmin {
             button_id = button_id + Math.random();
         }
     }
-    openlink(link) {
-        window.close();
-        if (localStorage.getItem("producer") == "true") {role = "producer"}
-        else if (localStorage.getItem("provider") == "true") {role = "provider"}
-        else if (localStorage.getItem("guest") == "true") {role = "guest"}
+
     
-        window.open("../html/" + link + "?role=" + role + "?name=" + localStorage.getItem("name"));
-        
-    }
     notify(newData) {
         const _this = this;
         _this.result = newData;
-        console.log('data in Tmin');
+        console.log('data in Tmin-convo');
         console.log(newData);
+        this.extractDetails(_this.result)
 
 
     }

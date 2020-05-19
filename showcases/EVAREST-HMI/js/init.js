@@ -50,7 +50,7 @@ fetch('./showcases/EVAREST-HMI/EVAREST_HMI.json')
             var sscItem = tucana.model.SmartServiceConfigurationItem.fromJSON(json);
             tucanaPlatform.createSmartServiceConfiguration(sscItem)
         });
-    }
+    }    
     /* if(localStorage.getItem("producer")  == "true"){
         fetch('./showcases/EVAREST-HMI/TestService.json')
         .then((response) => {

@@ -186,7 +186,7 @@ function generateAnswer(intent, customer_msg) {
             this.show_hide("button-addon2P","button-addon2B")
         }
         else{
-            alert("Please repharase your query so that we can help you better!"); 
+            alert("Bitte formulieren Sie Ihre Anfrage neu, damit wir Ihnen besser helfen können!"); 
         } 
         return "Oops. I didn't understand. Please rephrase your query.";
 }
@@ -254,7 +254,7 @@ function generateAnswerWithAlert(intent, customer_msg) {
             this.show_hide("button-addon2P","button-addon2B")
         }
         else{
-            alert("Please repharase your query so that we can help you better!"); 
+            alert("Bitte formulieren Sie Ihre Anfrage neu, damit wir Ihnen besser helfen können!"); 
         } 
         return "Oops. I didn't understand. Please rephrase your query.";
 }
@@ -328,6 +328,40 @@ function connectedPeers(){
         TPC.getConnectedPeers().then();
         });
 }
+
+function RrequestContract() {
+    var d = new Date();
+    //check = setScReqValue();
+    var answer = window.confirm('Sie sind dabei, Mero für DP anzufordern. Willst du das wirklich tun?');
+    if (answer){
+        showalert('Ihre Anfrage wurde an mero gesendet!');
+        DeleteDB();
+        removeConnectedPeer();
+            //StartService()
+            doAsync().then(function (response) {
+                if (checkConnectedPeer()){  
+                    location.reload();  
+                }
+                else{}          
+            
+              }).then(function(){        
+                    setTimeout(function () {
+                        if (checkConnectedPeer()){
+                            removeConnectedPeer(); 
+                        }
+                        else{
+                            showalert('Es gibt ein Netzwerkproblem. Wir versuchen Ihre Anfrage weiterzuleiten. Bitte haben Sie Geduld!');
+                        }                 
+                    }, 20000) 
+                if (checkConnectedPeer()){  
+                    removeConnectedPeer();  
+                }
+                else{}
+              })
+            }
+      RcheckResponse();
+        }
+
 
 function requestContract() {
     var d = new Date();
@@ -403,7 +437,38 @@ function DeleteDB(){
        console.log("Deleted database successfully");
         };
 }
-
+function RcheckResponse(){
+    removeConnectedPeer();
+    var i = 0;
+    chk = true;
+    (function myLoop (i) {          
+        setTimeout(function () {   
+            console.log("checking response");
+            var checkRespond =  checkConnectedPeer();
+            console.log(checkRespond);
+            if (true){
+                console.log(true);
+                showalert('Mero hat Ihre Anfrage angenommen. Wir schließen einen intelligenten Vertrag für Sie.');
+                setTimeout(function () { 
+                    window.open("../html/main020.html" + "?role=DaasUser" + "?name=XY");
+                    window.close();
+                }, 10000)                                                         
+                }
+                else{
+                    showalert("Sindo didn't accepted your request yet. Please have patience!");
+                }                   
+           if ((20000)) myLoop(--i);      //  decrement i and call myLoop again if i > 0
+        }, 50000)
+     })(10000);  
+    if (i==0){
+    _return = false;
+    }
+    else if (i > 0){
+    _return = true;
+    }
+      console.log("contract responded");
+      return _return;
+    }
 function checkResponse(){
     removeConnectedPeer();
     var i = 0;
@@ -711,11 +776,7 @@ function checkResponse(){
             const __this = _this;       
             setTimeout(function () { 
                 if (true/*localStorage.getItem("Connected peer")*/){ 
-                    var answer = window.confirm('Ihre Daten wurden aggregiert. Sie möchten es herunterladen.');
-                    if (answer){
-                        __this.createSAS();
-                        alert('Daten heruntergeladen');
-                    }                                                        
+                    openlink('main03b.html')                                                       
                 }
                 else{
                     alert('You didnt received any SAS yet.');
@@ -724,6 +785,26 @@ function checkResponse(){
             }, 10000)  
          })(10000);
         }
+    }
+    function checkSAS2(){
+        if (true/*localStorage.getItem("Connected peer")*/){ 
+            var answer = window.confirm('DaaS-Benutzer für Ihr Datenprodukt angefordert. Möchten Sie es teilen?);            ');
+            if (answer){
+                alert('Wir schließen einen intelligenten Vertrag für Sie.');
+                setTimeout(function () { 
+                    openlink('main22.html')
+                    },10000)
+            }                                                        
+        }
+    }
+    function openlink021()
+    {
+        if (localStorage.getItem("producer") == "true") {role = "producer"}
+        else if (localStorage.getItem("provider") == "true") {role = "provider"}
+        else if (localStorage.getItem("guest") == "true") {role = "guest"}
+    
+        window.open("../html/main021.html" + "?role=DaasUser" + "?name=XY");
+        window.close();
     }
     function createSAS(result = window['data']){
         console.log(result)
